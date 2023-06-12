@@ -16,4 +16,4 @@ pipelines:
               - cd docs-loops-and-logic
               - npm install
               - npm run build
-              - npx wrangler pages publish build --project-name=docusaurus-tangibleplugins
+              - npx wrangler pages publish build --project-name=docusaurus-loops-and-logic
