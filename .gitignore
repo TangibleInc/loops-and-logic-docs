@@ -3,9 +3,15 @@
 # Learn more about .gitignore:
 #     https://www.atlassian.com/git/tutorials/saving-changes/gitignore
 
+/vendor
+
 # Node artifact files
-node_modules/
-dist/
+/node_modules/
+/dist/
+
+composer.lock
+package-lock.json
+yarn.lock
 
 # Compiled Java class files
 *.class
@@ -48,3 +54,4 @@ Thumbs.db
 *.mov
 *.wmv
 
+*.local.js
