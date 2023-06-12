@@ -1,0 +1,19 @@
+#  Template NodeJS build
+
+#  This template allows you to validate your NodeJS code.
+#  The workflow allows running tests and code linting on the default branch.
+
+image: node:18
+
+pipelines:
+  default:
+    - parallel:
+        - step:
+            name: Deploy to Cloudflare Pages
+            caches:
+              - node
+            script:
+              - cd docs-loops-and-logic
+              - npm install
+              - npm run build
+              - npx wrangler pages publish build --project-name=docusaurus-tangibleplugins
