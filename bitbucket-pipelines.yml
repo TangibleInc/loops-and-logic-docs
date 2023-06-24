@@ -13,7 +13,6 @@ pipelines:
             caches:
               - node
             script:
-              - cd docs-loops-and-logic
               - npm install
               - npm run build
-              - npx wrangler pages publish build --project-name=docusaurus-loops-and-logic
+              - npx wrangler pages deploy build --project-name=docusaurus-loops-and-logic --branch=master
