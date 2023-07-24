@@ -62,21 +62,38 @@ const config = {
     /** @type {import('@docusaurus/preset-classic').ThemeConfig} */
     ({
       // Replace with your project's social card
-      image: 'img/docusaurus-social-card.jpg',
+      image: 'img/favicon.png',
       navbar: {
-        title: 'My Site',
+        title: '',
         logo: {
-          alt: 'My Site Logo',
-          src: 'img/logo.svg',
+          alt: 'Loops & Logic',
+          src: 'img/Logo.svg',
         },
         items: [
           {
             type: 'docSidebar',
-            sidebarId: 'tutorialSidebar',
             position: 'left',
-            label: 'Tutorial',
+            sidebarId: 'gettingStarted',
+            label: 'Getting Started',
           },
-          {to: '/blog', label: 'Blog', position: 'left'},
+          {
+            type: 'docSidebar',
+            sidebarId: 'learningGuides',
+            position: 'left',
+            label: 'Learning Guides',
+          },
+          {
+            type: 'docSidebar',
+            sidebarId: 'referenceGuides',
+            position: 'left',
+            label: 'Reference Guides',
+          },
+          {
+            type: 'docSidebar',
+            sidebarId: 'howToGuides',
+            position: 'left',
+            label: 'How-to Guides',
+          },
           {
             href: 'https://github.com/facebook/docusaurus',
             label: 'GitHub',
