@@ -11,7 +11,7 @@ const config = {
   favicon: 'img/favicon.png',
 
   // Set the production url of your site here
-  url: 'https://your-docusaurus-test-site.com',
+  url: 'https://docusaurus-loops-and-logics.pages.dev',
   // Set the /<baseUrl>/ pathname under which your site is served
   // For GitHub pages deployment, it is often '/<projectName>/'
   baseUrl: '/',
@@ -21,7 +21,7 @@ const config = {
   organizationName: 'tangible', // Usually your GitHub org/user name.
   projectName: 'loops-and-logic', // Usually your repo name.
 
-  onBrokenLinks: 'throw',
+  onBrokenLinks: 'warn',
   onBrokenMarkdownLinks: 'warn',
 
   // Even if you don't use internalization, you can use this field to set useful
@@ -42,14 +42,14 @@ const config = {
           // Please change this to your repo.
           // Remove this to remove the "edit this page" links.
           editUrl:
-            'https://github.com/facebook/docusaurus/tree/main/packages/create-docusaurus/templates/shared/',
+            'https://bitbucket.org/tangibleinc/docusaurus-loops-and-logic/src/master/',
         },
         blog: {
           showReadingTime: true,
           // Please change this to your repo.
           // Remove this to remove the "edit this page" links.
           editUrl:
-            'https://github.com/facebook/docusaurus/tree/main/packages/create-docusaurus/templates/shared/',
+            'https://bitbucket.org/tangibleinc/docusaurus-loops-and-logic/src/master/',
         },
         theme: {
           customCss: require.resolve('./src/css/custom.css'),
@@ -94,8 +94,8 @@ const config = {
             to: 'blog',
           },
           {
-            href: 'https://github.com/facebook/docusaurus',
-            label: 'GitHub',
+            href: 'https://discourse.tangible.one',
+            label: 'Forum',
             position: 'right',
           },
         ],

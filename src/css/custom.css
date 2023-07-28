@@ -51,12 +51,18 @@
 	
 	--ifm-card-border-color: var(--ifm-color-gray-100);
 }
-
+.table-of-contents__link:hover, .table-of-contents__link:hover code, .table-of-contents__link--active, .table-of-contents__link--active code {
+	color: var(--ifm-link-color);
+}
 /* For readability concerns, you should choose a lighter palette in dark mode. */
 [data-theme='dark'] {
   --docusaurus-highlighted-code-line-bg: rgba(0, 0, 0, 0.3);
 	--ifm-card-border-color: var(--ifm-color-gray-800);
 	--ifm-background-surface-color: #222224;
+	--ifm-menu-color-active: var(--ifm-color-primary-lighter);
+	--ifm-link-color: var(--ifm-color-primary-lighter);
+	--ifm-breadcrumb-color-active: var(--ifm-color-primary-lighter);
+	--ifm-navbar-link-hover-color: var(--ifm-color-primary-lighter);
 }
 
 .hero--primary {
@@ -73,8 +79,8 @@
 	--ifm-hero-text-color: var(--ifm-color-gray-1000);
 }
 
-.navbar__logo img {
-	max-width: 165px;
+.navbar__logo {
+	height: 3rem;
 }
 
 .navbar__item {
