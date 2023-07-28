@@ -1,0 +1,11 @@
+{
+  "position": 2,
+  "label": "Block Controls",
+  "collapsible": true,
+  "collapsed": true,
+  "link": {
+    "type": "generated-index",
+    "title": "Block Controls",
+    "slug": "/learning-guides/tangible-blocks/block-controls"
+  }
+}

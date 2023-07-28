@@ -6,9 +6,9 @@ const darkCodeTheme = require('prism-react-renderer/themes/dracula');
 
 /** @type {import('@docusaurus/types').Config} */
 const config = {
-  title: 'My Site',
-  tagline: 'Dinosaurs are cool',
-  favicon: 'img/favicon.ico',
+  title: 'Loops & Logic',
+  tagline: 'A low-code template system for WordPress',
+  favicon: 'img/favicon.png',
 
   // Set the production url of your site here
   url: 'https://your-docusaurus-test-site.com',
@@ -18,8 +18,8 @@ const config = {
 
   // GitHub pages deployment config.
   // If you aren't using GitHub pages, you don't need these.
-  organizationName: 'facebook', // Usually your GitHub org/user name.
-  projectName: 'docusaurus', // Usually your repo name.
+  organizationName: 'tangible', // Usually your GitHub org/user name.
+  projectName: 'loops-and-logic', // Usually your repo name.
 
   onBrokenLinks: 'throw',
   onBrokenMarkdownLinks: 'warn',
@@ -89,10 +89,9 @@ const config = {
             label: 'Reference Guides',
           },
           {
-            type: 'docSidebar',
-            sidebarId: 'howToGuides',
             position: 'left',
             label: 'How-to Guides',
+            to: 'blog',
           },
           {
             href: 'https://github.com/facebook/docusaurus',
@@ -102,7 +101,7 @@ const config = {
         ],
       },
       footer: {
-        style: 'dark',
+        style: 'light',
         links: [
           {
             title: 'Docs',
@@ -121,8 +120,8 @@ const config = {
                 href: 'https://stackoverflow.com/questions/tagged/docusaurus',
               },
               {
-                label: 'Discord',
-                href: 'https://discordapp.com/invite/docusaurus',
+                label: 'Forum',
+                href: 'https://discourse.tangible.one',
               },
               {
                 label: 'Twitter',
@@ -144,7 +143,7 @@ const config = {
             ],
           },
         ],
-        copyright: `Copyright © ${new Date().getFullYear()} My Project, Inc. Built with Docusaurus.`,
+        copyright: `Copyright © ${new Date().getFullYear()} Loops & Logic by Tangible Inc. Built with Docusaurus.`,
       },
       prism: {
         theme: lightCodeTheme,

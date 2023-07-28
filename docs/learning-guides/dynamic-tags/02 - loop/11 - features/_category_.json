@@ -1,0 +1,11 @@
+{
+  "position": 11,
+  "label": "Loop Features",
+  "collapsible": true,
+  "collapsed": true,
+  "link": {
+    "type": "generated-index",
+    "title": "Loop Features",
+    "slug": "/learning-guides/dynamic-tags/loop/features"
+  }
+}

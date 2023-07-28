@@ -1,0 +1,11 @@
+{
+  "position": 2,
+  "label": "Loops & Logic",
+  "collapsible": true,
+  "collapsed": false,
+  "link": {
+    "type": "generated-index",
+    "title": "Getting started with Loops & Logic",
+    "slug": "getting-started/loops-and-logic"
+  }
+}

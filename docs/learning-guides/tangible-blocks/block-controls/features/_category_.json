@@ -1,0 +1,11 @@
+{
+  "position": 2,
+  "label": "Control Features",
+  "collapsible": true,
+  "collapsed": true,
+  "link": {
+    "type": "generated-index",
+    "title": "Control Features",
+    "slug": "/learning-guides/tangible-blocks/block-controls/features"
+  }
+}

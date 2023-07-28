@@ -1,0 +1,11 @@
+{
+  "position": 29,
+  "label": "Modules",
+  "collapsible": true,
+  "collapsed": true,
+  "link": {
+    "type": "generated-index",
+    "title": "Modules",
+    "slug": "/learning-guides/dynamic-tags/modules"
+  }
+}

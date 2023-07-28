@@ -6,25 +6,128 @@
 
 /* You can override the default Infima variables here. */
 :root {
-  --ifm-color-primary: #2e8555;
-  --ifm-color-primary-dark: #29784c;
-  --ifm-color-primary-darker: #277148;
-  --ifm-color-primary-darkest: #205d3b;
-  --ifm-color-primary-light: #33925d;
-  --ifm-color-primary-lighter: #359962;
-  --ifm-color-primary-lightest: #3cad6e;
+  --ifm-heading-font-family: 'Archivo', sans-serif;
+  --ifm-font-family-base: 'Nunito', sans-serif;
+  --color-secondary: #007bff;
+
+  --ifm-color-primary: #002deb;
+  --ifm-color-primary-dark: #114dd7;
+  --ifm-color-primary-darker: #0736ad;
+  --ifm-color-primary-darkest: #021e6b;
+  --ifm-color-primary-light: #4c91f7;
+  --ifm-color-primary-lighter: #93cafd;
+  --ifm-color-primary-lightest: #d4efff;
+	--ifm-color-secondary: #fed62d;
+	--ifm-color-secondary-dark: #FFB100;
+	--ifm-color-secondary-darker: #1dddb3;
+	--ifm-color-secondary-darkest: #14ccad;
+	--ifm-color-secondary-light: #8fffce;
+	--ifm-color-secondary-lighter: #c9ffe3;
+	--ifm-color-secondary-lightest: #e8fff2;
+	--ifm-color-gray-100: #f0f1f2;
+	--ifm-color-gray-200: #e7e7e7;
+	--ifm-color-gray-300: #dadde1;
+	--ifm-color-gray-400: #ccd0d5;
+	--ifm-color-gray-500: #b7b7b7;
+	--ifm-color-gray-600: #929292;
+	--ifm-color-gray-700: #656565;
+	--ifm-color-gray-800: #2f3033;
+	--ifm-color-gray-900: #18181a;
+	--ifm-color-content: var(--ifm-color-emphasis-900);
   --ifm-code-font-size: 95%;
   --docusaurus-highlighted-code-line-bg: rgba(0, 0, 0, 0.1);
+	--ifm-global-shadow-lw: 0 2px 3px 0 rgba(0, 0, 0, 0.12);
+	--ifm-global-shadow-md: 0 3px 5px 0 rgba(0, 0, 0, 0.16);
+	--ifm-card-border-radius: 0;
+	--ifm-button-border-radius: 4px;
+	--ifm-button-font-weight: 600;
+	--ifm-h1-font-size: 2.4rem;
+	--ifm-h2-font-size: 2rem;
+	--ifm-h3-font-size: 1.6rem;
+	--ifm-h4-font-size: 1.4rem;
+	--ifm-h5-font-size: 1.2rem;
+	--ifm-h6-font-size: 1rem;
+	--ifm-font-weight-semibold: 600;
+	
+	--ifm-card-border-color: var(--ifm-color-gray-100);
 }
 
 /* For readability concerns, you should choose a lighter palette in dark mode. */
 [data-theme='dark'] {
-  --ifm-color-primary: #25c2a0;
-  --ifm-color-primary-dark: #21af90;
-  --ifm-color-primary-darker: #1fa588;
-  --ifm-color-primary-darkest: #1a8870;
-  --ifm-color-primary-light: #29d5b0;
-  --ifm-color-primary-lighter: #32d8b4;
-  --ifm-color-primary-lightest: #4fddbf;
   --docusaurus-highlighted-code-line-bg: rgba(0, 0, 0, 0.3);
+	--ifm-card-border-color: var(--ifm-color-gray-800);
+	--ifm-background-surface-color: #222224;
+}
+
+.hero--primary {
+	--docusaurus-highlighted-code-line-bg: rgba(0, 0, 0, 0.3);
+	--ifm-hero-background-color: var(--ifm-color-secondary);
+	--ifm-heading-color: var(--ifm-color-gray-1000);
+	--ifm-hero-text-color: var(--ifm-color-gray-1000);
+}
+
+[data-theme='dark'] .hero--primary {
+	--docusaurus-highlighted-code-line-bg: rgba(0, 0, 0, 0.3);
+	--ifm-hero-background-color: var(--ifm-color-secondary);
+	--ifm-heading-color: var(--ifm-color-gray-1000);
+	--ifm-hero-text-color: var(--ifm-color-gray-1000);
+}
+
+.navbar__logo img {
+	max-width: 165px;
+}
+
+.navbar__item {
+	font-size: 1rem;
+}
+
+.card {
+	border-radius: 4px;
+	box-shadow: 0 3px 0 var(--ifm-card-border-color);
+	border: 1px solid var(--ifm-card-border-color);
+	color: var(--ifm-color-content);
+	text-decoration: none;
+}
+a.card {
+	-webkit-transition: .2s ease-in-out;
+  transition: .2s ease-in-out;
+  transition-property: box-shadow, -ms-transform;
+  transition-property: box-shadow, -webkit-transform;
+  transition-property: box-shadow, transform;
+  will-change: box-shadow, -ms-transform;
+  will-change: box-shadow, -webkit-transform;
+  will-change: box-shadow, transform;
+  -ms-transform: translatey(0);
+  -webkit-transform: translatey(0);
+  transform: translatey(0);
+}
+a.card:hover, a.card:focus {
+	color: var(--ifm-color-content);
+	text-decoration: none;
+	box-shadow: 0 1px 0 var(--ifm-card-border-color);
+	-ms-transform: translatey(2px);
+	-webkit-transform: translatey(2px);
+	transform: translatey(2px);
+}
+.col .card {
+	min-height: 100%;
+}
+.button {
+	font-family: var(--ifm-heading-font-family);
+}
+
+.video-responsive {
+  position: relative;
+  aspect-ratio: 16 / 9;
+	border-radius: 4px;
+	box-shadow: 0 3px 0 var(--ifm-card-border-color);
+	border: 1px solid var(--ifm-card-border-color);
+}
+
+.video-responsive iframe {
+	position: absolute;
+	inset: 0;
+	width: 100%;
+	border-radius: 3px;
+	height: 100%;
 }
