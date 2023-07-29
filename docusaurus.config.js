@@ -149,7 +149,14 @@ const config = {
         theme: lightCodeTheme,
         darkTheme: darkCodeTheme,
       },
+      algolia: {
+        appId: '76KC6U65DT',
+        apiKey: 'e37a68f78cc633ffe054a7b4ef5b11e5',
+        indexName: 'build_up',
+        contextualSearch: true,
+      }
     }),
+    
 };
 
 module.exports = config;
