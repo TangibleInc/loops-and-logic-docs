@@ -45,7 +45,7 @@ export default function Home() {
   return (
     <Layout
       title={`${siteConfig.title}`}
-      description="Loops & Logic Documentation">
+      description="Loops & Logic Duck-umentation">
       <HomepageHeader />
       <main>
         <HomepageFeatures />
