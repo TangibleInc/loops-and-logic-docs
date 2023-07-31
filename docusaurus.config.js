@@ -62,7 +62,7 @@ const config = {
     /** @type {import('@docusaurus/preset-classic').ThemeConfig} */
     ({
       // Replace with your project's social card
-      image: 'img/favicon.png',
+      image: 'img/social-card.jpg',
       navbar: {
         title: '',
         logo: {
@@ -176,4 +176,6 @@ const config = {
     
 };
 
-module.exports = config;
+module.exports = {
+  favicon: '/img/favicon.png',
+};
