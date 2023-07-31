@@ -9,21 +9,21 @@ pipelines:
   default:
     - parallel:
       - step:
+          name: Deploy to Cloudflare Pages
+          caches:
+            - node
+          script:
+            - npm install
+            - npm run build
+            - npx wrangler pages deploy build --project-name=docusaurus-loops-and-logic --branch=development
+
+  tags:
+    "*":
+    - step:
         name: Deploy to Cloudflare Pages
         caches:
           - node
         script:
           - npm install
           - npm run build
-          - npx wrangler pages deploy build --project-name=docusaurus-loops-and-logic --branch=development
-          
-  tags:
-    "*":
-    - step:
-      name: Deploy to Cloudflare Pages
-      caches:
-        - node
-      script:
-        - npm install
-        - npm run build
-        - npx wrangler pages deploy build --project-name=docusaurus-loops-and-logic --branch=main
+          - npx wrangler pages deploy build --project-name=docusaurus-loops-and-logic --branch=main
