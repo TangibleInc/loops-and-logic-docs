@@ -1,0 +1,12 @@
+{
+  "position": 4,
+  "label": "How-to Guides",
+  "collapsible": true,
+  "collapsed": true,
+  "link": {
+    "type": "generated-index",
+    "title": "How-to Guides",
+		"description": "Looking to solve a specific problem or find some real-world examples of L&L markup? From your opening to your closing tags, these articles will show you how it's done.",
+    "slug": "docs/how-to"
+  }
+}

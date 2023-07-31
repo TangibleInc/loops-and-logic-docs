@@ -172,3 +172,12 @@ Second condition is true.
 All conditions are false.
 </If>
 ```
+
+## Examples
+
+- [How to conditionally display something when the current post has a certain taxonomy term applied](/docs/how-to/conditional-logic-taxonomy-term)  
+- [How to set up conditional logic based on the URL of a multisite](/docs/how-to/logic-multisite-route)
+- [How to show posts only if they exist and display a message if they don’t exist](/docs/how-to/no-posts-found-conditional)
+- [How to display a post editing link only when the current user is the post's author](/docs/how-to/display-post-edit-link-author)  
+- [How to make a loop behave differently every nth item (e.g. display content every third post, change styling on even/odd posts)](/docs/how-to/varied-loop-item-behavior)
+- [How to display term fields on a taxonomy term archive](/docs/how-to/term-fields-on-archive)

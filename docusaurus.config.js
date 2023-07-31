@@ -67,7 +67,7 @@ const config = {
         title: '',
         logo: {
           alt: 'Loops & Logic',
-          src: 'img/Logo.svg',
+          src: 'img/logo.svg',
         },
         items: [
           {
@@ -89,9 +89,10 @@ const config = {
             label: 'Reference Guides',
           },
           {
+            type: 'docSidebar',
+            sidebarId: 'howToGuides',
             position: 'left',
             label: 'How-to Guides',
-            to: 'blog',
           },
           {
             href: 'https://discourse.tangible.one',

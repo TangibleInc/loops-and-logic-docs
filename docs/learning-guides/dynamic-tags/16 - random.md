@@ -14,3 +14,7 @@ The `Random` tag generates a random number.
 Result: 26
 
 Use the attributes `from` and `to` to set the minimum and maximum number.
+
+## Examples
+
+- [How to set up conditional logic based on the URL of a multisite](/docs/how-to/logic-multisite-route)

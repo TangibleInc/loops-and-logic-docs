@@ -158,3 +158,16 @@ Here are some other features of the loop.
 *   [Exists](/docs/learning-guides/dynamic-tags/Loop/features/exists)
 *   [Variables](/docs/learning-guides/dynamic-tags/Loop/features/pagination)
 *   [Pagination](/docs/learning-guides/dynamic-tags/Loop/features/variables)
+
+## Examples
+
+- [How to create loops within loops within loops](/docs/how-to/nested-loops)  
+- [How to display WooCommerce attributes](/docs/how-to/woocommerce-attributes)  
+- [How to display a custom field that contains an image](/docs/how-to/custom-image-fields)  
+- [How to display a random post when your hosting provider has disabled random sorting](/docs/how-to/random-post-from-list)  
+- [How to only show posts with a certain custom field filled out](/docs/how-to/filter-custom-field-has-value)  
+- [How to order terms alphabetically by ACF text field and hide empty terms](/docs/how-to/order-alphabetically-acf-field-hide-empty)  
+- [How to show posts only if they exist and display a message if they don’t exist](/docs/how-to/no-posts-found-conditional)  
+- [How to add up the count of a parent taxonomy term with the count of all its children](/docs/how-to/count-hierarchical-terms)  
+- [How to make a loop behave differently every nth item (e.g. display content every third post, change styling on even/odd posts)](/docs/how-to/varied-loop-item-behavior)  
+- [How to display term fields on a taxonomy term archive](/docs/how-to/term-fields-on-archive)

@@ -24,3 +24,5 @@ The dynamic tags included in [the free version of Loops & Logic](https://wordpre
 Integrating with non-officially supported plugins  
 
 Loops & Logic interacts with data in the same way that the WordPress core does: using posts. Most third-party plugins extend WordPress' functionality by adding new post types, taxonomies, and fields. If we know the name of these, we can refer to them in our markup to display data created by third-party plugins. For example, WooCommerce uses a post type called `product` that could be queried just like any other post type using a [post loop](/docs/learning-guides/dynamic-tags/loop/post). Below are some examples demonstrating how to interact with data from plugins for which there isn't native support within the L&L templating language.
+- [How to use Loops & Logic with FacetWP](/docs/how-to/facet-wp-loop-tag)  
+- [How to display WooCommerce attributes](/docs/how-to/woocommerce-attributes)

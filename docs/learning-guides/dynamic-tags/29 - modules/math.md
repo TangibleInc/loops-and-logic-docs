@@ -46,3 +46,7 @@ It's just a different way to get and set variables.
 <Get math=total />
 <Set math=total>0</Set>
 ```
+
+## Examples
+
+- [How to add up the count of a parent taxonomy term with the count of all its children](/docs/how-to/count-hierarchical-terms)
