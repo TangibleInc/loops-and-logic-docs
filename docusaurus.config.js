@@ -176,6 +176,4 @@ const config = {
     
 };
 
-module.exports = {
-  favicon: '/img/favicon.png',
-};
+module.exports = config;
