@@ -108,8 +108,24 @@ const config = {
             title: 'Docs',
             items: [
               {
-                label: 'Tutorial',
-                to: '/docs/intro',
+                label: 'Get Started',
+                to: '/docs/getting-started/quick-start',
+              },
+              {
+                label: 'Loop Tag',
+                to: '/docs/learning-guides/dynamic-tags/loop/',
+              },
+              {
+                label: 'If Tag',
+                to: '/docs/learning-guides/dynamic-tags/if/',
+              },
+              {
+                label: 'Set and Get Tags',
+                to: '/docs/learning-guides/dynamic-tags/set-get',
+              },
+              {
+                label: 'Using ACF Fields',
+                to: '/docs/learning-guides/integrations/acf',
               },
             ],
           },
@@ -117,16 +133,12 @@ const config = {
             title: 'Community',
             items: [
               {
-                label: 'Stack Overflow',
-                href: 'https://stackoverflow.com/questions/tagged/docusaurus',
-              },
-              {
                 label: 'Forum',
                 href: 'https://discourse.tangible.one',
               },
               {
-                label: 'Twitter',
-                href: 'https://twitter.com/docusaurus',
+                label: 'Facebook Group',
+                href: 'https://www.facebook.com/groups/loopsandlogic',
               },
             ],
           },
@@ -134,12 +146,16 @@ const config = {
             title: 'More',
             items: [
               {
-                label: 'Blog',
-                to: '/blog',
+                label: 'Learn More',
+                href: 'https://loopsandlogic.com/',
               },
               {
-                label: 'GitHub',
-                href: 'https://github.com/facebook/docusaurus',
+                label: 'Blog',
+                href: 'https://loopsandlogic.com/blog/',
+              },
+              {
+                label: 'Tangible Blocks Beta',
+                href: 'https://loopsandlogic.com/tangible-blocks/',
               },
             ],
           },
