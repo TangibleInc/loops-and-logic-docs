@@ -7,15 +7,14 @@ image: node:18
 
 pipelines:
   default:
-    - parallel:
-      - step:
-          name: Deploy to Cloudflare Pages
-          caches:
-            - node
-          script:
-            - npm install
-            - npm run build
-            - npx wrangler pages deploy build --project-name=docusaurus-loops-and-logic --branch=development
+    - step:
+        name: Deploy to Cloudflare Pages
+        caches:
+          - node
+        script:
+          - npm install
+          - npm run build
+          - npx wrangler pages deploy build --project-name=docusaurus-loops-and-logic --branch=development
 
   tags:
     "*":
@@ -27,3 +26,14 @@ pipelines:
           - npm install
           - npm run build
           - npx wrangler pages deploy build --project-name=docusaurus-loops-and-logic --branch=main
+
+    - step:
+        name: Run Algolia Crawler for Indexing
+        image: ubuntu:latest
+        script:
+          - apt-get update -qy
+          - apt-get install -y jq
+          - export CONFIG=$(cat 'config.json' | jq -r tostring)
+          - docker run -i -e "CONFIG=$CONFIG" -e "APPLICATION_ID=$APPLICATION_ID" -e "API_KEY=$ALGOLIA_WRITE_API_KEY" algolia/docsearch-scraper
+        services:
+          - docker
