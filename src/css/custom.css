@@ -75,9 +75,12 @@
 
 [data-theme='dark'] .hero--primary {
 	--docusaurus-highlighted-code-line-bg: rgba(0, 0, 0, 0.3);
-	--ifm-hero-background-color: var(--ifm-color-secondary);
+	--ifm-hero-background-color: var(--ifm-color-emphasis-100);
 	--ifm-heading-color: var(--ifm-color-gray-1000);
-	--ifm-hero-text-color: var(--ifm-color-gray-1000);
+	--ifm-hero-text-color: var(--ifm-color-white);
+}
+.hero--primary h1 {
+	color: var(--ifm-hero-text-color);
 }
 
 .navbar__logo {
@@ -137,4 +140,8 @@ a.card:hover, a.card:focus {
 	width: 100%;
 	border-radius: 3px;
 	height: 100%;
+}
+
+.buttons_src-pages-index-module {
+	flex-wrap: wrap;
 }
