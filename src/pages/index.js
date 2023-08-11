@@ -44,7 +44,7 @@ export default function Home() {
   const {siteConfig} = useDocusaurusContext();
   return (
     <Layout
-      title={`${siteConfig.title}`}
+      title="Documentation"
       description="Loops & Logic Duck-umentation">
       <HomepageHeader />
       <main>
