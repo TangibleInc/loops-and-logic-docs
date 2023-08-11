@@ -23,3 +23,5 @@ yarn-error.log*
 .editorconfig
 .vscode
 .obsidian
+
+package-lock.json

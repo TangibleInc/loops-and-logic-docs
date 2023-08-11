@@ -171,6 +171,12 @@ const config = {
         apiKey: 'e37a68f78cc633ffe054a7b4ef5b11e5',
         indexName: 'docusaurus-2',
         contextualSearch: true,
+      },
+      sitemap: {
+        changefreq: 'monthly',
+        priority: 0.5,
+        ignorePatterns: ['/tags/**'],
+        filename: 'sitemap.xml',
       }
     }),
     
