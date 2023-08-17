@@ -35,7 +35,7 @@ Use the type attribute with id or name to get a field from a specific post.
 ```
 
 ## Tag-attributes
-This attribute simply renders its value as an attribute. It can be used to render multiple attributes, either as value-less keys (sometimes called boolean attributes, shown in the example below) or as key/value pairs.
+This attribute simply renders its value as an attribute. It can be used to render multiple attributes, either as value-less keys (sometimes called boolean attributes, shown in the example below) or as key/value pairs.
 
 In the example below, the audio file will only autoplay and loop if the user visiting the page is logged in.
 
