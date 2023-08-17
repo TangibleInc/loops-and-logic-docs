@@ -19,7 +19,7 @@ If the Field tag is placed inside a loop, it gets a field value from the current
 <Loop type=post count=3>
   <Field title />
 </Loop>
-```html
+```
 If there's no loop, it gets the field from the current post or page. For example, if the following template were placed on a page, it would display the publish date of the page using the format specified in the Date tag.
 ```html
 <Date format="F j, Y, g:i a">
@@ -35,7 +35,7 @@ Use the type attribute with id or name to get a field from a specific post.
 ```
 
 ## Tag-attributes
-This attribute simply renders its value as an attribute. ItÂ can be used to render multiple attributes, either as value-less keys (sometimes called boolean attributes, shown in the example below) or as key/value pairs.
+This attribute simply renders its value as an attribute. It can be used to render multiple attributes, either as value-less keys (sometimes called boolean attributes, shown in the example below) or as key/value pairs.
 
 In the example below, the audio file will only autoplay and loop if the user visiting the page is logged in.
 
