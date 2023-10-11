@@ -74,6 +74,43 @@ Use `date=default` to use the site setting from Settings -> General -> Date Form
 
 ..will output: `lundi 18 juillet 2022`.
 
+## Index
+
+Given a string, it returns the character at an index, position starting from zero (0).
+
+```html
+<Format index=1>ABC</Format> == B
+```
+
+Negative index counts from the end of string.
+
+```html
+<Format index=-1>ABC</Format> == C
+```
+
+It can be passed a list.
+
+```html
+<Format list index=1>[1,2,3]</Format> == 2
+<Format list index=-1>[1,2,3]</Format> == 3
+```
+
+It returns the item at an index starting from zero, or negative index.
+
+## Join
+
+It joins a list of parts into a string using a delimiter.
+
+```html
+<Format join=",">[1,2,3]</Format> == 1,2,3
+```
+
+If no delimiter is given, it joins them with nothing between.
+
+```html
+<Format join>[1,2,3]</Format> == 123
+```
+
 ## Length
 
 Use the `length` attribute to limit to a maximum length of characters.
@@ -85,6 +122,99 @@ Use the `length` attribute to limit to a maximum length of characters.
 ```
 
 It uses PHP's [mb_substr](https://www.php.net/manual/en/function.mb-substr.php) function, which supports UTF-8 multibyte characters.
+
+It can be combined with `offset`, which accepts an index (position number starting from zero).
+
+```html
+<Format offset=2 length=2>ABCDEF</Format> == CD
+```
+
+Negative length cuts off characters from the end of string.
+
+```html
+<Format length=-2>ABCDEF</Format> == ABCD
+```
+
+It can be passed a list.
+
+```html
+<Format list length=2>[1,2,3,4,5]</Format> == [1,2]
+<Format list length=-2>[1,2,3,4,5]</Format> == [1,2,3]
+```
+
+## List
+
+The `list` attribute applies a given format to every item in a list, and returns a new list.
+
+```html
+<Format list case=lower>["Hello","World"]</Format>
+
+Result: ["hello","world"]
+```
+
+This works for all format types, except for those that already work with a list: `index`, `length`, `offset`, `join`.
+
+Format list can be combined to chain multiple formats for processing a list.
+
+```html
+ <Format join=", ">
+  <Format list prefix="color-">
+    <Format list case=lower>
+      <Format list replace="/[^a-zA-Z0-9_-]/s" with="">
+        <Format split="," trim>#Red*, !Green), @Blue(</Format>
+      </Format>
+    </Format>
+  </Format>
+</Format>
+
+Result: color-red, color-green, color-blue
+```
+
+## Match pattern
+
+The `match_pattern` attribute returns a list of parts in a string that match the given regular expression pattern.
+
+```html
+<Format match="/\d+/">Test 123 and 456</Format> == ["123","456"]
+```
+
+Also see the [`replace_pattern` attribute](#replace-pattern) and [If matches](../if/#comparisons).
+
+### Pattern syntax
+
+The syntax for regular expressions is extensively documented in [PHP Manual: Pattern Syntax](https://www.php.net/manual/en/reference.pcre.pattern.syntax.php).
+
+For a quick summary:
+
+| Pattern | Matches |
+|---|---|
+| abc | Letters |
+| 123 | Digits |
+| \d | Any Digit |
+| \D | Any Non-digit character |
+| . | Any Character |
+| \. | Period |
+| \[abc] | Only a, b, or c |
+| \[^abc] | Not a, b, nor c |
+| \[a-z] | Characters a to z |
+| \[0-9] | Numbers 0 to 9 |
+| \w | Any Alphanumeric character |
+| \W | Any Non-alphanumeric character |
+| {m} | m Repetitions |
+| {m,n} | m to n Repetitions |
+| * | Zero or more repetitions |
+| + | One or more repetitions |
+| ? | Optional character |
+| \s | Any Whitespace |
+| \S | Any Non-whitespace character |
+| ^…$ | Starts and ends |
+| (…) | Capture Group |
+| (a(bc)) | Capture Sub-group |
+| (.*) | Capture all |
+| (abc\|def) | Matches abc or def |
+
+<!-- Couldn't use `inline code` for patterns due to Markdown parser misinterpreting `|` inside code, and can't escape it because it shows the backslash `\` -->
+
 
 ## Number
 
@@ -103,6 +233,54 @@ Optional attributes are:
 - `decimals` - Number of decimal places to display
 - `point` - Character for decimal point
 - `thousands` - Character for separating thousands
+
+## Offset
+
+Given a string, it returns a part of the string from offset (an index starting from zero).
+
+```html
+<Format offset=2>ABCDEF</Format> == CDEF
+```
+
+Negative offset counts from the end of string.
+
+```html
+<Format offset=-2>ABCDEF</Format> == EF
+```
+
+It can be combined with length (described below).
+
+```html
+<Format offset=2 length=2>ABCDEF</Format> == CD
+```
+
+It can be passed a list.
+
+```html
+<Format list offset=2>[1,2,3,4,5]</Format> == [3,4,5]
+<Format list offset=-2 length=1>[1,2,3,4,5]</Format> == [4]
+```
+
+## Prefix/suffix
+
+It adds a string to the beginning (prefix) or end (suffix) of a string.
+
+```html
+<Format prefix="color-">blue</Format> == color-blue
+<Format suffix="-mode">sync</Format> == sync-mode
+```
+
+These are more useful for applying to every item in a list, with [Format List](#list).
+
+```html
+<Format join=" ">
+  <Format list prefix="color-">
+    ["red","green","blue"]
+  </Format>
+</Format>
+
+Result: color-red color-green color-blue
+```
 
 ## Replace
 
@@ -126,6 +304,16 @@ To replace multiple different texts, use:
 
 - `replace_2` and `with_2`
 - `replace_3` and `with_3`
+
+## Replace pattern
+
+Use the `replace_pattern` and `with` attributes to replace text matching a regular expression pattern.
+
+```html
+<Format replace_pattern="/http(s?):\/\//" with="">https://example.com</Format>
+```
+
+For details on the pattern syntax, see the [`match_pattern`](#match-pattern) attribute.
 
 ## Remove HTML
 
@@ -158,6 +346,37 @@ Use the `slug` attribute to strip out HTML tags, convert to lowercase, remove s
 ```html
 <Format slug>This is a <em>simple</em> string!</Format>
 ```
+
+## Split
+
+It splits a string into a list of parts using a delimiter.
+
+```html
+<Format split=",">A,B,C</Format> == ["A","B","C"]
+```
+
+If no delimiter is given, it splits by character.
+
+```html
+‌<Format split>ABC</Format> == ["A","B","C"]
+```
+
+It can be combined with [`trim`](#trim).
+
+```html
+<Format split="," trim>A, B, C</Format> == ["A","B","C"]
+```
+
+## Trim
+
+It trims (removes) whitespace or other characters from the beginning and end of a string.
+
+```html
+<Format trim>  Hi  </Format> == Hi
+<Format trim="-~*">-~*123*~-</Format> == 123
+```
+
+It has variants `trim_left` and `trim_right`. These can be combined.
 
 ## URL
 
