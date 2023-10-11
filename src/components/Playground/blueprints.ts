@@ -21,9 +21,11 @@ export const defaultBlueprint: Blueprint = {
     { // Install L&L
       step: 'installPlugin',
       pluginZipFile: {
-        // resource: 'wordpress.org/plugins', slug: 'tangible-loops-and-logic',
-        resource: 'url',
-        url: 'http://localhost:3333/static/tangible-loops-and-logic.zip'
+
+        resource: 'wordpress.org/plugins', slug: 'tangible-loops-and-logic',
+
+        // Testing
+        // resource: 'url', url: 'http://localhost:3333/static/tangible-loops-and-logic.zip'
       }
     },
     { // Dismiss admin notice
@@ -51,7 +53,7 @@ update_option('blogname', 'Loops & Logic');
       step: `writeFile`,
       path: '/wordpress/wp-content/mu-plugins/entry.php',
       data: `<?php
-      
+
 add_filter('template_include', function($template) {
 
   // Provide minimal page to render template

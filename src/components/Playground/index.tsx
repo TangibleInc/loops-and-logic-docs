@@ -1,12 +1,14 @@
 import React, { useEffect, useRef } from 'react'
-import {
-  startPlaygroundWeb
-} from '@wp-playground/client'
-import {
-  defaultBlueprint,
-} from './blueprints'
+import { startPlaygroundWeb } from '@wp-playground/client'
+import { defaultBlueprint } from './blueprints'
 import type { StyleHTMLAttributes } from 'react'
 import type { PlaygroundClient } from '@wp-playground/client'
+
+import Tabs from '@theme/Tabs'
+import TabItem from '@theme/TabItem'
+
+// https://docusaurus.io/docs/markdown-features/code-blocks#usage-in-jsx
+import CodeBlock from '@theme/CodeBlock'
 
 type PlaygroundProps = {
   title?: string
@@ -23,6 +25,7 @@ type PlaygroundProps = {
   storage?: 'opfs-host' | 'opfs-browser' | 'temporary'
   // https://wordpress.github.io/wordpress-playground/blueprints-api/steps
   // blueprint?: Blueprint
+  buttonText?: string
 }
 
 type PostDefinition = {
@@ -30,65 +33,81 @@ type PostDefinition = {
   [field: string]: any
 }
 
-const PLAYGROUND_SERVER_URL =
-  'https://playground.wordpress.net'
-  // 'https://play.tangible.one'
-  // 'http://localhost:3333'
+const PLAYGROUND_SERVER_URL = 'https://playground.wordpress.net'
+// 'https://play.tangible.one'
+// 'http://localhost:3333'
 
 export default function Playground(props: PlaygroundProps = {}) {
-
+  // Lazy load by default
   const [isRunning, setIsRunning] = React.useState(props.lazy === false)
 
-  const {
-    iframeStyle = {},
-    buttonText = 'Run'
-  } = props
+  const { iframeStyle = {}, buttonText = 'Run' } = props
 
   const ref = useRef()
 
-  useEffect(function () {
+  useEffect(
+    function () {
+      if (!isRunning) return
 
-    if (!isRunning) return
+      const iframe = ref.current
+      if (!iframe) return
 
-    const iframe = ref.current
-    if (!iframe) return
+      start({
+        ...props,
+        iframe,
+      }).catch(console.error)
 
-    start({
-      ...props,
-      iframe
-    }).catch(console.error)
+      return () => {
+        // Clean up
+      }
+    },
+    [isRunning]
+  )
 
-    return () => {
-      // Clean up
-    }
-
-  }, [isRunning])
+  const example = props.template && (
+    <Tabs>
+      <TabItem value="template" label="Template" default>
+        <CodeBlock language="html">{props.template}</CodeBlock>
+      </TabItem>
+      <TabItem value="style" label="Style">
+        <CodeBlock language="scss">{props.style}</CodeBlock>
+      </TabItem>
+      <TabItem value="script" label="Script">
+        <CodeBlock language="js">{props.script}</CodeBlock>
+      </TabItem>
+    </Tabs>
+  )
 
   if (!isRunning) {
     const start = () => setIsRunning(true)
-    return <p>
-      <button className="button button--primary" onClick={start}>
-        {buttonText}
-      </button>
-    </p>
+    return <>
+      {example}
+      <p>
+        <button className="button button--primary" onClick={start}>
+          {buttonText}
+        </button>
+      </p>
+    </>
   }
 
-  return <p>
-    <iframe
-      ref={ref}
-      style={{
-        width: '100%',
-        height: '500px',
-        border: '1px solid #ccc',
-        borderRadius: '4px',
-        ...iframeStyle
-      }}
-    />
-  </p>
+  return <>
+    {example}
+    <p>
+      <iframe
+        ref={ref}
+        style={{
+          width: '100%',
+          height: '500px',
+          border: '1px solid #ccc',
+          borderRadius: '4px',
+          ...iframeStyle,
+        }}
+        />
+    </p>
+  </>
 }
 
 async function start(props: PlaygroundProps & { iframe: HTMLIFrameElement }) {
-
   const {
     iframe,
 
@@ -104,19 +123,16 @@ async function start(props: PlaygroundProps & { iframe: HTMLIFrameElement }) {
     storage = 'temporary',
 
     route = '/wp-admin/',
-
   } = props
 
   const playground: PlaygroundClient = await startPlaygroundWeb({
     // playground = startPlaygroundWeb({
     iframe,
-    remoteUrl: `${
-      PLAYGROUND_SERVER_URL
-      }/remote.html?storage=${storage}`,
+    remoteUrl: `${PLAYGROUND_SERVER_URL}/remote.html?storage=${storage}`,
     blueprint: {
       ...defaultBlueprint,
-      landingPage: route
-    }
+      landingPage: route,
+    },
   })
 
   if (!playground) return
@@ -144,13 +160,12 @@ async function start(props: PlaygroundProps & { iframe: HTMLIFrameElement }) {
           ], $post));
         }
       }
-      `
+      `,
     })
 
     if (errors) console.error('Error creating content', errors)
   }
   if (template) {
-
     // Create template and show it on frontend
 
     const { text: templateId, errors } = await playground.run({
@@ -172,7 +187,7 @@ async function start(props: PlaygroundProps & { iframe: HTMLIFrameElement }) {
 
       echo $template_id;
       exit;
-      `
+      `,
     })
 
     if (errors) console.error('Error creating template', errors)
