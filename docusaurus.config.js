@@ -95,6 +95,11 @@ const config = {
             label: 'How-to Guides',
           },
           {
+            to: '/docs/playground',
+            label: 'Playground',
+            position: 'right',
+          },
+          {
             href: 'https://discourse.tangible.one',
             label: 'Forum',
             position: 'right',

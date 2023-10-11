@@ -1,0 +1,46 @@
+---
+id: playground
+title: Playground
+url: /playground
+---
+
+import Playground from '@site/src/components/Playground'
+
+<Playground route='/wp-admin/' lazy={false} />
+
+<Playground {...{
+  template: `
+    <ul>
+      <Loop type=post>
+        <li><Field title /></li>
+      </Loop>
+    </ul>`,
+  style: `
+    ul {
+      color: blue;
+    }`,
+  script: `
+    console.log('Hello from component 1')
+  `,
+  content: {
+    post: [
+      { post_title: 'Another post' }
+    ]
+  }
+}} />
+
+<Playground {...{
+  template: `
+    <ul>
+      <Loop type=post>
+        <li><Field title /></li>
+      </Loop>
+    </ul>`,
+  style: `
+    ul {
+      color: green;
+    }`,
+  script: `
+    console.log('Hello from component 2')
+  `
+}} />
