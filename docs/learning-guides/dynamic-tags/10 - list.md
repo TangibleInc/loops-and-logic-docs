@@ -113,7 +113,7 @@ Second: <Field list=numbers item=2 />
 
 ##### Dynamic index
 
-Alternatively, use the `name` attribute with index starting from 0. This can be useful for getting an item by dynamic index, for example, using the [Math tag](/docs/learning-guides/dynamic-tags/math).
+Alternatively, use the `name` attribute with index starting from 0. This can be useful for getting an item by dynamic index, for example, using the [Math tag](/docs/learning-guides/dynamic-tags/modules/math).
 
 ```html
 <Field name="{Get index}" list=numbers />
