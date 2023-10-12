@@ -1,5 +1,4 @@
-import entryPhp from '!raw-loader!!./entry.php'
-import type { Blueprint, RunPHPStep } from '@wp-playground/client'
+import type { Blueprint } from '@wp-playground/client'
 
 export const mergeBlueprints = (b1: Blueprint, b2: Blueprint) => ({
   ...b1,
@@ -10,6 +9,10 @@ export const mergeBlueprints = (b1: Blueprint, b2: Blueprint) => ({
   ]
 })
 
+/**
+ * A blueprint is a set of steps to initialize the Playground environmennt
+ * @see https://wordpress.github.io/wordpress-playground/blueprints-api/index
+ */
 export const defaultBlueprint: Blueprint = {
   landingPage: '/wp-admin/post-new.php?post_type=tangible_template',
   steps: [
