@@ -23,4 +23,4 @@ tags:
 
 The first step is to create a conditional statement that renders true when the current user is a post's author. We can use `user_field=name` as the subject to check the user name of the currently logged-in user and then we can use `Field author_name` to get the author name of the current post. If those two match, we're golden!
 
-The next step is to create a dynamic URL that should be rendered when our conditional logic is true. This is easy because there's a [post field](/docs/learning-guides/dynamic-tags/loop/post#supported-fields) called `edit_url` that we can use to dynamically fill the `href` value.
+The next step is to create a dynamic URL that should be rendered when our conditional logic is true. This is easy because there's a [post field](/docs/dynamic-tags/loop/post#supported-fields) called `edit_url` that we can use to dynamically fill the `href` value.

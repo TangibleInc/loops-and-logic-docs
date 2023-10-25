@@ -78,21 +78,27 @@ const config = {
           },
           {
             type: 'docSidebar',
-            sidebarId: 'learningGuides',
+            sidebarId: 'dynamicTags',
             position: 'left',
-            label: 'Learning Guides',
+            label: 'Tags',
           },
           {
             type: 'docSidebar',
-            sidebarId: 'referenceGuides',
+            sidebarId: 'integrations',
             position: 'left',
-            label: 'Reference Guides',
+            label: 'Integrations',
+          },
+          {
+            type: 'docSidebar',
+            sidebarId: 'tangibleBlocks',
+            position: 'left',
+            label: 'Blocks',
           },
           {
             type: 'docSidebar',
             sidebarId: 'howToGuides',
             position: 'left',
-            label: 'How-to Guides',
+            label: 'How-to',
           },
           {
             href: 'https://discourse.tangible.one',
@@ -113,19 +119,19 @@ const config = {
               },
               {
                 label: 'Loop Tag',
-                to: '/docs/learning-guides/dynamic-tags/loop/',
+                to: '/docs/dynamic-tags/loop/',
               },
               {
                 label: 'If Tag',
-                to: '/docs/learning-guides/dynamic-tags/if/',
+                to: '/docs/dynamic-tags/if/',
               },
               {
                 label: 'Set and Get Tags',
-                to: '/docs/learning-guides/dynamic-tags/set-get',
+                to: '/docs/dynamic-tags/set-get',
               },
               {
                 label: 'Using ACF Fields',
-                to: '/docs/learning-guides/integrations/acf',
+                to: '/docs/integrations/acf',
               },
             ],
           },

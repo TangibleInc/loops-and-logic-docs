@@ -20,4 +20,4 @@ tags:
 
 ## The explanation
 
-WooCommerce saves attributes as custom taxonomies, prefixed with `pa_`. Attributes can be accessed with a [taxonomy_term loop](/docs/learning-guides/dynamic-tags/loop/taxonomy-term) just like any other taxonomy. The solution above presents a loop that filters taxonomy terms by the current post id and the taxonomy name `pa_flavors` and displays the term title.
+WooCommerce saves attributes as custom taxonomies, prefixed with `pa_`. Attributes can be accessed with a [taxonomy_term loop](/docs/dynamic-tags/loop/taxonomy-term) just like any other taxonomy. The solution above presents a loop that filters taxonomy terms by the current post id and the taxonomy name `pa_flavors` and displays the term title.

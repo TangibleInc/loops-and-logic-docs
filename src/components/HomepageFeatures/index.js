@@ -22,7 +22,7 @@ const FeatureList = [
         Find it in our Learning Guides
       </>
     ),
-		destination: '/docs/learning-guides/dynamic-tags/',
+		destination: '/docs/dynamic-tags/',
   },
   {
     title: 'Have a question or something cool to share?',

@@ -41,4 +41,4 @@ Here's what's going on in the solution template:
 4. Then we create another variable that gets the list item at the index that matches the random variable. This final variable outputs the post ID stored in the item, so we can pass that to the post loop to get a random post from the set each time a user visits the page.
 5. Finally, we have our post loop which only includes the post ID that matches the variable we set earlier.
 
-There are many other ways to use the [`Random` tag](/docs/learning-guides/dynamic-tags/random) to generate random numbers to mimic random post ordering, though this will depend on exactly what you're trying to achieve. We hope this example has provided some inspiration if your host blocks the functionality of `orderby=random`.
+There are many other ways to use the [`Random` tag](/docs/dynamic-tags/random) to generate random numbers to mimic random post ordering, though this will depend on exactly what you're trying to achieve. We hope this example has provided some inspiration if your host blocks the functionality of `orderby=random`.
