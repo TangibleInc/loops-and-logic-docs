@@ -9,7 +9,7 @@ const config = {
   title: 'Loops & Logic',
   tagline: 'A low-code template system for WordPress',
   favicon: 'img/favicon.png',
-  // this is a comment!
+
   // Set the production url of your site here
   url: 'https://docs.loopsandlogic.com',
   // Set the /<baseUrl>/ pathname under which your site is served
