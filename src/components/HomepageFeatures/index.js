@@ -19,7 +19,7 @@ const FeatureList = [
     Svg: require('@site/static/img/smart-duck.svg').default,
     description: (
       <>
-        Find it in our Learning Guides
+        Explore all of L&L's dynamic tags
       </>
     ),
 		destination: '/docs/dynamic-tags/',

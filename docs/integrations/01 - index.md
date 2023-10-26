@@ -9,8 +9,8 @@ The dynamic tags included in [the free version of Loops & Logic](https://wordpre
 
 ## Integrations included in Loops & Logic
 
-- **Advanced Custom Fields** (released) - [View documentation](/docs/integrations/acf)
-- **WP Fusion** (in development) - [View documentation](https://loop.tangible.one/extend/wp-fusion/)
+- **Advanced Custom Fields** - [View documentation](/docs/integrations/acf)
+- **WP Fusion** - [View documentation](/docs/integrations/wp-fusion)
 
 ## Integrations included in Loops & Logic Pro
 
