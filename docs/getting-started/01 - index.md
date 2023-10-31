@@ -8,7 +8,7 @@ slug: quick-start
 sidebar_position: 1
 ---
 
-If you want to get the most out of Loops & Logic, we recommend going through [our full getting started guide](/docs/getting-started/loops-and-logic/intro), but if you're in a rush, this guide will give you some quick demo templates to load onto your site so that you can start working with L&L.
+If you want to get the most out of Loops & Logic, we recommend going through [our full getting started guide](/getting-started/loops-and-logic/intro), but if you're in a rush, this guide will give you some quick demo templates to load onto your site so that you can start working with L&L.
 
   
 
@@ -66,4 +66,4 @@ Loops & Logic currently only includes blocks for the three page builders noted a
 
 ## Step 6: Try things!
 
-We're strong believers in learning by doing. So play around with the templates you've downloaded and see what happens! If you'd like to get a deeper understanding of how the L&L templating language works and how you can get the most out of this plugin, we recommend going through our [beginner's guide to Loops & Logic](/docs/getting-started/loops-and-logic/intro) to learn everything you'll need to know to build just about any template you can imagine. Happy looping!
+We're strong believers in learning by doing. So play around with the templates you've downloaded and see what happens! If you'd like to get a deeper understanding of how the L&L templating language works and how you can get the most out of this plugin, we recommend going through our [beginner's guide to Loops & Logic](/getting-started/loops-and-logic/intro) to learn everything you'll need to know to build just about any template you can imagine. Happy looping!

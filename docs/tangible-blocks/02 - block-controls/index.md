@@ -16,24 +16,24 @@ Tangible Blocks Editor adds a `Control` tag that enables building a variety of c
 
 Here are the available control types.
 
-- [Button group](/docs/tangible-blocks/block-controls/button-group)
-- [Checkbox](/docs/tangible-blocks/block-controls/checkbox)
-- [Color picker](/docs/tangible-blocks/block-controls/color)
-- [Combo box](/docs/tangible-blocks/block-controls/combo-box)
-- [Date picker](/docs/tangible-blocks/block-controls/date)
-- [Dimensions](/docs/tangible-blocks/block-controls/dimensions)
-- [Field group](/docs/tangible-blocks/block-controls/field-group)
-- [File](/docs/tangible-blocks/block-controls/file)
-- [Gallery](/docs/tangible-blocks/block-controls/gallery)
-- [Gradient](/docs/tangible-blocks/block-controls/gradient)
-- [Number](/docs/tangible-blocks/block-controls/number)
-- [Radio](/docs/tangible-blocks/block-controls/radio)
-- [Repeater](/docs/tangible-blocks/block-controls/repeater)
-- [Select](/docs/tangible-blocks/block-controls/select)
-- [Switch](/docs/tangible-blocks/block-controls/switch)
-- [Text](/docs/tangible-blocks/block-controls/text)
-- [Text suggestion](/docs/tangible-blocks/block-controls/text-suggestion)
-- [WYSIWYG](/docs/tangible-blocks/block-controls/wysiwyg)  
+- [Button group](/tangible-blocks/block-controls/button-group)
+- [Checkbox](/tangible-blocks/block-controls/checkbox)
+- [Color picker](/tangible-blocks/block-controls/color)
+- [Combo box](/tangible-blocks/block-controls/combo-box)
+- [Date picker](/tangible-blocks/block-controls/date)
+- [Dimensions](/tangible-blocks/block-controls/dimensions)
+- [Field group](/tangible-blocks/block-controls/field-group)
+- [File](/tangible-blocks/block-controls/file)
+- [Gallery](/tangible-blocks/block-controls/gallery)
+- [Gradient](/tangible-blocks/block-controls/gradient)
+- [Number](/tangible-blocks/block-controls/number)
+- [Radio](/tangible-blocks/block-controls/radio)
+- [Repeater](/tangible-blocks/block-controls/repeater)
+- [Select](/tangible-blocks/block-controls/select)
+- [Switch](/tangible-blocks/block-controls/switch)
+- [Text](/tangible-blocks/block-controls/text)
+- [Text suggestion](/tangible-blocks/block-controls/text-suggestion)
+- [WYSIWYG](/tangible-blocks/block-controls/wysiwyg)  
 
 ### Attributes
 
@@ -99,14 +99,14 @@ console.log(my_control_name);
 
 Here are a few features of block controls in the Tangible Blocks Editor.
 
-- [Sections and tabs](/docs/tangible-blocks/block-controls/features/sections-tabs)
-- [Control visibility](/docs/tangible-blocks/block-controls/features/control-visibility)
-- [Bases](/docs/tangible-blocks/block-controls/features/bases)
-- [Aliases](/docs/tangible-blocks/block-controls/features/aliases)
+- [Sections and tabs](/tangible-blocks/block-controls/features/sections-tabs)
+- [Control visibility](/tangible-blocks/block-controls/features/control-visibility)
+- [Bases](/tangible-blocks/block-controls/features/bases)
+- [Aliases](/tangible-blocks/block-controls/features/aliases)
 
 ## Transitioning from legacy controls
 
-As of Tangible Blocks version 3.1.6, [legacy controls](/docs/tangible-blocks/legacy-controls/) are being phased out along with the syntax used to display the value of these legacy controls. The new controls linked above now rely on native javascript within Tangible Blocks instead of relying on the page builder's own controls, which will allow much greater consistency between builders moving forward. The new syntax is also much more flexible and allows looping through multiple control values, which wasn't possible with the old `{{ control_name }}` syntax.
+As of Tangible Blocks version 3.1.6, [legacy controls](/tangible-blocks/legacy-controls/) are being phased out along with the syntax used to display the value of these legacy controls. The new controls linked above now rely on native javascript within Tangible Blocks instead of relying on the page builder's own controls, which will allow much greater consistency between builders moving forward. The new syntax is also much more flexible and allows looping through multiple control values, which wasn't possible with the old `{{ control_name }}` syntax.
 
 To use the new controls and syntax, simply enable this switch in the meta box at the bottom of your block template.
 

@@ -9,7 +9,7 @@ Use the `JSON-LD` tag to create structured data that can be added to the `head` 
 
 ## Overview
 
-The `JSON-LD` tag accepts data in the exact same way as [the `Map` tag](/docs/dynamic-tags/map), allowing you to add key-value pairs using the `Key` tag, lists (also called arrays) using the `List` tag, or maps (also called associate arrays) using the `Map` tag.
+The `JSON-LD` tag accepts data in the exact same way as [the `Map` tag](/dynamic-tags/map), allowing you to add key-value pairs using the `Key` tag, lists (also called arrays) using the `List` tag, or maps (also called associate arrays) using the `Map` tag.
 
 Unlike the `Map` tag, the `JSON-LD` tag doesn't save its value, but instead renders it as a properly formatted JSON-LD script.
 

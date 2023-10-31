@@ -31,7 +31,7 @@ Use the `clear` attribute and the unique name to clear the cache.
 <Cache clear=some_name />
 ```
 
-This can be useful during development to fetch fresh content. It's best to be used once and removed, or commented out with [the `Note` tag](/docs/dynamic-tags/note).
+This can be useful during development to fetch fresh content. It's best to be used once and removed, or commented out with [the `Note` tag](/dynamic-tags/note).
 
 ## Cache by user
 

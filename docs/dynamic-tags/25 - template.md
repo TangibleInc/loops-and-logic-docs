@@ -27,7 +27,7 @@ To get a template by post ID, use the `id` attribute.
 
 ### Tag attributes as local variables
 
-Attributes of the Template tag (or shortcode) are passed as [local variables](/docs/dynamic-tags/set-get#local-variable).
+Attributes of the Template tag (or shortcode) are passed as [local variables](/dynamic-tags/set-get#local-variable).
 
 ```html
 <Template id=123 my_variable=some_value />
@@ -49,7 +49,7 @@ The `[template]` shortcode works the same way as the Template tag described abov
 [template id=74]
 ```
 
-Like the Template tag, this shortcode can also use attributes to pass [local variables](/docs/dynamic-tags/set-get#local-variable) to the template.
+Like the Template tag, this shortcode can also use attributes to pass [local variables](/dynamic-tags/set-get#local-variable) to the template.
 
 ```html
 [template id=123 my_variable=some_value]

@@ -15,4 +15,4 @@ Common in many languages (such as PHP, the language in which WordPress itself is
 
 ## What is an associative array?
 
-_Associative arrays_ are similar to regular arrays and are sometimes called maps. Each item in the array contains a key which is associated with a value, also known as a key-value pair. Associative arrays are less common when working with L&L, but they can be created or looped through using [the `Map` tag](/docs/dynamic-tags/map).
+_Associative arrays_ are similar to regular arrays and are sometimes called maps. Each item in the array contains a key which is associated with a value, also known as a key-value pair. Associative arrays are less common when working with L&L, but they can be created or looped through using [the `Map` tag](/dynamic-tags/map).

@@ -15,7 +15,7 @@ The loop type `times` simply repeats the content a given number of times.
 
 The above will show: `AAAAA`.
 
-Use [the `loop` variable type](/docs/dynamic-tags/loop/features/variables#loop-variable-type) to get the current loop count.
+Use [the `loop` variable type](/dynamic-tags/loop/features/variables#loop-variable-type) to get the current loop count.
 
 ```html
 <Loop times=5>

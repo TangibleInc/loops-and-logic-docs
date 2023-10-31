@@ -58,19 +58,19 @@ Inside the attribute, angle brackets `<>` need to be changed to `{}`.
 In addition to regular variables, there are other variable types with special behavior.
 
 - [JS](#js-variable)
-- [List](/docs/dynamic-tags/list#get-list)
+- [List](/dynamic-tags/list#get-list)
 - [Local](#local-variable)
-- [Logic](/docs/dynamic-tags/if/logic-variables#get-condition)
-- [Loop](/docs/dynamic-tags/Loop/features/variables)
-- [Map](/docs/dynamic-tags/map#get-map)
-- [Path](/docs/dynamic-tags/path)
-- [Query](/docs/dynamic-tags/Loop/features/variables#query-variable-type)
-- [Route](/docs/dynamic-tags/route)
+- [Logic](/dynamic-tags/if/logic-variables#get-condition)
+- [Loop](/dynamic-tags/Loop/features/variables)
+- [Map](/dynamic-tags/map#get-map)
+- [Path](/dynamic-tags/path)
+- [Query](/dynamic-tags/Loop/features/variables#query-variable-type)
+- [Route](/dynamic-tags/route)
 - [Sass](#sass-variable)
-- [Setting](/docs/dynamic-tags/setting)
-- [Site](/docs/dynamic-tags/site)
+- [Setting](/dynamic-tags/setting)
+- [Site](/dynamic-tags/site)
 - [Template](#template-variable)
-- [URL](/docs/dynamic-tags/url)
+- [URL](/dynamic-tags/url)
 
 These can be accessed by using an attribute name of the variable type, instead of the `name` attribute.
 

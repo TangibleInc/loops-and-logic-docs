@@ -100,7 +100,7 @@ For each month, the following fields are available.
 - `name` - Name of the month
 - `short_name` - Short name of the month
 
-For the names, optionally set the `locale` attribute to translate. See [the Date tag](/docs/dynamic-tags/date) for details.
+For the names, optionally set the `locale` attribute to translate. See [the Date tag](/dynamic-tags/date) for details.
 
 ## Week
 
@@ -150,7 +150,7 @@ For each day, the following fields are available.
 - `name` - The name of the weekday
 - `short_name` - The short name of the weekday
 
-For the names, optionally set the `locale` attribute to translate. See [the Date tag](/docs/dynamic-tags/date#locale) for details.
+For the names, optionally set the `locale` attribute to translate. See [the Date tag](/dynamic-tags/date#locale) for details.
 
 ## Weekday
 
@@ -174,4 +174,4 @@ For each weekday, the following fields are available.
 - `name` - The name of the weekday
 - `short_name` - The short name of the weekday
 
-For the names, optionally set the `locale` attribute to translate. See [the Date tag](/docs/dynamic-tags/date#locale) for details.
+For the names, optionally set the `locale` attribute to translate. See [the Date tag](/dynamic-tags/date#locale) for details.

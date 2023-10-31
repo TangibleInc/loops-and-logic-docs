@@ -20,4 +20,4 @@ tags:
 
 ## Examples
 
-- [How to display term fields on a taxonomy term archive](/docs/how-to/term-fields-on-archive)
+- [How to display term fields on a taxonomy term archive](/how-to/term-fields-on-archive)

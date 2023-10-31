@@ -221,4 +221,4 @@ See [Convert: From Format](#from-format) for an explanation.
 
 ## Examples
 
-- [How to create a button that dynamically links to the current month's posts](/docs/how-to/dynamic-link-current-month-date-archive)
+- [How to create a button that dynamically links to the current month's posts](/how-to/dynamic-link-current-month-date-archive)

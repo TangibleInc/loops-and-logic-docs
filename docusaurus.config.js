@@ -116,23 +116,23 @@ const config = {
             items: [
               {
                 label: 'Get Started',
-                to: '/docs/getting-started/quick-start',
+                to: '/getting-started/quick-start',
               },
               {
                 label: 'Loop Tag',
-                to: '/docs/dynamic-tags/loop/',
+                to: '/dynamic-tags/loop/',
               },
               {
                 label: 'If Tag',
-                to: '/docs/dynamic-tags/if/',
+                to: '/dynamic-tags/if/',
               },
               {
                 label: 'Set and Get Tags',
-                to: '/docs/dynamic-tags/set-get',
+                to: '/dynamic-tags/set-get',
               },
               {
                 label: 'Using ACF Fields',
-                to: '/docs/integrations/acf',
+                to: '/integrations/acf',
               },
             ],
           },
