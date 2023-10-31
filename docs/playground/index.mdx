@@ -9,24 +9,3 @@ import Playground from '@site/src/components/Playground'
 Here is a WordPress site with Loops & Logic installed, running entirely in the browser.
 
 <Playground route='/wp-admin/' lazy={false} />
-
-
-## Runnable code example
-
-<Playground {...{
-  template: `<ul>
-  <Loop type=post>
-    <li><Field title /></li>
-  </Loop>
-</ul>`,
-  style: `ul {
-  color: green;
-}`,
-  script: `console.log('Hello from component')
-`,
-  content: {
-    post: [
-      { post_title: 'Another post' }
-    ]
-  }
-}} />
