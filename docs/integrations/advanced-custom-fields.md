@@ -64,7 +64,7 @@ Optionally, use the `format` and `locale` attributes to apply date formatting.
 <Field acf_date=field_name format="l j F Y" locale=fr />
 ```
 
-For format syntax and available locales, see [Format: Date](/docs/dynamic-tags/format#date).
+For format syntax and available locales, see [Format: Date](/dynamic-tags/format#date).
 
 Use `format=default` to use the site setting from Settings -> General -> Date Format.
 
@@ -171,7 +171,7 @@ Use the `acf_file` attribute.
 <Field acf_file=field_name field=url />
 ```
 
-See [Attachment Loop](/docs/dynamic-tags/loop/attachment) for available fields.
+See [Attachment Loop](/dynamic-tags/loop/attachment) for available fields.
 
 ### Image
 
@@ -187,7 +187,7 @@ Use the `acf_image` attribute.
 <Field acf_image=field_name field=url />
 ```
 
-See [Attachment Loop](/docs/dynamic-tags/loop/attachment) for available fields.
+See [Attachment Loop](/dynamic-tags/loop/attachment) for available fields.
 
 ### Link
 
@@ -215,7 +215,7 @@ Use the `acf_post` attribute.
 </Loop>
 ```
 
-See [Post Loop](/docs/dynamic-tags/loop/post) for available fields.
+See [Post Loop](/dynamic-tags/loop/post) for available fields.
 
 ### Relationship
 
@@ -227,7 +227,7 @@ Use the `acf_relationship` attribute.
 </Loop>
 ```
 
-See [Post Loop](/docs/dynamic-tags/loop/post) for available fields.
+See [Post Loop](/dynamic-tags/loop/post) for available fields.
 
 ### Taxonomy
 
@@ -239,7 +239,7 @@ Use the `acf_taxonomy` attribute.
 </Loop>
 ```
 
-See [Taxonomy Term Loop](/docs/dynamic-tags/loop/taxonomy-term) for available fields.
+See [Taxonomy Term Loop](/dynamic-tags/loop/taxonomy-term) for available fields.
 
 ### User
 
@@ -251,7 +251,7 @@ Use the `acf_user` attribute.
 </Loop>
 ```
 
-See [User Loop](/docs/dynamic-tags/loop/user) for available fields.
+See [User Loop](/dynamic-tags/loop/user) for available fields.
 
 ### Gallery
 
@@ -263,7 +263,7 @@ Use the `acf_gallery` attribute.
 </Loop>
 ```
 
-See [Attachment Loop](/docs/dynamic-tags/loop/attachment) for available fields.
+See [Attachment Loop](/dynamic-tags/loop/attachment) for available fields.
 
 ## Nested
 

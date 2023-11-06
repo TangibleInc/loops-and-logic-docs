@@ -49,4 +49,4 @@ It's just a different way to get and set variables.
 
 ## Examples
 
-- [How to add up the count of a parent taxonomy term with the count of all its children](/docs/how-to/count-hierarchical-terms)
+- [How to add up the count of a parent taxonomy term with the count of all its children](/how-to/count-hierarchical-terms)

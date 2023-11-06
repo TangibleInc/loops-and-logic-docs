@@ -4,7 +4,7 @@ title: Loop
 tags:
 - Dynamic Tags
 - Loop
-url: /docs/dynamic-tags/loop
+url: /dynamic-tags/loop
 ---
 
 The `Loop` tag gets items of site content by type and repeats its inner content for each item.
@@ -43,32 +43,32 @@ A loop *type* is the name of the type of content that should be looped through.
 
 These loop types are written in the value of the `type` attribute to define the type of content that is being looped through. The value is usually in singular form, such as `type=post`, `type=page`, or `type=user`. The name of the post type must be in lowercase letters and can only contain letters, numbers, `-` dashes, or `_` underscores. Each loop type has its own set of available query parameters and fields.
 
-*    `attachment` - This type loops through images or other files uploaded through the media upload system, which WordPress calls attachments. See the [attachment loop](/docs/dynamic-tags/loop/attachment) for available query parameters and fields.
-*    `calendar_*` - This type loops through generated calendar fields and can be used to build calendars. See the [calendar loop](/docs/dynamic-tags/loop/calendar) for available query parameters and fields.
-*    `menu` - This type loops through menu items. See the [menu loop](/docs/dynamic-tags/loop/menu) for available query parameters and fields.
-*    `post` - This type loops through posts, including core post types like `post` or `page` as well as any custom post type, including those created by third-party plugins. Use the `post_type` query parameter to specify one or many post types. See the [post loop](/docs/dynamic-tags/loop/post) for available query parameters and fields.
-*    `type` - This type loops through all post types registered on the site. See the [post type loop](/docs/dynamic-tags/loop/type) for available query parameters and fields.
-*    `taxonomy` - This type loops through all taxonomies registered on the site. See the [taxonomy loop](/docs/dynamic-tags/loop/taxonomy) for available query parameters and fields.
-*    `taxonomy_term` - This type loops through taxonomy terms. See the [taxonomy term loop](/docs/dynamic-tags/loop/taxonomy-term) for available query parameters and fields.
-*    `user` - This type loops through a site's users. See the [user loop](/docs/dynamic-tags/loop/user) for available query parameters and fields.
+*    `attachment` - This type loops through images or other files uploaded through the media upload system, which WordPress calls attachments. See the [attachment loop](/dynamic-tags/loop/attachment) for available query parameters and fields.
+*    `calendar_*` - This type loops through generated calendar fields and can be used to build calendars. See the [calendar loop](/dynamic-tags/loop/calendar) for available query parameters and fields.
+*    `menu` - This type loops through menu items. See the [menu loop](/dynamic-tags/loop/menu) for available query parameters and fields.
+*    `post` - This type loops through posts, including core post types like `post` or `page` as well as any custom post type, including those created by third-party plugins. Use the `post_type` query parameter to specify one or many post types. See the [post loop](/dynamic-tags/loop/post) for available query parameters and fields.
+*    `type` - This type loops through all post types registered on the site. See the [post type loop](/dynamic-tags/loop/type) for available query parameters and fields.
+*    `taxonomy` - This type loops through all taxonomies registered on the site. See the [taxonomy loop](/dynamic-tags/loop/taxonomy) for available query parameters and fields.
+*    `taxonomy_term` - This type loops through taxonomy terms. See the [taxonomy term loop](/dynamic-tags/loop/taxonomy-term) for available query parameters and fields.
+*    `user` - This type loops through a site's users. See the [user loop](/dynamic-tags/loop/user) for available query parameters and fields.
 
 ### Loop type attributes
 
 These loop types don't require using the `type` attribute and are instead themselves attributes that accept a value.
 
 *    `field="..."` - This type loops through a field value that is a list or map (also known as an associative array).
-*    `list="..."` - This type loops through data created by the `List` tag or passed directly as the attribute's value. See the [list loop](/docs/dynamic-tags/list) for more information.
-*    `map="..."` - This type loops through data created by the `Map` tag or passed directly as the attribute's value. See the [map loop](/docs/dynamic-tags/map) for more information.
+*    `list="..."` - This type loops through data created by the `List` tag or passed directly as the attribute's value. See the [list loop](/dynamic-tags/list) for more information.
+*    `map="..."` - This type loops through data created by the `Map` tag or passed directly as the attribute's value. See the [map loop](/dynamic-tags/map) for more information.
 *    `map_keys="..."` - This type loops through all keys in a map.
-*    `query="..."` - This type loops through a stored query variable without requiring the server to run a new query. For more information, see the [query variable](/docs/dynamic-tags/loop/features/variables#query-variable-type).
-*    `times="..."` - This type repeats its inner content a given number of times. See the [times loop](/docs/dynamic-tags/loop/times) for more information.
+*    `query="..."` - This type loops through a stored query variable without requiring the server to run a new query. For more information, see the [query variable](/dynamic-tags/loop/features/variables#query-variable-type).
+*    `times="..."` - This type repeats its inner content a given number of times. See the [times loop](/dynamic-tags/loop/times) for more information.
 *    `user_field="..."` - This type loops through a user field value that is a list or map.
 
 ### Integrations
 
 There are loop types that integrate with content from other plugins.
 
-*    [Advanced Custom Fields](/docs/integrations/acf)
+*    [Advanced Custom Fields](/integrations/acf)
 
 ## Attributes
 
@@ -95,13 +95,13 @@ Recent posts:
 *    `field_value="..."` - This attribute defines the field value that should be compared to the value of the `field` attribute.
 *    `field_value_2="..."` - Used when filtering multiple fields. See `field_value`.
 *    `field_value_3="..."` - Used when filtering multiple fields. See `field_value`.
-*    `field_compare="..."` - This attribute defines the comparison operator, or how the field should be compared to the `field_value` - See [If tag: Common comparisons](/docs/dynamic-tags/if/#general-comparisons) for more information.
+*    `field_compare="..."` - This attribute defines the comparison operator, or how the field should be compared to the `field_value` - See [If tag: Common comparisons](/dynamic-tags/if/#general-comparisons) for more information.
 *    `field_compare_2="..."` - Used when filtering multiple fields. See `field_compare`.
 *    `field_compare_3="..."` - Used when filtering multiple fields. See `field_compare`. 
 *    `field_type="..."` - This attribute defines the field type. It accepts a value of `string` (default), `number`, or `date`. It is useful when using numerical comparisons in `field_compare`.
 *    `field_type_2="..."` - Used when filtering multiple fields. See `field_type`.
 *    `field_type_3="..."` - Used when filtering multiple fields. See `field_type`.
-*    `paged="..."` - This attribute enables loop pagination and defines the number of items to display per page. It accepts a value of type number. For more information, see [loop pagination](/docs/dynamic-tags/loop/features/pagination).
+*    `paged="..."` - This attribute enables loop pagination and defines the number of items to display per page. It accepts a value of type number. For more information, see [loop pagination](/dynamic-tags/loop/features/pagination).
 *    `sort_field="..."` - This attribute defines the field by which to sort items in the loop. The example below will display the post titles of an `event` custom post type sorted in descending order based on an `event_date` custom field.
 ```html
 <Loop type="event" sort_field="event_date" sort_type="date" sort_date_format="m/d/Y" sort_order="desc">
@@ -155,19 +155,19 @@ The third way to filter the results of a loop is to use an `If` tag inside the `
 
 Here are some other features of the loop.
 
-*   [Exists](/docs/dynamic-tags/Loop/features/exists)
-*   [Variables](/docs/dynamic-tags/Loop/features/pagination)
-*   [Pagination](/docs/dynamic-tags/Loop/features/variables)
+*   [Exists](/dynamic-tags/Loop/features/exists)
+*   [Variables](/dynamic-tags/Loop/features/pagination)
+*   [Pagination](/dynamic-tags/Loop/features/variables)
 
 ## Examples
 
-- [How to create loops within loops within loops](/docs/how-to/nested-loops)  
-- [How to display WooCommerce attributes](/docs/how-to/woocommerce-attributes)  
-- [How to display a custom field that contains an image](/docs/how-to/custom-image-fields)  
-- [How to display a random post when your hosting provider has disabled random sorting](/docs/how-to/random-post-from-list)  
-- [How to only show posts with a certain custom field filled out](/docs/how-to/filter-custom-field-has-value)  
-- [How to order terms alphabetically by ACF text field and hide empty terms](/docs/how-to/order-alphabetically-acf-field-hide-empty)  
-- [How to show posts only if they exist and display a message if they don’t exist](/docs/how-to/no-posts-found-conditional)  
-- [How to add up the count of a parent taxonomy term with the count of all its children](/docs/how-to/count-hierarchical-terms)  
-- [How to make a loop behave differently every nth item (e.g. display content every third post, change styling on even/odd posts)](/docs/how-to/varied-loop-item-behavior)  
-- [How to display term fields on a taxonomy term archive](/docs/how-to/term-fields-on-archive)
+- [How to create loops within loops within loops](/how-to/nested-loops)  
+- [How to display WooCommerce attributes](/how-to/woocommerce-attributes)  
+- [How to display a custom field that contains an image](/how-to/custom-image-fields)  
+- [How to display a random post when your hosting provider has disabled random sorting](/how-to/random-post-from-list)  
+- [How to only show posts with a certain custom field filled out](/how-to/filter-custom-field-has-value)  
+- [How to order terms alphabetically by ACF text field and hide empty terms](/how-to/order-alphabetically-acf-field-hide-empty)  
+- [How to show posts only if they exist and display a message if they don’t exist](/how-to/no-posts-found-conditional)  
+- [How to add up the count of a parent taxonomy term with the count of all its children](/how-to/count-hierarchical-terms)  
+- [How to make a loop behave differently every nth item (e.g. display content every third post, change styling on even/odd posts)](/how-to/varied-loop-item-behavior)  
+- [How to display term fields on a taxonomy term archive](/how-to/term-fields-on-archive)

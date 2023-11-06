@@ -98,7 +98,7 @@ The above is the same as:
 </Loop>
 ```
 
-[The `Taxonomy` tag](/docs/dynamic-tags/loop/taxonomy-term) provides another way to express it.
+[The `Taxonomy` tag](/dynamic-tags/loop/taxonomy-term) provides another way to express it.
 
 ```html
 <Taxonomy category>
@@ -107,9 +107,9 @@ The above is the same as:
 ```
 
 ## Examples
-- [How to order terms alphabetically by ACF text field and hide empty terms](/docs/how-to/order-alphabetically-acf-field-hide-empty)
-- [How to conditionally display something when the current post has a certain taxonomy term applied](/docs/how-to/conditional-logic-taxonomy-term)
-- [How to create loops within loops within loops](/docs/how-to/nested-loops)
-- [How to display WooCommerce attributes](/docs/how-to/woocommerce-attributes)
-- [How to add up the count of a parent taxonomy term with the count of all its children](/docs/how-to/count-hierarchical-terms)
-- [How to display term fields on a taxonomy term archive](/docs/how-to/term-fields-on-archive)
+- [How to order terms alphabetically by ACF text field and hide empty terms](/how-to/order-alphabetically-acf-field-hide-empty)
+- [How to conditionally display something when the current post has a certain taxonomy term applied](/how-to/conditional-logic-taxonomy-term)
+- [How to create loops within loops within loops](/how-to/nested-loops)
+- [How to display WooCommerce attributes](/how-to/woocommerce-attributes)
+- [How to add up the count of a parent taxonomy term with the count of all its children](/how-to/count-hierarchical-terms)
+- [How to display term fields on a taxonomy term archive](/how-to/term-fields-on-archive)

@@ -56,7 +56,7 @@ Use the `date` attribute to apply date formatting.
 
 It uses the excellent [Carbon date/time library](https://carbon.nesbot.com/).
 
-See [the Date tag](/docs/dynamic-tags/date) for details on formatting and additionally supported attributes.
+See [the Date tag](/dynamic-tags/date) for details on formatting and additionally supported attributes.
 
 #### Examples
 

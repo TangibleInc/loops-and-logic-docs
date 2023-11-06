@@ -16,47 +16,47 @@ List of dynamic tags
 --------------------
 
 
-*   [`Date`](/docs/dynamic-tags/date): This tag modifies, formats, or displays a date.
-*   [`Embed`](/docs/dynamic-tags/embed): This tag embeds HTML based on a URL from any [provider supported by WordPress](https://wordpress.org/support/article/embeds/).
-*   [`Exit`](/docs/dynamic-tags/exit-catch): This tag exits the current template, ignoring the rest of its content.
-*   [`Field`](/docs/dynamic-tags/field): This tag gets or displays content from a field either from the current item in a loop or the current post on which a template is placed.
-*   [`Format`](/docs/dynamic-tags/format): This tag takes given content and applies various types of formatting to it.
-*   [`Get`](/docs/dynamic-tags/set-get) and [`Set`](/docs/dynamic-tags/set-get): These tags create and recall different types of variables.
-*   [`If`](/docs/dynamic-tags/if): This tag creates logic statements to conditionally display content or run sections of markup when certain conditions are met.
-*   [`JSON-LD`](/docs/dynamic-tags/json-ld): This tag creates structured data (schema) that can be added to the head of a web page.
-*   [`List`](/docs/dynamic-tags/list): This tag creates a list of items, also known as an array.
-*   [`Load`](/docs/dynamic-tags/load): This tag loads a template or file.
-*   [`Loop`](/docs/dynamic-tags/loop): This tag finds every item of content in the database that matches a set of criteria and loops through its inner contents once per item.
-*   [`Map`](/docs/dynamic-tags/map): This tag creates a map of items, also known as an associative array.
-*   [`Meta`](/docs/dynamic-tags/meta): This tag generates SEO meta tags.
-*   [`Note`](/docs/dynamic-tags/note): This tag displays notes within a template. Notes are not displayed when a template is rendered.
-*   [`Path`](/docs/dynamic-tags/path): This tag gets folder paths for various parts of the site.
-*   [`Random`](/docs/dynamic-tags/random): This tag generates a random number.
-*   [`Raw`](/docs/dynamic-tags/raw): This tag stops dynamic tags contained within it from being rendered. HTML tags and content will still be rendered.
-*   [`Redirect`](/docs/dynamic-tags/redirect): This tag redirects a user to a URL or route.
-*   [`Route`](/docs/dynamic-tags/route): This tag gets all or part of the current URL route (everything after the domain name).
-*   [`Setting`](/docs/dynamic-tags/setting): This tag gets site settings.
-*   [`Shortcode`](/docs/dynamic-tags/shortcode): This tag renders shortcodes inside a template.
-*   [`Taxonomy`](/docs/dynamic-tags/taxonomy-term): This tag is a shortcut for creating a taxonomy term loop from the current post.
-*   [`Template`](/docs/dynamic-tags/template): This tag runs templates inside other templates and allows for passing data between templates.
-*   [`Timer`](/docs/dynamic-tags/timer): This tag measures and displays the time it takes to render a template section.
-*   [`Url`](/docs/dynamic-tags/url): This tag gets various URLs for links.
-*   [`User`](/docs/dynamic-tags/user): This tag is a shortcut for creating a user loop for the current user.
+*   [`Date`](/dynamic-tags/date): This tag modifies, formats, or displays a date.
+*   [`Embed`](/dynamic-tags/embed): This tag embeds HTML based on a URL from any [provider supported by WordPress](https://wordpress.org/support/article/embeds/).
+*   [`Exit`](/dynamic-tags/exit-catch): This tag exits the current template, ignoring the rest of its content.
+*   [`Field`](/dynamic-tags/field): This tag gets or displays content from a field either from the current item in a loop or the current post on which a template is placed.
+*   [`Format`](/dynamic-tags/format): This tag takes given content and applies various types of formatting to it.
+*   [`Get`](/dynamic-tags/set-get) and [`Set`](/dynamic-tags/set-get): These tags create and recall different types of variables.
+*   [`If`](/dynamic-tags/if): This tag creates logic statements to conditionally display content or run sections of markup when certain conditions are met.
+*   [`JSON-LD`](/dynamic-tags/json-ld): This tag creates structured data (schema) that can be added to the head of a web page.
+*   [`List`](/dynamic-tags/list): This tag creates a list of items, also known as an array.
+*   [`Load`](/dynamic-tags/load): This tag loads a template or file.
+*   [`Loop`](/dynamic-tags/loop): This tag finds every item of content in the database that matches a set of criteria and loops through its inner contents once per item.
+*   [`Map`](/dynamic-tags/map): This tag creates a map of items, also known as an associative array.
+*   [`Meta`](/dynamic-tags/meta): This tag generates SEO meta tags.
+*   [`Note`](/dynamic-tags/note): This tag displays notes within a template. Notes are not displayed when a template is rendered.
+*   [`Path`](/dynamic-tags/path): This tag gets folder paths for various parts of the site.
+*   [`Random`](/dynamic-tags/random): This tag generates a random number.
+*   [`Raw`](/dynamic-tags/raw): This tag stops dynamic tags contained within it from being rendered. HTML tags and content will still be rendered.
+*   [`Redirect`](/dynamic-tags/redirect): This tag redirects a user to a URL or route.
+*   [`Route`](/dynamic-tags/route): This tag gets all or part of the current URL route (everything after the domain name).
+*   [`Setting`](/dynamic-tags/setting): This tag gets site settings.
+*   [`Shortcode`](/dynamic-tags/shortcode): This tag renders shortcodes inside a template.
+*   [`Taxonomy`](/dynamic-tags/taxonomy-term): This tag is a shortcut for creating a taxonomy term loop from the current post.
+*   [`Template`](/dynamic-tags/template): This tag runs templates inside other templates and allows for passing data between templates.
+*   [`Timer`](/dynamic-tags/timer): This tag measures and displays the time it takes to render a template section.
+*   [`Url`](/dynamic-tags/url): This tag gets various URLs for links.
+*   [`User`](/dynamic-tags/user): This tag is a shortcut for creating a user loop for the current user.
 
 
 ### Modules
 
 Most of the dynamic tags in L&L represent features that are built into the core of the plugin. Some tags, which we refer to as _modules_, represent features or functionality that depend on third-party frontend libraries bundled within the plugin. In practice, modules are written and used in the same way as tags. However, using a module in a template loads its associated library, which can have minor performance impacts. There is no impact on performance when these modules aren't used in a template.
 
-*   [`Async`](/docs/dynamic-tags/modules/async): This tag creates an empty HTML element and, after the page has loaded, makes an asynchronous request to the server to render the template, known as "lazy loading."
-*   [`Cache`](/docs/dynamic-tags/modules/cache): This tag stores the rendered template in the database along with an expiration time.
-*   [`Glider`](/docs/dynamic-tags/modules/glider): This tag creates a full-screen gallery glider.
-*   [`Markdown`](/docs/dynamic-tags/modules/markdown): This tag renders inner contents using Markdown formatting.
-*   [`Math`](/docs/dynamic-tags/modules/math): This tag allows for mathematical calculations within the template.
-*   [`Mobile Detect`](/docs/dynamic-tags/modules/mobile-detect): This attribute gets the type of device being used by the user; either mobile, tablet, or desktop.
-*   [`Prism`](/docs/dynamic-tags/modules/prism): This tag produces a code block with syntax highlighted in different languages. This is a module that loads a library when used.
-*   [`Sass`](/docs/dynamic-tags/modules/sass): This module extends the `style` tag to render the Sass styling language.
-*   [`Slider`](/docs/dynamic-tags/modules/slider): This tag displays a general-purpose gallery slider.
+*   [`Async`](/dynamic-tags/modules/async): This tag creates an empty HTML element and, after the page has loaded, makes an asynchronous request to the server to render the template, known as "lazy loading."
+*   [`Cache`](/dynamic-tags/modules/cache): This tag stores the rendered template in the database along with an expiration time.
+*   [`Glider`](/dynamic-tags/modules/glider): This tag creates a full-screen gallery glider.
+*   [`Markdown`](/dynamic-tags/modules/markdown): This tag renders inner contents using Markdown formatting.
+*   [`Math`](/dynamic-tags/modules/math): This tag allows for mathematical calculations within the template.
+*   [`Mobile Detect`](/dynamic-tags/modules/mobile-detect): This attribute gets the type of device being used by the user; either mobile, tablet, or desktop.
+*   [`Prism`](/dynamic-tags/modules/prism): This tag produces a code block with syntax highlighted in different languages. This is a module that loads a library when used.
+*   [`Sass`](/dynamic-tags/modules/sass): This module extends the `style` tag to render the Sass styling language.
+*   [`Slider`](/dynamic-tags/modules/slider): This tag displays a general-purpose gallery slider.
 
 Syntax for tags
 ---------------

@@ -19,4 +19,4 @@ Example:
 - `description` - Site description
 - `url` - Site URL
 
-If any other field name is passed, it will return the same as  [The `Setting` tag](/docs/dynamic-tags/setting).
+If any other field name is passed, it will return the same as  [The `Setting` tag](/dynamic-tags/setting).

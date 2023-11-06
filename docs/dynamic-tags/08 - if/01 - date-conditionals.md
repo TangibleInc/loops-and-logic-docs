@@ -59,7 +59,7 @@ To use the `Date` tag and `format` attribute:
 <Date format=timestamp>2022-02-02</Date>
 ```
 
-See [Date tag](/docs/dynamic-tags/date) for details.
+See [Date tag](/dynamic-tags/date) for details.
 
 ### Field
 
@@ -73,4 +73,4 @@ To use the `Field` tag and `date_format` attribute:
 
 If the value is not in a standard format such as `Y-m-d` or `Y-m-d H:i:s`, it might be necessary to use the `from_format` attribute.
 
-See [Date tag: Convert from format](/docs/dynamic-tags/date#from-format) for an explanation.
+See [Date tag: Convert from format](/dynamic-tags/date#from-format) for an explanation.

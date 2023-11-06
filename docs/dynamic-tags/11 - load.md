@@ -24,4 +24,4 @@ Optionally, use the `from` attribute to get the file from a path.
 <Load from=content file="/views/index.html" />
 ```
 
-It takes the name of a [path variable](/docs/dynamic-tags/path).
+It takes the name of a [path variable](/dynamic-tags/path).

@@ -96,8 +96,8 @@ User field value
 
 ## User tag
 
-The [`User` tag](/docs/dynamic-tags/user) is a shortcut to get a field from the current user.
+The [`User` tag](/dynamic-tags/user) is a shortcut to get a field from the current user.
 
 ## Examples
 
-- [How to display a post editing link only when the current user is the post's author](/docs/how-to/display-post-edit-link-author)
+- [How to display a post editing link only when the current user is the post's author](/how-to/display-post-edit-link-author)

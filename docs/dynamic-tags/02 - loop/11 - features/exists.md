@@ -56,5 +56,5 @@ This may be useful if you don't need to loop through the results.
 
 ## Examples
 
-- [How to show posts only if they exist and display a message if they don’t exist](/docs/how-to/no-posts-found-conditional)
-- [How to add up the count of a parent taxonomy term with the count of all its children](/docs/how-to/count-hierarchical-terms)
+- [How to show posts only if they exist and display a message if they don’t exist](/how-to/no-posts-found-conditional)
+- [How to add up the count of a parent taxonomy term with the count of all its children](/how-to/count-hierarchical-terms)

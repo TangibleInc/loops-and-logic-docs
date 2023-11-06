@@ -5,7 +5,7 @@ tags:
   - Integration
 slug: /integrations/wp-fusion
 ---
-The [WP Fusion](https://wpfusion.com) integration adds the following fields to the [`user` loop type](/docs/dynamic-tags/loop/user). These fields will generally be used to create conditional logic to check whether a user has specific tags or has access to a specific post.
+The [WP Fusion](https://wpfusion.com) integration adds the following fields to the [`user` loop type](/dynamic-tags/loop/user). These fields will generally be used to create conditional logic to check whether a user has specific tags or has access to a specific post.
 
 - `wp_fusion_tags` - An array of tag IDs
 <br/>Type: array
@@ -24,7 +24,7 @@ The `wp_fusion_tags` field can be used to check whether a user has a specific ta
 </If>
 ```
 
-Create powerful logic using any of the [list comparisons](/docs/dynamic-tags/if/#when-the-subject-is-a-list).
+Create powerful logic using any of the [list comparisons](/dynamic-tags/if/#when-the-subject-is-a-list).
 
 ```html
 <h2>Users who have made a purchase</h2>

@@ -32,5 +32,5 @@ import LoopFields from './_loop-fields.md';
 
 ## Examples
 
-- [How to display a custom field that contains an image](/docs/how-to/custom-image-fields)  
-- [How to adjust the resolution or size of a featured image](/docs/how-to/resolution-size-featured-image)
+- [How to display a custom field that contains an image](/how-to/custom-image-fields)  
+- [How to adjust the resolution or size of a featured image](/how-to/resolution-size-featured-image)

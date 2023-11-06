@@ -31,7 +31,7 @@ This control creates an image upload and selection interface.
 
 ## Rendering the control value
 
-The value can be rendered in a template using `Loop` to loop through the image fields. See the [attachment loop](/docs/dynamic-tags/loop/attachment) for available fields.
+The value can be rendered in a template using `Loop` to loop through the image fields. See the [attachment loop](/dynamic-tags/loop/attachment) for available fields.
 
 ```html
 <Loop control=gallery_name>

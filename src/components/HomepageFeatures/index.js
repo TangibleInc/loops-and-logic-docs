@@ -12,7 +12,7 @@ const FeatureList = [
         Read our Getting Started Docs
       </>
     ),
-		destination: '/docs/getting-started/quick-start',
+		destination: '/getting-started/quick-start',
   },
   {
     title: 'Looking for a specific tag?',
@@ -22,7 +22,7 @@ const FeatureList = [
         Explore all of L&L's dynamic tags
       </>
     ),
-		destination: '/docs/dynamic-tags/',
+		destination: '/dynamic-tags/',
   },
   {
     title: 'Have a question or something cool to share?',
