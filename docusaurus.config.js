@@ -97,6 +97,12 @@ const config = {
           },
           {
             type: 'docSidebar',
+            sidebarId: 'develop',
+            position: 'left',
+            label: 'Develop',
+          },
+          {
+            type: 'docSidebar',
             sidebarId: 'howToGuides',
             position: 'left',
             label: 'How-to',
