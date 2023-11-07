@@ -16,10 +16,8 @@ The L&L template language requires specific features from a parser beyond regula
 
 - Case-sensitive tag names: a typical HTML parser converts all tag names to upper/lowercase, but we need that information
 
-- Attributes without value, in the order that they were defined: most parsers do not maintain the order but we need that information, especially for the If tag
+- Attributes without value, in the order that they were defined: most parsers do not maintain the order but we need that information, especially the If tag.
 
-
-#
 
 # HTML
 
@@ -72,8 +70,7 @@ type TagAttributes = {
 
 #### Tag attribute pairs
 
-A list of key/value pairs has the advantage of extended syntax, such
-as the If tag that can take multiple conditions.
+A list of key/value pairs has the advantage of extended syntax, like the If tag could take multiple conditions.
 
 ```ts
 type TagAttributePair = [
