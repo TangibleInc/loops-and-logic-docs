@@ -1,0 +1,55 @@
+{
+  "name": "menu",
+  "title": "Menu",
+  "category": "core",
+  "query_args": {
+    "menu": {
+      "type": "string",
+      "description": "Get menu by ID or title"
+    }
+  },
+  "fields": {
+    "id": {
+      "description": "Menu item ID"
+    },
+    "title": {
+      "description": "Title"
+    },
+    "url": {
+      "description": "URL"
+    },
+    "type": {
+      "description": "Type: custom, post_type, taxonomy"
+    },
+    "type_label": {
+      "description": "Type label: \"Custom Link\", post type label, or taxonomy label"
+    },
+    "description": {
+      "description": "Description"
+    },
+    "target": {
+      "description": "Target, if item is a custom link"
+    },
+    "children": {
+      "description": "Loop instance of menu children, if any"
+    },
+    "post": {
+      "description": "Loop instance of item as post"
+    },
+    "taxonomy": {
+      "description": "Loop instance of item as taxonomy"
+    },
+    "post_id": {
+      "description": "Post ID, if item is a post"
+    },
+    "taxonomy_id": {
+      "description": "Taxonomy ID, if item is a taxonomy"
+    },
+    "parent_id": {
+      "description": "Parent menu item ID, if any"
+    }
+  },
+  "namespace": "Tangible\\Loop",
+  "className": "MenuLoop",
+  "extends": "BaseLoop"
+}

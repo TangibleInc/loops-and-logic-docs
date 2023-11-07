@@ -1,0 +1,57 @@
+---
+id: taxonomy-term
+title: Taxonomy term
+tags:
+  - Dynamic Tags
+  - Loop
+---
+
+import { QueryArgsList } from './_QueryArgs.jsx'
+import { FieldsList } from './_Fields.jsx'
+import json from '@site/generate/loop-types/taxonomy-term.json'
+const { query_args, fields } = json
+
+For loop type `taxonomy_term`, here are the query parameters and fields.
+
+## Query parameters
+
+<QueryArgsList args={query_args} />
+
+## Fields
+
+<FieldsList fields={fields} />
+
+
+## Shortcuts
+
+Use the `taxonomy` attribute as a shortcut.
+
+```html
+<Loop taxonomy=category>
+  <Field title />
+</Loop>
+```
+
+The above is the same as:
+
+```html
+<Loop type=taxonomy_term taxonomy=category>
+  <Field title />
+</Loop>
+```
+
+[The `Taxonomy` tag](/dynamic-tags/loop/taxonomy-term) provides another way to express it.
+
+```html
+<Taxonomy category>
+  <Term title />
+</Taxonomy>
+```
+
+## Examples
+- [How to order terms alphabetically by ACF text field and hide empty terms](/how-to/order-alphabetically-acf-field-hide-empty)
+- [How to conditionally display something when the current post has a certain taxonomy term applied](/how-to/conditional-logic-taxonomy-term)
+- [How to create loops within loops within loops](/how-to/nested-loops)
+- [How to display WooCommerce attributes](/how-to/woocommerce-attributes)
+- [How to add up the count of a parent taxonomy term with the count of all its children](/how-to/count-hierarchical-terms)
+- [How to display term fields on a taxonomy term archive](/how-to/term-fields-on-archive)

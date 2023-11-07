@@ -1,0 +1,22 @@
+---
+id: type
+title: Type
+tags:
+  - Dynamic Tags
+  - Loop
+---
+
+import { QueryArgsList } from './_QueryArgs.jsx'
+import { FieldsList } from './_Fields.jsx'
+import json from '@site/generate/loop-types/type.json'
+const { query_args, fields } = json
+
+The loop type `type` is for looping through loop types or post types. Here are the query parameters and fields.
+
+## Query parameters
+
+<QueryArgsList args={query_args} />
+
+## Fields
+
+<FieldsList fields={fields} />

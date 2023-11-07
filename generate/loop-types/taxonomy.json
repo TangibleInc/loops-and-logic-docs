@@ -1,0 +1,57 @@
+{
+  "name": "taxonomy",
+  "title": "Taxonomy",
+  "category": "core",
+  "query_args": {
+    "name": {
+      "description": "Get taxonomies by name/slug(s)",
+      "type": [
+        "string",
+        "array"
+      ]
+    },
+    "public": {
+      "description": "Get public taxonomies (true/false)",
+      "type": "boolean"
+    },
+    "core": {
+      "target_name": "_builtin",
+      "description": "Get built-in taxonomies (true/false)",
+      "type": "boolean"
+    },
+    "orderby": {
+      "description": "Order by field",
+      "type": "string",
+      "default": "title"
+    },
+    "order": {
+      "description": "Order: asc (ascending) or desc (descending)",
+      "type": "string",
+      "default": "asc",
+      "enum": [
+        "asc",
+        "desc"
+      ]
+    }
+  },
+  "fields": {
+    "name": {
+      "description": "Name/slug"
+    },
+    "title": {
+      "description": "Same as field \"label\""
+    },
+    "label": {
+      "description": "Label (singular)"
+    },
+    "label_plural": {
+      "description": "Label (plural)"
+    },
+    "description": {
+      "description": "Description"
+    }
+  },
+  "namespace": "Tangible\\Loop",
+  "className": "TaxonomyLoop",
+  "extends": "BaseLoop"
+}
