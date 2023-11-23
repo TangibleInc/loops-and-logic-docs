@@ -18,7 +18,7 @@ export const ensureGitRepo = async (repo) => {
   }
 }
 
-export const ensureGitRepos = async () => {
+export const ensureGitRepos = async (repos) => {
   const args = process.argv.slice(2)
 
   if (!(await fileExists(vendorPath))) {
@@ -30,10 +30,7 @@ export const ensureGitRepos = async () => {
    * Git clone plugin
    */
 
-  for (const repo of [
-    'template-system',
-    // 'tangible-fields-module'
-  ]) {
+  for (const repo of repos) {
     const { gitPath } = await ensureGitRepo(repo)
     if (!(await fileExists(gitPath))) {
       console.log('Something went wrong - Git repo not found')
