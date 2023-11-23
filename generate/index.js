@@ -1,16 +1,18 @@
 import path from 'path'
 import fs from 'fs/promises'
 
-import { cwd, referencePath, vendorPath } from './constants.js'
-import { ensureGitRepos } from './ensureGitRepos.js'
-import { exportJson } from './exportJson.js'
-import { parsePhp, parseArrayItems, walkNodes } from './parsePhp.js'
+import { cwd, referencePath, vendorPath } from './lib/constants.js'
+import { ensureGitRepos } from './lib/ensureGitRepos.js'
+import { exportJson } from './lib/exportJson.js'
+import { parsePhp, parseArrayItems, walkNodes } from './lib/parsePhp.js'
 
 // Generate API docs
 ;(async () => {
 
-  // console.log( parseArrayItems((await parsePhp(`<?php [1];`)).parsed[0].expr.items) ); process.exit()
 
+  /**
+   * Install Git repos in vendor as needed
+   */
   await ensureGitRepos([
     'template-system',
     'template-system-pro',
@@ -93,22 +95,32 @@ import { parsePhp, parseArrayItems, walkNodes } from './parsePhp.js'
     }
   }
 
-  for (const loopType of [
-    'attachment',
-    'base',
-    'calendar',
+  console.log()
+  for (const loopTypeFile of [
+    'attachment/index.php',
+    'base/index.php',
+
+    // TODO: Calendar loop type definitions: /template-system/loop/types
+    // 'calendar/day.php',
+    // 'calendar/month.php',
+    // 'calendar/quarter.php',
+    // 'calendar/week.php',
+    // 'calendar/weekday.php',
+    // 'calendar/year.php',
+
     // 'comment',
     // 'field',
     // 'list',
     // 'map',
-    'menu',
-    'post',
-    'taxonomy',
-    'taxonomy-term',
-    'type',
-    'user',
+    'menu/index.php',
+    'post/index.php',
+    'taxonomy/index.php',
+    'taxonomy-term/index.php',
+    'type/index.php',
+    'user/index.php',
   ]) {
-    const file = `loop/types/${loopType}/index.php`
+
+    const file = `loop/types/${loopTypeFile}`
 
     console.log('File:', file)
 
@@ -120,8 +132,12 @@ import { parsePhp, parseArrayItems, walkNodes } from './parsePhp.js'
     }
 
     walkNodes(parsed, extract)
+    console.log()
   } // Each loop type file
 
+  /**
+   * TODO: Generate an index of all loop types
+   */
   async function exportReferenceIndex() {
     const referenceIndexPath = path.join(referencePath, 'index.md')
     const indexContent = `# Reference

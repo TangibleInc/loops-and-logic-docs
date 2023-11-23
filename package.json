@@ -12,7 +12,7 @@
     "serve": "docusaurus serve",
     "write-translations": "docusaurus write-translations",
     "write-heading-ids": "docusaurus write-heading-ids",
-    "build:ref": "node generate/reference/index.js"
+    "gen": "node generate/index.js"
   },
   "dependencies": {
     "@docusaurus/core": "2.4.1",

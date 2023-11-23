@@ -20,7 +20,6 @@ export const ensureGitRepo = async (repo) => {
 
 export const ensureGitRepos = async (repos) => {
   const args = process.argv.slice(2)
-
   if (!(await fileExists(vendorPath))) {
     console.log('Create temporary folder')
     await fs.mkdir()
@@ -36,7 +35,9 @@ export const ensureGitRepos = async (repos) => {
       console.log('Something went wrong - Git repo not found')
       return
     }
-    if (args.includes('--update')) {
+
+    if (args.includes('update')) {
+      console.log('git pull', repo)
       await run(`git pull`, {
         cwd: gitPath,
       })
