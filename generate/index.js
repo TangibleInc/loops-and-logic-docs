@@ -100,13 +100,13 @@ import { parsePhp, parseArrayItems, walkNodes } from './lib/parsePhp.js'
     'attachment/index.php',
     'base/index.php',
 
-    // TODO: Calendar loop type definitions: /template-system/loop/types
-    // 'calendar/day.php',
-    // 'calendar/month.php',
-    // 'calendar/quarter.php',
-    // 'calendar/week.php',
-    // 'calendar/weekday.php',
-    // 'calendar/year.php',
+    // Calendar loop type definitions: /template-system/loop/types
+    'calendar/day.php',
+    'calendar/month.php',
+    'calendar/quarter.php',
+    'calendar/week.php',
+    'calendar/weekday.php',
+    'calendar/year.php',
 
     // 'comment',
     // 'field',
