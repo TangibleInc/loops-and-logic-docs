@@ -6,7 +6,7 @@ const pluck = (obj, keys) =>
     return acc
   }, {})
 
-export function QueryArgsList({ args, include, exclude }) {
+export function QueryArgsList({ args = {}, include, exclude }) {
   return (
     <ul>
       {Object.keys(include ? pluck(args, include) : args)

@@ -1,0 +1,210 @@
+{
+  "name": "edd_subscription",
+  "title": "EDD Subscription",
+  "description": "Loop through subscriptions of Easy Digital Downloads",
+  "category": "edd",
+  "query_args": {
+    "id": {
+      "description": "Restrict to ids",
+      "type": "array"
+    },
+    "number": {
+      "description": "Posts per page",
+      "type": "number"
+    },
+    "bill_times": {
+      "description": "Bill times",
+      "type": "number"
+    },
+    "bill_times_operator": {
+      "description": "Bill times operator",
+      "type": "string"
+    },
+    "orderby": {
+      "description": "Order by field",
+      "type": "string",
+      "default": "name"
+    },
+    "order": {
+      "description": "Order: ASC or DESC",
+      "type": "string",
+      "default": "ASC"
+    },
+    "status": {
+      "description": "Subscription status",
+      "type": [
+        "array",
+        "string"
+      ]
+    },
+    "search": {
+      "description": "Search",
+      "type": "string"
+    },
+    "gateway": {
+      "description": "Payment gateway",
+      "type": "string"
+    },
+    "creation_start": {
+      "description": "Creation start date",
+      "type": "date"
+    },
+    "creation_end": {
+      "description": "Creation end date",
+      "type": "date"
+    },
+    "creation_date": {
+      "description": "Creation exact date. Will ignore creation_start and creation_end if specified",
+      "type": "date"
+    },
+    "expiration_start": {
+      "description": "Creation start date",
+      "type": "date"
+    },
+    "expiration_end": {
+      "description": "Creation start date",
+      "type": "date"
+    },
+    "expiration_date": {
+      "description": "Creation start date or 'any' for any non-lifetime expiration. Will ignore expiration_start and expiration_end if specified",
+      "type": [
+        "date",
+        "string"
+      ]
+    },
+    "user": {
+      "description": "User ID, name, or \"current\". Ignores all other arguments if specified.",
+      "type": [
+        "number",
+        "string"
+      ]
+    },
+    "parent_payment_id": {
+      "description": "Get subscriptions for specific payment. Ignores all other arguments if specified.",
+      "type": [
+        "number",
+        "string"
+      ]
+    },
+    "product_id": {
+      "description": "Specific products",
+      "type": [
+        "number",
+        "string"
+      ]
+    }
+  },
+  "fields": {
+    "child_payments": {
+      "description": "Retrieve renewal payments for a subscription. Returns a loop."
+    },
+    "id": {
+      "description": "Subscription ID"
+    },
+    "customer_id": {
+      "description": "Customer ID"
+    },
+    "period": {
+      "description": "Period"
+    },
+    "initial_amount": {
+      "description": "initial_amount"
+    },
+    "initial_tax_rate": {
+      "description": "initial_tax_rate"
+    },
+    "initial_tax": {
+      "description": "initial_tax"
+    },
+    "recurring_amount": {
+      "description": "recurring_amount"
+    },
+    "recurring_tax_rate": {
+      "description": "recurring_tax_rate"
+    },
+    "recurring_tax": {
+      "description": "recurring_tax"
+    },
+    "bill_times": {
+      "description": "bill_times"
+    },
+    "parent_payment_id": {
+      "description": "parent_payment_id"
+    },
+    "product_id": {
+      "description": "product_id"
+    },
+    "price_id": {
+      "description": "price_id"
+    },
+    "created": {
+      "description": "created"
+    },
+    "expiration": {
+      "description": "expiration"
+    },
+    "trial_period": {
+      "description": "trial_period"
+    },
+    "profile_id": {
+      "description": "profile_id"
+    },
+    "gateway": {
+      "description": "gateway"
+    },
+    "times_billed": {
+      "description": "Returns the number of times the subscription has been billed"
+    },
+    "lifetime_value": {
+      "description": "Gets the lifetime value for the subscription"
+    },
+    "transaction_id": {
+      "description": "Retrieves the transaction ID from the subscription"
+    },
+    "is_active": {
+      "description": "Determines if subscription is active"
+    },
+    "is_expired": {
+      "description": "Determines if subscription is expired"
+    },
+    "status": {
+      "description": "Retrieves the subscription status"
+    },
+    "status_label": {
+      "description": "Retrieves the subscription status label"
+    },
+    "can_cancel": {
+      "description": "Determines if subscription can be cancelled"
+    },
+    "cancel_url": {
+      "description": "Retrieves the URL to cancel subscription"
+    },
+    "can_renew": {
+      "description": "Determines if subscription can be manually renewed"
+    },
+    "renew_url": {
+      "description": "Retrieves the URL to renew a subscription"
+    },
+    "can_update": {
+      "description": "Determines if subscription can have their payment method updated"
+    },
+    "update_url": {
+      "description": "Retrieves the URL to update subscription"
+    },
+    "can_reactivate": {
+      "description": "Determines if subscription can be reactivated"
+    },
+    "reactivation_url": {
+      "description": "Retrieves the URL to reactivate subscription"
+    },
+    "can_retry": {
+      "description": "Determines if subscription can be retried when failing"
+    },
+    "retry_url": {
+      "description": "Retrieves the URL to retry a failing subscription"
+    }
+  },
+  "namespace": "Tangible\\Loop\\Integrations\\EDD",
+  "className": "SubscriptionLoop",
+  "extends": "BaseLoop"
+}

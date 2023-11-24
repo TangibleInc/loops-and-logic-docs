@@ -1,0 +1,124 @@
+{
+  "name": "lifter_access_plan",
+  "title": "LifterLMS Access Plan",
+  "category": "lifterlms",
+  "description": "Loop through access plans",
+  "post_type": "llms_access_plan",
+  "namespace": "Tangible\\Loop\\Integrations\\LifterLms",
+  "className": "AccessPlanLoop",
+  "extends": "PostLoop",
+  "fields": {
+    "product_id": {
+      "description": "Product ID where the plan is assigned. Both Courses and Memberships are sellable and can be instantiated as a product"
+    },
+    "checkout_url": {
+      "description": "Return the url to the checkout page for a given plan"
+    },
+    "frequency": {
+      "description": "Return the frequecy of a given plan"
+    },
+    "enroll_text": {
+      "description": "Return the enroll text of a given plan"
+    },
+    "access_expiration": {
+      "description": "Access expiration"
+    },
+    "price": {
+      "description": "Return the price of a given plan (with the currency)"
+    },
+    "price_number": {
+      "description": "Return the price of a given plan"
+    },
+    "price_sale": {
+      "description": "Return the price on sale of a given plan"
+    },
+    "sku": {
+      "description": "User-created plan identifier"
+    },
+    "sale_start": {
+      "description": "Date when the sale pricing begins"
+    },
+    "sale_end": {
+      "description": "Date when the sale pricing ends"
+    },
+    "expiration_details": {
+      "description": "A sentence explaining plan expiration details"
+    },
+    "schedule_details": {
+      "description": "A sentence explaining the plan's trial offer"
+    },
+    "visibility": {
+      "description": "Get the access plans visibility setting"
+    },
+    "has_availability_restrictions": {
+      "description": "If the plan has availability restrictions"
+    },
+    "has_free_checkout": {
+      "description": "If the free checkout process & interface should be used for this access plan"
+    },
+    "has_trial": {
+      "description": "If the plan has a trial offer"
+    },
+    "is_available_to_user": {
+      "description": "If the plan is available to a user based on configured availability restrictions"
+    },
+    "is_featured": {
+      "description": "If the plan is marked as \"featured\""
+    },
+    "is_on_sale": {
+      "description": "If the plan is *currently* on sale, string \"true\"/\"false\""
+    },
+    "is_visible": {
+      "description": "If the plan is visible"
+    },
+    "is_recurring": {
+      "description": "If the plan has recurring payments"
+    }
+  },
+  "query_args": {
+    "product": {
+      "description": "Product ID or \"current\" for current product where the plan is assigned. Both Courses and Memberships are sellable and can be instantiated as a product ",
+      "type": "string"
+    },
+    "can_expire": {
+      "description": "Determine if the access plan has expiration settings, true/false",
+      "type": "boolean"
+    },
+    "has_restrictions": {
+      "description": "Determine if the plan has availability restrictions, true/false",
+      "type": "boolean"
+    },
+    "has_trial": {
+      "description": "Determine if the plan has a trial offer, true/false",
+      "type": "boolean"
+    },
+    "is_available_to_user": {
+      "description": "Determine if the plan is available to a user based on configured availability restrictions, true/false",
+      "type": "boolean"
+    },
+    "is_featured": {
+      "description": "Determine if the plan is marked as \"featured\", true/false",
+      "type": "boolean"
+    },
+    "is_free": {
+      "description": "Determines if a plan is marked as free, true/false",
+      "type": "boolean"
+    },
+    "is_on_sale": {
+      "description": "Determine if a plan is *currently* on sale, true/false",
+      "type": "boolean"
+    },
+    "is_visible": {
+      "description": "Determine if the plan is visible, true/false",
+      "type": "boolean"
+    },
+    "is_recurring": {
+      "description": "Determine if the Access Plan has recurring payments, true/false",
+      "type": "boolean"
+    },
+    "has_membership": {
+      "description": "If plan is associate to a membership, true/false",
+      "type": "boolean"
+    }
+  }
+}

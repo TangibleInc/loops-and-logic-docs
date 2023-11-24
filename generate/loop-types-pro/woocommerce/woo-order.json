@@ -1,0 +1,474 @@
+{
+  "name": "woo_order",
+  "title": "WooCommerce Order",
+  "category": "woocommerce",
+  "description": "Loop through orders",
+  "query_args": {
+    "orderby": {
+      "description": "Order by field",
+      "type": "string",
+      "default": "name",
+      "accepts": [
+        "none",
+        "ID",
+        "name",
+        "type",
+        "rand",
+        "date",
+        "modified"
+      ]
+    },
+    "order": {
+      "description": "Order",
+      "type": "string",
+      "default": "desc",
+      "accepts": [
+        "asc",
+        "desc"
+      ]
+    },
+    "status": {
+      "description": "Status",
+      "type": "string",
+      "default": "completed",
+      "accepts": [
+        "pending",
+        "processing",
+        "on-hold",
+        "completed",
+        "refunded",
+        "failed",
+        "cancelled"
+      ]
+    },
+    "type": {
+      "description": "Order Types",
+      "type": "string",
+      "default": "shop_order",
+      "accepts": [
+        "shop_order",
+        "shop_order_refund",
+        "shop_subscription"
+      ]
+    },
+    "order_id": {
+      "description": "Order ID(s)",
+      "type": [
+        "number",
+        "array"
+      ]
+    },
+    "user": {
+      "description": "User ID, name, or \"current\"",
+      "type": [
+        "number",
+        "string",
+        "array"
+      ]
+    },
+    "customer_id": {
+      "description": "User ID",
+      "type": [
+        "number",
+        "string"
+      ]
+    },
+    "exclude": {
+      "description": "Exclude product ID(s)",
+      "type": "array"
+    },
+    "parent": {
+      "description": "Parent product ID(s)",
+      "type": "number"
+    },
+    "parent_exclude": {
+      "description": "Exclude parent product ID(s)",
+      "type": "array"
+    },
+    "count": {
+      "description": "Limit number of results, or -1 for all",
+      "target_name": "limit",
+      "type": "number"
+    },
+    "currency": {
+      "description": "Currency used in order",
+      "type": "string"
+    },
+    "prices_include_tax": {
+      "description": "Prices include tax",
+      "type": "string",
+      "accepts": [
+        "yes",
+        "no"
+      ]
+    },
+    "payment_method": {
+      "description": "Slug of payment method used",
+      "type": "string"
+    },
+    "payment_method_title": {
+      "description": "Full title of payment method used",
+      "type": "string"
+    },
+    "discount_total": {
+      "description": "Total discount",
+      "type": "number"
+    },
+    "discount_tax": {
+      "description": "Discount tax",
+      "type": "number"
+    },
+    "shipping_total": {
+      "description": "Shipping total",
+      "type": "number"
+    },
+    "shipping_tax": {
+      "description": "Shipping tax",
+      "type": "number"
+    },
+    "cart_tax": {
+      "description": "Cart tax",
+      "type": "number"
+    },
+    "total": {
+      "description": "Order total",
+      "type": "number"
+    },
+    "billing_first_name": {
+      "description": "Billing first name",
+      "type": "string"
+    },
+    "billing_last_name": {
+      "description": "Billing last name",
+      "type": "string"
+    },
+    "billing_company": {
+      "description": "Billing company",
+      "type": "string"
+    },
+    "billing_address_1": {
+      "description": "Billing address 1",
+      "type": "string"
+    },
+    "billing_address_2": {
+      "description": "Billing address 2",
+      "type": "string"
+    },
+    "billing_city": {
+      "description": "Billing city",
+      "type": "string"
+    },
+    "billing_state": {
+      "description": "Billing state",
+      "type": "string"
+    },
+    "billing_postcode": {
+      "description": "Billing postcode",
+      "type": "string"
+    },
+    "billing_country": {
+      "description": "Billing country",
+      "type": "string"
+    },
+    "billing_email": {
+      "description": "Billing email",
+      "type": "string"
+    },
+    "billing_phone": {
+      "description": "Billing phone",
+      "type": "string"
+    },
+    "shipping_first_name": {
+      "description": "Shipping first name",
+      "type": "string"
+    },
+    "shipping_last_name": {
+      "description": "Shipping last name",
+      "type": "string"
+    },
+    "shipping_company": {
+      "description": "Shipping company",
+      "type": "string"
+    },
+    "shipping_address_1": {
+      "description": "Shipping address 1",
+      "type": "string"
+    },
+    "shipping_address_2": {
+      "description": "Shipping address 2",
+      "type": "string"
+    },
+    "shipping_city": {
+      "description": "Shipping city",
+      "type": "string"
+    },
+    "shipping_state": {
+      "description": "Shipping state",
+      "type": "string"
+    },
+    "shipping_postcode": {
+      "description": "Shipping postcode",
+      "type": "string"
+    },
+    "shipping_country": {
+      "description": "Shipping country",
+      "type": "string"
+    },
+    "shipping_email": {
+      "description": "Shipping email",
+      "type": "string"
+    },
+    "shipping_phone": {
+      "description": "Shipping phone",
+      "type": "string"
+    }
+  },
+  "fields": {
+    "id": {
+      "description": "ID"
+    },
+    "status": {
+      "description": "Status"
+    },
+    "customer_id": {
+      "description": "Customer ID"
+    },
+    "items": {
+      "description": "Return an OrderItem Loop of items within this order"
+    },
+    "order_number": {
+      "description": "Gets the order number for display (by default, order ID)"
+    },
+    "order_key": {
+      "description": "Get order key"
+    },
+    "billing_first_name": {
+      "description": "Billing first name"
+    },
+    "billing_last_name": {
+      "description": "Billing last name"
+    },
+    "billing_company": {
+      "description": "Billing company"
+    },
+    "billing_address_1": {
+      "description": "Billing address 1"
+    },
+    "billing_address_2": {
+      "description": "Billing address 2"
+    },
+    "billing_city": {
+      "description": "Billing city"
+    },
+    "billing_state": {
+      "description": "Billing state"
+    },
+    "billing_postcode": {
+      "description": "Billing postcode"
+    },
+    "billing_country": {
+      "description": "Billing country"
+    },
+    "billing_email": {
+      "description": "Billing email"
+    },
+    "billing_phone": {
+      "description": "Billing phone"
+    },
+    "shipping_first_name": {
+      "description": "Billing first name"
+    },
+    "shipping_last_name": {
+      "description": "Billing last name"
+    },
+    "shipping_company": {
+      "description": "Billing company"
+    },
+    "shipping_address_1": {
+      "description": "Billing address 1"
+    },
+    "shipping_address_2": {
+      "description": "Billing address 2"
+    },
+    "shipping_city": {
+      "description": "Billing city"
+    },
+    "shipping_state": {
+      "description": "Billing state"
+    },
+    "shipping_postcode": {
+      "description": "Billing postcode"
+    },
+    "shipping_country": {
+      "description": "Billing country"
+    },
+    "shipping_email": {
+      "description": "Billing email"
+    },
+    "shipping_phone": {
+      "description": "Billing phone"
+    },
+    "payment_method": {
+      "description": "Gets the payment method"
+    },
+    "payment_method_title": {
+      "description": "Get payment method title"
+    },
+    "transaction_id": {
+      "description": "Get transaction id"
+    },
+    "customer_ip_address": {
+      "description": "Get customer ip address"
+    },
+    "customer_user_agent": {
+      "description": "Get customer user agent"
+    },
+    "created_via": {
+      "description": "Get created via"
+    },
+    "customer_note": {
+      "description": "Get customer note"
+    },
+    "cart_hash": {
+      "description": "Get cart hash"
+    },
+    "date_created": {
+      "description": "Date created"
+    },
+    "date_modified": {
+      "description": "Date modified"
+    },
+    "date_completed": {
+      "description": "Date completed"
+    },
+    "date_paid": {
+      "description": "Date paid"
+    },
+    "shipping_address_map_url": {
+      "description": "Get a formatted shipping address for the order"
+    },
+    "formatted_billing_full_name": {
+      "description": "Get a formatted billing full name"
+    },
+    "formatted_shipping_full_name": {
+      "description": "Get a formatted shipping full name"
+    },
+    "formatted_billing_address": {
+      "description": "Get a formatted billing address for the order"
+    },
+    "formatted_shipping_address": {
+      "description": "Get a formatted shipping address for the order"
+    },
+    "checkout_payment_url": {
+      "description": "Generates a URL so that a customer can pay for their (unpaid - pending) order. Pass \"true\" for the checkout version which does not offer gateway choices"
+    },
+    "checkout_order_received_url": {
+      "description": "Generates a URL for the thanks page (order received)"
+    },
+    "cancel_order_url": {
+      "description": "Generates a URL so that a customer can cancel their (unpaid - pending) order"
+    },
+    "cancel_endpoint": {
+      "description": "Helper method to return the cancel endpoint"
+    },
+    "view_order_url": {
+      "description": "Generates a URL to view an order from the my account page"
+    },
+    "refunds": {
+      "description": "Get order refunds"
+    },
+    "total_refunded": {
+      "description": "Get amount already refunded"
+    },
+    "total_tax_refunded": {
+      "description": "Get the total tax refunded"
+    },
+    "total_shipping_refunded": {
+      "description": "Get the total shipping refunded"
+    },
+    "item_count_refunded": {
+      "description": "Gets the count of order items of a certain type that have been refunded"
+    },
+    "total_qty_refunded": {
+      "description": "Get the total number of items refunded"
+    },
+    "remaining_refund_amount": {
+      "description": "How much money is left to refund"
+    },
+    "remaining_refund_items": {
+      "description": "How many items are left to refund"
+    },
+    "order_item_totals": {
+      "description": "Get totals for display on pages and in emails"
+    },
+    "currency": {
+      "description": "Gets order currency"
+    },
+    "prices_include_tax": {
+      "description": "Gets prices including tax"
+    },
+    "discount_total": {
+      "description": "Get discount_total"
+    },
+    "discount_tax": {
+      "description": "Get discount_tax"
+    },
+    "shipping_total": {
+      "description": "Get shipping_total"
+    },
+    "shipping_tax": {
+      "description": "Get shipping_tax"
+    },
+    "cart_tax": {
+      "description": "Gets cart tax amount"
+    },
+    "total": {
+      "description": "Gets order grand total. incl. taxes. Used in gateways"
+    },
+    "total_tax": {
+      "description": "Get total tax amount"
+    },
+    "subtotal": {
+      "description": "Gets order subtotal"
+    },
+    "tax_totals": {
+      "description": "Get taxes, merged by code, formatted ready for output"
+    },
+    "shipping_method": {
+      "description": "Gets formatted shipping method title"
+    },
+    "item_count": {
+      "description": "Gets the count of order items of a certain type"
+    },
+    "formatted_order_total": {
+      "description": "Gets order total - formatted for display"
+    },
+    "subtotal_to_display": {
+      "description": "Gets subtotal - subtotal is shown before discounts, but with localised taxes"
+    },
+    "discount_to_display": {
+      "description": "Get the discount amount (formatted)"
+    },
+    "has_billing_address": {
+      "description": "Returns true if the order has a billing address"
+    },
+    "has_shipping_address": {
+      "description": "Returns true if the order has a shipping address"
+    },
+    "is_paid": {
+      "description": "Returns if an order has been paid for based on the order status"
+    },
+    "needs_payment": {
+      "description": "Checks if an order needs payment, based on status and order total"
+    },
+    "needs_processing": {
+      "description": "See if the order needs processing before it can be completed"
+    },
+    "has_free_item": {
+      "description": "Returns true if the order contains a free product"
+    }
+  },
+  "namespace": "Tangible\\Loop\\Integrations\\WooCommerce",
+  "className": "OrderLoop",
+  "extends": "BaseLoop"
+}

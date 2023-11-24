@@ -6,7 +6,7 @@ const pluck = (obj, keys) =>
     return acc
   }, {})
 
-export function FieldsList({ fields, include, exclude }) {
+export function FieldsList({ fields = {}, include, exclude }) {
   return (
     <ul>
       {Object.keys(include ? pluck(fields, include) : fields)

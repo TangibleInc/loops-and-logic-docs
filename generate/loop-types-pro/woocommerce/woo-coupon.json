@@ -1,0 +1,94 @@
+{
+  "name": "woo_coupon",
+  "title": "WooCommerce",
+  "category": "woocommerce",
+  "description": "Loop through",
+  "query_args": {
+    "type": {
+      "value": {}
+    },
+    "post_type": {
+      "value": "shop_coupon"
+    }
+  },
+  "fields": {
+    "product_categories": {
+      "description": "Get product categories this coupon can apply to. Returns a Loop"
+    },
+    "excluded_product_categories": {
+      "description": "Get product categories this coupon cannot not apply to. Returns a Loop"
+    },
+    "products": {
+      "description": "Get product IDs this coupon can apply to. Returns a Loop"
+    },
+    "excluded_products": {
+      "description": "Get product IDs that this coupon should not apply to. Returns a Loop"
+    },
+    "used_by": {
+      "description": "Get records of all users who have used the current coupon. Returns a Loop"
+    },
+    "id": {
+      "description": "ID"
+    },
+    "code": {
+      "description": "Get coupon code"
+    },
+    "description": {
+      "description": "Get coupon description"
+    },
+    "discount_type": {
+      "description": "Get discount type"
+    },
+    "amount": {
+      "description": "Get coupon amount"
+    },
+    "date_expires": {
+      "description": "Get coupon expiration date"
+    },
+    "date_created": {
+      "description": "Get date_created"
+    },
+    "date_modified": {
+      "description": "Get date_modified"
+    },
+    "usage_count": {
+      "description": "Get coupon usage count"
+    },
+    "individual_use": {
+      "description": "Get the \"individual use\" checkbox status"
+    },
+    "usage_limit": {
+      "description": "Get coupon usage limit"
+    },
+    "usage_limit_per_user": {
+      "description": "Get coupon usage limit per customer (for a single customer)"
+    },
+    "limit_usage_to_x_items": {
+      "description": "Usage limited to certain amount of items"
+    },
+    "free_shipping": {
+      "description": "If this coupon grants free shipping or not"
+    },
+    "exclude_sale_items": {
+      "description": "If this coupon should exclude items on sale"
+    },
+    "minimum_amount": {
+      "description": "Get minimum spend amount"
+    },
+    "maximum_amount": {
+      "description": "Get maximum spend amount"
+    },
+    "email_restrictions": {
+      "description": "Get emails to check customer usage restrictions"
+    },
+    "virtual": {
+      "description": "If the filter is added through the woocommerce_get_shop_coupon_data filter, it's virtual and not in the DB"
+    },
+    "is_valid": {
+      "description": "Check if a coupon is valid for the cart"
+    }
+  },
+  "namespace": "Tangible\\Loop\\Integrations\\WooCommerce",
+  "className": "CouponLoop",
+  "extends": "PostLoop"
+}

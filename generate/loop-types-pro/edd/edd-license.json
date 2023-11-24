@@ -1,0 +1,144 @@
+{
+  "name": "edd_license",
+  "title": "EDD License",
+  "description": "Loop through licenses of Easy Digital Downloads",
+  "category": "edd",
+  "query_args": {
+    "id": {
+      "description": "Restrict to ids",
+      "type": "array"
+    },
+    "count": {
+      "description": "Posts per page",
+      "target_name": "number",
+      "type": "number"
+    },
+    "key": {
+      "description": "License key",
+      "type": "string"
+    },
+    "orderby": {
+      "description": "Order by field",
+      "type": "string",
+      "default": "name"
+    },
+    "order": {
+      "description": "Order: ASC or DESC",
+      "type": "string",
+      "default": "ASC"
+    },
+    "parent": {
+      "description": "Post parent",
+      "default": 0,
+      "type": [
+        "number",
+        "string"
+      ]
+    },
+    "status": {
+      "description": "License status",
+      "type": [
+        "array",
+        "string"
+      ]
+    },
+    "search": {
+      "description": "Search",
+      "type": "string"
+    },
+    "creation_start": {
+      "description": "Creation start date",
+      "type": "date"
+    },
+    "creation_end": {
+      "description": "Creation end date",
+      "type": "date"
+    },
+    "creation_date": {
+      "description": "Creation exact date. Will ignore creation_start and creation_end if specified",
+      "type": "date"
+    },
+    "expiration_start": {
+      "description": "Creation start date",
+      "type": "date"
+    },
+    "expiration_end": {
+      "description": "Creation start date",
+      "type": "date"
+    },
+    "expiration_date": {
+      "description": "Creation start date or 'any' for any non-lifetime expiration. Will ignore expiration_start and expiration_end if specified",
+      "type": [
+        "date",
+        "string"
+      ]
+    },
+    "user": {
+      "description": "User ID, name, or \"current\". Ignores all other arguments if specified.",
+      "type": [
+        "number",
+        "string"
+      ]
+    },
+    "payment_id": {
+      "description": "Get licenses for specific payment. Ignores all other arguments if specified.",
+      "type": [
+        "number",
+        "string"
+      ]
+    }
+  },
+  "fields": {
+    "child_licenses": {
+      "description": "List of EDD_SL_License objects for the child licenses. Returns a loop."
+    },
+    "download": {
+      "description": "Gets associated download. Returns a loop."
+    },
+    "activations": {
+      "description": "Gets license activations. Returns a loop."
+    },
+    "logs": {
+      "description": "Gets license logs. Returns a loop."
+    },
+    "id": {
+      "description": "License ID"
+    },
+    "name": {
+      "description": "License name"
+    },
+    "default_activation_count": {
+      "description": "Default activation count"
+    },
+    "activation_count": {
+      "description": "Activation count"
+    },
+    "expiration": {
+      "description": "Expiration date or 'lifetime'"
+    },
+    "display_status": {
+      "description": "License display status"
+    },
+    "renewal_url": {
+      "description": "License renewal url"
+    },
+    "unsubscribe_url": {
+      "description": "License unsubscribe url"
+    },
+    "is_at_limit": {
+      "description": "Returns if the license is at its activation limit"
+    },
+    "is_expired": {
+      "description": "Check if license is expired"
+    },
+    "license_length": {
+      "description": "Get the string equivalent of the length of the license. For example: +1years"
+    },
+    "license_term": {
+      "description": "Used to display the term for a given license to the user"
+    }
+  },
+  "namespace": "Tangible\\Loop\\Integrations\\EDD",
+  "className": "LicenseLoop",
+  "extends": "BaseLoop"
+}

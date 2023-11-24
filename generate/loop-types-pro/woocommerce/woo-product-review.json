@@ -1,0 +1,66 @@
+{
+  "name": "woo_product_review",
+  "title": "WooCommerce",
+  "category": "woocommerce",
+  "description": "Loop through",
+  "query_args": {
+    "count": {
+      "description": "Maximum number of comments to retrieve. Default empty (no limit)",
+      "target_name": "number",
+      "type": "number"
+    },
+    "product": {
+      "description": "Product ID or \"current\"",
+      "type": [
+        "number",
+        "string"
+      ]
+    },
+    "status": {
+      "description": "Status",
+      "type": [
+        "string",
+        "array"
+      ],
+      "default": "approve"
+    }
+  },
+  "fields": {
+    "id": {
+      "description": "Comment id"
+    },
+    "product_id": {
+      "description": "Product id"
+    },
+    "author": {
+      "description": "Author name"
+    },
+    "author_email": {
+      "description": "Author email"
+    },
+    "author_url": {
+      "description": "Author url"
+    },
+    "author_ip": {
+      "description": "Author ip"
+    },
+    "date": {
+      "description": "Comment date"
+    },
+    "date_gmt": {
+      "description": "Comment date gmt"
+    },
+    "content": {
+      "description": "Comment content"
+    },
+    "karma": {
+      "description": "Comment Karma"
+    },
+    "rating": {
+      "description": "Review rating"
+    }
+  },
+  "namespace": "Tangible\\Loop\\Integrations\\WooCommerce",
+  "className": "ProductReviewLoop",
+  "extends": "BaseLoop"
+}

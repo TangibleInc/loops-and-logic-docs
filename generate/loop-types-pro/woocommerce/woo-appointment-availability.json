@@ -1,0 +1,79 @@
+{
+  "name": "woo_appointment_availability",
+  "title": "WooCommerce Appointment Availabilities",
+  "category": "woocommerce",
+  "description": "Loop through WooCommerce Appointment Availabilities",
+  "query_args": {
+    "product_id": {
+      "description": "Appointable Product ID."
+    },
+    "staff_id": {
+      "description": "Appointable Staff ID."
+    },
+    "is_appointable": {
+      "description": "If it is appointable, (bool)."
+    }
+  },
+  "fields": {
+    "id": {
+      "description": "ID"
+    },
+    "kind": {
+      "description": "Kind of availability - e.g. staff, product ... For global availabiity it is empty"
+    },
+    "kind_id": {
+      "description": "Kind id of availability - e.g. staff id, product id... For global availabiity it is empty"
+    },
+    "event_id": {
+      "description": "Event id"
+    },
+    "title": {
+      "description": "Availability title"
+    },
+    "range_type": {
+      "description": "Range type, ie \"custom\", \"custom:daterange\", \"months\", \"weeks\", \"days\", \"time\"(recurring, all week) , \"time:range\"(recurring, date range) , \"time:1\"(time on specific day in a week) "
+    },
+    "from_date": {
+      "description": "From date"
+    },
+    "to_date": {
+      "description": "To date"
+    },
+    "from_range": {
+      "description": "From range, depends on type. Returns hh:mm, # of month, # of week, # of day in week  "
+    },
+    "to_range": {
+      "description": "To range, depends on type. Returns hh:mm, # of month, # of week, # of day in week  "
+    },
+    "rrule": {
+      "description": "Range rule"
+    },
+    "appointable": {
+      "description": "If appointable (bool)"
+    },
+    "priority": {
+      "description": "Availability priority"
+    },
+    "qty": {
+      "description": "Availability quantity"
+    },
+    "ordering": {
+      "description": "Availability ordering"
+    },
+    "date_created": {
+      "description": "Date created"
+    },
+    "date_modified": {
+      "description": "Date modified"
+    },
+    "start_date": {
+      "description": "Date start"
+    },
+    "end_date": {
+      "description": "Date end"
+    }
+  },
+  "namespace": "Tangible\\Loop\\Integrations\\WooCommerce",
+  "className": "AppointmentAvailabilityLoop",
+  "extends": "BaseLoop"
+}

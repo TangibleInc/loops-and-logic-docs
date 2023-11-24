@@ -1,0 +1,27 @@
+{
+  "name": "edd_pricing",
+  "title": "EDD pricing",
+  "category": "edd",
+  "description": "Loop through EDD download pricing. Only one present if simple product",
+  "query_args": {},
+  "fields": {
+    "amount": {
+      "description": "Amount"
+    },
+    "period": {
+      "description": "Period"
+    },
+    "times": {
+      "description": "Times"
+    },
+    "signup_fee": {
+      "description": "Signup fee"
+    },
+    "trial_period": {
+      "description": "Trial period"
+    }
+  },
+  "namespace": "Tangible\\Loop\\Integrations\\EDD",
+  "className": "PricingLoop",
+  "extends": "FieldLoop"
+}

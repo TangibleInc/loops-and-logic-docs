@@ -91,6 +91,12 @@ const config = {
           },
           {
             type: 'docSidebar',
+            sidebarId: 'pro',
+            position: 'left',
+            label: 'Pro',
+          },
+          {
+            type: 'docSidebar',
             sidebarId: 'tangibleBlocks',
             position: 'left',
             label: 'Blocks',

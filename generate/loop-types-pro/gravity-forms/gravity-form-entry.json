@@ -1,0 +1,135 @@
+{
+  "name": "gravity_form_entry",
+  "title": "GravityForm Entry",
+  "category": "gravityforms",
+  "description": "Loop through GravityForms entries",
+  "namespace": "Tangible\\Loop\\Integrations\\GravityForms",
+  "className": "EntryLoop",
+  "extends": "BaseLoop",
+  "query_args": {
+    "form_id": {
+      "description": "Form ID(s)",
+      "type": [
+        "string",
+        "array"
+      ]
+    },
+    "entry_id": {
+      "description": "Specific Entry ID(s)",
+      "type": [
+        "string",
+        "array"
+      ]
+    },
+    "user": {
+      "description": "Entry created by: User ID or \"current\".",
+      "type": "string"
+    },
+    "start_date": {
+      "description": "Start date - the earliest date from which we retrieve entries(if omitted from beginning). Accepts formats like \"-10 days\", \"-3 hours\", \"yesterday\", \"April 22, 2021, 3:00 pm\", \"2021-04-22 15:01:46\" etc.",
+      "type": "string"
+    },
+    "end_date": {
+      "description": "End date - the latest date to which we retrieve entries(if omitted until now). Accepts formats like \"-10 days\", \"-3 hours\", \"yesterday\", \"April 22, 2021, 3:00 pm\", \"2021-04-22 15:01:46\" etc.",
+      "type": "string"
+    },
+    "orderby": {
+      "description": "Order by one of: \"id\", \"form_id\", \"date_created\", \"is_starred\", \"currency\",\t\"payment_status\",\"payment_date\", \"payment_amount\",\t\"payment_method\", \"transaction_id\", \"is_fulfilled\", \"created_by\", \"transaction_type\", \"status\"",
+      "default": "id",
+      "type": "string"
+    },
+    "order": {
+      "description": "Order: \"asc\" (ascending) or \"desc\" (descending)",
+      "default": "asc",
+      "type": "string"
+    },
+    "is_starred": {
+      "description": "Is entry starred \"0/1\"",
+      "type": "string"
+    },
+    "is_read": {
+      "description": "Is entry read \"0/1\"",
+      "type": "string"
+    },
+    "offset": {
+      "description": "Offset, argument for use with page size",
+      "type": "string"
+    },
+    "page_size": {
+      "description": "Entries page size",
+      "default": "20",
+      "type": "string"
+    }
+  },
+  "fields": {
+    "id": {
+      "description": "Entry ID"
+    },
+    "form_name": {
+      "description": "Entry's Form name"
+    },
+    "form_id": {
+      "description": "Entry\\s Form ID"
+    },
+    "fields": {
+      "description": "Entry Fields"
+    },
+    "grid": {
+      "description": "Entry detail view(like in admin)"
+    },
+    "entry_date_created": {
+      "description": "Entry date created"
+    },
+    "entry_date_updated": {
+      "description": "Entry date updated"
+    },
+    "entry_is_starred": {
+      "description": "Entry is starred or not"
+    },
+    "entry_is_read": {
+      "description": "Entry is read or not"
+    },
+    "entry_currency": {
+      "description": "Entry currency"
+    },
+    "entry_payment_status": {
+      "description": "Entry payment status"
+    },
+    "entry_payment_date": {
+      "description": "Entry payment date"
+    },
+    "entry_payment_amount": {
+      "description": "Entry payment amount"
+    },
+    "entry_payment_method": {
+      "description": "Entry payment method"
+    },
+    "entry_transaction_id": {
+      "description": "Entry transaction id"
+    },
+    "entry_is_fulfilled": {
+      "description": "Entry is fulfilled or not"
+    },
+    "entry_created_by": {
+      "description": "Entry created by User id"
+    },
+    "entry_transaction_type": {
+      "description": "Entry transaction type"
+    },
+    "entry_survey_score": {
+      "description": "Survey AddOn - survey score"
+    },
+    "entry_quiz_score": {
+      "description": "Quiz AddOn - quiz score"
+    },
+    "entry_quiz_percent": {
+      "description": "Quiz AddOn - quiz percent "
+    },
+    "entry_quiz_grade": {
+      "description": "Quiz AddOn - quiz grade"
+    },
+    "entry_quiz_is_pass": {
+      "description": "Quiz AddOn - if quiz is pass"
+    }
+  }
+}

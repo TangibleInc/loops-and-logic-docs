@@ -1,0 +1,132 @@
+{
+  "name": "lifter_student",
+  "title": "LifterLMS Student",
+  "category": "lifterlms",
+  "description": "Loop through students",
+  "namespace": "Tangible\\Loop\\Integrations\\LifterLms",
+  "className": "StudentLoop",
+  "extends": "UserLoop",
+  "fields": {
+    "id": {
+      "description": "Student ID"
+    },
+    "avatar": {
+      "description": "Student avatar image"
+    },
+    "is_active": {
+      "description": "Student is active, \"true\"/\"false\""
+    },
+    "enrolled_any_course": {
+      "description": "Student enrolled in any course, \"true\"/\"false\""
+    },
+    "enrolled_any_lesson": {
+      "description": "Student enrolled in any lesson, \"true\"/\"false\""
+    },
+    "enrolled_any_membership": {
+      "description": "Student enrolled in any membership, \"true\"/\"false\""
+    },
+    "registration_date": {
+      "description": "Student registration date"
+    },
+    "overall_grade": {
+      "description": "Student overall grade"
+    },
+    "overall_progress": {
+      "description": "Student overall progress"
+    },
+    "last_completed_lesson": {
+      "description": "Student last completed lesson for a course"
+    },
+    "next_lesson": {
+      "description": "Student next lesson for a course"
+    },
+    "course_progres": {
+      "description": "Student course progress"
+    },
+    "course_enrollment_date": {
+      "description": "Student course enrollment date"
+    },
+    "course_completion_date": {
+      "description": "Student course completion date"
+    },
+    "course_grade": {
+      "description": "Student course grade"
+    },
+    "has_completed_course": {
+      "description": "Student completed specific course, \"true\"/\"false\""
+    },
+    "has_completed_lesson": {
+      "description": "Student completed specific lesson, \"true\"/\"false\""
+    },
+    "has_completed_section": {
+      "description": "Student completed specific section, \"true\"/\"false\""
+    },
+    "courses": {
+      "description": "Student enrolled courses"
+    },
+    "completed_courses": {
+      "description": "Student completed courses"
+    },
+    "memberships": {
+      "description": "Student enrolled memberships"
+    },
+    "quizzes": {
+      "description": "Student quizzes(attempted)"
+    },
+    "achievements": {
+      "description": "Student achievements"
+    },
+    "certificates": {
+      "description": "Student certificates"
+    },
+    "orders": {
+      "description": "Student orders"
+    },
+    "submitted_assignments": {
+      "description": "Student submitted assignments"
+    },
+    "group_role": {
+      "description": "Student's specific Group role - LLMS Groups integration related"
+    },
+    "group_role_name": {
+      "description": "Student's specific Group role name - LLMS Groups integration related"
+    },
+    "group_enrollment_date": {
+      "description": "Student's specific Group enrollment date - LLMS Groups integration related"
+    }
+  },
+  "query_args": {
+    "enrolled_any": {
+      "description": "Current student is enrolled in any course, lesson, or membership",
+      "type": [
+        "string",
+        "array"
+      ],
+      "accepts": [
+        "course",
+        "lesson",
+        "membership"
+      ]
+    },
+    "is_active": {
+      "description": "Current student is active in at least one course or membership, \"true\"/\"false\"",
+      "type": "boolean"
+    },
+    "course": {
+      "description": "Course ID that student is enrolled.",
+      "type": "string"
+    },
+    "membership": {
+      "description": "Membership ID that student is enrolled.",
+      "type": "string"
+    },
+    "lesson": {
+      "description": "Lesson ID that student is enrolled.",
+      "type": "string"
+    },
+    "section": {
+      "description": "Section ID that student is enrolled.",
+      "type": "string"
+    }
+  }
+}

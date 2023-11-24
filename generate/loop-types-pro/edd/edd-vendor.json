@@ -1,0 +1,101 @@
+{
+  "name": "edd_vendor",
+  "title": "EDD FES Vendor",
+  "description": "Loop through vendors of EDD Front End Submission",
+  "category": "edd",
+  "namespace": "Tangible\\Loop\\Integrations\\EDD",
+  "className": "VendorLoop",
+  "extends": "BaseLoop",
+  "fields": {
+    "id": {
+      "description": "Vendor ID"
+    },
+    "user_id": {
+      "description": "Vendor User ID"
+    },
+    "username": {
+      "description": "Vendor username"
+    },
+    "status": {
+      "description": "Vendor status"
+    },
+    "email": {
+      "description": "Vendor email"
+    },
+    "product_count": {
+      "description": "Number of vendor products"
+    },
+    "sales_count": {
+      "description": "Number of vendor sales"
+    },
+    "sales_value": {
+      "description": "Total sales value"
+    },
+    "notes": {
+      "description": "Notes, field/list loop"
+    },
+    "date_created": {
+      "description": "Date when vendor was created"
+    },
+    "first_name": {
+      "description": "Vendor first name"
+    },
+    "last_name": {
+      "description": "Vendor last name"
+    },
+    "avatar": {
+      "description": "Vendor avatar"
+    },
+    "store_url": {
+      "description": "Vendor store url"
+    },
+    "store_name": {
+      "description": "Vendor store name"
+    },
+    "vendor_description": {
+      "description": "Vendor description"
+    },
+    "contact_email": {
+      "description": "Vendor store contact email"
+    },
+    "commissions": {
+      "description": "Vendor commissions"
+    },
+    "all": {
+      "description": "Show data of all custom fields (for development purpose)"
+    }
+  },
+  "query_args": {
+    "orderby": {
+      "description": "Order by field",
+      "type": "string",
+      "default": "id"
+    },
+    "order": {
+      "description": "Order: ASC or DESC",
+      "type": "string",
+      "default": "ASC"
+    },
+    "status": {
+      "description": "Vendor status: pending; approved",
+      "type": "string",
+      "default": "approved"
+    },
+    "email": {
+      "description": "Get vendor by email",
+      "type": "string"
+    },
+    "user_id": {
+      "description": "Get vendor by user_id",
+      "type": "string"
+    },
+    "username": {
+      "description": "Get vendor by username",
+      "type": "string"
+    },
+    "search": {
+      "description": "Search vendors by given string",
+      "type": "string"
+    }
+  }
+}

@@ -1,0 +1,452 @@
+{
+  "name": "woo_product",
+  "title": "WooCommerce Product",
+  "category": "woocommerce",
+  "description": "Loop through products",
+  "query_args": {
+    "orderby": {
+      "description": "Order by field",
+      "type": "string",
+      "default": "name",
+      "accepts": [
+        "none",
+        "ID",
+        "name",
+        "type",
+        "rand",
+        "date",
+        "modified"
+      ]
+    },
+    "order": {
+      "description": "Order",
+      "type": "string",
+      "default": "desc",
+      "accepts": [
+        "asc",
+        "desc"
+      ]
+    },
+    "status": {
+      "description": "Status",
+      "type": [
+        "string",
+        "array"
+      ],
+      "accepts": [
+        "draft",
+        "pending",
+        "private",
+        "publish"
+      ]
+    },
+    "product_type": {
+      "description": "Product type",
+      "type": [
+        "string",
+        "array"
+      ],
+      "default": [
+        "external",
+        "grouped",
+        "simple",
+        "variable",
+        "subscription",
+        "variable-subscription",
+        "appointment"
+      ],
+      "target_name": "type"
+    },
+    "id": {
+      "description": "Same as include",
+      "target_name": "include",
+      "type": "array"
+    },
+    "include": {
+      "description": "Include only product ID(s). This option is overwritten if a membership_id is supplied.",
+      "type": "array"
+    },
+    "exclude": {
+      "description": "Exclude product ID(s)",
+      "type": "array"
+    },
+    "parent": {
+      "description": "Parent product ID(s)",
+      "type": "number"
+    },
+    "parent_exclude": {
+      "description": "Exclude parent product ID(s)",
+      "type": "array"
+    },
+    "count": {
+      "description": "Limit number of results, or -1 for all",
+      "target_name": "limit",
+      "type": "number"
+    },
+    "membership_id": {
+      "description": "Return only products which grant access to a specific membership plan. Must have membership plugin installed and activated.",
+      "type": "number"
+    },
+    "sku": {
+      "description": "Product SKU or partial match",
+      "type": "string"
+    },
+    "tag": {
+      "description": "Products by category slug(s)",
+      "type": [
+        "string",
+        "array"
+      ]
+    },
+    "product_category": {
+      "description": "Products by category ID(s), slug(s)",
+      "type": [
+        "string",
+        "array"
+      ]
+    },
+    "product_tag": {
+      "description": "Products by tag ID(s), slug(s)",
+      "type": [
+        "string",
+        "array"
+      ]
+    },
+    "weight": {
+      "description": "Weight",
+      "type": "number"
+    },
+    "length": {
+      "description": "Length",
+      "type": "number"
+    },
+    "width": {
+      "description": "Width",
+      "type": "number"
+    },
+    "height": {
+      "description": "Height",
+      "type": "number"
+    },
+    "price": {
+      "description": "Price",
+      "type": "number"
+    },
+    "regular_price": {
+      "description": "Regular price",
+      "type": "number"
+    },
+    "sale_price": {
+      "description": "Sale price",
+      "type": "number"
+    },
+    "total_sales": {
+      "description": "Products with total sales",
+      "type": "number"
+    },
+    "virtual": {
+      "description": "Virtual product (does not require shipping)",
+      "type": "boolean"
+    },
+    "downloadable": {
+      "description": "Downloadable product",
+      "type": "boolean"
+    },
+    "featured": {
+      "description": "Featured",
+      "type": "boolean"
+    },
+    "sold_individually": {
+      "description": "Sold individually",
+      "type": "boolean"
+    },
+    "manage_stock": {
+      "description": "Product stock management enabled/disabled",
+      "type": "boolean"
+    },
+    "reviews_allowed": {
+      "description": "Reviews allowed",
+      "type": "boolean"
+    },
+    "backorders": {
+      "description": "Backorders allowed",
+      "type": "string",
+      "accepts": [
+        "yes",
+        "no",
+        "notify"
+      ]
+    },
+    "visibility": {
+      "description": "Product visibility",
+      "type": "string",
+      "accepts": [
+        "visible",
+        "catalog",
+        "search",
+        "hidden"
+      ]
+    },
+    "stock_quantity": {
+      "description": "Stock quantity",
+      "type": "number"
+    },
+    "stock_status": {
+      "description": "Stock status",
+      "type": "string",
+      "accepts": [
+        "outofstock",
+        "instock"
+      ]
+    },
+    "tax_status": {
+      "description": "Tax status",
+      "type": "string",
+      "accepts": [
+        "taxable",
+        "shipping",
+        "none"
+      ]
+    },
+    "tax_class": {
+      "description": "Tax status",
+      "type": "string"
+    },
+    "shipping_class": {
+      "description": "Shipping class",
+      "type": [
+        "string",
+        "array"
+      ]
+    },
+    "download_limit": {
+      "description": "Download limit",
+      "type": "number"
+    },
+    "download_expiry": {
+      "description": "Download expiry",
+      "type": "number"
+    },
+    "average_rating": {
+      "description": "Average rating",
+      "type": "number"
+    },
+    "review_count": {
+      "description": "Review count",
+      "type": "number"
+    },
+    "date_created": {
+      "description": "Date created",
+      "type": "string"
+    },
+    "date_modified": {
+      "description": "Date modified",
+      "type": "string"
+    },
+    "date_on_sale_from": {
+      "description": "Date on sale from",
+      "type": "string"
+    },
+    "date_on_sale_to": {
+      "description": "Date on sale to",
+      "type": "string"
+    }
+  },
+  "fields": {
+    "id": {
+      "description": "ID"
+    },
+    "purchased": {
+      "description": "Product is purchased"
+    },
+    "grants_access_to_team": {
+      "description": "Product grants access to a team"
+    },
+    "variations": {
+      "description": "Product variations if applicable, else empty array"
+    },
+    "attributes": {
+      "description": "Product attributes if applicable, else empty array"
+    },
+    "subscriptions": {
+      "description": "Active subscription object when restricted to subscription type products"
+    },
+    "price_per_period": {
+      "description": "Returns the active price per period for a product if it is a subscription."
+    },
+    "type": {
+      "description": "Product type"
+    },
+    "name": {
+      "description": "Name"
+    },
+    "sku": {
+      "description": "Product SKU or partial match"
+    },
+    "weight": {
+      "description": "Weight"
+    },
+    "length": {
+      "description": "Returns the length of a subscription product"
+    },
+    "width": {
+      "description": "Width"
+    },
+    "height": {
+      "description": "Height"
+    },
+    "price": {
+      "description": "Price"
+    },
+    "regular_price": {
+      "description": "Returns the sale price per period for a product if it is a subscription"
+    },
+    "sale_price": {
+      "description": "Sale price"
+    },
+    "total_sales": {
+      "description": "Products with total sales"
+    },
+    "virtual": {
+      "description": "Virtual product (does not require shipping)"
+    },
+    "downloadable": {
+      "description": "Downloadable product"
+    },
+    "featured": {
+      "description": "Featured"
+    },
+    "sold_individually": {
+      "description": "Sold individually"
+    },
+    "manage_stock": {
+      "description": "Product stock management enabled/disabled"
+    },
+    "reviews_allowed": {
+      "description": "Reviews allowed"
+    },
+    "backorders": {
+      "description": "Backorders allowed"
+    },
+    "visibility": {
+      "description": "Product visibility"
+    },
+    "stock_quantity": {
+      "description": "Stock quantity"
+    },
+    "stock_status": {
+      "description": "Stock status"
+    },
+    "tax_status": {
+      "description": "Tax status"
+    },
+    "tax_class": {
+      "description": "Tax status"
+    },
+    "shipping_class": {
+      "description": "Shipping class"
+    },
+    "download_limit": {
+      "description": "Download limit"
+    },
+    "download_expiry": {
+      "description": "Download expiry"
+    },
+    "average_rating": {
+      "description": "Average rating"
+    },
+    "review_count": {
+      "description": "Review count"
+    },
+    "subscription_limit": {
+      "description": "Subscription limitation"
+    },
+    "first_renewal_payment_date": {
+      "description": "The first renewal payment will be processed\t based on the subscription's length"
+    },
+    "expiration_date": {
+      "description": "The date on which the subscription product will expire"
+    },
+    "trial_expiration_date": {
+      "description": "The date on which the subscription trial will expire"
+    },
+    "sign_up_fee": {
+      "description": "The sign-up fee for a subscription"
+    },
+    "trial_period": {
+      "description": "Returns the trial period of a subscription product"
+    },
+    "trial_length": {
+      "description": "Returns the trial length of a subscription product"
+    },
+    "period": {
+      "description": "Returns the subscription period for a product"
+    },
+    "interval": {
+      "description": "Interval value"
+    },
+    "price_string": {
+      "description": "Returns a string representing the details of the subscription."
+    },
+    "has_price_label": {
+      "description": "Has price label"
+    },
+    "price_label": {
+      "description": "Price label"
+    },
+    "has_pricing": {
+      "description": "Has pricing"
+    },
+    "pricing": {
+      "description": "Pricing,returns list loop"
+    },
+    "qty": {
+      "description": "Quantity"
+    },
+    "duration_unit": {
+      "description": "Duration unit"
+    },
+    "duration": {
+      "description": "Duration value"
+    },
+    "interval_unit": {
+      "description": "Interval unit"
+    },
+    "padding_duration_unit": {
+      "description": "Padding between slots unit"
+    },
+    "padding_duration": {
+      "description": "Padding between slots value"
+    },
+    "user_can_cancel": {
+      "description": "User can cancel"
+    },
+    "cancel_limit_unit": {
+      "description": "Cancel limit unit"
+    },
+    "cancel_limit": {
+      "description": "Cancel limit value"
+    },
+    "requires_confirmation": {
+      "description": "Customer must confirm"
+    },
+    "customer_timezones": {
+      "description": "Customer timezone"
+    },
+    "availability_span": {
+      "description": "Availability span"
+    },
+    "has_restricted_days": {
+      "description": "Has restricted days within a week"
+    },
+    "restricted_days": {
+      "description": "Restricted days within a week"
+    },
+    "url": {
+      "description": "Product URL"
+    }
+  },
+  "namespace": "Tangible\\Loop\\Integrations\\WooCommerce",
+  "className": "ProductLoop",
+  "extends": "BaseLoop"
+}

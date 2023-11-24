@@ -8,6 +8,7 @@ import { fileExists } from './fileExists.js'
  * Export to JSON
  */
 export async function exportJson(state) {
+
   const loopTypesJsonPath = path.join(cwd, 'generate', 'loop-types')
 
   if (!(await fileExists(loopTypesJsonPath))) {

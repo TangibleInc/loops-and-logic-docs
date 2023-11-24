@@ -1,0 +1,11 @@
+{
+  "name": "edd_license_log",
+  "title": "EDD license log",
+  "category": "edd",
+  "description": "Loop through license logs",
+  "query_args": {},
+  "fields": {},
+  "namespace": "Tangible\\Loop\\Integrations\\EDD",
+  "className": "LicenseLogLoop",
+  "extends": "FieldLoop"
+}

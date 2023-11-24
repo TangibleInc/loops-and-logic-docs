@@ -5,7 +5,7 @@ import { loopTypesPath, referencePath } from './constants.js'
 import { fileExists } from './fileExists.js'
 
 /**
- * Export to Markdown
+ * Export to Markdown - Unused
  */
 export async function exportMarkdown(state) {
   if (!(await fileExists(referencePath))) {

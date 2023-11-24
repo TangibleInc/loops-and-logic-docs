@@ -1,0 +1,28 @@
+{
+  "name": "tec_organizer",
+  "title": "The Event Calendar Organizer Loop",
+  "description": "Loop through organizers",
+  "category": "tec",
+  "query_args": {
+    "event": {
+      "description": "Event ID to get organizers for",
+      "type": "integer"
+    },
+    "has_events": {
+      "description": "Whether to get only organizers with events",
+      "type": "boolean"
+    },
+    "only_with_upcoming": {
+      "description": "Whether to get only organizers with upcoming events",
+      "type": "boolean"
+    }
+  },
+  "fields": {
+    "all": {
+      "description": "Show all custom fields (for development purpose)"
+    }
+  },
+  "namespace": "Tangible\\Loop\\Integrations\\EventCalendar",
+  "className": "OrganizerLoop",
+  "extends": "BaseLoop"
+}

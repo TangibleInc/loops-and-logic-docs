@@ -1,0 +1,21 @@
+{
+  "name": "edd_cart",
+  "title": "EDD Cart",
+  "category": "edd",
+  "description": "Loop through cart items",
+  "query_args": {},
+  "fields": {
+    "id": {
+      "description": "Product / Download id"
+    },
+    "options": {
+      "description": "Cart options; contains keys `period`, `times`, `signup_fee` and `trial_period`"
+    },
+    "quantity": {
+      "description": "Quantity"
+    }
+  },
+  "namespace": "Tangible\\Loop\\Integrations\\EDD",
+  "className": "CartLoop",
+  "extends": "ListLoop"
+}

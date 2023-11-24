@@ -9,9 +9,11 @@ export async function parsePhp(content) {
   return await php.parse(content)
 }
 
-export function walkNodes(nodes, callback) {
+export function walkNodes(nodes, callback, ...args) {
+  const childWalk = (childNodes) =>
+    walkNodes(childNodes, callback, ...args)
   for (const node of nodes) {
-    callback(node, (childNodes) => walkNodes(childNodes, callback))
+    callback(node, childWalk, ...args)
   }
 }
 

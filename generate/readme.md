@@ -1,6 +1,6 @@
 # Generate
 
-This script generates documenation pages from the codebase of Template System, Template System Pro, and Tangible Fields.
+This script generates documentation pages from the codebase of Template System, Template System Pro, and Tangible Fields.
 
 ## Run
 

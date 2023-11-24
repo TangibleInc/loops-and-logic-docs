@@ -1,0 +1,53 @@
+{
+  "name": "learndash_assignment",
+  "title": "LearnDash Assignment",
+  "category": "learndash",
+  "description": "Loop through assignments",
+  "post_type": "sfwd-assignment",
+  "namespace": "Tangible\\Loop\\Integrations\\LearnDash",
+  "className": "AssignmentLoop",
+  "extends": "PostLoop",
+  "query_args": {
+    "enrolled": {
+      "description": "Current user is enrolled",
+      "type": "boolean"
+    },
+    "parent_id": {
+      "description": "Parrent ID - Lesson or Topic where assignment uploaded",
+      "type": "number"
+    },
+    "approved": {
+      "description": "Assignment approval status",
+      "type": "boolean"
+    }
+  },
+  "fields": {
+    "assignment_comments_status": {
+      "description": "Assignment comments status"
+    },
+    "assignment_comments_number": {
+      "description": "Assignment number of comments"
+    },
+    "assignment_status": {
+      "description": "Assignment approved or not"
+    },
+    "assignment_points_enabled": {
+      "description": "Assignment points enabled or not"
+    },
+    "assignment_points_max": {
+      "description": "Assignment maximum points "
+    },
+    "assignment_points_awarded": {
+      "description": "Assignment awarded points"
+    },
+    "assignment_points_percentage": {
+      "description": "Assignment points percentage"
+    },
+    "assignment_delete_url": {
+      "description": "Assignment delete URL"
+    },
+    "assignment_deletion_enabled": {
+      "description": "Assignment  deletion enabled or not"
+    }
+  }
+}
