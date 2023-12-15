@@ -1,8 +1,8 @@
 import path from 'path'
 import fs from 'fs/promises'
 
-import { cwd } from './constants.js'
-import { fileExists } from './fileExists.js'
+import { cwd } from './constants'
+import { fileExists } from './fileExists'
 
 /**
  * Export to JSON

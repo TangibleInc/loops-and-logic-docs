@@ -2,7 +2,7 @@
 
 This script generates documentation pages from the codebase of Template System, Template System Pro, and Tangible Fields.
 
-## Run
+## Use
 
 Run the NPM script.
 
@@ -20,15 +20,17 @@ Optionally, add the command `update` to perform Git pull on every repo.
 npm run gen update
 ```
 
-This will keep them fresh. It is not done automatically because network requests takes time.
+This will keep them fresh. It is not done automatically because network requests may take time.
 
 
 ## Result
 
-Currently, the script does the following steps.
+Currently, the script performs the following steps.
 
 - Template System: Loop type definitions
+
   - Parse classes in `template-system/loop/types`
+
   - Extract their definitions to `./loop-types` as JSON files
 
     These are imported from `docs/dynamic-tags/loop` to render **tables of query parameters and fields**.
@@ -43,9 +45,11 @@ Currently, the script does the following steps.
     - Type
     - User
 
+- Template System Pro: Loop type definitions
+
+
 ### TODO
 
-- Template System Pro: Loop type definitions
 
 - Fields module
   - Extract field definitions to `./field-types` as JSON files

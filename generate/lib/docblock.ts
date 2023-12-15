@@ -1,4 +1,4 @@
-import { walkNodes } from './parsePhp.js'
+import { walkNodes } from './parsePhp'
 
 /**
  * Gather Docblock comments and the function name, arguments, class proerties, methods

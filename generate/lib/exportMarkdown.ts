@@ -1,8 +1,8 @@
 import path from 'path'
 import fs from 'fs/promises'
 
-import { loopTypesPath, referencePath } from './constants.js'
-import { fileExists } from './fileExists.js'
+import { loopTypesPath, referencePath } from './constants'
+import { fileExists } from './fileExists'
 
 /**
  * Export to Markdown - Unused
