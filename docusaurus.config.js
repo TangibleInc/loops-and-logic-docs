@@ -32,6 +32,20 @@ const config = {
     locales: ['en'],
   },
 
+  plugins: [
+    [
+      '@docusaurus/plugin-client-redirects',
+      {
+        redirects: [
+          {
+            from: '/reference/template-system/framework',
+            to: '/reference/framework'
+          }
+        ]
+      }
+    ]
+  ],
+
   presets: [
     [
       'classic',
