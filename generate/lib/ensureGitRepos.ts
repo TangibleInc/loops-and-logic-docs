@@ -23,9 +23,7 @@ export const ensureGitRepo = async (repo) => {
   }
 }
 
-export const ensureGitRepos = async (repos) => {
-
-  const args = process.argv.slice(2)
+export const ensureGitRepos = async (repos, update = false) => {
 
   if (!(await fileExists(vendorPath))) {
     console.log('Create vendor folder')
@@ -48,7 +46,7 @@ export const ensureGitRepos = async (repos) => {
       return
     }
 
-    if (args.includes('update')) {
+    if (update) {
       console.log('git pull', repo)
       await run(`git pull`, {
         cwd: gitPath,

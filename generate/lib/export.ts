@@ -11,12 +11,10 @@ const templateSystemPath = path.join(vendorPath, 'template-system')
 
 export async function exportAll() {
 
-  console.log('Parse PHP and export all loop types as JSON\n')
-
-  await exportAllLooptypes()
+  await exportAllLoopTypes()
 }
 
-export async function exportAllLooptypes() {
+export async function exportAllLoopTypes() {
 
   const classes = {}
 

@@ -85,15 +85,15 @@ const config = {
           },
           {
             type: 'docSidebar',
-            sidebarId: 'integrations',
+            sidebarId: 'howToGuides',
             position: 'left',
-            label: 'Integrations',
+            label: 'How-to',
           },
           {
             type: 'docSidebar',
-            sidebarId: 'pro',
+            sidebarId: 'integrations',
             position: 'left',
-            label: 'Pro',
+            label: 'Integrations',
           },
           {
             type: 'docSidebar',
@@ -103,9 +103,9 @@ const config = {
           },
           {
             type: 'docSidebar',
-            sidebarId: 'howToGuides',
+            sidebarId: 'reference',
             position: 'left',
-            label: 'How-to',
+            label: 'Reference',
           },
           {
             href: 'https://discourse.tangible.one',
