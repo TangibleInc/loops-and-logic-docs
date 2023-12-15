@@ -85,6 +85,12 @@ const config = {
           },
           {
             type: 'docSidebar',
+            sidebarId: 'howToGuides',
+            position: 'left',
+            label: 'How-to',
+          },
+          {
+            type: 'docSidebar',
             sidebarId: 'integrations',
             position: 'left',
             label: 'Integrations',
@@ -97,9 +103,9 @@ const config = {
           },
           {
             type: 'docSidebar',
-            sidebarId: 'howToGuides',
+            sidebarId: 'reference',
             position: 'left',
-            label: 'How-to',
+            label: 'Reference',
           },
           {
             href: 'https://discourse.tangible.one',

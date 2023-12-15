@@ -1,0 +1,30 @@
+{
+  "name": "edd_download_file",
+  "title": "EDD download file",
+  "category": "edd",
+  "description": "Loop through download files of a product (download)",
+  "query_args": {},
+  "fields": {
+    "index": {
+      "description": "Attachment index"
+    },
+    "attachment_id": {
+      "description": "Attachment ID"
+    },
+    "thumbnail_size": {
+      "description": "Thumbnail size"
+    },
+    "name": {
+      "description": "Filename"
+    },
+    "file": {
+      "description": "File path"
+    },
+    "condition": {
+      "description": "Condition"
+    }
+  },
+  "namespace": "Tangible\\Loop\\Integrations\\EDD",
+  "className": "DownloadFileLoop",
+  "extends": "FieldLoop"
+}

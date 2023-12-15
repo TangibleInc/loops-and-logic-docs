@@ -1,0 +1,86 @@
+{
+  "name": "edd_commission",
+  "title": "EDD Commission",
+  "description": "Loop through commissions of EDD Front End Submission",
+  "category": "edd",
+  "namespace": "Tangible\\Loop\\Integrations\\EDD",
+  "className": "CommissionLoop",
+  "extends": "BaseLoop",
+  "fields": {
+    "id": {
+      "description": "Commission ID"
+    },
+    "user_id": {
+      "description": "Commission User ID"
+    },
+    "status": {
+      "description": "Commission status : unpaid, paid, revoked"
+    },
+    "payment_id": {
+      "description": "Commission payment id"
+    },
+    "currency": {
+      "description": "Commission currency"
+    },
+    "download_id": {
+      "description": "Commission product id"
+    },
+    "type": {
+      "description": "Commission type"
+    },
+    "rate": {
+      "description": "Commission rate"
+    },
+    "amount": {
+      "description": "Commission amount"
+    },
+    "date_created": {
+      "description": "Commission date created"
+    },
+    "date_paid": {
+      "description": "Commission date paid"
+    },
+    "all": {
+      "description": "Show data of all custom fields (for development purpose)"
+    }
+  },
+  "query_args": {
+    "orderby": {
+      "description": "Order by field",
+      "type": "string",
+      "default": "id"
+    },
+    "order": {
+      "description": "Order: ASC or DESC",
+      "type": "string",
+      "default": "ASC"
+    },
+    "status": {
+      "description": "Commission status: unpaid, paid, revoked",
+      "type": [
+        "array",
+        "string"
+      ],
+      "accepts": [
+        "unpaid",
+        "paid",
+        "revoked"
+      ]
+    },
+    "user": {
+      "description": "Get commission by user ID(s) or \"current\"",
+      "type": [
+        "array",
+        "string"
+      ]
+    },
+    "date_paid": {
+      "description": "Filter by date paid in Y-M-D format, \"today\", \"X days ago\" and other values compatible with strtotime()",
+      "type": "string"
+    },
+    "date_paid_compare": {
+      "description": "Date paid comparison - One of: \"before\", \"before_inclusive\", \"after\", \"after_inclusive\"",
+      "type": "string"
+    }
+  }
+}

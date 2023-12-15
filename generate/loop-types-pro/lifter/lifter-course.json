@@ -1,0 +1,203 @@
+{
+  "name": "lifter_course",
+  "title": "LifterLMS Course",
+  "category": "lifterlms",
+  "description": "Loop through courses",
+  "post_type": "course",
+  "namespace": "Tangible\\Loop\\Integrations\\LifterLms",
+  "className": "CourseLoop",
+  "extends": "PostLoop",
+  "query_args": {
+    "enrolled": {
+      "description": "Current user is enrolled",
+      "type": "boolean"
+    },
+    "completed": {
+      "description": "User completed the course",
+      "type": "boolean"
+    },
+    "certificate_earned": {
+      "description": "User completed the course",
+      "type": "boolean"
+    },
+    "has_prerequisite": {
+      "description": "Course has prerequisite, \"true\"/\"false\" ",
+      "type": "boolean"
+    },
+    "has_quizzes": {
+      "description": "Course has quiz(zes), \"true\"/\"false\" ",
+      "type": "boolean"
+    },
+    "student": {
+      "description": "Student ID(s) or \"current\" enrolled in a course.",
+      "type": [
+        "string",
+        "array"
+      ]
+    },
+    "instructor": {
+      "description": "Instructor ID(s) or \"current\" assigned to a course.",
+      "type": [
+        "string",
+        "array"
+      ]
+    },
+    "access_plan": {
+      "description": "Access Plan ID(s) assigned to a course.",
+      "type": [
+        "string",
+        "array"
+      ]
+    },
+    "is_purchasable": {
+      "description": "Course is purcasable(at least one access plan + at least one gateway enabled), \"true\"/\"false\" ",
+      "type": "boolean"
+    }
+  },
+  "fields": {
+    "id": {
+      "description": "Course ID"
+    },
+    "audio": {
+      "description": "Course audio embed"
+    },
+    "video": {
+      "description": "Course video embed"
+    },
+    "start_date": {
+      "description": "Date when a course opens. Students may register before this date but can only view content and complete lessons or quizzes after this date."
+    },
+    "end_date": {
+      "description": "Date when a course closes. Students may no longer view content or complete lessons / quizzes after this date."
+    },
+    "closed_message": {
+      "description": "Message displayed to visitors when the course is accessed after the Course End Date has passed."
+    },
+    "opens_message": {
+      "description": "Message displayed to visitors when the course is accessed before the Course Start Date has passed."
+    },
+    "enrollment_start_date": {
+      "description": "Before this date, registration is closed"
+    },
+    "enrollment_end_date": {
+      "description": "After this date, registration closes"
+    },
+    "enrollment_closed_message": {
+      "description": "Message displayed to non-enrolled visitors when the course is accessed after the Enrollment End Date has passed."
+    },
+    "enrollment_opens_message": {
+      "description": "Message displayed to non-enrolled visitors when the course is accessed before the Enrollment Start Date has passed."
+    },
+    "capacity": {
+      "description": "Number of students who can be enrolled in the course"
+    },
+    "capacity_message": {
+      "description": "Message displayed when capacity has been reached"
+    },
+    "average_grade": {
+      "description": "Calculated value of the overall average grade of all *enrolled* students in the course."
+    },
+    "average_progress": {
+      "description": "Calculated value of the overall average progress of all *enrolled* students in the course."
+    },
+    "prerequisite": {
+      "description": "Prerequisite course"
+    },
+    "length": {
+      "description": "Course length string - defined in admin "
+    },
+    "length_seconds": {
+      "description": "Course length in seconds "
+    },
+    "sales_page_content_page_id": {
+      "description": " ID of the WP page to redirect to when $sales_page_content_type is 'page' "
+    },
+    "sales_page_content_type": {
+      "description": "Sales page behavior [none,content,page,url] "
+    },
+    "sales_page_content_url": {
+      "description": "Redirect URL for a sales page, when $sales_page_content_type is 'url'"
+    },
+    "available_points": {
+      "description": "Course available points"
+    },
+    "categories": {
+      "description": "Course categories"
+    },
+    "difficulty": {
+      "description": "Course difficulty"
+    },
+    "enrollment_period": {
+      "description": "Whether or not a course time period restriction is enabled, \"true\"/\"false\""
+    },
+    "has_capacity": {
+      "description": "Course has capacity , \"true\"/\"false\" "
+    },
+    "has_prerequisite": {
+      "description": "Course has prerequisite, \"true\"/\"false\" "
+    },
+    "is_prerequisite_complete": {
+      "description": "Course prerequisite completed, \"true\"/\"false\" "
+    },
+    "time_period_enabled": {
+      "description": "Course time period enabled, \"true\"/\"false\" "
+    },
+    "is_purchasable": {
+      "description": "Course is purcasable(at least one access plan + at least one gateway enabled), \"true\"/\"false\"  "
+    },
+    "user_has_access": {
+      "description": "If User has access to the course, string \"true\"/\"false\""
+    },
+    "content_restricted_message": {
+      "description": "Message displayed when non-enrolled visitors try to access lessons/quizzes directly"
+    },
+    "instructors": {
+      "description": "Course instructors, instructors_assistants"
+    },
+    "enrolled_students": {
+      "description": "Course enrolled students "
+    },
+    "sections": {
+      "description": "Course sections"
+    },
+    "lessons": {
+      "description": "Course lessons"
+    },
+    "quizzes": {
+      "description": "Course quizzes"
+    },
+    "access_plans": {
+      "description": "Course access plans"
+    },
+    "content": {
+      "description": "Course content"
+    },
+    "student_enrollment_date": {
+      "description": "Course specific student enrollment date"
+    },
+    "student_completion_date": {
+      "description": "Course specific student completion date"
+    },
+    "student_grade": {
+      "description": "Course specific student grade"
+    },
+    "student_course_progres": {
+      "description": "Course specific student progress "
+    },
+    "student_completed_course": {
+      "description": "Course specific student completed course, \"true\"/\"false\" "
+    },
+    "student_last_completed_lesson": {
+      "description": "Course specific student last completed lesson"
+    },
+    "student_next_lesson": {
+      "description": "Course specific student next lesson "
+    },
+    "student_certificate_earned": {
+      "description": "Course specific student earned certificate "
+    },
+    "student_enrolled": {
+      "description": "Course specific(current) student student enrolled "
+    }
+  }
+}

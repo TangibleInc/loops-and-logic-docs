@@ -1,0 +1,155 @@
+{
+  "name": "taxonomy_term",
+  "category": "core",
+  "title": "Taxonomy Term",
+  "query_args": {
+    "taxonomy": {
+      "description": "Get terms by taxonomy",
+      "type": "string"
+    },
+    "id": {
+      "description": "Get terms by ID(s)",
+      "target_name": "include",
+      "type": [
+        "number",
+        "array"
+      ]
+    },
+    "name": {
+      "description": "Get terms by name/slug(s)",
+      "target_name": "include",
+      "type": [
+        "string",
+        "array"
+      ]
+    },
+    "post": {
+      "description": "Corresponding post ID(s) for term retrieval or \"current\" for current post",
+      "target_name": "object_ids",
+      "type": [
+        "number",
+        "array"
+      ]
+    },
+    "include": {
+      "description": "Include terms by ID(s) or slug(s)",
+      "type": [
+        "string",
+        "array"
+      ]
+    },
+    "exclude": {
+      "description": "Exclude terms by ID(s) or slug(s)",
+      "type": [
+        "string",
+        "array"
+      ]
+    },
+    "terms": {
+      "description": "Alias for \"include\"",
+      "type": [
+        "string",
+        "array"
+      ],
+      "target_name": "include"
+    },
+    "parent": {
+      "description": "Get terms by its parent term's ID or slug",
+      "type": [
+        "number",
+        "string"
+      ]
+    },
+    "parents": {
+      "description": "Set true to include only top-level parent terms",
+      "type": [
+        "boolean"
+      ]
+    },
+    "children": {
+      "description": "Set true to include only child terms",
+      "type": [
+        "boolean"
+      ]
+    },
+    "orderby": {
+      "description": "Order by one of: name, title (default), term_id, menu_order, count",
+      "type": "string",
+      "default": "title"
+    },
+    "order": {
+      "description": "Order: asc (ascending) or desc (descending)",
+      "type": "string",
+      "default": "asc",
+      "enum": [
+        "asc",
+        "desc"
+      ]
+    },
+    "orderby_field": {
+      "description": "Order by custom field",
+      "type": "string"
+    },
+    "orderby_field_number": {
+      "description": "Order by custom field whose value is a number",
+      "type": "string"
+    },
+    "hide_empty": {
+      "description": "Hide terms not assigned to any post - true or false (default)",
+      "type": "boolean"
+    }
+  },
+  "fields": {
+    "id": {
+      "description": "Term ID"
+    },
+    "name": {
+      "description": "Term name"
+    },
+    "title": {
+      "description": "Term title"
+    },
+    "url": {
+      "description": "URL to term archive page"
+    },
+    "count": {
+      "description": "Post count"
+    },
+    "taxonomy": {
+      "type": "taxonomy",
+      "description": "Taxonomy name (or loop instance)"
+    },
+    "parent": {
+      "type": "taxonomy_term",
+      "description": "Parent term ID (or loop instance)"
+    },
+    "children": {
+      "type": "taxonomy_term",
+      "description": "Children term IDs (or loop instance)"
+    },
+    "ancestors": {
+      "type": "taxonomy_term",
+      "description": "Ancestor term IDs (or loop instance) from lowest to highest level; Set reverse=true to go from top-level down"
+    },
+    "posts": {
+      "type": "post",
+      "description": "Loop instance of posts that belong to current term"
+    }
+  },
+  "default_orderby_fields": [
+    "name",
+    "slug",
+    "term_group",
+    "term_id",
+    "id",
+    "description",
+    "parent",
+    "menu_order",
+    "term_order",
+    "include",
+    "count"
+  ],
+  "namespace": "Tangible\\Loop",
+  "className": "TaxonomyTermLoop",
+  "extends": "BaseLoop"
+}

@@ -1,0 +1,93 @@
+{
+  "name": "lifter_assignment",
+  "title": "LifterLMS Assignment",
+  "category": "lifterlms",
+  "description": "Loop through assignments",
+  "post_type": "llms_assignment",
+  "namespace": "Tangible\\Loop\\Integrations\\LifterLms",
+  "className": "AssignmentLoop",
+  "extends": "PostLoop",
+  "fields": {
+    "id": {
+      "description": "Assignment ID"
+    },
+    "type": {
+      "description": "Assignment type"
+    },
+    "points": {
+      "description": "Assignment points"
+    },
+    "passing_percentage": {
+      "description": "Assignment passing percentage"
+    },
+    "enable_allowed_mimes": {
+      "description": "Assignment allowed upload file types enabled, \"true\"/\"false\""
+    },
+    "allowed_mimes": {
+      "description": "Assignment allowed upload file types"
+    },
+    "has_description": {
+      "description": "Assignment description enabled , \"true\"/\"false\""
+    },
+    "enable_word_count_max": {
+      "description": "Assignment max word count enabled , \"true\"/\"false\""
+    },
+    "enable_word_count_min": {
+      "description": "Assignment min word count enabled , \"true\"/\"false\""
+    },
+    "word_count_max": {
+      "description": "Assignment max word count"
+    },
+    "word_count_min": {
+      "description": "Assignment min words count"
+    },
+    "audio_url": {
+      "description": "Assignment audio URL"
+    },
+    "audio": {
+      "description": "Assignment audio embed"
+    },
+    "video_url": {
+      "description": "Assignment video URL"
+    },
+    "video": {
+      "description": "Assignment video embed"
+    },
+    "lesson": {
+      "description": "Assignment lesson"
+    },
+    "course": {
+      "description": "Assignment course"
+    },
+    "created_date": {
+      "description": "Assignment created date"
+    },
+    "updated_date": {
+      "description": "Assignment updated date"
+    },
+    "is_complete": {
+      "description": "If an assignment is completed, \"true\"/\"false\" "
+    },
+    "is_passing": {
+      "description": "If an assignment has a passing grade, \"true\"/\"false\" "
+    }
+  },
+  "query_args": {
+    "lesson": {
+      "description": "Lesson ID or \"current\" for current lesson where the assignment is assigned.",
+      "type": "string"
+    },
+    "course": {
+      "description": "Course ID or \"current\" for current course where the assignment is assigned.",
+      "type": "string"
+    },
+    "student": {
+      "description": "Student ID or \"current\".",
+      "type": "string"
+    },
+    "is_complete": {
+      "description": "If an assignment is completed, \"true\"/\"false\" ",
+      "type": "bool"
+    }
+  }
+}

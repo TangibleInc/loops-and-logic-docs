@@ -1,0 +1,219 @@
+{
+  "name": "learndash_certificate",
+  "title": "LearnDash Certificate",
+  "category": "learndash",
+  "description": "Loop through certificates",
+  "post_type": "sfwd-certificates",
+  "namespace": "Tangible\\Loop\\Integrations\\LearnDash",
+  "className": "CertificateLoop",
+  "extends": "PostLoop",
+  "query_args": {
+    "earned": {
+      "description": "Earned certificate, \"true\"/\"false\"",
+      "type": "bool"
+    },
+    "course": {
+      "description": "Course ID(s) or \"current\" for current course",
+      "type": [
+        "string",
+        "array"
+      ]
+    },
+    "quiz": {
+      "description": "Quiz ID(s) or \"current\" for current quiz",
+      "type": [
+        "string",
+        "array"
+      ]
+    },
+    "user": {
+      "description": "User ID or \"current\" for current user",
+      "type": "string"
+    }
+  },
+  "fields": {
+    "certificate_id": {
+      "description": "Certificate category ID"
+    },
+    "certificate_status": {
+      "description": "Certificate status, \"earned/not-earned\""
+    },
+    "certificate_earned_date": {
+      "description": "Certificate earned date"
+    },
+    "certificate_earned_timestamp": {
+      "description": "Certificate earned timestamp"
+    },
+    "certificate_assigned_to": {
+      "description": "Certificate assigned to \"group/course/quiz\""
+    },
+    "certificate_group_id": {
+      "description": "Certificate group ID  - works for group certificates only."
+    },
+    "certificate_group_title": {
+      "description": "Displays the group's title  - works for group certificates only"
+    },
+    "certificate_group_url": {
+      "description": "Displays the group's URL - works for group certificates only"
+    },
+    "certificate_group_price_type": {
+      "description": "Displays the group's Access Mode - works for group certificates only"
+    },
+    "certificate_group_price": {
+      "description": "Displays the group's price - works for group certificates only"
+    },
+    "certificate_group_courses_count": {
+      "description": "Displays the number of courses in the group - works for group certificates only"
+    },
+    "certificate_group_user_group_status": {
+      "description": "Displays the group progress status of the user - works for group certificates only"
+    },
+    "certificate_group_enrolled_on": {
+      "description": "Displays the date the user enrolled into the group - works for group certificates only"
+    },
+    "certificate_group_completed_on": {
+      "description": "Displays the date the user completed all courses assigned to the group - works for group certificates only"
+    },
+    "certificate_group_percent_completed": {
+      "description": "Displays the score achieved in the group\\’s courses - works for group certificates only"
+    },
+    "certificate_group_cert_url": {
+      "description": "Group certificate url for specified/current user"
+    },
+    "certificate_course_id": {
+      "description": "Certificate course ID  - works for course certificates only."
+    },
+    "certificate_course_title": {
+      "description": "Displays the course title - works for course certificates only."
+    },
+    "certificate_course_price": {
+      "description": "Displays the course price (only for one-time payment courses) - works for course certificates only."
+    },
+    "certificate_course_price_type": {
+      "description": "Displays the Access Mode for the given course - works for course certificates only."
+    },
+    "certificate_course_url": {
+      "description": "Displays the course URL - works for course certificates only."
+    },
+    "certificate_course_points": {
+      "description": "Displays the total available points for the course - works for course certificates only."
+    },
+    "certificate_user_course_points": {
+      "description": "Displays the amount of points the user earned for the course - works for course certificates only."
+    },
+    "certificate_enrolled_on": {
+      "description": "Displays the course enrollment date (this does not apply to OPEN courses) - works for course certificates only."
+    },
+    "certificate_completed_on": {
+      "description": "Displays the date the course was completed - works for course certificates only."
+    },
+    "certificate_user_course_time": {
+      "description": "Displays the total time spent on a course - works for course certificates only."
+    },
+    "certificate_cumulative_score": {
+      "description": "Displays the average score for all graded parts of the course - works for course certificates only."
+    },
+    "certificate_cumulative_points": {
+      "description": "Displays the average points earned - works for course certificates only."
+    },
+    "certificate_cumulative_total_points": {
+      "description": "Displays the average points earned - works for course certificates only."
+    },
+    "certificate_cumulative_percentage": {
+      "description": "Displays the average percentage of all quizzes taken in the course - works for course certificates only."
+    },
+    "certificate_cumulative_timespent": {
+      "description": "Displays the average time spent on each part of the course - works for course certificates only."
+    },
+    "certificate_aggregate_score": {
+      "description": "Displays the final score received for the course - works for course certificates only."
+    },
+    "certificate_aggregate_points": {
+      "description": "Displays the total points earned for the course - works for course certificates only."
+    },
+    "certificate_aggregate_total_points": {
+      "description": "Displays the total points earned for the course - works for course certificates only."
+    },
+    "certificate_aggregate_percentage": {
+      "description": "Displays the total percentage score for all quizzes taken as part of the course - works for course certificates only."
+    },
+    "certificate_aggregate_timespent": {
+      "description": "Displays the total time spent on quizzes for the course as a whole - works for course certificates only."
+    },
+    "certificate_course_cert_url": {
+      "description": "Course certificate url for specified/current user"
+    },
+    "certificate_quiz_id": {
+      "description": "Certificate quiz ID  - works for quiz certificates only."
+    },
+    "certificate_quiz_score": {
+      "description": "Displays the score received for that quiz - works for quiz certificates only."
+    },
+    "certificate_quiz_count": {
+      "description": "Displays the number of questions within the quiz - works for quiz certificates only."
+    },
+    "certificate_quiz_pass": {
+      "description": "Displays the score required in order to pass the quiz - works for quiz certificates only."
+    },
+    "certificate_quiz_pro_quizid": {
+      "description": "Displays quiz pro id that quiz - works for quiz certificates only."
+    },
+    "certificate_quiz_course_title": {
+      "description": "Displays the name of the course that the quiz is associated with - works for quiz certificates only."
+    },
+    "certificate_quiz_course_id": {
+      "description": "Displays course id that quiz  - works for quiz certificates only."
+    },
+    "certificate_quiz_lesson_id": {
+      "description": "Displays lesson id that quiz  - works for quiz certificates only."
+    },
+    "certificate_quiz_topic_id": {
+      "description": "Displays topic id that quiz  - works for quiz certificates only."
+    },
+    "certificate_quiz_timestamp": {
+      "description": "Displays the day/time when the quiz was completed - works for quiz certificates only."
+    },
+    "certificate_quiz_points": {
+      "description": "Displays the points received by the user on the quiz - works for quiz certificates only."
+    },
+    "certificate_quiz_total_points": {
+      "description": "Displays the total possible points that can be received for a given attempt - works for quiz certificates only."
+    },
+    "certificate_quiz_percentage": {
+      "description": "Displays the percentage grade received by the user on the quiz - works for quiz certificates only."
+    },
+    "certificate_quiz_title": {
+      "description": "Displays the name of the quiz - works for quiz certificates only."
+    },
+    "certificate_quiz_timespent": {
+      "description": "Displays the time spent taking the quiz - works for quiz certificates only."
+    },
+    "certificate_quiz_cert_url": {
+      "description": "Quiz certificate url for specified/current user"
+    },
+    "certificate_user_id": {
+      "description": "User ID"
+    },
+    "certificate_user_first_name": {
+      "description": "Displays a user's first name"
+    },
+    "certificate_user_last_name": {
+      "description": "Displays a user's last name"
+    },
+    "certificate_user_display_name": {
+      "description": "Displays a user's full display name."
+    },
+    "certificate_user_login": {
+      "description": "Displays a user's username"
+    },
+    "certificate_user_email": {
+      "description": "Displays a user's email address"
+    },
+    "certificate_user_url": {
+      "description": "Displays a user's website address "
+    },
+    "certificate_user_description": {
+      "description": "Displays a user's bio"
+    }
+  }
+}

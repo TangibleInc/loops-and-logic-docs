@@ -1,0 +1,55 @@
+{
+  "name": "tec_venue",
+  "title": "The Event Calendar Venue Loop",
+  "description": "Loop through venues",
+  "category": "tec",
+  "query_args": {
+    "event": {
+      "description": "Event ID to get venues for",
+      "type": "integer"
+    },
+    "has_events": {
+      "description": "Whether to get only venues with events",
+      "type": "boolean"
+    },
+    "only_with_upcoming": {
+      "description": "Whether to get only venues with upcoming events",
+      "type": "boolean"
+    }
+  },
+  "fields": {
+    "address": {
+      "description": "Address"
+    },
+    "country": {
+      "description": "Country"
+    },
+    "city": {
+      "description": "City"
+    },
+    "state_province": {
+      "description": "State Province"
+    },
+    "state": {
+      "description": "State"
+    },
+    "province": {
+      "description": "Province"
+    },
+    "zip": {
+      "description": "Zip"
+    },
+    "permalink": {
+      "description": "Permalink"
+    },
+    "directions_link": {
+      "description": "Google Maps link"
+    },
+    "all": {
+      "description": "Show all custom fields (for development purpose)"
+    }
+  },
+  "namespace": "Tangible\\Loop\\Integrations\\EventCalendar",
+  "className": "VenueLoop",
+  "extends": "BaseLoop"
+}

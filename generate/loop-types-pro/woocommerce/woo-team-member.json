@@ -1,0 +1,39 @@
+{
+  "name": "woo_team_member",
+  "title": "WooCommerce Team Member",
+  "category": "woocommerce",
+  "description": "Loop through team members",
+  "query_args": {},
+  "fields": {
+    "user": {
+      "description": "Loop containing corresponding user"
+    },
+    "id": {
+      "description": "Get id"
+    },
+    "team_id": {
+      "description": "Team id"
+    },
+    "role": {
+      "description": "Returns the member's role in the team"
+    },
+    "name": {
+      "description": "Returns the member's name for display purposes"
+    },
+    "email": {
+      "description": "Returns the member's email"
+    },
+    "added_date": {
+      "description": "Returns the UTC date when member was added to the team"
+    },
+    "local_added_date": {
+      "description": "Returns the local date when member was added to the team"
+    },
+    "is_team_owner": {
+      "description": "Checks whether the member is the owner of the team or not"
+    }
+  },
+  "namespace": "Tangible\\Loop\\Integrations\\WooCommerce",
+  "className": "TeamMemberLoop",
+  "extends": "FieldLoop"
+}

@@ -1,0 +1,80 @@
+{
+  "name": "lifter_coupon",
+  "title": "LifterLMS Coupon",
+  "category": "lifterlms",
+  "description": "Loop through coupons",
+  "post_type": "llms_coupon",
+  "namespace": "Tangible\\Loop\\Integrations\\LifterLms",
+  "className": "CouponLoop",
+  "extends": "PostLoop",
+  "fields": {
+    "id": {
+      "description": "Coupon ID"
+    },
+    "expiration_time": {
+      "description": "The timestamp of a coupon expiration date"
+    },
+    "formatted_discount_type": {
+      "description": "Get the discount type for human reading and allow translation"
+    },
+    "amount": {
+      "description": "Get coupon amount"
+    },
+    "formatted_amount": {
+      "description": "Get the formatted coupon amount with currency symbol and/or percentage symbol"
+    },
+    "courses": {
+      "description": "Coupon courses sub Loop"
+    },
+    "memberships": {
+      "description": "Coupon memberships sub Loop"
+    },
+    "usage_limit": {
+      "description": "Coupon usage limit"
+    },
+    "remaining_uses": {
+      "description": "The number of remaining uses"
+    },
+    "uses": {
+      "description": "The number of times the coupon has been used"
+    },
+    "is_expired": {
+      "description": "If a coupon is expired,\"true\"/\"false\""
+    },
+    "has_trial_discount": {
+      "description": "If trial amount discount is enabled for the coupon,\"true\"/\"false\""
+    },
+    "has_remaining_uses": {
+      "description": "If a coupon has uses remaining,\"true\"/\"false\""
+    },
+    "has_main_discount": {
+      "description": "If the main (non-trial) price is discounted by this coupon,\"true\"/\"false\""
+    }
+  },
+  "query_args": {
+    "product": {
+      "description": "Product ID or \"current\" for current product where the coupon is assigned.",
+      "type": "string"
+    },
+    "access_plan": {
+      "description": "Access Plan ID or \"current\" for current access plan where the coupon is assigned.",
+      "type": "string"
+    },
+    "has_main_discount": {
+      "description": "Determine if the main (non-trial) price is discounted by the coupon. true/false",
+      "type": "boolean"
+    },
+    "has_remaining_uses": {
+      "description": "Determine if a coupon has uses remaining. true/false",
+      "type": "boolean"
+    },
+    "has_trial_discount": {
+      "description": "Determine if trial amount discount is enabled for the coupon. true/false",
+      "type": "boolean"
+    },
+    "is_expired": {
+      "description": "Determine if a coupon is expired. true/false",
+      "type": "boolean"
+    }
+  }
+}

@@ -1,0 +1,24 @@
+{
+  "name": "edd_tax_rate",
+  "title": "EDD Tax rate",
+  "category": "edd",
+  "description": "Loop through tax rates",
+  "query_args": {},
+  "fields": {
+    "rate": {
+      "description": "Tax rate percent"
+    },
+    "country": {
+      "description": "Country"
+    },
+    "state": {
+      "description": "Country state"
+    },
+    "global": {
+      "description": "Applies to whole country"
+    }
+  },
+  "namespace": "Tangible\\Loop\\Integrations\\EDD",
+  "className": "TaxRateLoop",
+  "extends": "ListLoop"
+}

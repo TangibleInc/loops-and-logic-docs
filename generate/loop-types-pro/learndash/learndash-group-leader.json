@@ -1,0 +1,24 @@
+{
+  "name": "learndash_group_leader",
+  "title": "LearnDash Group Leader",
+  "category": "learndash",
+  "description": "Loop through LearnDash Group Leader users",
+  "namespace": "Tangible\\Loop\\Integrations\\LearnDash",
+  "className": "GroupLeaderLoop",
+  "extends": "UserLoop",
+  "query_args": {
+    "group": {
+      "description": "Group ID or \"current\" for current group",
+      "type": "string"
+    },
+    "course": {
+      "description": "Course ID or \"current\" for current course",
+      "type": "string"
+    },
+    "group_user": {
+      "description": "Group user ID or \"current\" for current user",
+      "type": "string"
+    }
+  },
+  "fields": {}
+}

@@ -1,0 +1,27 @@
+{
+  "name": "edd_activation",
+  "title": "EDD activation",
+  "category": "edd",
+  "description": "Loop through activations",
+  "query_args": {},
+  "fields": {
+    "site_id": {
+      "description": "Site id"
+    },
+    "site_name": {
+      "description": "Site name"
+    },
+    "license_id": {
+      "description": "License id"
+    },
+    "activated": {
+      "description": "Activated"
+    },
+    "is_local": {
+      "description": "Is local"
+    }
+  },
+  "namespace": "Tangible\\Loop\\Integrations\\EDD",
+  "className": "ActivationLoop",
+  "extends": "FieldLoop"
+}

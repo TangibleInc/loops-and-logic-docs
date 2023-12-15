@@ -1,0 +1,78 @@
+{
+  "name": "tec_attendee",
+  "title": "Events calendar attendee",
+  "category": "tec",
+  "description": "Loop through attendees",
+  "query_args": {},
+  "fields": {
+    "order_id": {
+      "description": "Order id"
+    },
+    "purchaser_name": {
+      "description": "Purchaser name"
+    },
+    "purchaser_email": {
+      "description": "Purchaser email"
+    },
+    "provider": {
+      "description": "Provider"
+    },
+    "provider_slug": {
+      "description": "Provider slug"
+    },
+    "purchase_time": {
+      "description": "Purchase time"
+    },
+    "optout": {
+      "description": "Optout"
+    },
+    "ticket": {
+      "description": "Ticket name"
+    },
+    "attendee_id": {
+      "description": "Attendee id"
+    },
+    "product_id": {
+      "description": "Product Id (most often Ticket id)"
+    },
+    "check_in": {
+      "description": "Check in"
+    },
+    "order_status": {
+      "description": "Order status"
+    },
+    "user_id": {
+      "description": "User id"
+    },
+    "ticket_sent": {
+      "description": "Whether ticket has been sent"
+    },
+    "event_id": {
+      "description": "Event id"
+    },
+    "ticket_name": {
+      "description": "Ticket name"
+    },
+    "holder_name": {
+      "description": "Holder name"
+    },
+    "holder_email": {
+      "description": "Holder email"
+    },
+    "ticket_id": {
+      "description": "Ticket Id"
+    },
+    "qr_ticket_id": {
+      "description": "Attendee ID"
+    },
+    "security_code": {
+      "description": "Security Code"
+    },
+    "ticket_exists": {
+      "description": "Ticket exists"
+    }
+  },
+  "namespace": "Tangible\\Loop\\Integrations\\EventCalendar",
+  "className": "AttendeeLoop",
+  "extends": "FieldLoop"
+}

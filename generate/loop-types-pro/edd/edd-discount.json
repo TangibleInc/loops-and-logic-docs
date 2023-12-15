@@ -1,0 +1,78 @@
+{
+  "name": "edd_discount",
+  "title": "EDD Discount",
+  "description": "Loop through discounts",
+  "category": "edd",
+  "query_args": {
+    "status": {
+      "description": "Status",
+      "type": [
+        "string",
+        "array"
+      ],
+      "accepts": [
+        "active",
+        "inactive",
+        "expired"
+      ],
+      "default": [
+        "active",
+        "inactive",
+        "expired"
+      ]
+    }
+  },
+  "fields": {
+    "excluded_products": {
+      "description": "Retrieve the downloads that are excluded from having this discount code applied. Returns a Loop."
+    },
+    "start": {
+      "description": "Retrieve the start date"
+    },
+    "expiration": {
+      "description": "Retrieve the end date"
+    },
+    "id": {
+      "description": "ID of post object"
+    },
+    "name": {
+      "description": "Retrieve the name of the discount"
+    },
+    "code": {
+      "description": "Retrieve the code used to apply the discount"
+    },
+    "status": {
+      "description": "Retrieve the status of the discount"
+    },
+    "status_label": {
+      "description": "Retrieves the status label of the discount"
+    },
+    "type": {
+      "description": "Retrieve the type of discount"
+    },
+    "amount": {
+      "description": "Retrieve the amount of discount"
+    },
+    "uses": {
+      "description": "Retrieve the uses for the discount code"
+    },
+    "max_uses": {
+      "description": "Retrieve the maximum uses for the discount code"
+    },
+    "min_price": {
+      "description": "Retrieve the minimum spend required for the discount to be satisfied"
+    },
+    "is_single_use": {
+      "description": "Retrieve the usage limit per limit (if the discount can only be used once per customer)"
+    },
+    "is_not_global": {
+      "description": "Retrieve the property determining if a discount is not global"
+    },
+    "product_condition": {
+      "description": "Product condition"
+    }
+  },
+  "namespace": "Tangible\\Loop\\Integrations\\EDD",
+  "className": "DiscountLoop",
+  "extends": "BaseLoop"
+}

@@ -1,0 +1,46 @@
+{
+  "name": "lifter_section",
+  "title": "LifterLMS Section",
+  "category": "lifterlms",
+  "description": "Loop through sections",
+  "post_type": "section",
+  "namespace": "Tangible\\Loop\\Integrations\\LifterLms",
+  "className": "SectionLoop",
+  "extends": "PostLoop",
+  "query_args": {
+    "course": {
+      "description": "Course ID that student is enrolled.",
+      "type": "string"
+    },
+    "lesson": {
+      "description": "Lesson ID that student is enrolled.",
+      "type": "string"
+    }
+  },
+  "fields": {
+    "section_id": {
+      "description": "Section ID"
+    },
+    "next_section_id": {
+      "description": "Next Section ID"
+    },
+    "prev_section_id": {
+      "description": "Previous Section ID"
+    },
+    "percent_complete": {
+      "description": "Section complete percent for a student"
+    },
+    "is_complete": {
+      "description": "Section completed by a student, \"true\"/\"false\""
+    },
+    "count_elements": {
+      "description": "Section elements count"
+    },
+    "parent_course": {
+      "description": "Section parent course "
+    },
+    "lessons": {
+      "description": "Section's lessons"
+    }
+  }
+}

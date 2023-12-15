@@ -1,0 +1,78 @@
+{
+  "name": "learndash_user_quiz_attempts",
+  "title": "LearnDash User Quiz Attempts loop",
+  "category": "learndash",
+  "description": "Loop through User Quiz Attempts",
+  "namespace": "Tangible\\Loop\\Integrations\\LearnDash",
+  "className": "UserQuizAttemptsLoop",
+  "extends": "BaseLoop",
+  "query_args": {
+    "user_id": {
+      "description": "User ID (current by default), comma separated User IDs or \"all\" for all Users attempts",
+      "type": "number"
+    },
+    "quiz_id": {
+      "description": "Quiz ID or \"current\" quiz",
+      "type": "string"
+    }
+  },
+  "fields": {
+    "quiz_id": {
+      "description": "User Quiz Attempt Quiz ID"
+    },
+    "correct_answers": {
+      "description": "User Quiz Attempt correct answers number"
+    },
+    "questions_total": {
+      "description": "User Quiz Attempt questions total"
+    },
+    "pass": {
+      "description": "User Quiz Attempt pass, \"true\"/\"false\" "
+    },
+    "course_id": {
+      "description": "User Quiz Attempt course id"
+    },
+    "lesson_id": {
+      "description": "User Quiz Attempt lesson id"
+    },
+    "topic_id": {
+      "description": "User Quiz Attempt topic id"
+    },
+    "points_earned": {
+      "description": "User Quiz Attempt points earned"
+    },
+    "total_points": {
+      "description": "User Quiz Attempt total points"
+    },
+    "percentage": {
+      "description": "User Quiz Attempt percentage"
+    },
+    "timespent": {
+      "description": "User Quiz Attempt timespent in sec."
+    },
+    "has_graded": {
+      "description": "User Quiz Attempt has graded type question(essay)"
+    },
+    "started": {
+      "description": "User Quiz Attempt started timestamp "
+    },
+    "completed": {
+      "description": "User Quiz Attempt completed timestamp"
+    },
+    "essays": {
+      "description": "User Quiz Attempt essays"
+    },
+    "rank": {
+      "description": "User Quiz Attempt rank"
+    },
+    "user_id": {
+      "description": "User Quiz Attempt user_id"
+    },
+    "display_name": {
+      "description": "User Quiz Attempt display_name"
+    },
+    "user_email": {
+      "description": "User Quiz Attempt user_email"
+    }
+  }
+}

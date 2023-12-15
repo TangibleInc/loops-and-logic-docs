@@ -1,0 +1,14 @@
+{
+  "name": "woo_tax_class",
+  "title": "WooCommerce",
+  "category": "woocommerce",
+  "description": "Loop through tax classes",
+  "fields": {
+    "name": {
+      "description": "Tax class name"
+    }
+  },
+  "namespace": "Tangible\\Loop\\Integrations\\WooCommerce",
+  "className": "TaxClassLoop",
+  "extends": "ListLoop"
+}

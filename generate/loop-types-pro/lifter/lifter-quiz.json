@@ -1,0 +1,81 @@
+{
+  "name": "lifter_quiz",
+  "title": "LifterLMS Quiz",
+  "category": "lifterlms",
+  "description": "Loop through quizes",
+  "post_type": "llms_quiz",
+  "namespace": "Tangible\\Loop\\Integrations\\LifterLms",
+  "className": "QuizLoop",
+  "extends": "PostLoop",
+  "fields": {
+    "id": {
+      "description": "Quiz ID"
+    },
+    "content": {
+      "description": "Quiz cntent"
+    },
+    "course": {
+      "description": "Quiz course loop"
+    },
+    "lesson": {
+      "description": "Quiz lesson loop"
+    },
+    "questions": {
+      "description": "Quiz questions loop"
+    },
+    "is_open": {
+      "description": "Quiz is open for current student, \"true\"/\"false\""
+    },
+    "has_time_limit": {
+      "description": "Quiz has time limit \"true\"/\"false\""
+    },
+    "has_attempt_limit": {
+      "description": "Quiz has attempts limit \"true\"/\"false\""
+    },
+    "time_limit": {
+      "description": "Quiz time limit in minutes"
+    },
+    "allowed_attempts": {
+      "description": "Quiz attempts allowed \"true\"/\"false\""
+    },
+    "passing_percent": {
+      "description": "Quiz passing percent"
+    },
+    "random_questions": {
+      "description": "Quiz questions randomized \"true\"/\"false\""
+    },
+    "show_correct_answer": {
+      "description": "Quiz question show correct answer if wrong chosen \"true\"/\"false\""
+    },
+    "wrapper_start": {
+      "description": "Quiz wrapper start html"
+    },
+    "wrapper_end": {
+      "description": "Quiz wrapper end html"
+    },
+    "attempts": {
+      "description": "Quiz attempts"
+    },
+    "user_has_access": {
+      "description": "If User has access to the quiz, string \"true\"/\"false\""
+    }
+  },
+  "query_args": {
+    "course": {
+      "description": "Course ID or \"current\" for current course where the quiz is assigned.",
+      "type": "string"
+    },
+    "lesson": {
+      "description": "Lesson ID or \"current\" for current lesson where the quiz is assigned.",
+      "type": "string"
+    },
+    "student": {
+      "description": "Student ID or \"current\" for current student who attemted the quiz.",
+      "type": "string"
+    },
+    "is_open": {
+      "description": "If current student can take the quiz. \"true\"/\"false\" ",
+      "type": "boolean"
+    }
+  }
+}

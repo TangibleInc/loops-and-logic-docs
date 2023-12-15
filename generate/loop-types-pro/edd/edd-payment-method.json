@@ -1,0 +1,21 @@
+{
+  "name": "edd_payment_method",
+  "title": "EDD Payment Method",
+  "category": "edd",
+  "description": "Loop through available payment methods",
+  "query_args": {},
+  "fields": {
+    "admin_label": {
+      "description": "Admin label"
+    },
+    "checkout_label": {
+      "description": "Checkout label"
+    },
+    "supports": {
+      "description": "Options a gateway supports"
+    }
+  },
+  "namespace": "Tangible\\Loop\\Integrations\\EDD",
+  "className": "PaymentMethodLoop",
+  "extends": "ListLoop"
+}

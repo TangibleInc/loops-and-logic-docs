@@ -1,0 +1,87 @@
+{
+  "name": "tec_ticket",
+  "title": "The Event Calendar Ticket Loop",
+  "description": "Loop through tickets",
+  "category": "tec",
+  "query_args": {
+    "event": {
+      "description": "Event ID to get tickets for",
+      "type": "integer"
+    },
+    "post": {
+      "description": "Event ID to get tickets for. Can be used instead of 'event'. Event Calendar allows other post types than Event to have tickets.",
+      "type": "integer"
+    }
+  },
+  "fields": {
+    "id": {
+      "description": "Id"
+    },
+    "name": {
+      "description": "Ticket name"
+    },
+    "description": {
+      "description": "Ticket name"
+    },
+    "on_sale": {
+      "description": "Indicates if the ticket is currently being offered at a reduced price as part of a special sale."
+    },
+    "price": {
+      "description": "Ticket price"
+    },
+    "price_suffix": {
+      "description": "Holds the price suffix"
+    },
+    "regular_price": {
+      "description": "Regular price (if the ticket is not on a special sale this will be identical to $price)."
+    },
+    "frontend_link": {
+      "description": "Link to the front end of this ticket, if the providers has single view for this ticket."
+    },
+    "sku": {
+      "description": "Holds the SKU for the ticket"
+    },
+    "start_date": {
+      "description": "Date the ticket should be put on sale"
+    },
+    "start_time": {
+      "description": "Time the ticket should be put on sale"
+    },
+    "end_date": {
+      "description": "Date the ticket should be stop being sold"
+    },
+    "end_time": {
+      "description": "Time the ticket should be stop being sold"
+    },
+    "available": {
+      "description": "Provides the quantity of Available tickets based on the Attendees number"
+    },
+    "capacity": {
+      "description": "Original stock capacity"
+    },
+    "is_in_stock": {
+      "description": "Determines if there is any stock for purchasing"
+    },
+    "qty_pending": {
+      "description": "Quantity pending"
+    },
+    "qty_sold": {
+      "description": "Quantity sold"
+    },
+    "qty_refunded": {
+      "description": "Quantity refunded"
+    },
+    "qty_cancelled": {
+      "description": "Quantity cancelled"
+    },
+    "attendees": {
+      "description": "Ticket attendees"
+    },
+    "all": {
+      "description": "Show all custom fields (for development purpose)"
+    }
+  },
+  "namespace": "Tangible\\Loop\\Integrations\\EventCalendar",
+  "className": "TicketLoop",
+  "extends": "BaseLoop"
+}

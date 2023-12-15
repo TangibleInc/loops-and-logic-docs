@@ -1,0 +1,147 @@
+{
+  "name": "tec_event",
+  "title": "The Event Calendar Event Loop",
+  "description": "Loop through events of the Events Calendar",
+  "category": "tec",
+  "query_args": {
+    "id": {
+      "description": "Same as include",
+      "target_name": "include",
+      "type": [
+        "array",
+        "integer"
+      ]
+    },
+    "start_date": {
+      "description": "Event start date",
+      "type": "string"
+    },
+    "end_date": {
+      "description": "Event end date",
+      "type": "string"
+    },
+    "eventDate": {
+      "description": "Specific event date",
+      "type": "string"
+    },
+    "venue": {
+      "description": "Select events from a specific Venue",
+      "type": "integer"
+    },
+    "organizer": {
+      "description": "Select events from a specific Organizer",
+      "type": "integer"
+    },
+    "eventDisplay": {
+      "description": "Special string which sets specific start / end times ",
+      "type": "string",
+      "accepts": [
+        "custom",
+        "month",
+        "day",
+        "single-event",
+        "future",
+        "all",
+        "list",
+        "past"
+      ]
+    },
+    "hide_upcoming": {
+      "description": "Hide events that are not on eventDate, internal usage",
+      "type": "boolean"
+    },
+    "category": {
+      "target_name": "event_category",
+      "type": ""
+    }
+  },
+  "fields": {
+    "id": {
+      "description": "Event post ID"
+    },
+    "start_date": {
+      "description": "Event start date"
+    },
+    "start_date_utc": {
+      "description": "Event start date (UTC)"
+    },
+    "end_date": {
+      "description": "Event end date"
+    },
+    "end_date_utc": {
+      "description": "Event end date (UTC)"
+    },
+    "timezone": {
+      "description": "Event timezone"
+    },
+    "duration": {
+      "description": "Event duration"
+    },
+    "multiday": {
+      "description": "Number of days event spans or false if single day"
+    },
+    "is_past": {
+      "description": "Whether event is past event"
+    },
+    "all_day": {
+      "description": "Whether event is all day"
+    },
+    "end_of_day": {
+      "description": "End of day"
+    },
+    "starts_this_week": {
+      "description": "Starts this week"
+    },
+    "ends_this_week": {
+      "description": "Ends this week"
+    },
+    "this_week_duration": {
+      "description": "This week duration"
+    },
+    "happens_this_week": {
+      "description": "Happens this week"
+    },
+    "displays_on": {
+      "description": "Displays on"
+    },
+    "featured": {
+      "description": "Event is featured"
+    },
+    "sticky": {
+      "description": "Sticky"
+    },
+    "cost": {
+      "description": "Cost"
+    },
+    "excerpt": {
+      "description": "Excerpt"
+    },
+    "permalink": {
+      "description": "Permalink"
+    },
+    "schedule_details": {
+      "description": "Schedule Details"
+    },
+    "plain_schedule_details": {
+      "description": "plain_schedule_details"
+    },
+    "title": {
+      "description": "title"
+    },
+    "image": {
+      "description": "Thumbnail"
+    },
+    "organizers": {
+      "description": "Event organizers. Returns a Loop"
+    },
+    "venues": {
+      "description": "Event venues. Returns a Loop"
+    },
+    "all": {
+      "description": "Show all custom fields (for development purpose)"
+    }
+  },
+  "namespace": "Tangible\\Loop\\Integrations\\EventCalendar",
+  "className": "EventLoop",
+  "extends": "BaseLoop"
+}

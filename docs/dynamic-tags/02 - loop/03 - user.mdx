@@ -1,0 +1,56 @@
+---
+id: user
+title: User
+tags:
+  - Dynamic Tags
+  - Loop
+---
+
+import { QueryArgsList } from '@site/common/QueryArgs.jsx'
+import { FieldsList } from '@site/common/Fields.jsx'
+import json from '@site/generate/loop-types/user.json'
+const { query_args, fields } = json
+
+For loop type `user`, here are the query parameters and fields.
+
+## Query parameters
+
+<QueryArgsList args={query_args} exclude={['fields']}/>
+
+## Fields
+
+<FieldsList fields={fields} />
+
+## User conditions
+
+Current user is logged in
+
+```html
+<If user exists>
+```
+
+Current user is not logged in
+
+```html
+<If not user exists>
+```
+
+Current user is admin
+
+```html
+<If user_role includes value=administrator>
+```
+
+User field value
+
+```html
+<If user_field=field_name value="something">
+```
+
+## User tag
+
+The [`User` tag](/dynamic-tags/user) is a shortcut to get a field from the current user.
+
+## Examples
+
+- [How to display a post editing link only when the current user is the post's author](/how-to/display-post-edit-link-author)

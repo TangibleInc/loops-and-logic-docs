@@ -1,0 +1,90 @@
+{
+  "name": "attachment",
+  "title": "Attachment",
+  "category": "core",
+  "query_args": {
+    "id": {
+      "target_name": "include",
+      "description": "ID",
+      "type": [
+        "string",
+        "array"
+      ]
+    },
+    "name": {
+      "target_name": "include",
+      "description": "Name/slug",
+      "type": [
+        "string",
+        "array"
+      ]
+    },
+    "count": {
+      "description": "Limit number of items",
+      "type": "number"
+    },
+    "include": {
+      "description": "Include by ID or name",
+      "type": [
+        "string",
+        "array"
+      ]
+    },
+    "exclude": {
+      "description": "Exclude by ID or name",
+      "type": [
+        "string",
+        "array"
+      ]
+    }
+  },
+  "fields": {
+    "id": {
+      "description": "ID"
+    },
+    "title": {
+      "description": "Title"
+    },
+    "caption": {
+      "description": "Caption"
+    },
+    "description": {
+      "description": "Description"
+    },
+    "alt": {
+      "description": "Image attribute alt"
+    },
+    "url": {
+      "description": "URL - Accepts optional attribute \"size\" for image size",
+      "subfields": {
+        "size": {
+          "description": "Image size"
+        }
+      }
+    },
+    "filename": {
+      "description": "File name"
+    },
+    "extension": {
+      "description": "File extension"
+    },
+    "size": {
+      "description": "File size"
+    },
+    "type": {
+      "description": "File type"
+    },
+    "srcset": {
+      "description": "Responsive image attribute \"srcset\" for img tag - Accepts optional attribute \"size\" for image size name (default is \"medium\"), or width and height values in pixels separated by comma like \"400,300\""
+    },
+    "sizes": {
+      "description": "Responsive image attribute \"sizes\" for img tag - Accepts optional attribute \"size\" for image size name (default is \"medium\"), or width and height values in pixels separated by comma like \"400,300\""
+    },
+    "image": {
+      "description": "Image"
+    }
+  },
+  "namespace": "Tangible\\Loop",
+  "className": "AttachmentLoop",
+  "extends": "PostLoop"
+}

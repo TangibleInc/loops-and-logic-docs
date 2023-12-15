@@ -1,0 +1,451 @@
+{
+  "name": "post",
+  "title": "Post",
+  "category": "core",
+  "description": "Post loop for posts, pages and custom post types",
+  "query_args": {
+    "post_type": {
+      "description": "Post type(s)",
+      "type": [
+        "string",
+        "array"
+      ]
+    },
+    "type": {
+      "target_name": "post_type",
+      "type": [
+        "string",
+        "array"
+      ]
+    },
+    "id": {
+      "target_name": "include",
+      "description": "ID",
+      "type": [
+        "string",
+        "array"
+      ]
+    },
+    "name": {
+      "target_name": "include",
+      "description": "Name/slug",
+      "type": [
+        "string",
+        "array"
+      ]
+    },
+    "status": {
+      "target_name": "post_status",
+      "description": "Post status: publish (default), pending, draft, future, private, trash",
+      "type": [
+        "string",
+        "array"
+      ],
+      "default": "publish"
+    },
+    "include": {
+      "description": "Include by ID or name",
+      "type": [
+        "string",
+        "array"
+      ]
+    },
+    "exclude": {
+      "description": "Exclude by ID or name",
+      "type": [
+        "string",
+        "array"
+      ]
+    },
+    "sticky": {
+      "description": "Sticky posts: true (stick to top), false (exclude them), only (exclude normal posts) - By default, they are treated the same as normal posts",
+      "type": "string"
+    },
+    "parent": {
+      "target_name": "post_parent__in",
+      "description": "Include by parent ID or name",
+      "type": [
+        "string",
+        "array"
+      ]
+    },
+    "exclude_parent": {
+      "target_name": "post_parent__not_in",
+      "description": "Exclude by parent ID or name",
+      "type": [
+        "string",
+        "array"
+      ]
+    },
+    "include_children": {
+      "description": "Include children",
+      "type": "boolean"
+    },
+    "author": {
+      "target_name": "author__in",
+      "description": "Include by author ID, login name, or \"current\"",
+      "type": [
+        "string",
+        "array"
+      ]
+    },
+    "exclude_author": {
+      "target_name": "author__not_in",
+      "description": "Exclude by author ID, login name, or \"current\"",
+      "type": [
+        "string",
+        "array"
+      ]
+    },
+    "category": {
+      "target_name": "category__in",
+      "description": "Include by category ID, slug, or \"current\"",
+      "type": [
+        "string",
+        "array"
+      ]
+    },
+    "exclude_category": {
+      "target_name": "category__not_in",
+      "description": "Exclude by category ID, slug, or \"current\"",
+      "type": [
+        "string",
+        "array"
+      ]
+    },
+    "tag": {
+      "target_name": "tag__in",
+      "description": "Include by tag ID, slug, or \"current\"",
+      "type": [
+        "string",
+        "array"
+      ]
+    },
+    "exclude_tag": {
+      "target_name": "tag__not_in",
+      "description": "Exclude by tag ID, slug, or \"current\"",
+      "type": [
+        "string",
+        "array"
+      ]
+    },
+    "taxonomy": {
+      "description": "Include by taxonomy ID, slug, or \"current\" for taxonomy archive<br>Use with \"term\" and \"taxonomy_compare\" attributes",
+      "type": [
+        "string",
+        "number"
+      ]
+    },
+    "terms": {
+      "description": "Include by taxonomy term ID, slug, or \"current\"<br>Use with \"taxonomy\" attribute",
+      "type": [
+        "string",
+        "number",
+        "array"
+      ]
+    },
+    "child_terms": {
+      "description": "Set \"true\" to include child terms for hierarchical taxonomies",
+      "type": [
+        "string"
+      ]
+    },
+    "taxonomy_compare": {
+      "description": "One of \"in\" (default), \"not\", \"and\", \"exists\", and \"not exists\"<br>Use with \"taxonomy\" attribute",
+      "type": [
+        "string"
+      ]
+    },
+    "taxonomy_relation": {
+      "description": "When using more than one \"taxonomy\" queries, can specify \"and\" or \"or\"",
+      "type": "string"
+    },
+    "taxonomy_2": {
+      "description": "See attribute \"taxonomy\"",
+      "type": [
+        "string",
+        "number"
+      ]
+    },
+    "terms_2": {
+      "description": "See attribute \"terms\"",
+      "type": [
+        "string",
+        "number",
+        "array"
+      ]
+    },
+    "taxonomy_compare_2": {
+      "description": "See attribute \"taxonomy_compare\"",
+      "type": [
+        "string"
+      ]
+    },
+    "taxonomy_3": {
+      "description": "See attribute \"taxonomy\"",
+      "type": [
+        "string",
+        "number"
+      ]
+    },
+    "terms_3": {
+      "description": "See attribute \"terms\"",
+      "type": [
+        "string",
+        "number",
+        "array"
+      ]
+    },
+    "taxonomy_compare_3": {
+      "description": "See attribute \"taxonomy_compare\"",
+      "type": [
+        "string"
+      ]
+    },
+    "search": {
+      "target_name": "s",
+      "description": "Search by given keyword - Prepending a keyword with a hyphen \"-\" will exclude posts matching it",
+      "type": "string"
+    },
+    "publish_date": {
+      "description": "Filter by publish date in Y-M-D format, \"today\", \"X days ago\" and other values compatible with strtotime() - Optionally use \"publish_compare\" attribute",
+      "type": "string"
+    },
+    "publish_compare": {
+      "description": "Publish date comparison - One of: \"before\", \"before_inclusive\", \"after\", \"after_inclusive\"",
+      "type": "string"
+    },
+    "publish_year": {
+      "target_name": "year",
+      "description": "Filter by given publish year, or \"current\"",
+      "type": "number"
+    },
+    "publish_month": {
+      "target_name": "monthnum",
+      "description": "Filter by given publish month, from 1 to 12, or \"current\"",
+      "type": "number"
+    },
+    "publish_week": {
+      "target_name": "w",
+      "description": "Filter by given publish week, from 1 to 54, or \"current\" - Note: the \"publish_compare\" attribute is not supported for this field",
+      "type": "number"
+    },
+    "publish_day": {
+      "target_name": "day",
+      "description": "Filter by given publish day of the month, from 1 to 31, or \"current\"",
+      "type": "number"
+    },
+    "custom_field": {
+      "description": "Filter by given custom field - Faster than using \"field\", this queries raw field values in the database",
+      "type": "string"
+    },
+    "custom_field_value": {
+      "description": "Filter by given custom field value",
+      "type": "string"
+    },
+    "custom_field_compare": {
+      "description": "Compare using one of: \"equal\" (default), \"not\", \"before\", \"before_inclusive\", \"after\", \"after_inclusive\"",
+      "type": "string"
+    },
+    "custom_field_type": {
+      "description": "For custom field query, one of: string (default), number, date, time, datetime",
+      "type": "string"
+    },
+    "custom_field_2": {
+      "description": "See attribute \"custom_field\"",
+      "type": [
+        "string"
+      ]
+    },
+    "custom_field_value_2": {
+      "description": "See attribute \"custom_field_value\"",
+      "type": [
+        "string"
+      ]
+    },
+    "custom_field_compare_2": {
+      "description": "See attribute \"custom_field_compare\"",
+      "type": [
+        "string"
+      ]
+    },
+    "custom_field_type_2": {
+      "description": "See attribute \"custom_field_type\"",
+      "type": "string"
+    },
+    "custom_field_3": {
+      "description": "See attribute \"custom_field\"",
+      "type": [
+        "string"
+      ]
+    },
+    "custom_field_value_3": {
+      "description": "See attribute \"custom_field_value\"",
+      "type": [
+        "string"
+      ]
+    },
+    "custom_field_compare_3": {
+      "description": "See attribute \"custom_field_compare\"",
+      "type": [
+        "string"
+      ]
+    },
+    "custom_field_type_3": {
+      "description": "See attribute \"custom_field_type\"",
+      "type": "string"
+    },
+    "custom_date_field": {
+      "description": "Filter by given custom date field - Faster than using \"field\", this queries raw field values in the database",
+      "type": "string"
+    },
+    "custom_date_field_value": {
+      "description": "Filter by given custom date field value, or \"current\"",
+      "type": "string"
+    },
+    "custom_date_field_compare": {
+      "description": "Compare using one of: \"equal\" (default), \"not\", \"before\", \"before_inclusive\", \"after\", \"after_inclusive\"",
+      "type": "string"
+    },
+    "custom_date_field_format": {
+      "description": "For custom date field query, specify the date format of the field value - Default is \"Ymd\"; For date-time field, set \"Y-m-d H:i:s\". If it's a timestamp, use \"timestamp\". For custom field plugins other than ACF, you may need to use a different format.",
+      "type": "string"
+    },
+    "custom_date_field_type": {
+      "description": "For custom date field query, one of: date (default), time, datetime, number",
+      "type": "string"
+    },
+    "orderby": {
+      "description": "Order by one of: id, author, title, name, type, date, modified, random, comment_count, relevance, menu",
+      "type": "string",
+      "default": "title"
+    },
+    "order": {
+      "description": "Order: asc (ascending) or desc (descending)",
+      "type": "string",
+      "default": "asc",
+      "accepts": [
+        "asc",
+        "desc"
+      ]
+    },
+    "orderby_field": {
+      "description": "Order by custom field",
+      "type": "string"
+    },
+    "orderby_field_number": {
+      "description": "Order by custom field whose value is a number",
+      "type": "string"
+    },
+    "paged": {
+      "target_name": "posts_per_page",
+      "description": "Posts per page",
+      "type": "number"
+    },
+    "page": {
+      "target_name": "paged",
+      "description": "Page number",
+      "type": "number",
+      "default": 1
+    },
+    "fields": {
+      "value": "ids"
+    }
+  },
+  "fields": {
+    "id": {
+      "description": "ID"
+    },
+    "name": {
+      "description": "name/slug"
+    },
+    "url": {
+      "description": "URL"
+    },
+    "title": {
+      "description": "Title"
+    },
+    "content": {
+      "description": "Content"
+    },
+    "excerpt": {
+      "description": "Excerpt"
+    },
+    "status": {
+      "description": "Status"
+    },
+    "edit_url": {
+      "description": "Edit URL"
+    },
+    "publish_date": {
+      "description": "Publish date"
+    },
+    "modify_date": {
+      "description": "Modify date"
+    },
+    "post_class": {
+      "description": "Post classes"
+    },
+    "menu_order": {
+      "description": "Menu order"
+    },
+    "archive_author": {
+      "description": "On an author archive page: Current author as a user loop"
+    },
+    "archive_term": {
+      "description": "On a taxonomy archive page: Current taxonomy term as a loop"
+    },
+    "archive_post_type": {
+      "description": "On a post type archive page: Current post type as a loop"
+    },
+    "author": {
+      "type": "user",
+      "description": "Author"
+    },
+    "author_*": {
+      "type": "user",
+      "description": "Modified author's user field"
+    },
+    "modified_author": {
+      "type": "user",
+      "description": "Modified author"
+    },
+    "parent": {
+      "type": "current",
+      "description": "Parent"
+    },
+    "parent_*": {
+      "type": "current",
+      "description": "Parent field"
+    },
+    "parent_ids": {
+      "description": "All parent IDs from current to top"
+    },
+    "children": {
+      "type": "current",
+      "description": "Children"
+    },
+    "children_ids": {
+      "type": "current",
+      "description": "Children IDs"
+    },
+    "ancestors": {
+      "type": "current",
+      "description": "Ancestor posts from lowest to highest level; Set reverse=true to go from top-level down"
+    },
+    "image": {
+      "type": "attachment",
+      "description": "Featured image"
+    },
+    "image_*": {
+      "type": "attachment",
+      "description": "Featured image field"
+    },
+    "all": {
+      "description": "Show all custom fields (for development purpose)"
+    }
+  },
+  "namespace": "Tangible\\Loop",
+  "className": "PostLoop",
+  "extends": "BaseLoop"
+}

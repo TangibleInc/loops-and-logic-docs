@@ -1,0 +1,151 @@
+{
+  "name": "woo_subscription",
+  "title": "WooCommerce Subscription",
+  "category": "woocommerce",
+  "description": "Loop through subscriptions",
+  "query_args": {
+    "orderby": {
+      "description": "Order by",
+      "type": "string",
+      "default": "name",
+      "accepted": [
+        "start_date",
+        "trial_end_date",
+        "end_date",
+        "status",
+        "order_id"
+      ]
+    },
+    "order": {
+      "description": "Order",
+      "type": "string",
+      "default": "desc",
+      "accepts": [
+        "asc",
+        "desc"
+      ]
+    },
+    "status": {
+      "description": "Status",
+      "type": [
+        "string",
+        "array"
+      ],
+      "target_name": "subscription_status",
+      "default": [
+        "active",
+        "cancelled",
+        "expired"
+      ],
+      "accepts": [
+        "any",
+        "active",
+        "cancelled",
+        "suspended",
+        "expired",
+        "pending",
+        "trash"
+      ]
+    },
+    "product_id": {
+      "description": "The post ID of a WC_Product_Subscription, WC_Product_Variable_Subscription or WC_Product_Subscription_Variation object",
+      "type": "number"
+    },
+    "user": {
+      "description": "User ID, name, or \"current\"",
+      "type": [
+        "number",
+        "string"
+      ]
+    },
+    "user_id": {
+      "description": "User ID, name, or \"current\"",
+      "type": [
+        "number",
+        "string",
+        "array"
+      ]
+    },
+    "customer_id": {
+      "description": "User ID",
+      "type": [
+        "number",
+        "string"
+      ]
+    }
+  },
+  "fields": {
+    "items": {
+      "description": "Return an OrderItem Loop of items within this subscription"
+    },
+    "id": {
+      "description": "ID"
+    },
+    "status": {
+      "description": "Status"
+    },
+    "subscriber": {
+      "description": "Returns a Loop with the corresponding subscribed user"
+    },
+    "date_created": {
+      "description": "Date created"
+    },
+    "date_trial_end": {
+      "description": "Trial End"
+    },
+    "next_payment": {
+      "description": "Next payment"
+    },
+    "last_order_date_created": {
+      "description": "Last order date created"
+    },
+    "end": {
+      "description": "Subscription end"
+    },
+    "completed_payment_count": {
+      "description": "Get the number of payments completed for a subscription"
+    },
+    "failed_payment_count": {
+      "description": "Get the number of payments failed"
+    },
+    "total_initial_payment": {
+      "description": "Returns the total amount charged at the outset of the Subscription"
+    },
+    "billing_period": {
+      "description": "Get billing period"
+    },
+    "billing_interval": {
+      "description": "Get billing interval"
+    },
+    "trial_period": {
+      "description": "Get trial period"
+    },
+    "suspension_count": {
+      "description": "Get suspension count"
+    },
+    "switch_data": {
+      "description": "Get the switch data"
+    },
+    "date_paid": {
+      "description": "Get date_paid prop of most recent related order that has been paid"
+    },
+    "date_completed": {
+      "description": "Get date_completed"
+    },
+    "date_to_display": {
+      "description": "Returns a string representation of a subscription date in the site's time (i.e. not GMT/UTC timezone)"
+    },
+    "formatted_line_subtotal": {
+      "description": "Gets line subtotal - formatted for display"
+    },
+    "formatted_order_total": {
+      "description": "Gets order total - formatted for display"
+    },
+    "subtotal_to_display": {
+      "description": "Gets subtotal - subtotal is shown before discounts, but with localised taxes"
+    }
+  },
+  "namespace": "Tangible\\Loop\\Integrations\\WooCommerce",
+  "className": "SubscriptionLoop",
+  "extends": "BaseLoop"
+}

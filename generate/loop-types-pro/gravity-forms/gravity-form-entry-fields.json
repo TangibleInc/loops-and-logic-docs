@@ -1,0 +1,48 @@
+{
+  "name": "gravity_form_entry_fields",
+  "title": "GravityForms Entry Fields",
+  "category": "gravityforms",
+  "description": "Loop through GravityForms Entry fields",
+  "namespace": "Tangible\\Loop\\Integrations\\GravityForms",
+  "className": "EntryFieldsLoop",
+  "extends": "BaseLoop",
+  "query_args": {
+    "entry_id": {
+      "description": "Entry ID the field belongs to\".",
+      "type": "string"
+    },
+    "field_id": {
+      "description": "Field ID(s) - returns specified fields for the entry",
+      "type": [
+        "string",
+        "array"
+      ]
+    }
+  },
+  "fields": {
+    "id": {
+      "description": "Entry Field ID"
+    },
+    "label": {
+      "description": "Entry Field Label"
+    },
+    "value": {
+      "description": "Entry Field Value (for some field types it is a loop with keys)"
+    },
+    "value_html": {
+      "description": "Entry Field Value - HTML presentation"
+    },
+    "type": {
+      "description": "Entry Field Type"
+    },
+    "input_type": {
+      "description": "Entry Field Input Type - some field types have various input types"
+    },
+    "is_addon": {
+      "description": "Is Entry Field of GF AddOn"
+    },
+    "is_loop": {
+      "description": "Is Entry Field Value a loop"
+    }
+  }
+}

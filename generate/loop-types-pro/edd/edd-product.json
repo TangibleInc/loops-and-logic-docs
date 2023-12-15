@@ -1,0 +1,71 @@
+{
+  "name": "edd_product",
+  "title": "EDD Product",
+  "description": "Loop through products (downloads) of Easy Digital Downloads",
+  "category": "edd",
+  "query_args": {
+    "id": {
+      "description": "Same as include",
+      "target_name": "include",
+      "type": [
+        "array",
+        "integer"
+      ]
+    },
+    "category_id": {
+      "description": "Filter by category term ids",
+      "type": [
+        "array"
+      ]
+    },
+    "vendor_id": {
+      "description": "Filter by Vendor id(s)",
+      "type": [
+        "array",
+        "string"
+      ]
+    },
+    "vendor_slug": {
+      "description": "Filter by Vendor slug(s)",
+      "type": [
+        "array",
+        "string"
+      ]
+    }
+  },
+  "fields": {
+    "is_variable": {
+      "description": "Whether product has variable pricing. If yes, the \"pricing\" field is to be used to grab price"
+    },
+    "raw_price": {
+      "description": "Product raw price. Might be irrelevant if product has variable pricing"
+    },
+    "price": {
+      "description": "Product display price (either raw or sale price). Might be irrelevant if product has variable pricing"
+    },
+    "sale_price": {
+      "description": "Product sale price (whether product is on sale or not). Might be irrelevant if product has variable pricing "
+    },
+    "purchase_link": {
+      "description": "Edd download purchase link - generates the Purchase or Add to Cart buttons"
+    },
+    "vendor": {
+      "description": "Product vendor. Returns a Loop of \"edd_vendor\" type."
+    },
+    "pricing": {
+      "description": "Product pricing. Returns one or more values, depending on whether product has variable prices or not. Returns a Loop."
+    },
+    "files": {
+      "description": "Downloadable files. Returns one or more values, depending on whether product has variable prices or not. Returns a Loop."
+    },
+    "sku": {
+      "description": "Product sku"
+    },
+    "type": {
+      "description": "EDD product type"
+    }
+  },
+  "namespace": "Tangible\\Loop\\Integrations\\EDD",
+  "className": "ProductLoop",
+  "extends": "PostLoop"
+}

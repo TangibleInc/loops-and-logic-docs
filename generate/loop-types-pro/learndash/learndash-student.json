@@ -1,0 +1,72 @@
+{
+  "name": "learndash_student",
+  "title": "LearnDash Student",
+  "category": "learndash",
+  "description": "Loop through LearnDash Student users",
+  "namespace": "Tangible\\Loop\\Integrations\\LearnDash",
+  "className": "StudentLoop",
+  "extends": "UserLoop",
+  "query_args": {
+    "student": {
+      "description": "Student ID(s) or \"current\" for the current student",
+      "type": "string, array"
+    },
+    "group_leader": {
+      "description": "Group leader ID or \"current\" for current student",
+      "type": "string"
+    },
+    "group": {
+      "description": "Group  ID or \"current\" that student belongs to",
+      "type": "string"
+    },
+    "enrolled_any": {
+      "description": "Enrolled any",
+      "default": "true",
+      "type": "boolean"
+    },
+    "show_activities_limit": {
+      "description": "Limit number of student activities to show",
+      "type": "number",
+      "deafult": 99999
+    },
+    "activities_course_id": {
+      "description": "Course ID or \"current\" to show activities",
+      "type": "string"
+    }
+  },
+  "fields": {
+    "course_points": {
+      "description": "Student all courses points"
+    },
+    "courses_count": {
+      "description": "Student all courses count"
+    },
+    "course_completed_count": {
+      "description": "Student completed courses count"
+    },
+    "certificate_count": {
+      "description": "Student certificates count"
+    },
+    "quiz_attempts": {
+      "description": "Student quiz attempts loop"
+    },
+    "last_active_course": {
+      "description": "Student last active course loop "
+    },
+    "enrolled_courses": {
+      "description": "Student all enrolled courses"
+    },
+    "quizzes": {
+      "description": "Student quizzes loop"
+    },
+    "activity": {
+      "description": "Student activity loop"
+    },
+    "student_groups": {
+      "description": "Student groups loop"
+    },
+    "student_group_leaders": {
+      "description": "Student group leaders loop"
+    }
+  }
+}
