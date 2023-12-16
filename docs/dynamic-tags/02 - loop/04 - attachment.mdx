@@ -1,0 +1,108 @@
+---
+id: attachment
+title: Attachment
+tags:
+  - Dynamic Tags
+  - Loop
+---
+
+import { QueryArgsList } from '@site/common/QueryArgs.jsx'
+import { FieldsList } from '@site/common/Fields.jsx'
+import postJson from '@site/generate/loop-types/post.json'
+import json from '@site/generate/loop-types/attachment.json'
+const { query_args, fields } = json
+const { query_args: postQueryArgs, fields: PostFields } = postJson
+
+For loop type `attachment`, here are the query parameters and fields.
+
+## Query parameters
+
+### Order
+
+<QueryArgsList
+  args={postQueryArgs}
+  keys={['order', 'orderby', 'orderby_field', 'orderby_field_number']}
+/>
+
+### Core post meta
+
+<QueryArgsList
+  args={postQueryArgs}
+  keys={[
+    'include',
+    'exclude',
+    'id',
+    'name',
+    'author',
+    'exclude_author',
+    'publish_compare',
+    'publish_date',
+    'publish_day',
+    'publish_month',
+    'publish_week',
+    'publish_year',
+    'search',
+    'status',
+    'sticky',
+    'post_type',
+  ]}
+/>
+
+### Custom post meta
+
+<QueryArgsList
+  args={postQueryArgs}
+  keys={[
+    'custom_date_field',
+    'custom_date_field_compare',
+    'custom_date_field_format',
+    'custom_date_field_type',
+    'custom_date_field_value',
+    'custom_field',
+    'custom_field_compare',
+    'custom_field_type',
+    'custom_field_value',
+  ]}
+/>
+
+### Taxonomy
+
+<QueryArgsList
+  args={postQueryArgs}
+  keys={[
+    'category',
+    'exclude_category',
+    'tag',
+    'exclude_tag',
+    'child_terms',
+    'taxonomy',
+    'taxonomy_compare',
+    'taxonomy_relation',
+    'terms',
+  ]}
+/>
+
+### Pagination
+
+<QueryArgsList args={postQueryArgs} keys={['page', 'paged']} />
+
+### All parameters
+
+<QueryArgsList args={{...postQueryArgs, ...query_args}} />
+
+
+## Fields
+
+### Attachment fields
+
+<FieldsList fields={fields} keys={['alt', 'caption', 'description', 'extension', 'filename', 'size', 'sizes', 'srcset', 'type', 'url']} />
+
+
+### All fields
+
+<FieldsList fields={{...PostFields, ...fields}} />
+
+## Examples
+
+- [How to display a custom field that contains an image](/how-to/custom-image-fields)  
+- [How to adjust the resolution or size of a featured image](/how-to/resolution-size-featured-image)

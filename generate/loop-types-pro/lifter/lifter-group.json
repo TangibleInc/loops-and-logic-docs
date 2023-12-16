@@ -1,0 +1,73 @@
+{
+  "name": "lifter_group",
+  "title": "LifterLMS Group",
+  "category": "lifterlms",
+  "description": "Loop through groups",
+  "post_type": "llms_group",
+  "namespace": "Tangible\\Loop\\Integrations\\LifterLms",
+  "className": "GroupLoop",
+  "extends": "PostLoop",
+  "fields": {
+    "id": {
+      "description": "Group ID"
+    },
+    "content": {
+      "description": "Group content"
+    },
+    "banner_image": {
+      "description": "Group banner image source"
+    },
+    "logo_image": {
+      "description": "Group logo image source"
+    },
+    "seats_used": {
+      "description": "Group seats - used"
+    },
+    "seats_total": {
+      "description": "Group seats - total "
+    },
+    "seats_open": {
+      "description": "Group seats - open"
+    },
+    "leaders": {
+      "description": "Group leaders"
+    },
+    "members": {
+      "description": "Group members"
+    },
+    "groups_item": {
+      "description": "Group's item - Membership/Course "
+    },
+    "visibility": {
+      "description": "Group visibility - \"open\": anyone can access, \"private\" : only users with active accounts on the site can access, \"closed\": only group members can access "
+    },
+    "has_open_seats": {
+      "description": "Group has open seats"
+    },
+    "pending_invitations_count": {
+      "description": "Total number of pending invitations for the group."
+    }
+  },
+  "query_args": {
+    "user": {
+      "description": "User ID or \"current\" for current user who belongs to the group.",
+      "type": "string"
+    },
+    "has_open_seats": {
+      "description": "Group has open seats, \"true\"/\"false\"",
+      "type": "boolean"
+    },
+    "visibility": {
+      "description": "Group visibility - \"open\", \"private\", \"closed\"",
+      "type": [
+        "string",
+        "array"
+      ],
+      "accepts": [
+        "open",
+        "private",
+        "closed"
+      ]
+    }
+  }
+}

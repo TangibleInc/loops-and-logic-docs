@@ -1,0 +1,82 @@
+{
+  "name": "edd_payment",
+  "title": "EDD Payment",
+  "description": "Loop through payments of Easy Digital Downloads",
+  "category": "edd",
+  "query_args": {
+    "count": {
+      "description": "Posts per page",
+      "type": "number",
+      "target_name": "number",
+      "alias": [
+        "posts_per_page"
+      ]
+    },
+    "orderby": {
+      "description": "Order by field",
+      "type": [
+        "string",
+        "array"
+      ],
+      "default": "name"
+    },
+    "order": {
+      "description": "Order: ASC or DESC",
+      "type": "string",
+      "default": "ASC"
+    },
+    "year": {
+      "description": "Year",
+      "type": "number"
+    },
+    "month": {
+      "description": "Month",
+      "type": "number"
+    },
+    "day": {
+      "description": "Dat",
+      "type": "number"
+    },
+    "s": {
+      "description": "Search",
+      "type": "string"
+    },
+    "start_date": {
+      "description": "Start date",
+      "type": "date"
+    },
+    "end_date": {
+      "description": "End date",
+      "type": "date"
+    }
+  },
+  "fields": {
+    "id": {
+      "description": "Payment ID"
+    },
+    "payment_number": {
+      "description": "Payment number"
+    },
+    "amount": {
+      "description": "Payment amount"
+    },
+    "date": {
+      "description": "Payment date"
+    },
+    "status": {
+      "description": "Payment status"
+    },
+    "currency_code": {
+      "description": "Currency code"
+    },
+    "subscription_id": {
+      "description": "Subscription ID where applicable"
+    },
+    "all": {
+      "description": "Dump data of all custom fields (for development purpose)"
+    }
+  },
+  "namespace": "Tangible\\Loop\\Integrations\\EDD",
+  "className": "PaymentLoop",
+  "extends": "BaseLoop"
+}

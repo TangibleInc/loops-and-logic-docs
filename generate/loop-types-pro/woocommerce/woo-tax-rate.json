@@ -1,0 +1,36 @@
+{
+  "name": "woo_tax_rate",
+  "title": "WooCommerce",
+  "category": "woocommerce",
+  "description": "Loop through tax rates",
+  "query_args": {
+    "tax_class": {
+      "description": "Tax class. Ignored if product is supplied",
+      "type": "string"
+    },
+    "product": {
+      "description": "Product ID or \"current\". Overrides tax_class if used.",
+      "type": [
+        "number",
+        "string"
+      ]
+    }
+  },
+  "fields": {
+    "rate": {
+      "description": "Tax rate amount"
+    },
+    "label": {
+      "description": "Tax rate label"
+    },
+    "shipping": {
+      "description": "Whether tax rate applies to shipping"
+    },
+    "compound": {
+      "description": "Whether tax rate is compound"
+    }
+  },
+  "namespace": "Tangible\\Loop\\Integrations\\WooCommerce",
+  "className": "TaxRateLoop",
+  "extends": "ListLoop"
+}

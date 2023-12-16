@@ -1,0 +1,54 @@
+{
+  "name": "lifter_question",
+  "title": "LifterLMS Question",
+  "category": "lifterlms",
+  "description": "Loop through questions\n      s",
+  "post_type": "llms_question",
+  "namespace": "Tangible\\Loop\\Integrations\\LifterLms",
+  "className": "QuestionLoop",
+  "extends": "PostLoop",
+  "fields": {
+    "id": {
+      "description": "Question ID"
+    },
+    "content": {
+      "description": "Question content"
+    },
+    "clarifications": {
+      "description": "Question clarifications"
+    },
+    "clarifications_enabled": {
+      "description": "Question clarifications enabled, \"true\"/ \"false\" "
+    },
+    "description_enabled": {
+      "description": "Question description enabled, \"true\"/ \"false\""
+    },
+    "has_image": {
+      "description": "Question has image, \"true\"/ \"false\""
+    },
+    "image": {
+      "description": "Question image"
+    },
+    "multi_choices": {
+      "description": "Question multi choices, \"true\"/ \"false\""
+    },
+    "points": {
+      "description": "Question points"
+    },
+    "video_enabled": {
+      "description": "Question video enabled , \"true\"/ \"false\""
+    },
+    "video": {
+      "description": "Question source"
+    },
+    "quiz": {
+      "description": "Question parent Quiz"
+    }
+  },
+  "query_args": {
+    "quiz": {
+      "description": "Quiz ID or \"current\" for current quiz where the question is added.",
+      "type": "string"
+    }
+  }
+}

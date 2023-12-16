@@ -1,0 +1,170 @@
+---
+id: post
+title: Post
+tags:
+  - Dynamic Tags
+  - Loop
+---
+
+import { QueryArgsList } from '@site/common/QueryArgs.jsx'
+import { FieldsList } from '@site/common/Fields.jsx'
+import json from '@site/generate/loop-types/post.json'
+const { query_args, fields } = json
+
+For loop type `post`, `page`, and custom post type, here are the query parameters and fields.
+
+## Query parameters
+
+### Order
+
+<QueryArgsList
+  args={query_args}
+  include={['order', 'orderby', 'orderby_field', 'orderby_field_number']}
+/>
+
+### Core post meta
+
+<QueryArgsList
+  args={query_args}
+  include={[
+    'include',
+    'exclude',
+    'id',
+    'name',
+    'author',
+    'exclude_author',
+    'publish_compare',
+    'publish_date',
+    'publish_day',
+    'publish_month',
+    'publish_week',
+    'publish_year',
+    'search',
+    'status',
+    'sticky',
+    'post_type',
+  ]}
+/>
+
+### Custom post meta
+
+<QueryArgsList
+  args={query_args}
+  include={[
+    'custom_date_field',
+    'custom_date_field_compare',
+    'custom_date_field_format',
+    'custom_date_field_type',
+    'custom_date_field_value',
+    'custom_field',
+    'custom_field_compare',
+    'custom_field_type',
+    'custom_field_value',
+    //'custom_field_*',
+    //'custom_field_type_*',
+    //'custom_field_value_*',
+  ]}
+/>
+
+### Taxonomy
+
+<QueryArgsList
+  args={query_args}
+  include={[
+    'category',
+    'exclude_category',
+    'tag',
+    'exclude_tag',
+    'child_terms',
+    'taxonomy',
+    'taxonomy_compare',
+    'taxonomy_relation',
+    'terms',
+    //'taxonomy_*',
+    //'taxonomy_compare_*',
+    //'terms_*',
+  ]}
+/>
+
+### Pagination
+
+<QueryArgsList args={query_args} include={['page', 'paged']} />
+
+### All parameters
+
+<QueryArgsList args={query_args} />
+
+## Fields
+
+### Hierarchical
+
+Fields representing hierarchical relationships with other posts
+
+<FieldsList
+  fields={fields}
+  include={[
+    'ancestors',
+    'children',
+    'children_ids',
+    'parent',
+    'parent_ids',
+    'parent_*',
+  ]}
+/>
+
+### All fields
+
+<FieldsList fields={fields} />
+
+## Examples
+
+### Excerpt
+
+For post excerpts, the attribute auto=true can be used to optionally generate an excerpt from post content for posts that don't already have content in their excerpt field.  
+```html
+<Field excerpt auto=true />
+```  
+Attributes to customize:  
+
+*    `words` Maximum number of words - default 55
+*    `more` Text to display after content is trimmed - default: [&hellip;]
+
+
+### Publish date
+
+The example below will display posts that have been published in the past two weeks.  
+```html
+<Loop type=post publish_compare="after" publish_date="2 weeks ago">
+```
+
+### Custom date field
+
+The example below will display posts in an "event" custom post type that has an "event_date_time" custom field before the current date (i.e. past events)  
+```html
+<Loop type=event custom_date_field=event_date_time custom_date_field_format="Y-m-d H:i:s" custom_date_field_compare=before custom_date_field_value=current>
+```
+
+### Custom field
+
+The example below will display posts that have a "news_type" custom field that is not equal to "exclusive."
+```html
+<Loop type=post custom_field=news_type custom_field_compare=not custom_field_value=exclusive>
+```
+
+### Search
+
+The example below will display posts in a "course" custom post type that match a search, where the value of that search is defined by a URL query called "keywords."
+```html
+<Loop type=course search="{Url query=keywords}">
+```
+
+### More Examples
+
+- [How to display a random post when your hosting provider has disabled random sorting](/how-to/random-post-from-list)
+- [How to display a custom field that contains an image](/how-to/custom-image-fields)
+- [How to create loops within loops within loops](/how-to/nested-loops)
+- [How to only show posts with a certain custom field filled out](/how-to/filter-custom-field-has-value)
+- [How to show posts only if they exist and display a message if they don’t exist](/how-to/no-posts-found-conditional)
+- [How to adjust the resolution or size of a featured image](/how-to/resolution-size-featured-image)
+- [How to display a post editing link only when the current user is the post's author](/how-to/display-post-edit-link-author)
+- [How to display term fields on a taxonomy term archive](/how-to/term-fields-on-archive)

@@ -1,0 +1,33 @@
+{
+  "name": "lifter_voucher",
+  "title": "LifterLMS Voucher",
+  "category": "lifterlms",
+  "description": "Loop through vouchers",
+  "post_type": "llms_voucher",
+  "namespace": "Tangible\\Loop\\Integrations\\LifterLms",
+  "className": "VoucherLoop",
+  "extends": "PostLoop",
+  "fields": {
+    "id": {
+      "description": "Voucher ID"
+    },
+    "codes": {
+      "description": "Voucher codes"
+    },
+    "redeemed_codes": {
+      "description": "Voucher redeemed codes"
+    },
+    "courses": {
+      "description": "Voucher courses sub Loop"
+    },
+    "memberships": {
+      "description": "Voucher memberships sub Loop"
+    }
+  },
+  "query_args": {
+    "product": {
+      "description": "Product ID or \"current\" for current product where the voucher is assigned.",
+      "type": "string"
+    }
+  }
+}

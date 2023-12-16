@@ -1,0 +1,46 @@
+{
+  "name": "lifter_certificate",
+  "title": "LifterLMS Certificate",
+  "category": "lifterlms",
+  "description": "Loop through certificates",
+  "post_type": "llms_certificate",
+  "namespace": "Tangible\\Loop\\Integrations\\LifterLms",
+  "className": "CertificateLoop",
+  "extends": "PostLoop",
+  "fields": {
+    "id": {
+      "description": "Certificate ID"
+    },
+    "content_raw": {
+      "description": "Certificate raw content"
+    },
+    "image": {
+      "description": "Certificate image URL"
+    },
+    "image_html": {
+      "description": "Certificate image html"
+    },
+    "title_for_certificate": {
+      "description": "Certificate title(displayed on the certificate)"
+    },
+    "triggered_by_post_id": {
+      "description": "Certificate post id which triggered the earning of the certificate(Lesson, Course, Section, Track, etc...)"
+    },
+    "triggered_by_post_type": {
+      "description": "Certificate triggered by post type which triggered the earning of the certificate(Lesson, Course, Section, Track, etc...)"
+    },
+    "content_html": {
+      "description": "Certificate content html"
+    }
+  },
+  "query_args": {
+    "triggered_by": {
+      "description": "Post ID or \"current\" for current post which triggered the earning of the certificate(Lesson, Course, Section, Track, etc...).",
+      "type": "string"
+    },
+    "user": {
+      "description": "User ID or \"current\" for current user who earned the certificate.",
+      "type": "string"
+    }
+  }
+}

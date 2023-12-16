@@ -1,0 +1,51 @@
+{
+  "name": "lifter_instructor",
+  "title": "LifterLMS Instructor",
+  "category": "lifterlms",
+  "description": "Loop through instructors, instructors_assistants",
+  "namespace": "Tangible\\Loop\\Integrations\\LifterLms",
+  "className": "InstructorLoop",
+  "extends": "UserLoop",
+  "fields": {
+    "id": {
+      "description": "Instructor ID"
+    },
+    "assistants": {
+      "description": "Instructor assistants"
+    },
+    "courses": {
+      "description": "Instructor courses"
+    },
+    "memberships": {
+      "description": "Instructor memberships"
+    },
+    "students": {
+      "description": "Instructor students"
+    },
+    "is_instructor": {
+      "description": "If the instructor is an instructor on a post, \"true\",\"false\"."
+    }
+  },
+  "query_args": {
+    "course": {
+      "description": "Course ID that instructor is enrolled.",
+      "type": "string"
+    },
+    "student": {
+      "description": "Student ID that has the instructor assigned.",
+      "type": "string"
+    },
+    "assistant": {
+      "description": "Assistant ID that has the instructor assigned.",
+      "type": "string"
+    },
+    "membership": {
+      "description": "Membership ID that instructor is enrolled.",
+      "type": "string"
+    },
+    "is_instructor_on_post": {
+      "description": "If the instructor is an instructor on a post, \"true\",\"false\".",
+      "type": "boolean"
+    }
+  }
+}

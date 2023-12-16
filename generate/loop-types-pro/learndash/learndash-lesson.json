@@ -1,0 +1,249 @@
+{
+  "name": "learndash_lesson",
+  "title": "LearnDash Lesson",
+  "category": "learndash",
+  "description": "Loop through lessons",
+  "post_type": "sfwd-lessons",
+  "namespace": "Tangible\\Loop\\Integrations\\LearnDash",
+  "className": "LessonLoop",
+  "extends": "PostLoop",
+  "query_args": {
+    "course": {
+      "description": "Course ID or \"current\" for current course",
+      "type": "string"
+    },
+    "enrolled": {
+      "description": "Current user is enrolled",
+      "type": "boolean"
+    },
+    "completion_status": {
+      "description": "Lesson completion status ('open', 'started', 'completed', 'locked')",
+      "type": [
+        "string",
+        "array"
+      ],
+      "accepts": [
+        "open",
+        "started",
+        "completed",
+        "locked"
+      ]
+    },
+    "video_exists": {
+      "description": "Lesson video exists, true or false",
+      "type": "boolean"
+    }
+  },
+  "fields": {
+    "lesson_progress_status": {
+      "description": "Progress status: open, started, completed, or locked"
+    },
+    "lesson_progress_status_label": {
+      "description": "Progress status label: Not Started, In Progress, Completed, or Locked"
+    },
+    "lesson_progress_percent": {
+      "description": "Lesson progress percent - Quizzes not counted as steps"
+    },
+    "lesson_progress_total": {
+      "description": "Lesson total steps - Quizzes not counted as steps"
+    },
+    "lesson_progress_completed": {
+      "description": "Lesson completed steps - Quizzes not counted as steps"
+    },
+    "lesson_progress_percent_q": {
+      "description": "Lesson progress percent - Quizzes counted as steps"
+    },
+    "lesson_progress_total_q": {
+      "description": "Lesson total steps - Quizzes counted as steps"
+    },
+    "lesson_progress_completed_q": {
+      "description": "Lesson completed steps - Quizzes counted as steps"
+    },
+    "lesson_is_sample": {
+      "description": "If the lesson is sample or not"
+    },
+    "lesson_schedule": {
+      "description": "Lesson schedule : After Course Enrollment - value \"after_course_enrolled\" / After Specific Date - value \"after_specific_date\""
+    },
+    "lesson_drip_enabled": {
+      "description": "Lesson Drip enabled or not"
+    },
+    "lesson_drip_date": {
+      "description": "Drip date - Optionally use \"date_format\" attribute"
+    },
+    "lesson_drip_date_timestamp": {
+      "description": "Drip date timestamp"
+    },
+    "lesson_drip_date_past": {
+      "description": "Drip date is in the past (before and including today)"
+    },
+    "lesson_drip_date_future": {
+      "description": "Drip date is in the future (after today)"
+    },
+    "lesson_next_step": {
+      "description": "Next step"
+    },
+    "lesson_next_step_title": {
+      "description": "Next step Title"
+    },
+    "lesson_next_step_url": {
+      "description": "Next step URL"
+    },
+    "lesson_next_step_id": {
+      "description": "Next step Id"
+    },
+    "lesson_previous_step": {
+      "description": "Previous step"
+    },
+    "lesson_previous_step_title": {
+      "description": "Previous step Title"
+    },
+    "lesson_previous_step_url": {
+      "description": "Previous step URL"
+    },
+    "lesson_previous_step_id": {
+      "description": "Previous step Id"
+    },
+    "lesson_parent_course_title": {
+      "description": "Lesson parent Course Title"
+    },
+    "lesson_parent_course_url": {
+      "description": "Lesson parent Course URL"
+    },
+    "lesson_parent_course_id": {
+      "description": "Lesson parent Course id"
+    },
+    "lesson_mark_complete": {
+      "description": "Mark Complete button"
+    },
+    "lesson_has_next_lesson": {
+      "description": "Has next lesson"
+    },
+    "lesson_next_lesson_id": {
+      "description": "Next lesson id"
+    },
+    "lesson_next_lesson_title": {
+      "description": "Next lesson title"
+    },
+    "lesson_next_lesson_url": {
+      "description": "Next lesson url"
+    },
+    "lesson_next_lesson_link": {
+      "description": "Next lesson link"
+    },
+    "lesson_has_previous_lesson": {
+      "description": "Has previous lesson"
+    },
+    "lesson_previous_lesson_id": {
+      "description": "Previous lesson id"
+    },
+    "lesson_previous_lesson_title": {
+      "description": "Previous lesson title"
+    },
+    "lesson_previous_lesson_url": {
+      "description": "Previous lesson url"
+    },
+    "lesson_previous_lesson_link": {
+      "description": "Previous lesson link"
+    },
+    "lesson_materials": {
+      "description": "Lesson materials"
+    },
+    "lesson_assignments_enabled": {
+      "description": "Is assignment enabled"
+    },
+    "lesson_assignments_extensions": {
+      "description": "Assignment file extensions limit"
+    },
+    "lesson_assignments_size": {
+      "description": "Assignment file size limit"
+    },
+    "lesson_assignments_points": {
+      "description": "Assignment points enabled"
+    },
+    "lesson_assignments_points_amount": {
+      "description": "Assignment points amount"
+    },
+    "lesson_assignments_auto_approve": {
+      "description": "Assignment grading type(Auto-approve, Manually grade) "
+    },
+    "lesson_assignments_upload": {
+      "description": "Assignment file uploads number limit "
+    },
+    "lesson_assignments_deletion": {
+      "description": "Assignment deletion enabled"
+    },
+    "lesson_assignments_form": {
+      "description": "Renders Assignment upload form."
+    },
+    "lesson_video": {
+      "description": "Renders Video."
+    },
+    "lesson_video_url": {
+      "description": "Video URL."
+    },
+    "lesson_video_exist": {
+      "description": "Video exists or not."
+    },
+    "lesson_video_enabled": {
+      "description": "Video enabled or not."
+    },
+    "lesson_video_shown": {
+      "description": "Video available \"before\" or \"after\" completed sub-steps."
+    },
+    "lesson_video_auto_complete_delay": {
+      "description": "Delay between video completion and lesson completion."
+    },
+    "lesson_video_auto_start": {
+      "description": "Video auto-start or not."
+    },
+    "lesson_video_show_controls": {
+      "description": "Show Video controls or not."
+    },
+    "lesson_video_auto_complete": {
+      "description": "Mark the lesson as completed once the user has watched the full video."
+    },
+    "lesson_video_show_complete_button": {
+      "description": "Display the Mark Complete button on a lesson even if not yet clickable."
+    },
+    "lesson_video_focus_pause": {
+      "description": "Pause the video if user switches to a different window.."
+    },
+    "lesson_video_track_time": {
+      "description": "Allows user to resume video position."
+    },
+    "lesson_has_section": {
+      "description": "If Lesson has a section(if it is a first lesson under a section) - bool"
+    },
+    "lesson_section_title": {
+      "description": "Section title"
+    },
+    "lesson_section_order": {
+      "description": "Section order"
+    },
+    "lesson_section_url": {
+      "description": "Section URL"
+    },
+    "lesson_section_is_expanded": {
+      "description": "If the section is expanded - bool"
+    },
+    "lesson_section_type": {
+      "description": "Section type"
+    },
+    "lesson_step_number": {
+      "description": "Lesson Step Number relative to Course - WITHOUT Quizzes counted"
+    },
+    "lesson_step_number_q": {
+      "description": "Lesson Step Number relative to Course - WITH Quizzes counted"
+    },
+    "lesson_number_no_children": {
+      "description": "Lesson Number relative to Course - NO Topics and Quizzes counted"
+    },
+    "lesson_timer": {
+      "description": "Display timer countdown."
+    },
+    "lesson_time_enabled": {
+      "description": "If Forced time enabled or not."
+    }
+  }
+}

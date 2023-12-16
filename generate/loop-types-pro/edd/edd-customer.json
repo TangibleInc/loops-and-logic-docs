@@ -1,0 +1,61 @@
+{
+  "name": "edd_customer",
+  "title": "EDD Customer",
+  "description": "Loop through customers of Easy Digital Downloads",
+  "category": "edd",
+  "query_args": {
+    "orderby": {
+      "description": "Order by field",
+      "type": [
+        "string",
+        "array"
+      ],
+      "default": "name"
+    },
+    "order": {
+      "description": "Order: ASC or DESC",
+      "type": "string",
+      "default": "ASC"
+    },
+    "email": {
+      "description": "Get customer by email",
+      "type": "string"
+    },
+    "search": {
+      "description": "Search customers by given string",
+      "type": "string"
+    }
+  },
+  "fields": {
+    "id": {
+      "description": "Customer ID"
+    },
+    "user_id": {
+      "description": "Customer User ID"
+    },
+    "name": {
+      "description": "Customer name"
+    },
+    "email": {
+      "description": "Customer email"
+    },
+    "purchase_count": {
+      "description": "Number of purchases"
+    },
+    "purchase_value": {
+      "description": "Total amount spent on purchases"
+    },
+    "date_created": {
+      "description": "Date when customer was created"
+    },
+    "payment_ids": {
+      "description": "Payment IDs"
+    },
+    "all": {
+      "description": "Show data of all custom fields (for development purpose)"
+    }
+  },
+  "namespace": "Tangible\\Loop\\Integrations\\EDD",
+  "className": "CustomerLoop",
+  "extends": "BaseLoop"
+}

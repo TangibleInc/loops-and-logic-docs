@@ -5,6 +5,7 @@
 /build
 
 # Generated files
+/generate/vendor
 .docusaurus
 .cache-loader
 

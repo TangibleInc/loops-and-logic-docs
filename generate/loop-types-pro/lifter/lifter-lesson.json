@@ -1,0 +1,134 @@
+{
+  "name": "lifter_lesson",
+  "title": "LifterLMS Lesson",
+  "category": "lifterlms",
+  "description": "Loop through lessons",
+  "post_type": "lesson",
+  "namespace": "Tangible\\Loop\\Integrations\\LifterLms",
+  "className": "LessonLoop",
+  "extends": "PostLoop",
+  "query_args": {
+    "enrolled": {
+      "description": "Current user is enrolled, \"true\"/\"false\"",
+      "type": "boolean"
+    },
+    "is_drip_past": {
+      "description": "Is lesson drip time past, \"true\"/\"false\"",
+      "type": "boolean"
+    },
+    "is_available": {
+      "description": "Is lesson is available based on drip settings, \"true\"/\"false\"",
+      "type": "boolean"
+    },
+    "is_complete": {
+      "description": "If the lesson has been completed by a specific user, \"true\"/\"false\"",
+      "type": "boolean"
+    },
+    "is_free": {
+      "description": "If the lesson is marked as \"free\", \"true\"/\"false\"",
+      "type": "boolean"
+    },
+    "course": {
+      "description": "Course ID or \"current\" for current course where the lesson is assigned.",
+      "type": "string"
+    },
+    "section": {
+      "description": "Section ID or \"current\" for current section where the lesson is assigned.",
+      "type": "string"
+    },
+    "quiz": {
+      "description": "Quiz ID or \"current\" for current quiz of the lesson it is assigned.",
+      "type": "string"
+    },
+    "user": {
+      "description": "User ID.",
+      "type": "string"
+    }
+  },
+  "fields": {
+    "next_step_title": {
+      "description": "Lesson next step title"
+    },
+    "next_step_url": {
+      "description": "Lesson next step url"
+    },
+    "prev_step_title": {
+      "description": "Lesson previous step title"
+    },
+    "prev_step_url": {
+      "description": "Lesson previous step url"
+    },
+    "id": {
+      "description": "Lesson ID"
+    },
+    "audio": {
+      "description": "Lesson audio embed"
+    },
+    "video": {
+      "description": "Lesson video embed"
+    },
+    "available_date": {
+      "description": "Get the date a course became or will become available according to element drip settings - if no drip, published date used"
+    },
+    "points": {
+      "description": "Number of points assigned to the lesson, used to calculate the weight of the lesson when grading courses"
+    },
+    "has_prerequisite": {
+      "description": "If Lesson has prerequisite, \"true\"/\"false\""
+    },
+    "has_quiz": {
+      "description": "If Lesson has quiz, \"true\"/\"false\""
+    },
+    "is_available": {
+      "description": "If Lesson is available, \"true\"/\"false\""
+    },
+    "is_complete": {
+      "description": "If Lesson is completed by specific user, \"true\"/\"false\""
+    },
+    "is_free": {
+      "description": "If Lesson is marked as \"free\", \"true\"/\"false\""
+    },
+    "is_orphan": {
+      "description": "If Lesson is an orphan, \"true\"/\"false\""
+    },
+    "require_passing_grade": {
+      "description": "If Lesson require passing grade, \"true\"/\"false\""
+    },
+    "require_assignment_passing_grade": {
+      "description": "If Lesson require assignment passing grade, \"true\"/\"false\""
+    },
+    "is_drip_past": {
+      "description": "If Lesson has drip is past, \"true\"/\"false\""
+    },
+    "user_has_access": {
+      "description": "If User has access to the lesson, string \"true\"/\"false\""
+    },
+    "drip_method": {
+      "description": "What sort of drip method to utilize [''(none)|date|enrollment|start|prerequisite]"
+    },
+    "date_available": {
+      "description": "Date when lesson becomes available, applies when drip_method is \"date\""
+    },
+    "time_available": {
+      "description": "Optional time to make lesson available on date_available when drip_method is \"date\""
+    },
+    "days_before_available": {
+      "description": "The number of days before the lesson is available, applies when drip_method is \"enrollment\" or \"start\""
+    },
+    "parent_course": {
+      "description": "Lesson parent course"
+    },
+    "parent_section": {
+      "description": "Lesson parent section"
+    },
+    "quiz": {
+      "description": "Lesson quiz"
+    },
+    "prerequisite": {
+      "description": "Lesson prerequisite"
+    },
+    "content": {
+      "description": "Lesson content"
+    }
+  }
+}

@@ -1,0 +1,122 @@
+{
+  "name": "user",
+  "title": "User",
+  "category": "core",
+  "query_args": {
+    "id": {
+      "target_name": "include",
+      "description": "User by ID",
+      "type": [
+        "string",
+        "array"
+      ]
+    },
+    "name": {
+      "target_name": "login__in",
+      "description": "User by name/slug",
+      "type": [
+        "string",
+        "array"
+      ]
+    },
+    "include": {
+      "description": "Include users by ID or name",
+      "type": [
+        "string",
+        "array"
+      ]
+    },
+    "exclude": {
+      "description": "Exclude users by ID or name",
+      "type": [
+        "string",
+        "array"
+      ]
+    },
+    "orderby": {
+      "description": "Order by field",
+      "type": [
+        "string",
+        "array"
+      ],
+      "default": "display_name"
+    },
+    "order": {
+      "description": "Order: asc (ascending) or desc (descending)",
+      "type": "string",
+      "default": "asc",
+      "accepts": [
+        "asc",
+        "desc"
+      ]
+    },
+    "paged": {
+      "description": "Items per page",
+      "type": "number",
+      "default": 10
+    },
+    "role": {
+      "target_name": "role__in",
+      "description": "User role(s)",
+      "type": [
+        "string",
+        "array"
+      ]
+    },
+    "not_role": {
+      "target_name": "role__not_in",
+      "description": "Exclude user role(s)",
+      "type": [
+        "string",
+        "array"
+      ]
+    },
+    "fields": {
+      "value": "ids"
+    }
+  },
+  "fields": {
+    "id": {
+      "description": "ID"
+    },
+    "name": {
+      "description": "Name"
+    },
+    "full_name": {
+      "description": "Full name"
+    },
+    "email": {
+      "description": "Email"
+    },
+    "url": {
+      "description": "URL"
+    },
+    "archive_url": {
+      "description": "Post archive URL"
+    },
+    "edit_url": {
+      "description": "Edit URL"
+    },
+    "post_count": {
+      "description": "Post count"
+    },
+    "avatar": {
+      "description": "Avatar image"
+    },
+    "avatar_url": {
+      "description": "Avatar URL"
+    },
+    "registration_date": {
+      "description": "Registration date"
+    },
+    "roles": {
+      "description": "User role(s)"
+    },
+    "locale": {
+      "description": "User locale from the Language setting in profile edit screen"
+    }
+  },
+  "namespace": "Tangible\\Loop",
+  "className": "UserLoop",
+  "extends": "BaseLoop"
+}

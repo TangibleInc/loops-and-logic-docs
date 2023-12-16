@@ -1,0 +1,109 @@
+{
+  "name": "learndash_user_activity",
+  "title": "LearnDash User Activity",
+  "category": "learndash",
+  "description": "Loop through User Activities",
+  "namespace": "Tangible\\Loop\\Integrations\\LearnDash",
+  "className": "UserActivityLoop",
+  "extends": "BaseLoop",
+  "query_args": {
+    "user_id": {
+      "description": "User ID (current by default)",
+      "type": "number"
+    },
+    "course_id": {
+      "description": "Course ID or \"current\" of the activity",
+      "type": "string"
+    },
+    "limit": {
+      "description": "Limit number of activities",
+      "type": "number",
+      "default": 25
+    },
+    "on_date": {
+      "description": "Activities on a specific date. Accepts time format strings, eg. \"Thursday, September 10, 2020 17:29:14\", \"2020-12-11\" etc. Takes precedence over other date query arguments",
+      "type": "string"
+    },
+    "from_date": {
+      "description": "Activities on and after a specific date. Accepts time format strings, eg. \"Thursday, September 10, 2020 17:29:14\", \"2020-12-11\" etc.",
+      "type": "string"
+    },
+    "to_date": {
+      "description": "Activities to and on a specific date. Accepts time format strings, eg. \"Thursday, September 10, 2020 17:29:14\", \"2020-12-11\" etc.",
+      "type": "string"
+    },
+    "activity_event": {
+      "description": "Whether to filter activities by \"started\" or \"completed\" date - values \"started\" and \"completed\" ",
+      "type": "string",
+      "default": "started"
+    },
+    "activity_status": {
+      "description": "Whether to filter activities by status - values \"open\", \"started\" and \"completed\" ",
+      "type": "string"
+    },
+    "date_precision": {
+      "description": "When set to \"full\" takes into account hours,minutes and seconds when calculating date - values \"full\" and \"day\"",
+      "type": "string",
+      "default": "day"
+    },
+    "orderby": {
+      "description": "Order by  - values:  activity_id,\tuser_id,\tpost_id,\tcourse_id,\tactivity_type,\tactivity_status,\tactivity_started,\tactivity_completed, \tactivity_updated",
+      "type": "string"
+    },
+    "order": {
+      "description": "Order - values:  asc/desc",
+      "type": "string",
+      "default": "desc"
+    }
+  },
+  "fields": {
+    "activity_id": {
+      "description": "Activity ID"
+    },
+    "activity_type": {
+      "description": "Activity type: course, lesson, topic, quiz"
+    },
+    "course_id": {
+      "description": "Activity Course ID"
+    },
+    "id": {
+      "description": "Post ID"
+    },
+    "title": {
+      "description": "Post title"
+    },
+    "url": {
+      "description": "Post URL"
+    },
+    "post": {
+      "description": "Post loop"
+    },
+    "type": {
+      "description": "Post loop type"
+    },
+    "status": {
+      "description": "Status - One of: open, started, completed"
+    },
+    "steps_completed": {
+      "description": "Steps completed"
+    },
+    "steps_total": {
+      "description": "Total steps"
+    },
+    "percentage": {
+      "description": "Progress percentage (0~100)"
+    },
+    "started": {
+      "description": "Activity started timestamp"
+    },
+    "completed": {
+      "description": "Activity completed timestamp"
+    },
+    "duration": {
+      "description": "Duration in seconds (quiz only)"
+    },
+    "duration_in_minutes": {
+      "description": "Duration in minutes (quiz only)"
+    }
+  }
+}

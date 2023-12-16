@@ -31,8 +31,8 @@ Learning to write functional, efficient L&L markup isn't difficult. In fact, the
 
 While the links below are beginner guides, we’ll assume you have a basic understanding of HTML syntax and understand the concepts of tags and attributes. We’ll also assume you're familiar with basic WordPress concepts like post types and taxonomies. We recommend working through these guides in the following order:
 
-1. [The inner workings of L&L](/docs/getting-started/loops-and-logic/inner-workings-loops-and-logic): start here to get a solid understanding of what's going on behind the scenes with Loops & Logic.
-2. [The syntax of L&L markup](/docs/getting-started/loops-and-logic/syntax-loops-and-logic-markup): once you have a general understanding of how L&L works, learn the syntax rules to use when writing your own templates.
-3. [Creating a simple template](/docs/getting-started/loops-and-logic/creating-a-simple-template): now that you know the syntax, take a look at a simple template example to get an intuitive understanding of the templating language.
-4. [Displaying an L&L template](/docs/getting-started/loops-and-logic/displaying-a-template): being able to write a template is important, but you'll also need to know how to place it on a page!
-5. [Importing and exporting L&L templates](/docs/getting-started/loops-and-logic/import-export): satisfied with your template? Loops & Logic makes it easy to export and import your templates to use them across multiple sites.
+1. [The inner workings of L&L](/getting-started/loops-and-logic/inner-workings-loops-and-logic): start here to get a solid understanding of what's going on behind the scenes with Loops & Logic.
+2. [The syntax of L&L markup](/getting-started/loops-and-logic/syntax-loops-and-logic-markup): once you have a general understanding of how L&L works, learn the syntax rules to use when writing your own templates.
+3. [Creating a simple template](/getting-started/loops-and-logic/creating-a-simple-template): now that you know the syntax, take a look at a simple template example to get an intuitive understanding of the templating language.
+4. [Displaying an L&L template](/getting-started/loops-and-logic/displaying-a-template): being able to write a template is important, but you'll also need to know how to place it on a page!
+5. [Importing and exporting L&L templates](/getting-started/loops-and-logic/import-export): satisfied with your template? Loops & Logic makes it easy to export and import your templates to use them across multiple sites.

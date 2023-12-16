@@ -1,0 +1,12 @@
+{
+  "position": 1,
+  "label": "Terminology definitions",
+  "collapsible": true,
+  "collapsed": true,
+  "link": {
+    "type": "generated-index",
+    "title": "Terminology definitions",
+		"description": "Brief explanations of some of the technical terms used in this documentation",
+    "slug": "/terminology"
+  }
+}

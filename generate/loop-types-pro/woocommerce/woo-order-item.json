@@ -1,0 +1,51 @@
+{
+  "name": "woo_order_item",
+  "title": "WooCommerce Order Item",
+  "category": "woocommerce",
+  "description": "Loop through order items",
+  "query_args": {},
+  "fields": {
+    "product": {
+      "description": "Get product. Returns a Loop."
+    },
+    "unit_price": {
+      "description": "Price per unit"
+    },
+    "product_id": {
+      "description": "Corresponding product id"
+    },
+    "variation_id": {
+      "description": "Get variation ID"
+    },
+    "quantity": {
+      "description": "Get quantity"
+    },
+    "tax_class": {
+      "description": "Get tax class"
+    },
+    "subtotal": {
+      "description": "Get subtotal"
+    },
+    "subtotal_tax": {
+      "description": "Get subtotal tax"
+    },
+    "total": {
+      "description": "Get total"
+    },
+    "total_tax": {
+      "description": "Get total tax"
+    },
+    "item_download_url": {
+      "description": "Get the Download URL"
+    },
+    "item_downloads": {
+      "description": "Get any associated downloadable files"
+    },
+    "tax_status": {
+      "description": "Get tax status"
+    }
+  },
+  "namespace": "Tangible\\Loop\\Integrations\\WooCommerce",
+  "className": "OrderItemLoop",
+  "extends": "FieldLoop"
+}

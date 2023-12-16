@@ -1,0 +1,24 @@
+{
+  "name": "edd_download_log",
+  "title": "EDD Download log",
+  "description": "Loop through download logs",
+  "category": "edd",
+  "query_args": {},
+  "fields": {
+    "file": {
+      "description": "Respective product (download)"
+    },
+    "payment_id": {
+      "description": "Corresponding payment id"
+    },
+    "product_id": {
+      "description": "Respective product (download)"
+    },
+    "user_id": {
+      "description": "User who downloaded file"
+    }
+  },
+  "namespace": "Tangible\\Loop\\Integrations\\EDD",
+  "className": "DownloadLogLoop",
+  "extends": "BaseLoop"
+}

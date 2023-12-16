@@ -1,0 +1,57 @@
+{
+  "name": "learndash_essay",
+  "title": "LearnDash Quiz Essay",
+  "category": "learndash",
+  "description": "Loop through quiz essays",
+  "post_type": "sfwd-essays",
+  "namespace": "Tangible\\Loop\\Integrations\\LearnDash",
+  "className": "EssayLoop",
+  "extends": "PostLoop",
+  "query_args": {
+    "status": {
+      "target_name": "post_status",
+      "description": "Post status: graded, not_graded. Default ['graded', 'not_graded']",
+      "type": [
+        "string",
+        "array"
+      ],
+      "default": [
+        "graded",
+        "not_graded"
+      ]
+    },
+    "quiz": {
+      "description": "Quiz ID  or \"current\" for current quiz",
+      "type": "string"
+    }
+  },
+  "fields": {
+    "essay_status": {
+      "description": "Essay status - graded , not_graded"
+    },
+    "essay_graded_type": {
+      "description": "Essay graded type - upload, text"
+    },
+    "essay_download_link": {
+      "description": "Essay download link for 'upload type'"
+    },
+    "essay_grading_progression": {
+      "description": "Essay grading progression - not-graded-none, not-graded-full, graded-full"
+    },
+    "essay_comments_status": {
+      "description": "Essay comments status"
+    },
+    "essay_comments_number": {
+      "description": "Essay comments number"
+    },
+    "essay_points_max": {
+      "description": "Essay points max"
+    },
+    "essay_points_awarded": {
+      "description": "Essay points awarded"
+    },
+    "essay_points_percentage": {
+      "description": "Essay points percentage"
+    }
+  }
+}

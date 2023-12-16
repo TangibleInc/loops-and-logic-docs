@@ -32,12 +32,27 @@ const config = {
     locales: ['en'],
   },
 
+  plugins: [
+    [
+      '@docusaurus/plugin-client-redirects',
+      {
+        redirects: [
+          {
+            from: '/reference/template-system/framework',
+            to: '/reference/framework'
+          }
+        ]
+      }
+    ]
+  ],
+
   presets: [
     [
       'classic',
       /** @type {import('@docusaurus/preset-classic').Options} */
       ({
         docs: {
+          routeBasePath: '/', // Serve the docs at the site's root
           sidebarPath: require.resolve('./sidebars.js'),
           // Please change this to your repo.
           // Remove this to remove the "edit this page" links.
@@ -78,21 +93,33 @@ const config = {
           },
           {
             type: 'docSidebar',
-            sidebarId: 'learningGuides',
+            sidebarId: 'dynamicTags',
             position: 'left',
-            label: 'Learning Guides',
-          },
-          {
-            type: 'docSidebar',
-            sidebarId: 'referenceGuides',
-            position: 'left',
-            label: 'Reference Guides',
+            label: 'Tags',
           },
           {
             type: 'docSidebar',
             sidebarId: 'howToGuides',
             position: 'left',
-            label: 'How-to Guides',
+            label: 'How-to',
+          },
+          {
+            type: 'docSidebar',
+            sidebarId: 'integrations',
+            position: 'left',
+            label: 'Integrations',
+          },
+          {
+            type: 'docSidebar',
+            sidebarId: 'tangibleBlocks',
+            position: 'left',
+            label: 'Blocks',
+          },
+          {
+            type: 'docSidebar',
+            sidebarId: 'reference',
+            position: 'left',
+            label: 'Reference',
           },
           {
             to: '/docs/playground',
@@ -114,23 +141,23 @@ const config = {
             items: [
               {
                 label: 'Get Started',
-                to: '/docs/getting-started/quick-start',
+                to: '/getting-started/quick-start',
               },
               {
                 label: 'Loop Tag',
-                to: '/docs/learning-guides/dynamic-tags/loop/',
+                to: '/dynamic-tags/loop/',
               },
               {
                 label: 'If Tag',
-                to: '/docs/learning-guides/dynamic-tags/if/',
+                to: '/dynamic-tags/if/',
               },
               {
                 label: 'Set and Get Tags',
-                to: '/docs/learning-guides/dynamic-tags/set-get',
+                to: '/dynamic-tags/set-get',
               },
               {
                 label: 'Using ACF Fields',
-                to: '/docs/learning-guides/integrations/acf',
+                to: '/integrations/acf',
               },
             ],
           },

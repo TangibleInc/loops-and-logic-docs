@@ -12,17 +12,17 @@ const FeatureList = [
         Read our Getting Started Docs
       </>
     ),
-		destination: '/docs/getting-started/quick-start',
+		destination: '/getting-started/quick-start',
   },
   {
     title: 'Looking for a specific tag?',
     Svg: require('@site/static/img/smart-duck.svg').default,
     description: (
       <>
-        Find it in our Learning Guides
+        Explore all of L&L's dynamic tags
       </>
     ),
-		destination: '/docs/learning-guides/dynamic-tags/',
+		destination: '/dynamic-tags/',
   },
   {
     title: 'Have a question or something cool to share?',

@@ -1,0 +1,13 @@
+{
+  "name": "learndash_group_user",
+  "title": "LearnDash Group User",
+  "namespace": "Tangible\\Loop\\Integrations\\LearnDash",
+  "className": "GroupUserLoop",
+  "extends": "StudentLoop",
+  "query_args": {
+    "group_leader": {
+      "description": "Group leader ID or \"current\" for current user",
+      "type": "string"
+    }
+  }
+}

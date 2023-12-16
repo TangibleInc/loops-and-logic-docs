@@ -1,0 +1,54 @@
+{
+  "name": "learndash_question",
+  "title": "LearnDash Question",
+  "category": "learndash",
+  "description": "Loop through quizze questions",
+  "post_type": "sfwd-question",
+  "namespace": "Tangible\\Loop\\Integrations\\LearnDash",
+  "className": "QuestionLoop",
+  "extends": "PostLoop",
+  "query_args": {
+    "quiz": {
+      "description": "Quiz ID  or \"current\" for current quiz",
+      "type": "string"
+    }
+  },
+  "fields": {
+    "question_text": {
+      "description": "Question text"
+    },
+    "question_cat_id": {
+      "description": "Question category ID"
+    },
+    "question_cat_name": {
+      "description": "Question category name"
+    },
+    "question_type": {
+      "description": "Question type"
+    },
+    "question_points": {
+      "description": "Question points"
+    },
+    "question_answers": {
+      "description": "Questions answers field list. Loop fields: \"answer\", \"html\", \"points\", \"correct\", \"sortString\", \"sortStringHtml\", \"graded\", \"gradingProgression\", \"gradedType\" "
+    },
+    "question_correct_msg": {
+      "description": "Correct message"
+    },
+    "question_incorrect_msg": {
+      "description": "Incorrect message"
+    },
+    "question_tip_enabled": {
+      "description": "Tip enabled - \"true\" or \"false\" "
+    },
+    "question_tip_msg": {
+      "description": "Tip message"
+    },
+    "question_show_points_in_box": {
+      "description": "Show points - \"true\" or \"false\" "
+    },
+    "question_answer_points_activated": {
+      "description": "Answer points actvated - \"true\" or \"false\" "
+    }
+  }
+}

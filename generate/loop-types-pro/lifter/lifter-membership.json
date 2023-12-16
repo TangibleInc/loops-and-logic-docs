@@ -1,0 +1,89 @@
+{
+  "name": "lifter_membership",
+  "title": "LifterLMS Membership",
+  "category": "lifterlms",
+  "description": "Loop through memberships",
+  "post_type": "llms_membership",
+  "namespace": "Tangible\\Loop\\Integrations\\LifterLms",
+  "className": "MembershipLoop",
+  "extends": "PostLoop",
+  "fields": {
+    "membership_id": {
+      "description": "Membership ID"
+    },
+    "associated_posts": {
+      "description": "List loop of associated posts with the membership - can contain membership restricted post, page, custom post, membership auto-enroll course, course that has at least one access plan with members-only"
+    },
+    "content": {
+      "description": "Membership content"
+    },
+    "auto_enroll_courses": {
+      "description": "Children Loop of the auto enrollment courses"
+    },
+    "instructors": {
+      "description": "Children Loop instructors"
+    },
+    "sales_page_url": {
+      "description": "The URL to a WP Page or Custom URL when sales page redirection is enabled"
+    },
+    "redirect_page_url": {
+      "description": "Restricted Access Redirect - when a non-member attempts to access content restricted to the membership "
+    },
+    "restriction_add_notice": {
+      "description": "Whether or not to add an on screen message when content is restricted by the membership"
+    },
+    "restriction_notice": {
+      "description": "Restriction notice to display "
+    },
+    "student_count": {
+      "description": "Retrieve the number of enrolled students in the membership."
+    },
+    "students": {
+      "description": "Students Loop based on enrollment status in the membership."
+    },
+    "access_plans": {
+      "description": "Membership access plans."
+    },
+    "is_purchasable": {
+      "description": "Membership is purchasable."
+    },
+    "has_free_access_plan": {
+      "description": "Membership has free access_plan."
+    }
+  },
+  "query_args": {
+    "enrolled": {
+      "description": "Current user is enrolled",
+      "type": "boolean"
+    },
+    "is_purchasable": {
+      "description": "Membership is purchasable(at least one access plan + at least one gateway enabled), \"true\"/\"false\" .",
+      "type": "boolean"
+    },
+    "has_free_access_plan": {
+      "description": "Membership has free access_plan.",
+      "type": "boolean"
+    },
+    "student": {
+      "description": "Student ID(s) or \"current\" enrolled in a membership.",
+      "type": [
+        "string",
+        "array"
+      ]
+    },
+    "instructor": {
+      "description": "Instructor ID(s) or \"current\" assigned to a membership.",
+      "type": [
+        "string",
+        "array"
+      ]
+    },
+    "access_plan": {
+      "description": "Access Plan ID(s) assigned to a membership.",
+      "type": [
+        "string",
+        "array"
+      ]
+    }
+  }
+}

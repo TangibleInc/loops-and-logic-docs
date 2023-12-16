@@ -1,0 +1,339 @@
+{
+  "name": "learndash_quiz",
+  "title": "LearnDash Quiz",
+  "category": "learndash",
+  "description": "Loop through quizzes",
+  "post_type": "sfwd-quiz",
+  "namespace": "Tangible\\Loop\\Integrations\\LearnDash",
+  "className": "QuizLoop",
+  "extends": "PostLoop",
+  "fields": {
+    "quiz_status": {
+      "description": "Quiz status - \"completed, started, locked, open\""
+    },
+    "quiz_status_label": {
+      "description": "Quiz status label: Not Started, In Progress, Completed, or Locked"
+    },
+    "quiz_has_prerequisite": {
+      "description": "Quiz prerequisite set - \"true\" or \"false\" "
+    },
+    "quiz_prerequisites": {
+      "description": "Quizzes that must be completed prior to taking the quiz"
+    },
+    "quiz_only_registered_users": {
+      "description": "Only authenticated users can take the Quiz - \"true\" or \"false\""
+    },
+    "quiz_passing_percentage": {
+      "description": "Quiz Passing Score/Percentage"
+    },
+    "quiz_has_certificate": {
+      "description": "Quiz has Certificate - \"true\" or \"false\""
+    },
+    "quiz_certificate_url": {
+      "description": "Quiz Certificate URL"
+    },
+    "quiz_certificate_id": {
+      "description": "Quiz Certificate ID"
+    },
+    "quiz_certificate_data": {
+      "description": "Quiz Certificate data loop"
+    },
+    "quiz_certificate_threshold_percent": {
+      "description": "Score needed to receive a certificate - percentage"
+    },
+    "quiz_certificate_threshold_decimal": {
+      "description": "Score needed to receive a certificate - decimal number"
+    },
+    "quiz_retry_restrictions": {
+      "description": "Quiz retakes restricted - \"true\" or \"false\""
+    },
+    "quiz_retry_repeats": {
+      "description": "Number of Retries Allowed - default \"0\" for unlimited"
+    },
+    "quiz_retries_applicable_to": {
+      "description": "Quiz Retries Applicable to: '1'- All users, '2'- Registered only, '3' - Anonymous only"
+    },
+    "quiz_force_question_complete": {
+      "description": "Quiz Questions required to complete - \"true\" or \"false\""
+    },
+    "quiz_time_limit_enabled": {
+      "description": "Quiz time limit enabled - \"true\" or \"false\""
+    },
+    "quiz_time_limit": {
+      "description": "Quiz Time Limit in seconds"
+    },
+    "quiz_result_grade_enabled": {
+      "description": "Quiz Result Messages enabled - \"true\" or \"false\""
+    },
+    "quiz_result_messages": {
+      "description": "Quiz Result Messages display - list loop of \"percent\"/\"text\" pairs"
+    },
+    "quiz_restart_quiz_hidden": {
+      "description": "Restart Quiz button - \"true\" or \"false\" "
+    },
+    "quiz_show_average_result": {
+      "description": "Display the average score of all users who took the quiz - \"true\" or \"false\" "
+    },
+    "quiz_show_category_score": {
+      "description": "Display the score achieved for each Question Category - \"true\" or \"false\" "
+    },
+    "quiz_hide_result_points": {
+      "description": "Hide achieved Quiz score on the Result page - \"true\" or \"false\" "
+    },
+    "quiz_hide_correct_questions": {
+      "description": "Hide number of correctly answered Questions on the Result page - \"true\" or \"false\" "
+    },
+    "quiz_hide_result_time": {
+      "description": "Hide Quiz Time on the Result page - \"true\" or \"false\" "
+    },
+    "quiz_answer_feedback_enabled": {
+      "description": "Custom Answer Feedback enabled - \"true\" or \"false\" "
+    },
+    "quiz_hide_answer_message_box": {
+      "description": "Correct / Incorrect Messages hidden - \"true\" or \"false\" "
+    },
+    "quiz_disable_answer_mark": {
+      "description": "Correct / Incorrect Answer Marks disabled - \"true\" or \"false\" "
+    },
+    "quiz_hide_view_question": {
+      "description": "View Questions Button hidden - \"true\" or \"false\" "
+    },
+    "quiz_materials": {
+      "description": "Quiz materials"
+    },
+    "quiz_autostart": {
+      "description": "Quiz autostart - \"true\" or \"false\" "
+    },
+    "quiz_question_display_type": {
+      "description": "Quiz questions display type. \"single\": one questionat a time  or \"multiple\": all questions at once "
+    },
+    "quiz_question_display_single_feedback": {
+      "description": "Quiz question feedback display. end = Display results at the end only (default), each = Display results after each submitted answer"
+    },
+    "quiz_question_display_single_feedback_back_button": {
+      "description": "Quiz question feedback button display - empty or \"on\""
+    },
+    "quiz_show_review_question": {
+      "description": "Quiz show review question table - \"true\" or \"false\""
+    },
+    "quiz_summary_hide": {
+      "description": "Quiz Summary table before submission hidden - \"true\" or \"false\""
+    },
+    "quiz_skip_question_disabled": {
+      "description": "Quiz Skip question button a disabled - \"true\" or \"false\""
+    },
+    "quiz_question_show_points": {
+      "description": "Quiz Additional Question Options : Show points - \"true\" or \"false\""
+    },
+    "quiz_question_show_category": {
+      "description": "Quiz Additional Question Options : Show category - \"true\" or \"false\""
+    },
+    "quiz_question_hide_numbering": {
+      "description": "Quiz Additional Question Options : Hide Question numbering- \"true\" or \"false\""
+    },
+    "quiz_question_numbered_answer": {
+      "description": "Quiz Additional Question Options : Numbered answers- \"true\" or \"false\""
+    },
+    "quiz_question_answer_random": {
+      "description": "Quiz Additional Question Options : Random answers order- \"true\" or \"false\""
+    },
+    "quiz_custom_fields_activated": {
+      "description": "Quiz Custom fields Form activated - \"true\" or \"false\""
+    },
+    "quiz_custom_form_position": {
+      "description": "Custom Form position - '0'- On the quiz startpage, '1'- At the end of the quiz (before the quiz result)"
+    },
+    "quiz_toplist_activated": {
+      "description": "Quiz Leaderboard activated - \"true\" or \"false\" "
+    },
+    "quiz_toplist_access": {
+      "description": "Who can apply to Quiz Leaderboard - '1'- All users, '2'- Registered only, '3' - Anonymous only"
+    },
+    "quiz_toplist_multi_apply": {
+      "description": "Quiz Leaderboard Multiple Applications per user enabled - \"true\" or \"false\""
+    },
+    "quiz_toplist_re_apply": {
+      "description": "Quiz Leaderboard Re-apply after - in minutes"
+    },
+    "quiz_toplist_auto_add": {
+      "description": "Quiz Leaderboard Automatic user entry - \"true\" or \"false\""
+    },
+    "quiz_toplist_display_limit": {
+      "description": "Quiz Leaderboard Number of displayed entries - default '0' for all"
+    },
+    "quiz_toplist_sort_by": {
+      "description": "Quiz Leaderboard Sort list by - '1'- Best user, '2'- Newest entry, '3' - Oldest entry"
+    },
+    "quiz_toplist_display_enabled": {
+      "description": "Quiz Leaderboard Display on Quiz results page enabled - \"true\" or \"false\" "
+    },
+    "quiz_toplist_display_position": {
+      "description": "Quiz Leaderboard Display on Quiz results page position - '1'- Below the result text, '2'- In a button"
+    },
+    "quiz_wrap_open": {
+      "description": "Renders Quiz Wrapper Open tag - needed for quiz to function"
+    },
+    "quiz_wrap_close": {
+      "description": "Renders Quiz Wrapper Close tag - needed for quiz to function"
+    },
+    "quiz_custom_form": {
+      "description": "Renders Quiz Custom fields Form"
+    },
+    "quiz_time_limit_box": {
+      "description": "Renders Quiz Time Limit Box"
+    },
+    "quiz_info_page_box": {
+      "description": "Renders Quiz Info Page Box"
+    },
+    "quiz_show_max_question": {
+      "description": "Renders Quiz all/subset Questions  Box"
+    },
+    "quiz_show_quiz_box": {
+      "description": "Renders Quiz Content Box"
+    },
+    "quiz_show_review_box": {
+      "description": "Renders Quiz Review Box"
+    },
+    "quiz_show_result_box": {
+      "description": "Renders Quiz Results  Box"
+    },
+    "quiz_show_check_page_box": {
+      "description": "Renders Quiz Summary Box"
+    },
+    "quiz_show_add_toplist_box": {
+      "description": "Renders Quiz Add to Toplist  Box"
+    },
+    "quiz_lock_box": {
+      "description": "Renders Quiz Locked Box(already completed the quiz before)"
+    },
+    "quiz_start_box": {
+      "description": "Renders Quiz Start Box"
+    },
+    "quiz_load_box": {
+      "description": "Renders Quiz Loading Box"
+    },
+    "quiz_only_registered_box": {
+      "description": "Renders Quiz Only Registered User Box"
+    },
+    "quiz_prerequisite_box": {
+      "description": "Renders Quiz Prerequisite Box"
+    },
+    "quiz_toplist_in_button_box": {
+      "description": "Renders Quiz In Button position Box"
+    },
+    "quiz_anker_box": {
+      "description": "Renders Quiz Anchor tag Box"
+    },
+    "quiz_display_all": {
+      "description": "Renders the Whole Quiz"
+    },
+    "quiz_next_step_title": {
+      "description": "Next step title"
+    },
+    "quiz_next_step_url": {
+      "description": "Next step URL"
+    },
+    "quiz_next_step_id": {
+      "description": "Next step Id"
+    },
+    "quiz_prev_step_title": {
+      "description": "Previous step title"
+    },
+    "quiz_prev_step_url": {
+      "description": "Previous step URL"
+    },
+    "quiz_prev_step_id": {
+      "description": "Previous step ID"
+    },
+    "quiz_parent_course_url": {
+      "description": "Parent Course URL"
+    },
+    "quiz_parent_course_title": {
+      "description": "Parent Course Title"
+    },
+    "quiz_parent_course_id": {
+      "description": "Parent Course Id"
+    },
+    "quiz_parent_lesson_url": {
+      "description": "Parent lesson URL"
+    },
+    "quiz_parent_lesson_title": {
+      "description": "Parent lesson Title"
+    },
+    "quiz_parent_lesson_id": {
+      "description": "Parent lesson Id"
+    },
+    "quiz_parent_topic_url": {
+      "description": "Parent topic URL"
+    },
+    "quiz_parent_topic_title": {
+      "description": "Parent topic Title"
+    },
+    "quiz_parent_topic_id": {
+      "description": "Parent topic Id"
+    },
+    "quiz_step_number_course": {
+      "description": "Quiz Step Number relative to Course"
+    },
+    "quiz_step_number_lesson": {
+      "description": "Quiz Step Number relative to parent Lesson"
+    },
+    "quiz_step_number_topic": {
+      "description": "Quiz Step Number relative to parent Topic"
+    },
+    "quiz_submitted_essays": {
+      "description": "Submitted Essays loop"
+    }
+  },
+  "query_args": {
+    "course": {
+      "description": "Course ID or \"current\" for current course",
+      "type": "string"
+    },
+    "lesson": {
+      "description": "Lesson ID or \"current\" for current lesson",
+      "type": "string"
+    },
+    "topic": {
+      "description": "Topic ID or \"current\" for current topic",
+      "type": "string"
+    },
+    "enrolled": {
+      "description": "Current user is enrolled",
+      "type": "boolean"
+    },
+    "student": {
+      "description": "Student ID or \"current\" who has quiz started",
+      "type": "string"
+    },
+    "all_quizzes": {
+      "description": "Whether to return all quizzes(eg. for a Course ID to return all Course, Lessons and Topics quizzes",
+      "type": "boolean"
+    },
+    "has_prerequisite": {
+      "description": "Whether the Quiz has prerequisite, true/false",
+      "type": "boolean"
+    },
+    "has_certificate": {
+      "description": "Whether the Quiz has certificate, true/false",
+      "type": "boolean"
+    },
+    "certificate_earned": {
+      "description": "Quiz Certificate earned or not",
+      "type": "boolean"
+    },
+    "quiz_status": {
+      "description": "Quiz Status for the User: 'completed', 'started', 'locked', 'open'",
+      "type": [
+        "string",
+        "array"
+      ],
+      "accepts": [
+        "completed",
+        "started",
+        "locked",
+        "open"
+      ]
+    }
+  }
+}

@@ -16,4 +16,4 @@ tags:
 
 ## The explanation
 
-The [`Date` tag](/docs/learning-guides/dynamic-tags/date) can be used to dynamically render the current date or some other desired date to fill the `href` attribute of the anchor tag. If instead of linking to the current month's archive we wanted to link to the previous month's archive, we could add the attribute `subtract="1 month"` to our `Date` tag.
+The [`Date` tag](/dynamic-tags/date) can be used to dynamically render the current date or some other desired date to fill the `href` attribute of the anchor tag. If instead of linking to the current month's archive we wanted to link to the previous month's archive, we could add the attribute `subtract="1 month"` to our `Date` tag.

@@ -1,0 +1,122 @@
+{
+  "name": "learndash_group",
+  "title": "LearnDash Group",
+  "category": "learndash",
+  "description": "Loop through LearnDash Groups",
+  "post_type": "groups",
+  "namespace": "Tangible\\Loop\\Integrations\\LearnDash",
+  "className": "GroupLoop",
+  "extends": "PostLoop",
+  "query_args": {
+    "enrolled": {
+      "description": "Current user is enrolled, true/false",
+      "type": "boolean"
+    },
+    "is_group_leader": {
+      "description": "Current user is group leader, true/false",
+      "type": "boolean"
+    },
+    "course": {
+      "description": "Course ID(s) or \"current\" assigned to group",
+      "type": [
+        "string",
+        "array"
+      ]
+    },
+    "access_type": {
+      "description": "Access type: Open(open), Free(free), Buy now(paynow), Recurring(subscribe), Closed(closed)",
+      "type": [
+        "string",
+        "array"
+      ],
+      "accepts": [
+        "open",
+        "free",
+        "paynow",
+        "subscribe",
+        "closed"
+      ]
+    },
+    "certificate_earned": {
+      "description": "Course Certificate earned or not",
+      "type": "boolean"
+    }
+  },
+  "fields": {
+    "materials_enabled": {
+      "description": "Group materials enabled, true/false"
+    },
+    "materials": {
+      "description": "Group materials link"
+    },
+    "certificate": {
+      "description": "Group certificate loop"
+    },
+    "certificate_link": {
+      "description": "Group certificate link"
+    },
+    "certificate_url": {
+      "description": "Group certificate url"
+    },
+    "certificate_data": {
+      "description": "Group certificate data loop"
+    },
+    "disable_content_table": {
+      "description": "Group disable content table, true/false"
+    },
+    "courses_per_page_enabled": {
+      "description": "Group courses per page enabled, true/false"
+    },
+    "courses_per_page_custom": {
+      "description": "Group courses per page"
+    },
+    "courses_order_enabled": {
+      "description": "Group ordering enabled, true/false "
+    },
+    "courses_orderby": {
+      "description": "Group order by"
+    },
+    "courses_order": {
+      "description": "Group order"
+    },
+    "price_type": {
+      "description": "Group price type"
+    },
+    "custom_button_url": {
+      "description": "Group custom button url"
+    },
+    "price": {
+      "description": "Group price"
+    },
+    "price_subscribe_interval": {
+      "description": "Group price interval for the \"subscribe\" price type"
+    },
+    "price_subscribe_frequency": {
+      "description": "Group price frequency for the \"subscribe\" price type"
+    },
+    "enrolled_courses": {
+      "description": "Group enrolled courses loop"
+    },
+    "quizzes": {
+      "description": "Group quizzes loop"
+    },
+    "leaders": {
+      "description": "Group leaders loop"
+    },
+    "users": {
+      "description": "Group users loop"
+    },
+    "user_progress_percentage": {
+      "description": "Group specific user(or current) progress percentage"
+    },
+    "user_group_status": {
+      "description": "Group specific user(or current) status"
+    },
+    "user_group_started": {
+      "description": "Group specific user(or current) timestamp started "
+    },
+    "user_group_completed": {
+      "description": "Group specific user(or current) timestamp completed"
+    }
+  }
+}

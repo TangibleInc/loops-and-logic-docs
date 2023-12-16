@@ -1,0 +1,115 @@
+{
+  "name": "woo_user_membership",
+  "title": "WooCommerce User Membership",
+  "category": "woocommerce",
+  "description": "Loop through user memberships",
+  "query_args": {
+    "orderby": {
+      "description": "Order by",
+      "type": "string",
+      "default": "name",
+      "accepts": [
+        "none",
+        "ID",
+        "name",
+        "type",
+        "rand",
+        "date",
+        "modified"
+      ]
+    },
+    "order": {
+      "description": "Order",
+      "type": "string",
+      "default": "desc",
+      "accepts": [
+        "asc",
+        "desc"
+      ]
+    },
+    "user": {
+      "description": "User ID, name, or \"current\"",
+      "type": [
+        "number",
+        "string"
+      ]
+    },
+    "user_id": {
+      "description": "User ID, name, or \"current\"",
+      "type": [
+        "number",
+        "string",
+        "array"
+      ]
+    },
+    "items": {
+      "description": "Pre-populated list of items",
+      "type": "array"
+    }
+  },
+  "fields": {
+    "user": {
+      "description": "User object corresponding to membership"
+    },
+    "id": {
+      "description": "ID"
+    },
+    "plan_id": {
+      "description": "Gets the associated plan ID"
+    },
+    "status": {
+      "description": "Membership status"
+    },
+    "start_date": {
+      "description": "Membership from"
+    },
+    "end_date": {
+      "description": "Membership to"
+    },
+    "cancelled_date": {
+      "description": "Gets the membership cancelled datetime."
+    },
+    "paused_date": {
+      "description": "Gets the membership paused datetime."
+    },
+    "total_time": {
+      "description": "Returns the total active or inactive time of a membership"
+    },
+    "total_active_time": {
+      "description": "Returns the total amount of time the membership has been active since its start date"
+    },
+    "type": {
+      "description": "Returns the user membership type."
+    },
+    "order_id": {
+      "description": "Gets the order id that granted access"
+    },
+    "product_id": {
+      "description": "Gets the product id that granted access"
+    },
+    "notes": {
+      "description": "Return the membership's notes"
+    },
+    "is_cancelled": {
+      "description": "Checks if the membership has been cancelled."
+    },
+    "is_expired": {
+      "description": "Checks if the membership has been expired."
+    },
+    "is_paused": {
+      "description": "Checks if the membership is paused."
+    },
+    "is_delayed": {
+      "description": "Checks if the membership has a delayed activation."
+    },
+    "is_active": {
+      "description": "Checks if a membership is currently in active status."
+    },
+    "can_be_renewed": {
+      "description": "Checks whether the user membership can be renewed by the user."
+    }
+  },
+  "namespace": "Tangible\\Loop\\Integrations\\WooCommerce",
+  "className": "UserMembershipLoop",
+  "extends": "BaseLoop"
+}

@@ -1,0 +1,33 @@
+{
+  "name": "type",
+  "title": "Post Type",
+  "category": "core",
+  "query_args": {
+    "public": {
+      "description": "If true, only public post types will be returned.",
+      "type": "boolean"
+    },
+    "builtin": {
+      "target_name": "_builtin",
+      "description": "If true, will return WordPress default post types. Use false to return only custom post types.",
+      "type": "boolean"
+    }
+  },
+  "fields": {
+    "name": {
+      "description": "Post type name/slug"
+    },
+    "label": {
+      "description": "Post type label (singular)"
+    },
+    "label_plural": {
+      "description": "Post type label (plural)"
+    },
+    "description": {
+      "description": "Post type description"
+    }
+  },
+  "namespace": "Tangible\\Loop",
+  "className": "PostTypeLoop",
+  "extends": "BaseLoop"
+}

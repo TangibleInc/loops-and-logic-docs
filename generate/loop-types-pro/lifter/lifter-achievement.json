@@ -1,0 +1,49 @@
+{
+  "name": "lifter_achievement",
+  "title": "LifterLMS Achievement",
+  "category": "lifterlms",
+  "description": "Loop through achievements",
+  "post_type": "llms_achievement",
+  "namespace": "Tangible\\Loop\\Integrations\\LifterLms",
+  "className": "AchievementLoop",
+  "extends": "PostLoop",
+  "fields": {
+    "id": {
+      "description": "Achievement ID"
+    },
+    "is_enabled": {
+      "description": "Achievement is enabled, \"true\"/\"false\""
+    },
+    "content_raw": {
+      "description": "Achievement raw content"
+    },
+    "image": {
+      "description": "Achievement image URL"
+    },
+    "image_html": {
+      "description": "Achievement image html"
+    },
+    "title_for_achievement": {
+      "description": "Achievement title(displayed on the achievement)"
+    },
+    "triggered_by_post_id": {
+      "description": "Achievement post id which triggered the earning of the achievement(Lesson, Course, Section, Track, etc...)"
+    },
+    "triggered_by_post_type": {
+      "description": "Achievement triggered by post type which triggered the earning of the achievement(Lesson, Course, Section, Track, etc...)"
+    },
+    "content_html": {
+      "description": "Achievement content html"
+    }
+  },
+  "query_args": {
+    "triggered_by": {
+      "description": "Post ID or \"current\" for current post which triggered the earning of the achievement(Lesson, Course, Section, Track, etc...).",
+      "type": "string"
+    },
+    "user": {
+      "description": "User ID or \"current\" for current user who earned the achievement.",
+      "type": "string"
+    }
+  }
+}

@@ -1,0 +1,207 @@
+{
+  "name": "lifter_order",
+  "title": "LifterLMS Order",
+  "category": "lifterlms",
+  "description": "Loop through orders",
+  "post_type": "llms_order",
+  "namespace": "Tangible\\Loop\\Integrations\\LifterLms",
+  "className": "OrderLoop",
+  "extends": "PostLoop",
+  "fields": {
+    "id": {
+      "description": "Order ID"
+    },
+    "access_expiration_date": {
+      "description": "Determine the date when access will expire "
+    },
+    "status": {
+      "description": "Order llms status"
+    },
+    "status_name": {
+      "description": "Order status name"
+    },
+    "plan_title": {
+      "description": "Access plan title"
+    },
+    "product_title": {
+      "description": "Order product title"
+    },
+    "product_link": {
+      "description": "Order product link"
+    },
+    "product_id": {
+      "description": "Order product id"
+    },
+    "access_status": {
+      "description": "Get the current status of a student's access  - 'inactive', 'expired', 'active'"
+    },
+    "coupon_amount": {
+      "description": "Formatted coupon amount with a currency symbol or percentage"
+    },
+    "customer_name": {
+      "description": "Customer's full name"
+    },
+    "gateway": {
+      "description": "Payment gateway instance for the order's selected payment gateway"
+    },
+    "gateway_title": {
+      "description": "Payment gateway title"
+    },
+    "initial_price": {
+      "description": "Initial payment amount due on checkout - value of \"total\" except when the product has a trial "
+    },
+    "last_transaction_date": {
+      "description": "Date of the last (most recent) transaction"
+    },
+    "next_payment_date": {
+      "description": "Due date of the next payment according to access plan terms"
+    },
+    "start_date": {
+      "description": "Date of the first initially successful transaction - if none found, uses the created date of the order"
+    },
+    "trial_end_date": {
+      "description": "Date when a trial will end"
+    },
+    "view_link": {
+      "description": "Link to view the order on the student dashboard"
+    },
+    "billing_frequency": {
+      "description": "Billing frequency"
+    },
+    "billing_cycle": {
+      "description": "Billing cycle"
+    },
+    "billing_period": {
+      "description": "Billing period"
+    },
+    "trial_original_total": {
+      "description": "Trial original total"
+    },
+    "coupon_amount_trial": {
+      "description": "Order coupon trial amount"
+    },
+    "coupon_value_trial": {
+      "description": "Order coupon trial value"
+    },
+    "trial_total": {
+      "description": "Trial total"
+    },
+    "trial_length": {
+      "description": "Trial length"
+    },
+    "trial_period": {
+      "description": "Trial period"
+    },
+    "original_total": {
+      "description": "Order original total"
+    },
+    "sale_price": {
+      "description": "Order sale price"
+    },
+    "coupon_amount_regular": {
+      "description": "Order coupon amount"
+    },
+    "total": {
+      "description": "Total"
+    },
+    "transactions": {
+      "description": "Order transactions list loop- 'id',  'status', 'status_name', 'date', 'refund_amount', 'amount',         'net_amount', 'gateway_source_description', 'pages'"
+    },
+    "billing_address_1": {
+      "description": "Billing address_1"
+    },
+    "billing_address_2": {
+      "description": "Billing address_2"
+    },
+    "billing_city": {
+      "description": "Billing city"
+    },
+    "billing_country": {
+      "description": "Billing country"
+    },
+    "billing_email": {
+      "description": "Billing email"
+    },
+    "billing_phone": {
+      "description": "Billing phone"
+    },
+    "billing_first_name": {
+      "description": "Billing first name"
+    },
+    "billing_last_name": {
+      "description": "Billing last name"
+    },
+    "billing_state": {
+      "description": "Billing state"
+    },
+    "billing_zip": {
+      "description": "Billing zip"
+    },
+    "has_coupon": {
+      "description": "If a coupon was used - true/false"
+    },
+    "has_discount": {
+      "description": "If there was a discount applied to this order - true/false"
+    },
+    "has_sale": {
+      "description": "If the access plan was on sale during the purchase - true/false"
+    },
+    "has_scheduled_payment": {
+      "description": "If there's a payment scheduled for the order - true/false"
+    },
+    "has_trial": {
+      "description": "If the order has a trial - true/false"
+    },
+    "has_trial_ended": {
+      "description": "If the trial period has ended for the order - true/false"
+    },
+    "is_recurring": {
+      "description": "If the order is recurring - true/false"
+    }
+  },
+  "query_args": {
+    "status": {
+      "target_name": "post_status",
+      "type": [
+        "string",
+        "array"
+      ]
+    },
+    "product": {
+      "description": "Product ID or \"current\" for current product where the order is assigned.",
+      "type": "string"
+    },
+    "user": {
+      "description": "User ID or \"current\" for current user.",
+      "type": "string"
+    },
+    "has_coupon": {
+      "description": "If a coupon was used - true/false.",
+      "type": "boolean"
+    },
+    "has_discount": {
+      "description": "If there was a discount applied to this order via either a sale or a coupon - true/false.",
+      "type": "boolean"
+    },
+    "has_sale": {
+      "description": "If the access plan was on sale during the purchase - true/false.",
+      "type": "boolean"
+    },
+    "has_scheduled_payment": {
+      "description": "If there's a payment scheduled for the order - true/false.",
+      "type": "boolean"
+    },
+    "has_trial": {
+      "description": "If the order has a trial - true/false.",
+      "type": "boolean"
+    },
+    "has_trial_ended": {
+      "description": "If the trial period has ended for the order - true/false.",
+      "type": "boolean"
+    },
+    "is_recurring": {
+      "description": "If the order is recurring or singular - true/false.",
+      "type": "boolean"
+    }
+  }
+}

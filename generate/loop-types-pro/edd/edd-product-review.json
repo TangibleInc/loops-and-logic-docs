@@ -1,0 +1,66 @@
+{
+  "name": "edd_product_review",
+  "title": "EDD product review",
+  "category": "edd",
+  "description": "Loop through product reviews",
+  "query_args": {
+    "count": {
+      "description": "Maximum number of comments to retrieve. Default empty (no limit)",
+      "target_name": "number",
+      "type": "number"
+    },
+    "product_id": {
+      "description": "Product/Download ID",
+      "type": [
+        "number",
+        "string"
+      ]
+    },
+    "status": {
+      "description": "Status",
+      "type": [
+        "string",
+        "array"
+      ],
+      "default": "approve"
+    }
+  },
+  "fields": {
+    "id": {
+      "description": "Comment id"
+    },
+    "product_id": {
+      "description": "Product id"
+    },
+    "author": {
+      "description": "Author name"
+    },
+    "author_email": {
+      "description": "Author email"
+    },
+    "author_url": {
+      "description": "Author url"
+    },
+    "author_ip": {
+      "description": "Author ip"
+    },
+    "date": {
+      "description": "Comment date"
+    },
+    "date_gmt": {
+      "description": "Comment date gmt"
+    },
+    "content": {
+      "description": "Comment content"
+    },
+    "karma": {
+      "description": "Comment Karma"
+    },
+    "rating": {
+      "description": "Review rating"
+    }
+  },
+  "namespace": "Tangible\\Loop\\Integrations\\EDD",
+  "className": "ProductReviewLoop",
+  "extends": "BaseLoop"
+}

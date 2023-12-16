@@ -1,0 +1,89 @@
+{
+  "name": "woo_membership_team",
+  "title": "WooCommerce Membership Team",
+  "category": "woocommerce",
+  "description": "Loop through membership teams",
+  "query_args": {
+    "status": {
+      "description": "Status",
+      "type": [
+        "string",
+        "array"
+      ],
+      "default": "any"
+    },
+    "role": {
+      "description": "Role",
+      "type": [
+        "string",
+        "array"
+      ],
+      "accepts": [
+        "member",
+        "manager",
+        "owner"
+      ],
+      "default": [
+        "member",
+        "manager",
+        "owner"
+      ]
+    },
+    "user": {
+      "description": "User ID, name, or \"current\"",
+      "type": [
+        "number",
+        "string"
+      ]
+    },
+    "user_id": {
+      "description": "User ID(s), name(s), or \"current\", who belongs to the team",
+      "type": [
+        "number",
+        "string",
+        "array"
+      ]
+    }
+  },
+  "fields": {
+    "plan": {
+      "description": "Associated plan"
+    },
+    "members": {
+      "description": "Loop containing team members"
+    },
+    "owner": {
+      "description": "Loop containing user acting as owner of team"
+    },
+    "id": {
+      "description": "ID"
+    },
+    "is_member": {
+      "description": "Whether current user is member of this plan"
+    },
+    "name": {
+      "description": "Name"
+    },
+    "date": {
+      "description": "Date created"
+    },
+    "seat_count": {
+      "description": "All seats"
+    },
+    "used_seat_count": {
+      "description": "Used seats"
+    },
+    "remaining_seat_count": {
+      "description": "Remaining seats"
+    },
+    "registration_url": {
+      "description": "Registration URL set by team owner in my profile"
+    },
+    "invitation_count": {
+      "description": "Pending Invitation count"
+    }
+  },
+  "namespace": "Tangible\\Loop\\Integrations\\WooCommerce",
+  "className": "MembershipTeamLoop",
+  "extends": "BaseLoop"
+}

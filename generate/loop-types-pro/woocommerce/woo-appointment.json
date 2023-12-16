@@ -1,0 +1,79 @@
+{
+  "name": "woo_appointment",
+  "title": "WooCommerce Appointments",
+  "category": "woocommerce",
+  "description": "Loop through WooCommerce Appointments",
+  "query_args": {
+    "product_id": {
+      "description": "Appointable Product ID."
+    }
+  },
+  "fields": {
+    "id": {
+      "description": "ID"
+    },
+    "order_id": {
+      "description": "Order id"
+    },
+    "all_day": {
+      "description": "All day (bool)"
+    },
+    "cost": {
+      "description": "Appointment cost"
+    },
+    "customer_id": {
+      "description": "Customer id"
+    },
+    "date_created": {
+      "description": "Date created"
+    },
+    "date_modified": {
+      "description": "Date modified"
+    },
+    "start": {
+      "description": "Appointment Start"
+    },
+    "end": {
+      "description": "Appointment End"
+    },
+    "google_calendar_event_id": {
+      "description": "Google calendar event id"
+    },
+    "google_calendar_staff_event_ids": {
+      "description": "Google calendar staff event ids"
+    },
+    "order_item_id": {
+      "description": "Order item id"
+    },
+    "parent_id": {
+      "description": "Parent id"
+    },
+    "product_id": {
+      "description": "Product id"
+    },
+    "staff_id": {
+      "description": "Staff id"
+    },
+    "staff_ids": {
+      "description": "Staff ids"
+    },
+    "status": {
+      "description": "Appointment status -'unpaid','pending-confirmation','confirmed' ,'paid','cancelled',\t'complete'"
+    },
+    "customer_status": {
+      "description": "Customer status -'expected','arrived,'no-show'"
+    },
+    "qty": {
+      "description": "Quantity"
+    },
+    "timezone": {
+      "description": "Timezone"
+    },
+    "product": {
+      "description": "Appointment product - returns product loop"
+    }
+  },
+  "namespace": "Tangible\\Loop\\Integrations\\WooCommerce",
+  "className": "AppointmentLoop",
+  "extends": "BaseLoop"
+}

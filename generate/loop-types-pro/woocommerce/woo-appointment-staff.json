@@ -1,0 +1,29 @@
+{
+  "name": "woo_appointment_staff",
+  "title": "WooCommerce Appointments Staff",
+  "category": "woocommerce",
+  "description": "Loop through WooCommerce Appointments Staff",
+  "namespace": "Tangible\\Loop\\Integrations\\WooCommerce",
+  "className": "AppointmentStaffLoop",
+  "extends": "UserLoop",
+  "query_args": {
+    "product_id": {
+      "description": "Product id staff assigned to",
+      "type": "string"
+    }
+  },
+  "fields": {
+    "base_cost": {
+      "description": "Staff base cost product_id argument should be passed to get this value"
+    },
+    "qty": {
+      "description": "Staff quantity, product_id argument should be passed to get this value"
+    },
+    "products": {
+      "description": "Products staff assigned to, returns loop"
+    },
+    "availability": {
+      "description": "Staff availability, returns loop"
+    }
+  }
+}

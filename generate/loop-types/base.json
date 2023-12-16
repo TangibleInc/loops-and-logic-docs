@@ -1,0 +1,50 @@
+{
+  "name": "base",
+  "query_args": {
+    "count": {
+      "description": "Limit number of items",
+      "type": "number"
+    },
+    "offset": {
+      "description": "Offset loop by number of items to skip",
+      "type": "number"
+    },
+    "field": {
+      "description": "Filter by given field - If value is not set, it queries for posts whose field value exists",
+      "type": "string"
+    },
+    "field_value": {
+      "description": "Filter by given field value",
+      "type": "string"
+    },
+    "field_compare": {
+      "description": "Compare using one of: \"is\" (default), \"is_not\", \"before\", \"before_inclusive\", \"after\", \"after_inclusive\", \"in\", \"not_in\", \"exists\", \"not_exists\"",
+      "type": "string"
+    },
+    "field_type": {
+      "description": "For field query, one of: string (default), number, date, time, datetime",
+      "type": "string"
+    },
+    "sort_field": {
+      "description": "Sort by given field name",
+      "type": "string"
+    },
+    "sort_order": {
+      "description": "Sort order: asc (ascending) or desc (descending)",
+      "type": "string",
+      "default": "asc",
+      "accepts": [
+        "asc",
+        "desc"
+      ]
+    },
+    "sort_type": {
+      "description": "For sort query, one of: string (default), lowercase, number, date",
+      "type": "string"
+    }
+  },
+  "fields": {},
+  "namespace": "Tangible\\Loop",
+  "className": "BaseLoop",
+  "title": "Base"
+}

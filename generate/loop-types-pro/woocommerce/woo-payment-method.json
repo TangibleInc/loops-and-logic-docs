@@ -1,0 +1,24 @@
+{
+  "name": "woo_payment_method",
+  "title": "WooCommerce Payment Method",
+  "category": "woocommerce",
+  "description": "Loop through available payment methods",
+  "query_args": {},
+  "fields": {
+    "title": {
+      "description": "Return the gateway's title"
+    },
+    "description": {
+      "description": "Return the gateway's description"
+    },
+    "icon": {
+      "description": "Return the gateway's icon"
+    },
+    "return_url": {
+      "description": "Get the return url (thank you page)"
+    }
+  },
+  "namespace": "Tangible\\Loop\\Integrations\\WooCommerce",
+  "className": "PaymentMethodLoop",
+  "extends": "ListLoop"
+}

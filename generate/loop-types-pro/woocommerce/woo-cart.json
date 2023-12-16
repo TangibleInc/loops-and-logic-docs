@@ -1,0 +1,45 @@
+{
+  "name": "woo_cart",
+  "title": "WooCommerce Cart",
+  "category": "woocommerce",
+  "description": "Loop through cart items",
+  "query_args": {},
+  "fields": {
+    "addons": {
+      "description": "Item Addons"
+    },
+    "key": {
+      "description": "Item Key"
+    },
+    "product_id": {
+      "description": "Product ID"
+    },
+    "variation_id": {
+      "description": "Variation ID"
+    },
+    "data_hash": {
+      "description": "Hash"
+    },
+    "line_tax_data": {
+      "description": "Line tax data"
+    },
+    "line_subtotal": {
+      "description": "Line subtotal"
+    },
+    "line_subtotal_tax": {
+      "description": "Line subtotal tax"
+    },
+    "line_total": {
+      "description": "Line total"
+    },
+    "line_tax": {
+      "description": "Line tax"
+    },
+    "data": {
+      "description": "Product itself"
+    }
+  },
+  "namespace": "Tangible\\Loop\\Integrations\\WooCommerce",
+  "className": "CartLoop",
+  "extends": "ListLoop"
+}

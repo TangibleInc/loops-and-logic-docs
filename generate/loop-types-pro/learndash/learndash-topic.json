@@ -1,0 +1,219 @@
+{
+  "name": "learndash_topic",
+  "title": "LearnDash Topic",
+  "category": "learndash",
+  "description": "Loop through topics",
+  "post_type": "sfwd-topic",
+  "namespace": "Tangible\\Loop\\Integrations\\LearnDash",
+  "className": "TopicLoop",
+  "extends": "PostLoop",
+  "query_args": {
+    "course": {
+      "description": "Course ID or \"current\" for current course",
+      "type": "string"
+    },
+    "lesson": {
+      "description": "Lesson ID  or \"current\" for current lesson",
+      "type": [
+        "string"
+      ]
+    },
+    "enrolled": {
+      "description": "Current user is enrolled",
+      "type": "boolean"
+    },
+    "completion_status": {
+      "description": "Topic completion status ('open', 'started', 'completed', 'locked')",
+      "type": [
+        "string",
+        "array"
+      ],
+      "accepts": [
+        "open",
+        "started",
+        "completed",
+        "locked"
+      ]
+    },
+    "video_exists": {
+      "description": "Topic video exists, true or false",
+      "type": "boolean"
+    }
+  },
+  "fields": {
+    "topic_progress_status": {
+      "description": "Progress status: open, started, completed, or locked"
+    },
+    "topic_progress_status_label": {
+      "description": "Progress status label: Not Started, In Progress, Completed, or Locked"
+    },
+    "topic_progress_percent": {
+      "description": "Topic progress percent"
+    },
+    "topic_progress_total": {
+      "description": "Topic total steps"
+    },
+    "topic_progress_completed": {
+      "description": "Topic completed steps"
+    },
+    "topic_next_step": {
+      "description": "Next step"
+    },
+    "topic_next_step_title": {
+      "description": "Next step Title"
+    },
+    "topic_next_step_url": {
+      "description": "Next step URL"
+    },
+    "topic_next_step_id": {
+      "description": "Next step Id"
+    },
+    "topic_previous_step": {
+      "description": "Previous step"
+    },
+    "topic_previous_step_title": {
+      "description": "Previous step Title"
+    },
+    "topic_previous_step_url": {
+      "description": "Previous step URL"
+    },
+    "topic_previous_step_id": {
+      "description": "Previous step Id"
+    },
+    "topic_parent_course_title": {
+      "description": "Topic parent Course Title"
+    },
+    "topic_parent_course_url": {
+      "description": "Topic parent Course URL"
+    },
+    "topic_parent_course_id": {
+      "description": "Topic parent Course id"
+    },
+    "topic_parent_lesson_title": {
+      "description": "Topic parent Lesson Title"
+    },
+    "topic_parent_lesson_url": {
+      "description": "Topic parent Lesson URL"
+    },
+    "topic_parent_lesson_id": {
+      "description": "Topic parent Lesson id"
+    },
+    "topic_has_next_topic": {
+      "description": "Has next topic"
+    },
+    "topic_next_topic_id": {
+      "description": "Next topic id"
+    },
+    "topic_next_topic_title": {
+      "description": "Next topic title"
+    },
+    "topic_next_topic_url": {
+      "description": "Next topic url"
+    },
+    "topic_next_topic_link": {
+      "description": "Next topic link"
+    },
+    "topic_has_previous_topic": {
+      "description": "Has previous topic"
+    },
+    "topic_previous_topic_id": {
+      "description": "Previous topic id"
+    },
+    "topic_previous_topic_title": {
+      "description": "Previous topic title"
+    },
+    "topic_previous_topic_url": {
+      "description": "Previous topic url"
+    },
+    "topic_previous_topic_link": {
+      "description": "Previous topic link"
+    },
+    "topic_step_number_course": {
+      "description": "Topic Step Number relative to Course - WITHOUT Quizzes counted"
+    },
+    "topic_step_number_course_q": {
+      "description": "Topic Step Number relative to Course - WITH Quizzes counted"
+    },
+    "topic_step_number_lesson": {
+      "description": "Topic Step Number relative to parent Lesson - WITHOUT Quizzes counted"
+    },
+    "topic_step_number_lesson_q": {
+      "description": "Topic Step Number relative to parent Lesson - WITH Quizzes counted"
+    },
+    "topic_mark_complete": {
+      "description": "Mark Complete button"
+    },
+    "topic_materials": {
+      "description": "Topic materials"
+    },
+    "topic_assignments_enabled": {
+      "description": "Is assignment enabled"
+    },
+    "topic_assignments_extensions": {
+      "description": "Assignment file extensions limit"
+    },
+    "topic_assignments_size": {
+      "description": "Assignment file size limit"
+    },
+    "topic_assignments_points": {
+      "description": "Assignment points enabled"
+    },
+    "topic_assignments_points_amount": {
+      "description": "Assignment points amount"
+    },
+    "topic_assignments_auto_approve": {
+      "description": "Assignment grading type(Auto-approve, Manually grade) "
+    },
+    "topic_assignments_upload": {
+      "description": "Assignment file uploads number limit "
+    },
+    "topic_assignments_deletion": {
+      "description": "Assignment deletion enabled"
+    },
+    "topic_assignments_form": {
+      "description": "Renders Assignment upload form."
+    },
+    "topic_video": {
+      "description": "Renders Video."
+    },
+    "topic_video_url": {
+      "description": "Video URL."
+    },
+    "topic_video_exist": {
+      "description": "Video exists or not."
+    },
+    "topic_video_enabled": {
+      "description": "Video enabled or not."
+    },
+    "topic_video_shown": {
+      "description": "Video available \"before\" or \"after\" completed sub-steps."
+    },
+    "topic_video_auto_complete_delay": {
+      "description": "Delay between video completion and topic completion."
+    },
+    "topic_video_auto_start": {
+      "description": "Video auto-start or not."
+    },
+    "topic_video_show_controls": {
+      "description": "Show Video controls or not."
+    },
+    "topic_video_auto_complete": {
+      "description": "Mark the topic as completed once the user has watched the full video."
+    },
+    "topic_video_show_complete_button": {
+      "description": "Display the Mark Complete button on a topic even if not yet clickable."
+    },
+    "topic_video_focus_pause": {
+      "description": "Pause the video if user switches to a different window.."
+    },
+    "topic_video_track_time": {
+      "description": "Allows user to resume video position."
+    },
+    "topic_timer": {
+      "description": "Display timer countdown."
+    },
+    "topic_time_enabled": {
+      "description": "If Forced time enabled or not."
+    }
+  }
+}

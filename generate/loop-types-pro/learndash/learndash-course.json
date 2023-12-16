@@ -1,0 +1,194 @@
+{
+  "name": "learndash_course",
+  "title": "LearnDash Course",
+  "category": "learndash",
+  "description": "Loop through courses",
+  "post_type": "sfwd-courses",
+  "namespace": "Tangible\\Loop\\Integrations\\LearnDash",
+  "className": "CourseLoop",
+  "extends": "PostLoop",
+  "query_args": {
+    "enrolled": {
+      "description": "Current user is enrolled",
+      "type": "boolean"
+    },
+    "access_type": {
+      "description": "Access type: Open(open), Free(free), Buy now(paynow), Recurring(subscribe), Closed(closed)",
+      "type": [
+        "string",
+        "array"
+      ],
+      "accepts": [
+        "open",
+        "free",
+        "paynow",
+        "subscribe",
+        "closed"
+      ]
+    },
+    "linked_group": {
+      "description": "Group ID the Course belongs to",
+      "type": [
+        "string",
+        "array"
+      ]
+    },
+    "group_leader": {
+      "description": "Group Leader ID the Course belongs to",
+      "type": "string"
+    },
+    "completion_status": {
+      "description": "Course Completion Status for the User: Not Started(open), In Progress(started), Completed(completed)",
+      "type": [
+        "string",
+        "array"
+      ],
+      "accepts": [
+        "open",
+        "started",
+        "completed"
+      ]
+    },
+    "certificate_earned": {
+      "description": "Course Certificate earned or not",
+      "type": "boolean"
+    },
+    "certificate_exists": {
+      "description": "Course Certificate exists or not",
+      "type": "boolean"
+    },
+    "prerequisite_exists": {
+      "description": "Course Prerequisite exists or not",
+      "type": "boolean"
+    },
+    "prerequisite_completed": {
+      "description": "Course Prerequisite completed or not",
+      "type": "boolean"
+    }
+  },
+  "fields": {
+    "course_resume_title": {
+      "description": "Course Resume - first incomplete step title"
+    },
+    "course_resume_url": {
+      "description": "Course Resume - first incomplete step url"
+    },
+    "course_resume_id": {
+      "description": "Course Resume - first incomplete step id"
+    },
+    "course_next_step_title": {
+      "description": "Course next step title"
+    },
+    "course_next_step_url": {
+      "description": "Course next step URL"
+    },
+    "course_next_step_id": {
+      "description": "Course next step Id"
+    },
+    "course_enrolled": {
+      "description": "Course is enrolled by current user"
+    },
+    "course_progress_percent": {
+      "description": "Course progress percent"
+    },
+    "course_steps_completed": {
+      "description": "Course steps completed"
+    },
+    "course_date_completed": {
+      "description": "Course date completed"
+    },
+    "course_steps_total": {
+      "description": "Course steps total"
+    },
+    "course_enroll": {
+      "description": "Take this course button"
+    },
+    "course_price_type_label": {
+      "description": "Price type label"
+    },
+    "course_price_type": {
+      "description": "Price type"
+    },
+    "course_price": {
+      "description": "Price"
+    },
+    "course_price_currency": {
+      "description": "Price Currency"
+    },
+    "course_price_url": {
+      "description": "Price URL - Only for closed courses"
+    },
+    "course_lessons": {
+      "description": "List of Course Lessons"
+    },
+    "course_topics": {
+      "description": "List of all Course Lessons Topics"
+    },
+    "course_quizzes_all": {
+      "description": "List of all Course, Lessons and Topics quizzes"
+    },
+    "course_quizzes": {
+      "description": "List of Course quizzes(final quizzes)"
+    },
+    "course_groups": {
+      "description": "List of Course groups"
+    },
+    "course_content_table": {
+      "description": "Displays the Course Content table (lessons, topics, and quizzes)"
+    },
+    "course_content_table_ld": {
+      "description": "Displays the Course Content table - LearnDash template (lessons, topics, and quizzes)"
+    },
+    "course_progress": {
+      "description": "Displays the Course Progress bar"
+    },
+    "course_last_activity": {
+      "description": "Last User Activity"
+    },
+    "course_status": {
+      "description": "Course status ('Not Started', 'In Progress', 'Completed' converted to 'open', 'started', 'completed')"
+    },
+    "course_status_label": {
+      "description": "Course status label ('Not Started', 'In Progress', 'Completed' )"
+    },
+    "course_points": {
+      "description": "Number of points awarded for completing the course."
+    },
+    "course_points_access": {
+      "description": "Number of points required in order to gain access to the course."
+    },
+    "course_access_expires": {
+      "description": "When a user will have access to the course."
+    },
+    "course_since": {
+      "description": "From when the Course is available."
+    },
+    "course_lessons_number": {
+      "description": "Number of Course Lessons."
+    },
+    "course_topics_number": {
+      "description": "Number of Course Topics."
+    },
+    "course_quizzes_number": {
+      "description": "Number of Course Quizzes."
+    },
+    "course_students_number": {
+      "description": "Number of Course Students."
+    },
+    "course_materials": {
+      "description": "Course materials."
+    },
+    "course_certificate_link": {
+      "description": "Course certificate link."
+    },
+    "course_certificate_url": {
+      "description": "Course certificate URL."
+    },
+    "course_certificate_id": {
+      "description": "Course certificate ID."
+    },
+    "course_certificate_data": {
+      "description": "Course certificate data loop."
+    }
+  }
+}

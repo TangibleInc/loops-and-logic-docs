@@ -1,0 +1,88 @@
+{
+  "name": "woo_membership",
+  "title": "WooCommerce Membership",
+  "category": "woocommerce",
+  "description": "Loop through memberships",
+  "query_args": {
+    "orderby": {
+      "description": "Order by",
+      "type": [
+        "string",
+        "array"
+      ],
+      "default": "name"
+    },
+    "order": {
+      "description": "Order",
+      "type": "string",
+      "default": "desc",
+      "accepts": [
+        "asc",
+        "desc"
+      ]
+    },
+    "count": {
+      "description": "Limit number of results, or -1 for all",
+      "target_name": "numberposts",
+      "type": "number"
+    },
+    "status": {
+      "description": "Status",
+      "type": [
+        "string",
+        "array"
+      ],
+      "target_name": "post_status",
+      "default": "publish",
+      "accepts": [
+        "publish",
+        "private",
+        "future",
+        "draft",
+        "pending",
+        "trash"
+      ]
+    }
+  },
+  "fields": {
+    "id": {
+      "description": "ID"
+    },
+    "status": {
+      "description": "Status"
+    },
+    "name": {
+      "description": "Name"
+    },
+    "active": {
+      "description": "Whether current user has an active membership plan of this type"
+    },
+    "members": {
+      "description": "Returns a UserLoop of active members of this membership plan"
+    },
+    "memberships": {
+      "description": "Returns a Loop of related user membership objects for this membership plan"
+    },
+    "formatted_name": {
+      "description": "Formatted Name"
+    },
+    "access_method": {
+      "description": "Plan access method"
+    },
+    "email_content": {
+      "description": "Plan email content"
+    },
+    "access_length": {
+      "description": "Plan access length (human readable)"
+    },
+    "restricted_content": {
+      "description": "Restricted content"
+    },
+    "restricted_products": {
+      "description": "Restricted products"
+    }
+  },
+  "namespace": "Tangible\\Loop\\Integrations\\WooCommerce",
+  "className": "MembershipLoop",
+  "extends": "BaseLoop"
+}
