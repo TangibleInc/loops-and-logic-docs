@@ -10,7 +10,9 @@ Run the NPM script.
 npm run gen
 ```
 
-On initial run, it clones Git repositories in `generate/vendor`, which is ignored from the Docs repo. On subsequent runs, it will generate docs from installed repos.
+On initial run, it clones Git repositories in `generate/vendor`, which is ignored from the Docs repo.
+
+On subsequent runs, it will generate docs from installed repos.
 
 ### Update repos
 
@@ -31,28 +33,22 @@ Currently, the script performs the following steps.
 
   - Parse classes in `template-system/loop/types`
 
-  - Extract their definitions to `./loop-types` as JSON files
+  - Extract their definitions to `generate/loop-types` as JSON files
 
-    These are imported from `docs/dynamic-tags/loop` to render **tables of query parameters and fields**.
-
-    - Attachment
-    - Base - Shared by all loop types: Sort by field
-    - Calendar
-    - Menu
-    - Post
-    - Taxonomy
-    - Taxonomy term
-    - Type
-    - User
+    These are imported from `docs/dynamic-tags/loop` to render a **table of query parameters and fields**.
 
 - Template System Pro: Loop type definitions
+
+- Template System: Modules
+
+  Gathers all Markdown files from modules and their child modules, if any, and copies them to `docs/reference`.
 
 
 ### TODO
 
-
 - Fields module
   - Extract field definitions to `./field-types` as JSON files
-  - Import them into docs pages and render a **list of all fields and their properties**.
+  - Import them into docs pages and render a **table of all fields and their parameters**.
+
     Maybe merge them with Block Control docs
 

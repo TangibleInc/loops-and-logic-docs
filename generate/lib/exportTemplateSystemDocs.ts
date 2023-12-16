@@ -64,6 +64,8 @@ export default async function exportTemplateSystemDocs() {
       continue
     }
 
+    // Name the folders by priority
+
     let docsPath = path.join(docsReferencePath, '01 - template-system')
 
     const pos = topLevelFolders.indexOf(dir)
@@ -76,6 +78,12 @@ export default async function exportTemplateSystemDocs() {
       }${priority} - ${dir}`
 
       if (dir==='framework') {
+
+        /**
+         * Framework section is at root menu, because it's meant to be used by
+         * other plugins also. 
+         */
+
         targetFile = parts.join('/')
         docsPath = path.join(docsReferencePath, '02 - framework')
       } else {
