@@ -97,6 +97,7 @@ export function Playground(props: PlaygroundProps = {}) {
         ref={ref}
         style={{
           width: '100%',
+          maxWidth: '1400px',
           height: '500px',
           border: '1px solid #ccc',
           borderRadius: '4px',
@@ -120,7 +121,10 @@ async function start(props: PlaygroundProps & { iframe: HTMLIFrameElement }) {
     // Create content
     content = {},
 
-    storage = 'temporary',
+    storage = window.location.protocol==='https:'
+      ? 'browser'
+      : 'temporary'
+    ,
 
     route = '/wp-admin/',
   } = props
