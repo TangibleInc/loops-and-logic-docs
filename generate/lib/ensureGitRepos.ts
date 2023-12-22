@@ -6,6 +6,7 @@ import { fileExists } from './fileExists.js'
 import { run } from './run.js'
 
 export const ensureGitRepo = async (repo) => {
+
   const gitPath = path.join(vendorPath, repo)
 
   if (!(await fileExists(gitPath))) {
@@ -39,7 +40,6 @@ export const ensureGitRepos = async (repos, update = false) => {
     console.log('Ensure Git repo', repo)
 
     const { gitPath } = await ensureGitRepo(repo)
-
 
     if (!(await fileExists(gitPath))) {
       console.log('Something went wrong - Git repo not found')

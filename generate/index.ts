@@ -2,6 +2,7 @@ import { ensureGitRepos } from './lib/ensureGitRepos.js'
 import { exportAllPro } from './lib/pro'
 import { exportAllLoopTypes } from './lib/export'
 import exportTemplateSystemDocs from './lib/exportTemplateSystemDocs'
+import { generarteDocs } from './lib/docs.js'
 
 // Generate API docs
 const main = async () => {
@@ -20,6 +21,7 @@ const main = async () => {
       // 'tangible-fields-pro-module',
       // 'tangible-loops-and-logic',
       // 'tangible-blocks',
+      // 'tangible-blocks-editor',
       // 'tangible-blocks-pro',
     ],
     update
@@ -56,6 +58,8 @@ const main = async () => {
      * @see /docs/develop/template-system
      */
     'system': exportTemplateSystemDocs,
+
+    docs: generarteDocs,
 
     /**
      * npm run gen all
