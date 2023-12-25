@@ -38,8 +38,10 @@ const PLAYGROUND_SERVER_URL = 'https://playground.wordpress.net'
 // 'http://localhost:3333'
 
 export function Playground(props: PlaygroundProps = {}) {
-  // Lazy load by default
-  const [isRunning, setIsRunning] = React.useState(props.lazy === false)
+  const [isRunning, setIsRunning] = React.useState(
+    // Lazy load by default for code examples
+    props.lazy === false || (!props.template && props.lazy !== true)
+  )
 
   const { iframeStyle = {}, buttonText = 'Run' } = props
 
@@ -137,14 +139,16 @@ async function start(
   } = props
 
   if (fullSite) {
-    iframe.src = `${PLAYGROUND_SERVER_URL}/?storage=${storage}&mode=browser-full-screen&plugin=tangible-loops-and-logic&url=${encodeURIComponent(
-      '/wp-admin/options-general.php?page=tangible-loops-and-logic-settings&tab=welcome&dismiss_admin_notice=true'
-    )}`
-
-    // Passing blueprint JSON in URL hash is not working
-    // '#'+encodeURIComponent(JSON.stringify(defaultBlueprint))
-
-    return
+    /**
+     * TODO: Simple interface around the iframe to interact with the Playground.
+     *
+     * Previously used browser-full-screen mode of official Playground server,
+     * but it was too limited for customizing blueprint, plugin URL, toolbar.
+     */
+    // iframe.src = `${PLAYGROUND_SERVER_URL}/?storage=${storage}&mode=browser-full-screen&plugin=tangible-loops-and-logic&url=${encodeURIComponent('/wp-admin/options-general.php?page=tangible-loops-and-logic-settings&tab=welcome&dismiss_admin_notice=true')}`
+    //   // Passing blueprint JSON in URL hash is not working
+    //   // '#'+encodeURIComponent(JSON.stringify(defaultBlueprint))
+    //   return
   }
 
   // Code example has no browser chrome around the playground site
@@ -195,6 +199,7 @@ async function start(
 
     if (errors) console.error('Error creating content', errors)
   }
+
   if (template) {
     // Create template and show it on frontend
 

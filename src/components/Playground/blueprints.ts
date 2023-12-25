@@ -24,8 +24,8 @@ export const defaultBlueprint: Blueprint = {
     { // Install L&L
       step: 'installPlugin',
       pluginZipFile: {
-        resource: 'wordpress.org/plugins', slug: 'tangible-loops-and-logic',
-
+        // resource: 'wordpress.org/plugins', slug: 'tangible-loops-and-logic',
+        resource: 'url', url: 'https://raw.githubusercontent.com/TangibleInc/releases/main/tangible-template-system-latest.zip'
         /**
          * Testing from development build of plugin
          * Must be served with CORS enabled - GitHub releases don't work.

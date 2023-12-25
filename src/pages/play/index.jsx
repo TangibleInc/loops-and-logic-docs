@@ -5,16 +5,22 @@ import styles from './styles.module.css'
 
 export default function PlaygroundPage() {
   return (
-    <Layout title="Playground" description="WordPress Playground with Loops & Logic">
+    <Layout
+      title="Playground"
+      description="WordPress Playground with Loops & Logic"
+    >
       <main className={styles.main}>
         <h1>Playground</h1>
         <p>
           Here is a WordPress site with Loops & Logic installed, running
           entirely in the browser.
         </p>
-        <Playground route="/wp-admin/" lazy={false} iframeStyle={{
-          height: '680px'
-        }} />
+        <Playground
+          route="/wp-admin/post-new.php?post_type=tangible_template"
+          iframeStyle={{
+            height: '680px',
+          }}
+        />
       </main>
     </Layout>
   )
