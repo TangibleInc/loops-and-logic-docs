@@ -1,4 +1,4 @@
-import type { Blueprint } from '@wp-playground/client'
+import type { Blueprint, Step } from '@wp-playground/client'
 
 export const mergeBlueprints = (b1: Blueprint, b2: Blueprint) => ({
   ...b1,
@@ -24,10 +24,12 @@ export const defaultBlueprint: Blueprint = {
     { // Install L&L
       step: 'installPlugin',
       pluginZipFile: {
-
         resource: 'wordpress.org/plugins', slug: 'tangible-loops-and-logic',
 
-        // Testing
+        /**
+         * Testing from development build of plugin
+         * Must be served with CORS enabled - GitHub releases don't work.
+         */
         // resource: 'url', url: 'http://localhost:3333/static/tangible-loops-and-logic.zip'
       }
     },
@@ -52,31 +54,35 @@ $wp_rewrite->flush_rules();
 update_option('blogname', 'Loops & Logic');
 `,
     },
-    { // Run on every request
-      step: `writeFile`,
-      path: '/wordpress/wp-content/mu-plugins/entry.php',
-      data: `<?php
+  ]
+}
+
+export const codeExampleSteps: Step[] = [
+  { // Run on every request
+    step: `writeFile`,
+    path: '/wordpress/wp-content/mu-plugins/entry.php',
+    data: `<?php
 
 add_filter('template_include', function($template) {
 
-  // Provide minimal page to render template
+// Provide minimal page to render template
 
-  if (!isset($_GET['template_id'])
-    || !function_exists('tangible_template_system')
-  ) return $template;
+if (!isset($_GET['template_id'])
+  || !function_exists('tangible_template_system')
+) return $template;
 
-  // Remove admin top bar on frontend
+// Remove admin top bar on frontend
 
-  add_filter( 'show_admin_bar', function() {
-    remove_action('wp_head', '_admin_bar_bump_cb');
-    return false;
-  });
+add_filter( 'show_admin_bar', function() {
+  remove_action('wp_head', '_admin_bar_bump_cb');
+  return false;
+});
 
-  $content = tangible_template_system()->render_template_post(
-    (int) $_GET['template_id']
-  );
+$content = tangible_template_system()->render_template_post(
+  (int) $_GET['template_id']
+);
 
-  ?><!DOCTYPE html>
+?><!DOCTYPE html>
 <html <?php language_attributes(); ?>>
 <head>
 <style>html, body { margin: 0 }</style>
@@ -92,10 +98,8 @@ wp_footer();
 </body>
 </html><?php
 
-  exit;
+exit;
 });
 `,
-    }
-  ]
-}
-
+  }
+]

@@ -122,8 +122,8 @@ const config = {
             label: 'Reference',
           },
           {
-            to: '/playground',
-            label: 'Playground',
+            to: '/play',
+            label: 'Play',
             position: 'right',
           },
           {

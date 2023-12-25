@@ -6,20 +6,27 @@ url: /playground/code-example
 
 import Playground from '@site/src/components/Playground'
 
-<Playground {...{
-  template: `<ul>
+<Playground
+  template={
+`<ul>
   <Loop type=post>
     <li><Field title /></li>
   </Loop>
-</ul>`,
-  style: `ul {
+</ul>`}
+ style={
+`ul {
   color: green;
-}`,
-  script: `console.log('Hello from component')
-`,
-  content: {
+}`}
+  script={
+`console.log('Hello from component')
+`}
+  content={{
     post: [
       { post_title: 'Another post' }
     ]
-  }
-}} />
+  }}
+  iframeStyle={{
+    border: 'none',
+    height: '220px'
+  }}
+/>

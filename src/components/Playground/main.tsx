@@ -1,8 +1,8 @@
 import React, { useEffect, useRef } from 'react'
 import { startPlaygroundWeb } from '@wp-playground/client'
-import { defaultBlueprint } from './blueprints'
 import type { StyleHTMLAttributes } from 'react'
 import type { PlaygroundClient } from '@wp-playground/client'
+import { defaultBlueprint, codeExampleSteps } from './blueprints'
 
 import Tabs from '@theme/Tabs'
 import TabItem from '@theme/TabItem'
@@ -55,6 +55,7 @@ export function Playground(props: PlaygroundProps = {}) {
       start({
         ...props,
         iframe,
+        fullSite: !props.template,
       }).catch(console.error)
 
       return () => {
@@ -80,35 +81,44 @@ export function Playground(props: PlaygroundProps = {}) {
 
   if (!isRunning) {
     const start = () => setIsRunning(true)
-    return <>
-      {example}
-      <p>
-        <button className="button button--primary" onClick={start}>
-          {buttonText}
-        </button>
-      </p>
-    </>
+    return (
+      <>
+        {example}
+        <p>
+          <button className="button button--primary" onClick={start}>
+            {buttonText}
+          </button>
+        </p>
+      </>
+    )
   }
 
-  return <>
-    {example}
-    <p>
-      <iframe
-        ref={ref}
-        style={{
-          width: '100%',
-          maxWidth: '1400px',
-          height: '500px',
-          border: '1px solid #ccc',
-          borderRadius: '4px',
-          ...iframeStyle,
-        }}
+  return (
+    <>
+      {example}
+      <p>
+        <iframe
+          ref={ref}
+          style={{
+            width: '100%',
+            maxWidth: '1400px',
+            height: '420px',
+            border: '1px solid #ccc',
+            borderRadius: '4px',
+            ...iframeStyle,
+          }}
         />
-    </p>
-  </>
+      </p>
+    </>
+  )
 }
 
-async function start(props: PlaygroundProps & { iframe: HTMLIFrameElement }) {
+async function start(
+  props: PlaygroundProps & {
+    iframe: HTMLIFrameElement
+    fullSite?: boolean
+  }
+) {
   const {
     iframe,
 
@@ -121,13 +131,23 @@ async function start(props: PlaygroundProps & { iframe: HTMLIFrameElement }) {
     // Create content
     content = {},
 
-    storage = window.location.protocol==='https:'
-      ? 'browser'
-      : 'temporary'
-    ,
-
-    route = '/wp-admin/',
+    storage = window.location.protocol === 'https:' ? 'browser' : 'temporary',
+    route = '/',
+    fullSite,
   } = props
+
+  if (fullSite) {
+    iframe.src = `${PLAYGROUND_SERVER_URL}/?storage=${storage}&mode=browser-full-screen&plugin=tangible-loops-and-logic&url=${encodeURIComponent(
+      '/wp-admin/options-general.php?page=tangible-loops-and-logic-settings&tab=welcome&dismiss_admin_notice=true'
+    )}`
+
+    // Passing blueprint JSON in URL hash is not working
+    // '#'+encodeURIComponent(JSON.stringify(defaultBlueprint))
+
+    return
+  }
+
+  // Code example has no browser chrome around the playground site
 
   const playground: PlaygroundClient = await startPlaygroundWeb({
     // playground = startPlaygroundWeb({
@@ -135,6 +155,7 @@ async function start(props: PlaygroundProps & { iframe: HTMLIFrameElement }) {
     remoteUrl: `${PLAYGROUND_SERVER_URL}/remote.html?storage=${storage}`,
     blueprint: {
       ...defaultBlueprint,
+      steps: [...defaultBlueprint.steps, ...codeExampleSteps],
       landingPage: route,
     },
   })
@@ -202,13 +223,7 @@ async function start(props: PlaygroundProps & { iframe: HTMLIFrameElement }) {
     if (errors) console.error('Error creating template', errors)
 
     if (templateId) {
-      /**
-       * Would have been nice to resize iframe height to fit its content but
-       * it's complicated to achieve due to cross-site origin.
-       */
-      iframe.src = await playground.pathToInternalUrl(
-        `/?template_id=${templateId}`
-      )
+      await playground.goTo(`/?template_id=${templateId}`)
     }
   }
 }
