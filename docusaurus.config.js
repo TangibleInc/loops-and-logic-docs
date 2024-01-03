@@ -122,6 +122,11 @@ const config = {
             label: 'Reference',
           },
           {
+            to: '/play',
+            label: 'Play',
+            position: 'right',
+          },
+          {
             href: 'https://discourse.tangible.one',
             label: 'Forum',
             position: 'right',

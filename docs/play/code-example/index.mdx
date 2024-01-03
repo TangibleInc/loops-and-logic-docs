@@ -1,0 +1,32 @@
+---
+id: code-example
+title: Runnable code example
+url: /playground/code-example
+---
+
+import Playground from '@site/src/components/Playground'
+
+<Playground
+  template={
+`<ul>
+  <Loop type=post>
+    <li><Field title /></li>
+  </Loop>
+</ul>`}
+ style={
+`ul {
+  color: green;
+}`}
+  script={
+`console.log('Hello from component')
+`}
+  content={{
+    post: [
+      { post_title: 'Another post' }
+    ]
+  }}
+  iframeStyle={{
+    border: 'none',
+    height: '220px'
+  }}
+/>
