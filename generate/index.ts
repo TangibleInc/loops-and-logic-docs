@@ -55,7 +55,7 @@ const main = async () => {
      * 
      * Template System modules
      * 
-     * @see /docs/develop/template-system
+     * @see /docs/reference/template-system
      */
     'system': exportTemplateSystemDocs,
 

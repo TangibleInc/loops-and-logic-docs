@@ -23,6 +23,7 @@ export default async function exportTemplateSystemDocs() {
           '**/node_modules/**',
           '.git',
           '.phpunit.cache',
+          '**/tests/**',
           '**/vendor/**',
         ],
       }
