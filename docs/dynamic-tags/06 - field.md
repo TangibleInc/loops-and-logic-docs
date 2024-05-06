@@ -33,18 +33,4 @@ Use the type attribute with id or name to get a field from a specific post.
 ```html
 <Field title type=page name=example />
 ```
-
-## Tag-attributes
-This attribute simply renders its value as an attribute. It can be used to render multiple attributes, either as value-less keys (sometimes called boolean attributes, shown in the example below) or as key/value pairs.
-
-In the example below, the audio file will only autoplay and loop if the user visiting the page is logged in.
-
-```html
-<audio src="music.mp3" tag-attributes="{If user}autoplay loop{/If}"></audio>
-```
-
-If the user is logged in, the HTML output will be:
-
-```html
-<audio controls src="music.mp3" autoplay loop></audio>
 ```

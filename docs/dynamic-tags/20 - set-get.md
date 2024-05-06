@@ -147,4 +147,20 @@ This is a way to pass values to the Style section of a template post.
 
 A valid variable name must include only alphanumeric (letters and numbers), underscore `_`, and dash `-`.
 
-Use the `type` attribute to define the value type: `number`, `color`, `list`, `map`, and `string`. `string` wraps the value in "quotes" while all other types work the same as the default by passing an unquoted value.
+By default, the value of Sass variables are saved without quotes so that variables containing numbers or hex colors work as expected. When working with strings or URLs, these values need to be quoted. Use the `type` attribute to define the value type: `number`, `color`, `list`, `map`, and `string`. `string` wraps the value in quotes `""` while all other types work the same as the default by passing an unquoted value.
+
+For example, an image URL variable could be saved using either of the approaches below.
+
+```html
+<Set sass=background_image>"<Field image_url />"</Set>
+```
+
+```html
+<Set sass=background_image type=string><Field image_url /></Set>
+```
+
+This variable can then be referenced in the Style tab.
+
+```css
+background-image: url($background_image);
+```

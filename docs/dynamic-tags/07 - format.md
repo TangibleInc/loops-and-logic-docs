@@ -182,7 +182,7 @@ Also see the [`replace_pattern` attribute](#replace-pattern) and the `If` tag's 
 
 ### Pattern syntax
 
-The syntax for regular expressions is extensively documented in [PHP Manual: Pattern Syntax](https://www.php.net/manual/en/reference.pcre.pattern.syntax.php). Remember to use delimiters. If using repetitions, be sure to wrap the regular expression in [`{Raw}` tags](../dynamic-tags/raw) to avoid the inner curly brackets getting interpreted as a nested tag.
+The syntax for regular expressions is extensively documented in [PHP Manual: Pattern Syntax](https://www.php.net/manual/en/reference.pcre.pattern.syntax.php). Remember to use delimiters.
 
 For a quick summary:
 
@@ -391,4 +391,12 @@ Usually, this is passed to a link `href` attribute. It's probably easier to set 
 ```html
 <Set q><Format url_query>..</Format></Set>
 <a href="https://example.com{Get q}"></a>
+```
+
+## Words
+
+Use `words` to trim content to the specified number of words.
+
+```html
+<Format words="2">Lorem ipsum dolor sit amet</Format> == Lorem ipsum
 ```

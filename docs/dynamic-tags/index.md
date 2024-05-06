@@ -113,3 +113,19 @@ To use tags inside an attribute value, replace `<>` with curly braces `{}`. This
 ```
 
 Make sure to quote such attributes, as they usually contain a space. In most cases closed tags like `Field` don't need the slash `/` to close themselves inside an attribute.
+
+## Dynamic attributes
+---------------
+In most cases, attributes and their values can be changed dynamically using the curly brace syntax described above. However, HTML has some attributes that don't accept a value and are simply true or false based on whether they're added to a tag. These are sometimes called boolean attributes. In these cases, L&L's `tag-attributes` attribute can be used to dynamically add these attributes to a tag. This attribute simply renders its value as an attribute.
+
+In the example below, the audio file will only autoplay and loop if the user visiting the page is logged in.
+
+```html
+<audio src="music.mp3" tag-attributes="{If user}autoplay loop{/If}"></audio>
+```
+
+If the user is logged in, the HTML output by the template above will be:
+
+```html
+<audio controls src="music.mp3" autoplay loop></audio>
+```

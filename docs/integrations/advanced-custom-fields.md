@@ -6,6 +6,8 @@ tags:
 ---
 The `Loop` and `Field` tags support the following ACF field types.
 
+Loops & Logic also adds an optional Tangible Template field type to the ACF field groups interface. This field type can be enabled under Tangible > Settings.
+
 ## Basic fields
 
 These field types can be displayed simply with the `Field` tag.

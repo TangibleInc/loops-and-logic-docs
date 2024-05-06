@@ -10,7 +10,7 @@ This control creates a number field that can be increased or decreased.
 ```html
 <Control type="number" name="number_control_name" label="Number control" min="0" max="100">
   <Key default>50</Key>
-<Control>
+</Control>
 ```
 
 ## Attributes

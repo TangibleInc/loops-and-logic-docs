@@ -6,7 +6,7 @@ tags:
 - Logic
 ---
 
-The `If` tag evaluates whether a condition is true or false. When the condition is true, its inner content is displayed.
+The `If` tag evaluates whether a condition is true or false. When the condition is true, its inner content is run or displayed.
 
 The basic structure is:
 ```html
@@ -20,7 +20,7 @@ The condition is expressed using tag attributes to define the subject, the compa
 
 ### Subject (required)
 
-The subject defines what data is being evaluated. The `If` tag must always contain a subject. This subject can use any of the attributes listed as *core conditions* below when working with WordPress core content and may use other conditions when working with content from third-party plugins.
+The subject defines what data is being evaluated. The `If` tag must always contain a subject. This subject can use any of the attributes [listed below](#subjects) when working with WordPress core content and may use other attributes when working with content from third-party plugins.
 
 #### Subject without a value
 
@@ -42,21 +42,21 @@ Other subjects like `check` and `field` require a value. In this example, the co
 
 ### Comparison (optional)
 
-The comparison defines what to do with the subject, such as comparing it to another value or simply checking if it exists. Usually, this is written as a second attribute without a value, like `is`, `more_than`, or `less_than`. It can also be given as an attribute with a value, like `is="something"`. If no value is specified, the default comparison is exists. If a value is specified, the default comparison is `is`. An `If` tag can only contain one comparison. To build complex conditions with multiple comparisons, see logic variables.
+The comparison defines what to do with the subject, such as comparing it to another value or simply checking if it exists. This is written as a second attribute, like `is`, `more_than`, or `includes`. If no value is specified, the default comparison is `exists`. If a value is specified, the default comparison is `is`. An `If` tag can only contain one comparison. To build complex conditions with multiple comparisons, see [logic variables](/dynamic-tags/if/logic-variables).
 
 ### Value to compare (optional)
 
 Many of the core conditions support defining a value, written with the attribute `value="something"`. As noted above, this value can also be added to the comparison, so the comparison and value `is value="something"` can also be written as `is="something"`.
 
-## Conditions
+## Subjects
 
-The following subjects are defined as conditions for WordPress core content. The integrations in Loops & Logic Pro and Tangible Blocks Pro provide additional conditions for third-party plugins' content types.
+The following subjects are defined as conditions for WordPress core content. The integrations in Loops & Logic Pro and Tangible Blocks Pro provide additional subjects for third-party plugins' content types, such as those in the [Advanced Custom Fields integration](/integrations/acf).
 
 ### Archive
 
 `archive="..."`
 
-This subject evaluates whether the current page is an archive page. It accepts a value of author, category, date, post (default), tag, and taxonomy. It also accepts the attributes type or taxonomy to filter by post type or taxonomy, respectively. In the example below, the condition is true when the template is placed on a category taxonomy archive page.
+This subject evaluates whether the current page is an archive page. It accepts a value of `author`, `category`, `date`, `post` (default), `tag`, and `taxonomy`. It also accepts the attributes `type` or `taxonomy` to filter by post type or taxonomy, respectively. In the example below, the condition is true when the template is placed on a category taxonomy archive page.
 
 ```html
 <If archive="taxonomy" taxonomy="category">
@@ -66,7 +66,7 @@ This subject evaluates whether the current page is an archive page. It accepts a
 
 `check="..."`
 
-This subject evaluates anything contained in its value. It accepts an optional attribute value of type text. In the example below, the condition is true when the first three letters of a certain variable are "ABC."
+This subject evaluates anything contained in its value and is the most flexible subject of the `If` tag. It accepts an optional attribute value of type text. In the example below, the condition is true when the first three letters of a certain variable are "ABC."
   ```html
   <If check="{Format length=3}{Get some_variable}{/Format}" is value="abc">
   ```

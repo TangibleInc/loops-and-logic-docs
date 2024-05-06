@@ -20,8 +20,9 @@ In the admin dashboard of your WordPress site, navigate to Plugins > Add New, se
 
 ## Step 2: Download some demo templates
 
-[Click here to download a .json file that contains some general L&L templates that will work with the data structure of most WordPress blogs.](https://raw.githubusercontent.com/TangibleInc/Quick-start-templates-for-Loops-Logic/master/quick-start-templates-for-loops-and-logic.json) On a PC, right-click the page and choose "Save as..." to download the file. On a Mac, click File > Save As to save the .json file.
+L&L templates can be shared either as .json or .png files. The PNG below is an encoded collection of general L&L templates that will work with the data structure of most WordPress blogs. Save the image below to your computer.
 
+![](./quick-start-templates-for-loops-and-logic.png)
 ## Step 3: Import the file into Loops & Logic
 
 In your site's dashboard, navigate to Tangible > Import & Export and click Import. Select the .json file you just downloaded.

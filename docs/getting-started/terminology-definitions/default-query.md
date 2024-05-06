@@ -27,7 +27,7 @@ This would be the same as manually defining a query using the `Loop` tag and the
 
 ```html
 <Loop type=post name=my-blog-post-slug>
-  <Field publish />
+  <Field publish_date />
 </Loop>
 ```
 

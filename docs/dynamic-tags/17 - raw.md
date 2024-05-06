@@ -13,10 +13,11 @@ Use the `Raw` tag to surround content that you do not want to be rendered.
 </Raw>
 ```
 
-This tag can also be used within an attribute's value, such as when working with HTML data or regular expressions.
+This tag can be used to stop Loops & logic from parsing incorrect HTML syntax, like `<<a <b>>` or static tags and to simply render contents of the `Raw` tag as literal text. It may be necessary in some situations when HTML tags are being passed within an attribute value.
 
 ```html
-<If field="title" matches_pattern value="{Raw}/.{25,}/{/Raw}">
-  This title is over 25 characters.
-</If>
+<Set html><Raw><a href="https://example.org">world</a></Raw></Set>
+
+<Format replace="world" with="{Get html}">Hello world</Format>
 ```
+

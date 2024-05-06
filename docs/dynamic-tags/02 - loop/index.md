@@ -64,9 +64,9 @@ These loop types don't require using the `type` attribute and are instead themse
 *    `times="..."` - This type repeats its inner content a given number of times. See the [times loop](/dynamic-tags/loop/times) for more information.
 *    `user_field="..."` - This type loops through a user field value that is a list or map.
 
-### Integrations
+### Integration loop types
 
-There are loop types that integrate with content from other plugins.
+Beyond the core loop types above, certain integrations add additional types that integrate with content from other plugins.
 
 *    [Advanced Custom Fields](/integrations/acf)
 
@@ -101,6 +101,7 @@ Recent posts:
 *    `field_type="..."` - This attribute defines the field type. It accepts a value of `string` (default), `number`, or `date`. It is useful when using numerical comparisons in `field_compare`.
 *    `field_type_2="..."` - Used when filtering multiple fields. See `field_type`.
 *    `field_type_3="..."` - Used when filtering multiple fields. See `field_type`.
+*    `offset="..."` - This attribute offsets the start of the loop, skipping the specified number of items. It accepts a value of type number. 
 *    `paged="..."` - This attribute enables loop pagination and defines the number of items to display per page. It accepts a value of type number. For more information, see [loop pagination](/dynamic-tags/loop/features/pagination).
 *    `sort_field="..."` - This attribute defines the field by which to sort items in the loop. The example below will display the post titles of an `event` custom post type sorted in descending order based on an `event_date` custom field.
 ```html
