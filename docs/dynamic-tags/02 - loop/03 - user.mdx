@@ -8,18 +8,17 @@ tags:
 
 import { QueryArgsList } from '@site/common/QueryArgs.jsx'
 import { FieldsList } from '@site/common/Fields.jsx'
-import json from '@site/generate/loop-types/user.json'
-const { query_args, fields } = json
+import user from '@site/generate/loop-types/user.json'
 
 For loop type `user`, here are the query parameters and fields.
 
 ## Query parameters
 
-<QueryArgsList args={query_args} exclude={['fields']}/>
+<QueryArgsList args={user.query_args} exclude={['fields']}/>
 
 ## Fields
 
-<FieldsList fields={fields} />
+<FieldsList fields={user.fields} />
 
 ## User conditions
 

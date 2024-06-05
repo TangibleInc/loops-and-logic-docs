@@ -8,10 +8,8 @@ tags:
 
 import { QueryArgsList } from '@site/common/QueryArgs.jsx'
 import { FieldsList } from '@site/common/Fields.jsx'
-import postJson from '@site/generate/loop-types/post.json'
-import json from '@site/generate/loop-types/attachment.json'
-const { query_args, fields } = json
-const { query_args: postQueryArgs, fields: PostFields } = postJson
+import post from '@site/generate/loop-types/post.json'
+import attachment from '@site/generate/loop-types/attachment.json'
 
 For loop type `attachment`, here are the query parameters and fields.
 
@@ -20,14 +18,14 @@ For loop type `attachment`, here are the query parameters and fields.
 ### Order
 
 <QueryArgsList
-  args={postQueryArgs}
+  args={post.query_args}
   keys={['order', 'orderby', 'orderby_field', 'orderby_field_number']}
 />
 
-### Core post meta
+### Core fields
 
 <QueryArgsList
-  args={postQueryArgs}
+  args={post.query_args}
   keys={[
     'include',
     'exclude',
@@ -48,10 +46,10 @@ For loop type `attachment`, here are the query parameters and fields.
   ]}
 />
 
-### Custom post meta
+### Custom fields
 
 <QueryArgsList
-  args={postQueryArgs}
+  args={post.query_args}
   keys={[
     'custom_date_field',
     'custom_date_field_compare',
@@ -68,7 +66,7 @@ For loop type `attachment`, here are the query parameters and fields.
 ### Taxonomy
 
 <QueryArgsList
-  args={postQueryArgs}
+  args={post.query_args}
   keys={[
     'category',
     'exclude_category',
@@ -84,23 +82,23 @@ For loop type `attachment`, here are the query parameters and fields.
 
 ### Pagination
 
-<QueryArgsList args={postQueryArgs} keys={['page', 'paged']} />
+<QueryArgsList args={post.query_args} keys={['page', 'paged']} />
 
 ### All parameters
 
-<QueryArgsList args={{...postQueryArgs, ...query_args}} />
+<QueryArgsList args={{...post.query_args, ...attachment.query_args}} />
 
 
 ## Fields
 
 ### Attachment fields
 
-<FieldsList fields={fields} keys={['alt', 'caption', 'description', 'extension', 'filename', 'size', 'sizes', 'srcset', 'type', 'url']} />
+<FieldsList fields={attachment.fields} keys={['alt', 'caption', 'description', 'extension', 'filename', 'size', 'sizes', 'srcset', 'type', 'url']} />
 
 
 ### All fields
 
-<FieldsList fields={{...PostFields, ...fields}} />
+<FieldsList fields={{...post.fields, ...attachment.fields}} />
 
 ## Examples
 

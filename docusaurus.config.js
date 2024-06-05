@@ -1,8 +1,9 @@
 // @ts-check
 // Note: type annotations allow type checking and IDEs autocompletion
 
-const lightCodeTheme = require('prism-react-renderer/themes/github');
-const darkCodeTheme = require('prism-react-renderer/themes/dracula');
+const { themes } = require('prism-react-renderer')
+const lightCodeTheme = themes.github
+const darkCodeTheme = themes.dracula
 
 /** @type {import('@docusaurus/types').Config} */
 const config = {
@@ -31,6 +32,11 @@ const config = {
     defaultLocale: 'en',
     locales: ['en'],
   },
+  /**
+   * Treat .md as Markdown, .mdx as MDX
+   * https://github.com/facebook/docusaurus/issues/3018
+   */
+  markdown: { format: 'detect' },
 
   plugins: [
     [
@@ -39,11 +45,11 @@ const config = {
         redirects: [
           {
             from: '/reference/template-system/framework',
-            to: '/reference/framework'
-          }
-        ]
-      }
-    ]
+            to: '/reference/framework',
+          },
+        ],
+      },
+    ],
   ],
 
   presets: [
@@ -127,7 +133,7 @@ const config = {
           //   position: 'right',
           // },
           {
-            href: 'https://discourse.tangible.one',
+            href: 'https://tangibletalk.com',
             label: 'Forum',
             position: 'right',
           },
@@ -166,7 +172,7 @@ const config = {
             items: [
               {
                 label: 'Forum',
-                href: 'https://discourse.tangible.one',
+                href: 'https://tangibletalk.com',
               },
               {
                 label: 'Facebook Group',
@@ -209,9 +215,8 @@ const config = {
         priority: 0.5,
         ignorePatterns: ['/tags/**'],
         filename: 'sitemap.xml',
-      }
+      },
     }),
-    
-};
+}
 
-module.exports = config;
+module.exports = config

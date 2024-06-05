@@ -14,7 +14,7 @@ It uses the same structure as Controls.
 
 Here are the available base types.
 
-- [ajax select](#ajax_select)
+- [ajax select](#ajax-select)
 
 ---
 

@@ -8,8 +8,7 @@ tags:
 
 import { QueryArgsList } from '@site/common/QueryArgs.jsx'
 import { FieldsList } from '@site/common/Fields.jsx'
-import json from '@site/generate/loop-types/post.json'
-const { query_args, fields } = json
+import post from '@site/generate/loop-types/post.json'
 
 For loop type `post`, `page`, and custom post type, here are the query parameters and fields.
 
@@ -18,14 +17,14 @@ For loop type `post`, `page`, and custom post type, here are the query parameter
 ### Order
 
 <QueryArgsList
-  args={query_args}
+  args={post.query_args}
   include={['order', 'orderby', 'orderby_field', 'orderby_field_number']}
 />
 
-### Core post meta
+### Core fields
 
 <QueryArgsList
-  args={query_args}
+  args={post.query_args}
   include={[
     'include',
     'exclude',
@@ -46,10 +45,10 @@ For loop type `post`, `page`, and custom post type, here are the query parameter
   ]}
 />
 
-### Custom post meta
+### Custom fields
 
 <QueryArgsList
-  args={query_args}
+  args={post.query_args}
   include={[
     'custom_date_field',
     'custom_date_field_compare',
@@ -69,7 +68,7 @@ For loop type `post`, `page`, and custom post type, here are the query parameter
 ### Taxonomy
 
 <QueryArgsList
-  args={query_args}
+  args={post.query_args}
   include={[
     'category',
     'exclude_category',
@@ -88,11 +87,11 @@ For loop type `post`, `page`, and custom post type, here are the query parameter
 
 ### Pagination
 
-<QueryArgsList args={query_args} include={['page', 'paged']} />
+<QueryArgsList args={post.query_args} include={['page', 'paged']} />
 
 ### All parameters
 
-<QueryArgsList args={query_args} />
+<QueryArgsList args={post.query_args} />
 
 ## Fields
 
@@ -101,7 +100,7 @@ For loop type `post`, `page`, and custom post type, here are the query parameter
 Fields representing hierarchical relationships with other posts
 
 <FieldsList
-  fields={fields}
+  fields={post.fields}
   include={[
     'ancestors',
     'children',
@@ -114,7 +113,7 @@ Fields representing hierarchical relationships with other posts
 
 ### All fields
 
-<FieldsList fields={fields} />
+<FieldsList fields={post.fields} />
 
 ## Examples
 

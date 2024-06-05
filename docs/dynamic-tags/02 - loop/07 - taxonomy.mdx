@@ -8,15 +8,14 @@ tags:
 
 import { QueryArgsList } from '@site/common/QueryArgs.jsx'
 import { FieldsList } from '@site/common/Fields.jsx'
-import json from '@site/generate/loop-types/taxonomy.json'
-const { query_args, fields } = json
+import taxonomy from '@site/generate/loop-types/taxonomy.json'
 
 For loop type `taxonomy`, here are the query parameters and fields.
 
 ## Query parameters
 
-<QueryArgsList args={query_args} />
+<QueryArgsList args={taxonomy.query_args} />
 
 ## Fields
 
-<FieldsList fields={fields} />
+<FieldsList fields={taxonomy.fields} />

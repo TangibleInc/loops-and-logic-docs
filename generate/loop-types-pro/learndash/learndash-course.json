@@ -64,6 +64,17 @@
     "prerequisite_completed": {
       "description": "Course Prerequisite completed or not",
       "type": "boolean"
+    },
+    "order_by_field": {
+      "description": "Custom order by field",
+      "type": "string",
+      "accepts": [
+        "course_progress_percent",
+        "course_students_number",
+        "course_price",
+        "course_date_completed",
+        "course_last_activity"
+      ]
     }
   },
   "fields": {

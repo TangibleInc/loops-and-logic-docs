@@ -8,15 +8,14 @@ tags:
 
 import { QueryArgsList } from '@site/common/QueryArgs.jsx'
 import { FieldsList } from '@site/common/Fields.jsx'
-import json from '@site/generate/loop-types/type.json'
-const { query_args, fields } = json
+import loopType from '@site/generate/loop-types/type.json'
 
 The loop type `type` is for looping through loop types or post types. Here are the query parameters and fields.
 
 ## Query parameters
 
-<QueryArgsList args={query_args} />
+<QueryArgsList args={loopType.query_args} />
 
 ## Fields
 
-<FieldsList fields={fields} />
+<FieldsList fields={loopType.fields} />

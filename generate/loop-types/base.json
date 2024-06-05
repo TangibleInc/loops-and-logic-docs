@@ -46,5 +46,6 @@
   "fields": {},
   "namespace": "Tangible\\Loop",
   "className": "BaseLoop",
+  "extends": "StdClass",
   "title": "Base"
 }

@@ -24,4 +24,4 @@ The above example is the same as:
 </Loop>
 ```
 
-See [the Taxonomy Term loop type](/dynamic-tags/Loop/taxonomy-term#fields) for available fields.
+See [the Taxonomy Term loop type](/dynamic-tags/loop/taxonomy-term#fields) for available fields.

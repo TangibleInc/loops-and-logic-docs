@@ -2,9 +2,9 @@
 
 The source code of the documentation site is at:
 
-https://bitbucket.org/tangibleinc/docusaurus-loops-and-logic
+https://github.com/tangibleinc/loops-and-logic-docs
 
-The website is built using [Docusaurus 2](https://docusaurus.io/), a static website generator.
+The website is built using [Docusaurus 3](https://docusaurus.io/), a static website generator.
 
 #### Generate
 
@@ -15,10 +15,12 @@ See description of the [Generate script](generate), which is part of the build p
 ### Installation
 
 ```
-git clone https://bitbucket.org/tangibleinc/docusaurus-loops-and-logic
-cd docusaurus-loops-and-logic
+git clone https://github.com/tangibleinc/loops-and-logic-docs
+cd loops-and-logic-docs
 npm install
 ```
+
+Tangible team members with access to the Git repo can clone from `git@github.com:tangibleinc/loops-and-logic-docs`.
 
 ### Local Development
 
