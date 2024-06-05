@@ -16,22 +16,22 @@
     "gen:watch": "chokidar 'generate/vendor/**/readme.md' --initial --follow-symlinks --silent --ignore '**/node_modules/**' --ignore 'generate/vendor/*/vendor/**' -c 'tsx generate/index.ts system'"
   },
   "dependencies": {
-    "@docusaurus/core": "2.4.1",
-    "@docusaurus/module-type-aliases": "2.4.1",
-    "@docusaurus/plugin-client-redirects": "2.4.1",
-    "@docusaurus/preset-classic": "2.4.1",
-    "@mdx-js/react": "^1.6.22",
-    "@wp-playground/client": "^0.7.19",
-    "clsx": "^1.2.1",
-    "prism-react-renderer": "^1.3.5",
-    "react": "^17.0.2",
-    "react-dom": "^17.0.2"
+    "@docusaurus/core": "3.4.0",
+    "@docusaurus/module-type-aliases": "3.4.0",
+    "@docusaurus/plugin-client-redirects": "3.4.0",
+    "@docusaurus/preset-classic": "3.4.0",
+    "@mdx-js/react": "^3.0.1",
+    "@wp-playground/client": "^0.7.20",
+    "clsx": "^2.1.1",
+    "prism-react-renderer": "^2.3.1",
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1"
   },
   "devDependencies": {
     "@expreva/php-parser": "^1.0.0",
     "chokidar-cli": "^3.0.0",
-    "globby": "^14.0.0",
-    "tsx": "^4.6.2"
+    "globby": "^14.0.1",
+    "tsx": "^4.11.2"
   },
   "browserslist": {
     "production": [
