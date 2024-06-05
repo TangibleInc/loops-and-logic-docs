@@ -47,7 +47,7 @@
       "default": "day"
     },
     "orderby": {
-      "description": "Order by  - values:  activity_id,\tuser_id,\tpost_id,\tcourse_id,\tactivity_type,\tactivity_status,\tactivity_started,\tactivity_completed, \tactivity_updated",
+      "description": "Order by  - values:  activity_id,\tuser_id,\tpost_id,\tcourse_id,\tactivity_type,\tactivity_status,\tactivity_started,\tactivity_completed, activity_updated",
       "type": "string"
     },
     "order": {
