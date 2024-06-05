@@ -156,9 +156,9 @@ The third way to filter the results of a loop is to use an `If` tag inside the `
 
 Here are some other features of the loop.
 
-*   [Exists](/dynamic-tags/Loop/features/exists)
-*   [Variables](/dynamic-tags/Loop/features/pagination)
-*   [Pagination](/dynamic-tags/Loop/features/variables)
+*   [Exists](/dynamic-tags/loop/features/exists)
+*   [Variables](/dynamic-tags/loop/features/pagination)
+*   [Pagination](/dynamic-tags/loop/features/variables)
 
 ## Examples
 

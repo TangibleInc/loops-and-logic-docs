@@ -16,7 +16,7 @@ Here are the legacy control types.
 - [Image](#image)
 - [Number](#number)
 - [Post Query](#post-query)
-- [Rich text editor](#editor)
+- [Rich text editor](#rich-text-editor)
 - [Select](#select)
 - [Switch](#switch)
 - [Text](#text)

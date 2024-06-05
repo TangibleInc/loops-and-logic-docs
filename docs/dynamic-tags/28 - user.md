@@ -20,4 +20,4 @@ The above is the same as:
 </Loop>
 ```
 
-See [the User loop type](/dynamic-tags/Loop/user#fields) for available fields.
+See [the User loop type](/dynamic-tags/loop/user#fields) for available fields.
