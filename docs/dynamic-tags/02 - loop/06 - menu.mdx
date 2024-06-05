@@ -8,15 +8,14 @@ tags:
 
 import { QueryArgsList } from '@site/common/QueryArgs.jsx'
 import { FieldsList } from '@site/common/Fields.jsx'
-import json from '@site/generate/loop-types/menu.json'
-const { query_args, fields } = json
+import menu from '@site/generate/loop-types/menu.json'
 
 For loop type `menu`, here are the query parameters and fields.
 
 ## Query parameters
 
-<QueryArgsList args={query_args} />
+<QueryArgsList args={menu.query_args} />
 
 ## Fields
 
-<FieldsList fields={fields} />
+<FieldsList fields={menu.fields} />

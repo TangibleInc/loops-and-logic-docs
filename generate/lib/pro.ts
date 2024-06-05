@@ -220,7 +220,7 @@ async function processProIntegration({
       slug,
     })
 
-    const markdownFile = path.join(markdownFolder, `${title}.md`)
+    const markdownFile = path.join(markdownFolder, `${title}.mdx`)
     const template = `---
 id: ${slug}
 title: ${title}
@@ -231,17 +231,16 @@ tags:
 import { QueryArgsList } from '@site/common/QueryArgs.jsx'
 import { FieldsList } from '@site/common/Fields.jsx'
 import json from '@site/generate/loop-types-pro/${name}/${file}'
-const { query_args, fields } = json
 
 For loop type \`${loopTypeName}\`, here are the query parameters and fields.
 
 ## Query parameters
 
-<QueryArgsList args={query_args} />
+<QueryArgsList args={json.query_args} />
 
 ## Fields
 
-<FieldsList fields={fields} />
+<FieldsList fields={json.fields} />
 `
     await fs.writeFile(markdownFile, template, 'utf8')
 
