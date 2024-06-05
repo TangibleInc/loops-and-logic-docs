@@ -133,7 +133,7 @@ const config = {
           //   position: 'right',
           // },
           {
-            href: 'https://discourse.tangible.one',
+            href: 'https://tangibletalk.com',
             label: 'Forum',
             position: 'right',
           },
@@ -172,7 +172,7 @@ const config = {
             items: [
               {
                 label: 'Forum',
-                href: 'https://discourse.tangible.one',
+                href: 'https://tangibletalk.com',
               },
               {
                 label: 'Facebook Group',
