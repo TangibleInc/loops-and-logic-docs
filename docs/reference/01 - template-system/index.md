@@ -41,7 +41,51 @@ To contribute to the codebase, [create a fork](https://docs.github.com/en/pull-r
 
 ## Develop
 
-#### Build for production
+### Start local dev site
+
+This starts the server for a local development site.
+
+```sh
+npm run start
+```
+
+Open another terminal tab/window to develop modules with JS and CSS assets.
+
+Press CTRL + C to stop.
+
+### List modules
+
+The project is composed of modules which can be built individually. See the list of modules with assets.
+
+```sh
+npm run list-modules
+```
+
+The list is generated from the codebase by finding all config files `tangible.config.js`, and gathering their folder names relative to the project root. These can be built with the `dev`, `build`, and `format` commands described below.
+
+You can specify one or more modules, for example:
+
+```sh
+npm run dev editor integrations/gutenberg
+```
+
+Another example, to build all child modules of the `admin` module.
+
+```sh
+npm run build admin
+```
+
+### Build modules for development
+
+Watch files for changes and rebuild.
+
+```sh
+npm run dev [module1 module2..]
+```
+
+Press CTRL + C to stop.
+
+### Build modules for production
 
 Builds minified bundles with source maps.
 
@@ -49,21 +93,7 @@ Builds minified bundles with source maps.
 npm run build [module1 module2..]
 ```
 
-The project is composed of modules which can be built individually. Specify which modules to build, for example:
-
-```sh
-npm run build editor integrations/gutenberg
-```
-
-#### Build for development
-
-Watch files for changes and rebuild. Press CTRL + C to stop the process.
-
-```sh
-npm run dev [module1 module2..]
-```
-
-#### Format files
+### Format code
 
 Format files to code standard with [Prettier](https://prettier.io) and [PHP Beautify](https://github.com/tangibleinc/php-beautify).
 
@@ -71,132 +101,75 @@ Format files to code standard with [Prettier](https://prettier.io) and [PHP Beau
 npm run format [module1 module2..]
 ```
 
+### Install third-party plugins
 
-### List all modules with assets
+This step is optional. Run `npm run deps` to see the help screen for the command.
 
-See the complete list of modules with assets.
+The following will install all plugin dependencies such as Advanced Custom Fields, Beaver Builder, Elementor, and WP Fusion. You can also choose to install and update plugins individually.
 
 ```sh
-npm run list
+npm run deps all
 ```
 
-The list is generated from the codebase by finding all config files `tangible.config.js`, and gathering their folder names relative to the project root.
+They will be downloaded in the folder `vendor/tangible`. Existing plugins will be skipped, unless you pass the option `--update` to download their newest version.
 
-These can be built with the `dev` and `build` commands.
+```sh
+npm run deps all -- --update
+```
 
-For example, `npm run build admin` will build all child modules of the `admin` module; or you can build an individual module like `npm run build admin/editor`.
+After install, the command updates the file `.wp-env.override.json` to map the local plugin folders.
 
 
 ## Test
 
 There is a suite of unit and integration tests included.
 
-### Requirements
+The test environment uses [`wp-now`](https://github.com/WordPress/playground-tools/tree/trunk/packages/wp-now#wp-now), which runs WordPress on Node and PHP-WASM. It does not require Docker or PHP being installed on the local system.
 
-Prerequisites: [Docker](https://docs.docker.com/get-started/overview/)
+### Run
 
-To run the tests, we use [wp-env](https://developer.wordpress.org/block-editor/reference-guides/packages/packages-env/) to create a local test environment, optionally switching between PHP versions.
-
-Please note that `wp-env` requires Docker to be installed. There are instructions available for installing it on [Windows](https://docs.docker.com/desktop/install/windows-install/), [macOS](https://docs.docker.com/desktop/install/mac-install/), and [Linux](https://docs.docker.com/desktop/install/linux-install/). If you're on Windows, you might have to use [Windows Subsystem for Linux](https://learn.microsoft.com/en-us/windows/wsl/install) to run the tests (see [this comment](https://bitbucket.org/tangibleinc/tangible-fields-module/pull-requests/30#comment-389568162)).
-
-
-### Prepare
-
-Start the local server environment.
-
-```sh
-npm run start
-```
-
-After installing everything, it starts a local dev site at `http://localhost:4650`, and test site at `http://localhost:4651`. The default user is `admin` with `password`.
-
-(These port numbers are defined in `.wp-env.json`. An arbitrary number was chosen to avoid conflict with any other environment running on `wp-env`, whose default port numbers are `8888` and `8889`. If you have anything running on the above ports, stop them first.)
-
-Install Composer dependencies for development and testing.
-
-```sh
-npm run env:composer
-```
-
-This runs `composer install` in the container.
-
-
-### Install plugin dependencies
-
-This step is optional. Run the following to install plugin dependencies such as Advanced Custom Fields, Beaver Builder, Elementor, and WP Fusion.
-
-```sh
-npm run deps all
-```
-
-They will be downloaded in the folder `vendor/tangible`. Existing plugins will be skipped. Pass the the option `--update` to re-download their latest version.
-
-```sh
-npm run deps all --update
-```
-
-You can install and update plugins individually. Run `npm run deps` to see the help screen.
-
-After install, the command updates the file `.wp-env.override.json` to map the local plugin folders to the Docker container. Run `npm run start` to restart the server.
-
-
-### Run tests
-
-This repository includes NPM scripts to run the tests with PHP versions 7.4 and 8.2.
-
-**Note**: We need to maintain compatibility with PHP 7.4, as WordPress itself only has beta support for PHP 8.x. See [PHP Compatibility and WordPress versions](https://make.wordpress.org/core/handbook/references/php-compatibility-and-wordpress-versions/) and [Usage Statistics](https://wordpress.org/about/stats/).
-
-
-Ensure a local environment is running, then run tests using a specific PHP version. This will tell `wp-env` to install it.
-
-```sh
-npm run test:8.2
-```
-
-The version-specific command takes a while to start, but afterwards you can run the following to re-run tests in the same environment.
+Run the tests.
 
 ```sh
 npm run test
 ```
 
-To switch the PHP version, run a different version-specific command.
+### PHP versions
+
+By default it uses PHP 7.4, the oldest version we support. WordPress itself only has beta support for PHP 8.x. See [PHP Compatibility and WordPress versions](https://make.wordpress.org/core/handbook/references/php-compatibility-and-wordpress-versions/) and [Usage Statistics](https://wordpress.org/about/stats/).
+
+Run the tests with PHP 8.3.
 
 ```sh
-npm run test:7.4
+npm run test:8.3
 ```
 
-To stop the Docker process:
+### Run all PHP versions and E2E
+
+Run the tests with all PHP versions, as well as end-to-end tests.
 
 ```sh
-npm run stop
+npm run test:all
 ```
 
-Usually it's enough to run `start` and `stop`. To completely remove the created Docker images and cache:
+### Run test file or folder
+
+Run individual test file.
 
 ```sh
-npm run destroy
+npx roll run tests/loop/taxonomy.ts
 ```
 
-#### Reference
+Run test folder with `index.ts`.
 
-Relevant info for writing unit tests:
-
-- [PHPUnit](https://github.com/sebastianbergmann/phpunit)
-  - [PHPUnit Polyfills](https://github.com/Yoast/PHPUnit-Polyfills)
-  - [Assertions](https://docs.phpunit.de/en/10.5/assertions.html)
-
-- [WP_UnitTestCase](https://github.com/WordPress/wordpress-develop/blob/trunk/tests/phpunit/includes/abstract-testcase.php)
-  - [WP_UnitTest_Factory](https://github.com/WordPress/wordpress-develop/blob/trunk/tests/phpunit/includes/factory/class-wp-unittest-factory.php)
-  - [WP_UnitTest_Factory_For_Post](https://github.com/WordPress/wordpress-develop/blob/trunk/tests/phpunit/includes/factory/class-wp-unittest-factory-for-post.php)
+```sh
+npx roll run tests/logic
+```
 
 
 ### End-to-end tests
 
 The folder `/tests/e2e` contains end-to-end-tests using [Playwright](https://playwright.dev/docs/intro) and [WordPress E2E Testing Utils](https://developer.wordpress.org/block-editor/reference-guides/packages/packages-e2e-test-utils-playwright/).
-
-#### Run
-
-Run the tests. This will start the local WordPress environment with `wp-env` as needed. Then Playwright starts a browser engine to interact with the test site.
 
 ```sh
 npm run e2e
@@ -260,26 +233,36 @@ Examples of how to write end-to-end tests:
 │   ├── template-post          // Template post
 │   └── universal-id           // Universal ID
 │
-├── content                    // Content Structure
+├── content                    // Content Structure integration
 ├── form                       // Form
-├── editor                     // Code editor
+├── editor                     // Template editor core
+│
+├── elandel                    // TypeScript implementation of the template language
+│   ├── css                    // CSS engine with extended syntax
+│   ├── editor                 // Code editor
+│   └── html                   // HTML engine with extended syntax
 │
 ├── framework                  // Framework module shared by plugins
 │   │
 │   ├── admin                  // Admin features 
 │   ├── ajax                   // AJAX
 │   ├── api                    // API
-│   ├── auth                   // Authentication
+│   ├── async-action           // Async action
+│   ├── background-queue       // Background queue
+│   ├── content                // Content structure
 │   ├── date                   // Date module based on Carbon library
+│   ├── design                 // Design
+│   ├── empty-block-theme      // Empty Block Theme for testing
+│   ├── env                    // Dev and test environment
 │   ├── format                 // Format methods
 │   ├── hjson                  // Human JSON
 │   ├── html                   // New streaming HTML parser and renderer 
-│   ├── interface              // Interface module (backward compatibility)
+│   ├── interface              // Interface module (deprecated)
 │   ├── log                    // Logger
-│   ├── object                 // Object module (backward compatibility)
+│   ├── object                 // Object module (deprecated)
 │   ├── plugin                 // Plugin features
 │   ├── preact                 // Preact
-│   └── select                 // Select2 (forked)
+│   └── select                 // Select
 │
 ├── integrations               // Vendor integrations
 │   │
@@ -325,17 +308,18 @@ Examples of how to write end-to-end tests:
 │   ├── cache                  // Cache
 │   ├── calendar               // Calendar
 │   ├── chart                  // Chart
-│   ├── codemirror-v5          // CodeMirror v5 (legacy)
+│   ├── codemirror-v5          // CodeMirror v5 (deprecated)
 │   ├── date-picker            // Date picker
 │   ├── embed                  // Embed
 │   ├── glider                 // Glider image gallery
 │   ├── hyperdb                // HyperDB
+│   ├── logic-v1               // Logic v1 (deprecated)
 │   ├── markdown               // Markdown
 │   ├── math                   // Math
 │   ├── mermaid                // Mermaid diagram language
 │   ├── mobile-detect          // Mobile detect
 │   ├── module-loader          // Dynamic module loader
-│   ├── paginator              // Paginator
+│   ├── pager                  // Pager
 │   ├── prism                  // Prism syntax highlighter
 │   ├── sass                   // Sass compiler
 │   ├── slider                 // Slider
@@ -349,12 +333,11 @@ Examples of how to write end-to-end tests:
 │   └── integrations           // Integration tests with third-party plugins
 │
 └── tools
-    ├── deps                   // Install and update third-party plugins
     └── git-subrepo            // Manage Git subrepos
 ```
 
 Above reference based on output of `tree`.
 
 ```sh
-tree -I vendor -I node_modules -I artifacts --gitignore -d -L 2
+tree -I vendor -I node_modules -I artifacts -I publish --gitignore -d -L 2
 ```
