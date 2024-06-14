@@ -7,7 +7,6 @@ import { cwd, vendorPath } from './constants'
  * npm run gen template-system
  */
 export default async function exportTemplateSystemDocs() {
-
   const docsReferencePath = path.join(cwd, 'docs', 'reference')
   const templateSystemPath = path.join(vendorPath, 'template-system')
 
@@ -37,31 +36,43 @@ export default async function exportTemplateSystemDocs() {
   // console.log(docs)
 
   const topLevelFolders = [
-    'language',
-    'modules',
-    'integrations',
-    'admin',
+    // 'language',
+    // 'modules',
+    // 'integrations',
+    // 'admin',
+    // 'content',
+    // 'editor',
+    // 'elandel',
+    // 'form',
+    // 'loop',
+    // 'logic',
+    // 'framework',
+    // 'views',
+  ]
+
+  const excludeDirs = [
     'editor',
-    'loop',
-    'logic',
-    'framework',
+    'tools/git-subrepo',
+    'content/site-structure',
+    // 'integrations',
+    'loop'
   ]
 
   for (const file of docs) {
-
     const sourceFilePath = path.join(templateSystemPath, file)
 
     let targetFile = file.replace('readme.md', 'index.md')
 
     const parts = targetFile.split('/')
+    const fullDir = parts.slice(0, -1).join('/')
     const dir = parts.shift() || ''
 
-    if (['loop', 'logic'].indexOf(dir) !== -1) {
-
-      /**
-       * Skip Loop and Logic modules until better docs ready
-       */
-
+    if (
+      excludeDirs.indexOf(fullDir) >= 0 ||
+      fullDir.startsWith('integrations') ||
+      fullDir.startsWith('modules')
+    ) {
+      // Skip
       continue
     }
 
@@ -70,26 +81,20 @@ export default async function exportTemplateSystemDocs() {
     let docsPath = path.join(docsReferencePath, '01 - template-system')
 
     const pos = topLevelFolders.indexOf(dir)
-    if (pos >= 0) {
+    if (dir === 'framework') {
+      /**
+       * Framework section is at root menu, because it's meant to be used by
+       * other plugins also.
+       */
 
-      const priority = (pos + 1)
+      targetFile = parts.join('/')
+      docsPath = path.join(docsReferencePath, '02 - framework')
+    } else if (pos >= 0) {
+      const priority = pos + 1
 
-      const targetDir = `${
-        priority < 9 ? '0' : ''
-      }${priority} - ${dir}`
+      const targetDir = `${priority <= 9 ? '0' : ''}${priority} - ${dir}`
 
-      if (dir==='framework') {
-
-        /**
-         * Framework section is at root menu, because it's meant to be used by
-         * other plugins also. 
-         */
-
-        targetFile = parts.join('/')
-        docsPath = path.join(docsReferencePath, '02 - framework')
-      } else {
-        targetFile = `${targetDir}/` + (parts.join('/'))
-      }
+      targetFile = `${targetDir}/` + parts.join('/')
     }
 
     const targetFilePath = path.join(docsPath, targetFile)
@@ -104,5 +109,4 @@ export default async function exportTemplateSystemDocs() {
 
   console.log()
   // TODO: Watch mode - Watch files and rebuild on changes
-
 }

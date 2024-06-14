@@ -14,7 +14,7 @@ The codebase is organized by feature areas, which are made up of modules.
 - [Language](language/) - Defines the template language and tags
 - [Admin](admin/) - Admin features such as template post types, editor, import/export, assets, locations, layouts, builder integrations
 - [Modules](modules/) - Additional template system features, such as Chart, Slider, Table
-- [Integrations](integrations/) - Integrate with third-party plugins
+- [Integrations](/integrations) - Integrate with third-party plugins
 - [Framework](../framework/) - Features shared across plugins, such as AJAX, Date, HJSON
 
 Each module should aim to be generally useful, clarify its dependencies internal and external, and ideally be well-documented and tested. Some are published as NPM (JavaScript) or Composer (PHP) package.
