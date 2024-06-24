@@ -19,7 +19,7 @@ This control creates a repeatable group of inner controls.
 - `label` - Defines the label of the control which will be displayed in the page builder.  
     Type: string  
     
-- `layout` - Defines the layout of the control such as `block` and `bare` 
+- `layout` - Defines the layout of the control such as `block`, `bare` and `advanced`
 - `name` - Defines the name of the control which will be referenced to render the control value.  
     Type: string
 
