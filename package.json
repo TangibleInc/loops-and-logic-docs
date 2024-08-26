@@ -17,12 +17,12 @@
     "gen:watch": "chokidar 'generate/vendor/**/readme.md' --initial --follow-symlinks --silent --ignore '**/node_modules/**' --ignore 'generate/vendor/*/vendor/**' -c 'tsx generate/index.ts system'"
   },
   "dependencies": {
-    "@docusaurus/core": "3.4.0",
-    "@docusaurus/module-type-aliases": "3.4.0",
-    "@docusaurus/plugin-client-redirects": "3.4.0",
-    "@docusaurus/preset-classic": "3.4.0",
+    "@docusaurus/core": "3.5.2",
+    "@docusaurus/module-type-aliases": "3.5.2",
+    "@docusaurus/plugin-client-redirects": "3.5.2",
+    "@docusaurus/preset-classic": "3.5.2",
     "@mdx-js/react": "^3.0.1",
-    "@wp-playground/client": "^0.7.20",
+    "@wp-playground/client": "^0.9.32",
     "clsx": "^2.1.1",
     "prism-react-renderer": "^2.3.1",
     "react": "^18.3.1",
@@ -31,8 +31,8 @@
   "devDependencies": {
     "@expreva/php-parser": "^1.0.0",
     "chokidar-cli": "^3.0.0",
-    "globby": "^14.0.1",
-    "tsx": "^4.11.2"
+    "globby": "^14.0.2",
+    "tsx": "^4.18.0"
   },
   "browserslist": {
     "production": [
