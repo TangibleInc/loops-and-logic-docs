@@ -95,7 +95,7 @@ const config = {
             type: 'docSidebar',
             position: 'left',
             sidebarId: 'gettingStarted',
-            label: 'Getting Started',
+            label: 'Start',
           },
           {
             type: 'docSidebar',
@@ -107,7 +107,7 @@ const config = {
             type: 'docSidebar',
             sidebarId: 'howToGuides',
             position: 'left',
-            label: 'How-to',
+            label: 'How',
           },
           {
             type: 'docSidebar',

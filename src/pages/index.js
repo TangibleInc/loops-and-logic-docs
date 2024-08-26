@@ -13,7 +13,7 @@ function HomepageHeader() {
     <header className={clsx('hero hero--primary', styles.heroBanner)}>
       <div className="container">
 				<div className={clsx('row', styles.heroBannerRow)}>
-					<div className={clsx('col col--5 padding-bottom--md')}>
+					<div className={clsx('col col--5 padding-bottom--md', styles.heroBannerColumnLeft)}>
 						<h1 className="hero__title">{siteConfig.title}</h1>
 						<p className="hero__subtitle">{siteConfig.tagline}</p>
 						<div className={styles.buttons}>
@@ -29,7 +29,7 @@ function HomepageHeader() {
 							</Link>
 						</div>
 					</div>
-					<div className={clsx('col col--7')}>
+					<div className={clsx('col col--7', styles.heroBannerColumnRight)}>
 					 <div className="video-responsive">
 							<iframe width="950" height="534" src="https://www.youtube.com/embed/-ObJkmhJ3qU" title="We reinvented HTML for WordPress: Introducing Loops &amp; Logic" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
 						</div>
