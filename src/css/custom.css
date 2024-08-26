@@ -63,7 +63,11 @@
 	--ifm-button-border-radius: 4px;
 	
 	--ifm-card-border-color: var(--ifm-color-gray-100);
+
+  --ifm-tabs-padding-vertical: 1rem;
+  --ifm-tabs-padding-horizontal: 1rem;
 }
+
 .table-of-contents__link:hover, .table-of-contents__link:hover code, .table-of-contents__link--active, .table-of-contents__link--active code {
 	color: var(--ifm-link-color);
 }
@@ -156,6 +160,13 @@ a.card:hover, a.card:focus {
     calc( var(--ifm-button-padding-horizontal) * var(--ifm-button-size-multiplier) )
     calc( var(--ifm-button-padding-vertical) * var(--ifm-button-size-multiplier) )
   ;
+}
+
+.tabs {
+  font-size: 18px;
+}
+.tabs__item {
+  padding: .5rem 1rem;
 }
 
 .video-responsive {

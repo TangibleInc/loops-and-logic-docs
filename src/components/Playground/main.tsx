@@ -2,13 +2,14 @@ import React, { useEffect, useRef } from 'react'
 import { startPlaygroundWeb } from '@wp-playground/client'
 import type { StyleHTMLAttributes } from 'react'
 import type { PlaygroundClient } from '@wp-playground/client'
-import { defaultBlueprint, codeExampleSteps } from './blueprints'
 
 import Tabs from '@theme/Tabs'
 import TabItem from '@theme/TabItem'
-
 // https://docusaurus.io/docs/markdown-features/code-blocks#usage-in-jsx
 import CodeBlock from '@theme/CodeBlock'
+
+import { defaultBlueprint, codeExampleSteps } from './blueprints'
+import styles from './index.module.css'
 
 type PlaygroundProps = {
   title?: string
@@ -38,9 +39,10 @@ const PLAYGROUND_SERVER_URL = 'https://playground.wordpress.net'
 // 'http://localhost:3333'
 
 export function Playground(props: PlaygroundProps = {}) {
+  const isFullSite = !props.template
   const [isRunning, setIsRunning] = React.useState(
     // Lazy load by default for code examples
-    props.lazy === false || (!props.template && props.lazy !== true)
+    props.lazy === false || (isFullSite && props.lazy !== true),
   )
 
   const { iframeStyle = {}, buttonText = 'Run' } = props
@@ -57,17 +59,17 @@ export function Playground(props: PlaygroundProps = {}) {
       start({
         ...props,
         iframe,
-        fullSite: !props.template,
+        fullSite: isFullSite,
       }).catch(console.error)
 
       return () => {
         // Clean up
       }
     },
-    [isRunning]
+    [isRunning],
   )
 
-  const example = props.template && (
+  const example = !isFullSite && (
     <Tabs>
       <TabItem value="template" label="Template" default>
         <CodeBlock language="html">{props.template}</CodeBlock>
@@ -81,45 +83,44 @@ export function Playground(props: PlaygroundProps = {}) {
     </Tabs>
   )
 
+  const Wrap = ({ children }) =>
+    isFullSite ? (
+      <>{children}</>
+    ) : (
+      <>
+        {example}
+        <p>{children}</p>
+      </>
+    )
+
   if (!isRunning) {
     const start = () => setIsRunning(true)
     return (
-      <>
-        {example}
-        <p>
-          <button className="button button--primary" onClick={start}>
-            {buttonText}
-          </button>
-        </p>
-      </>
+      <Wrap>
+        <button className="button button--primary" onClick={start}>
+          {buttonText}
+        </button>
+      </Wrap>
     )
   }
 
   return (
-    <>
-      {example}
-      <p>
-        <iframe
-          ref={ref}
-          style={{
-            width: '100%',
-            maxWidth: '1400px',
-            height: '420px',
-            border: '1px solid #ccc',
-            borderRadius: '4px',
-            ...iframeStyle,
-          }}
-        />
-      </p>
-    </>
+    <Wrap>
+      <iframe className={styles.iframe} ref={ref} style={iframeStyle || {}} />
+    </Wrap>
   )
 }
+
+const defaultStorage =
+  typeof window !== 'undefined' && window.location.protocol === 'https:'
+    ? 'browser'
+    : 'temporary'
 
 async function start(
   props: PlaygroundProps & {
     iframe: HTMLIFrameElement
     fullSite?: boolean
-  }
+  },
 ) {
   const {
     iframe,
@@ -133,7 +134,7 @@ async function start(
     // Create content
     content = {},
 
-    storage = window.location.protocol === 'https:' ? 'browser' : 'temporary',
+    storage = defaultStorage,
     route = '/',
     fullSite,
   } = props

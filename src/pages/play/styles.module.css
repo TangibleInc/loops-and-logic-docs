@@ -1,3 +1,14 @@
 .main {
-  padding: 1rem 2rem;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+.main,
+.main iframe {
+  width: 100dvw;
+  height: 100dvh;
+  margin: 0;
+  padding: 0;
+  border: 0 none;
+  border-radius: 0;
 }

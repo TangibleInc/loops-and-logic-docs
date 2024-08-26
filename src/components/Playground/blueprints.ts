@@ -3,10 +3,7 @@ import type { Blueprint, Step } from '@wp-playground/client'
 export const mergeBlueprints = (b1: Blueprint, b2: Blueprint) => ({
   ...b1,
   ...b2,
-  steps: [
-    ...(b1.steps || []),
-    ...(b2.steps || [])
-  ]
+  steps: [...(b1.steps || []), ...(b2.steps || [])],
 })
 
 /**
@@ -19,30 +16,33 @@ export const defaultBlueprint: Blueprint = {
     {
       step: 'login',
       username: 'admin',
-      password: 'password'
+      password: 'password',
     },
-    { // Install L&L
+    {
+      // Install L&L
       step: 'installPlugin',
       pluginZipFile: {
         // resource: 'wordpress.org/plugins', slug: 'tangible-loops-and-logic',
-        resource: 'url', url: 'https://raw.githubusercontent.com/TangibleInc/releases/main/plugins/tangible-template-system.zip'
+        resource: 'url',
+        url: 'https://raw.githubusercontent.com/TangibleInc/releases/main/plugins/tangible-template-system.zip',
         /**
          * Testing from development build of plugin
          * Must be served with CORS enabled - GitHub releases don't work.
          */
         // resource: 'url', url: 'http://localhost:3333/static/tangible-loops-and-logic.zip'
-      }
+      },
     },
-    { // Dismiss admin notice
+    {
+      // Dismiss admin notice
       step: 'request',
       request: {
-        url: '/wp-admin/options-general.php?page=tangible-loops-and-logic-settings&tab=welcome&dismiss_admin_notice=true'
-      }
+        url: '/wp-admin/options-general.php?page=tangible-loops-and-logic-settings&tab=welcome&dismiss_admin_notice=true',
+      },
     },
-    { // Run once to set up site
+    {
+      // Run once to set up site
       step: 'runPHP',
-      code:
-        `<?php
+      code: `<?php
 include 'wordpress/wp-load.php';
 
 // Set permalink structure
@@ -54,14 +54,41 @@ $wp_rewrite->flush_rules();
 update_option('blogname', 'Loops & Logic');
 `,
     },
-  ]
+  ],
 }
 
 export const codeExampleSteps: Step[] = [
-  { // Run on every request
+  {
+    // Run on every request
     step: `writeFile`,
     path: '/wordpress/wp-content/mu-plugins/entry.php',
-    data: `<?php
+    data: /*php*/ `<?php
+
+// Admin notice to introduce playground
+
+add_action( 'admin_notices', function() {
+  if (isset($_GET['template_id'])
+    || get_option('playground_admin_notice_dismissed')
+  ) return;
+  if (isset($_GET['dismiss'])) {
+    update_option('playground_admin_notice_dismissed', true);
+    return;
+  }
+  ?>
+  <div id=dismiss-this class="updated notice notice-success is-dismissible">
+    <p>This is a temporary site running entirely in the browser using <a href="https://wordpress.org/playground/" target=_blank>WordPress Playground</a>.</p>
+  </div>
+  <script>
+    setTimeout(function() {
+      const $el = document.querySelector('#dismiss-this .notice-dismiss')
+      $el && $el.addEventListener('click', function(e) {
+        e.preventDefault()
+        window.location.search += '&dismiss=1'
+      })
+    }, 300) // Wait until WP creates admin notice
+  </script>
+  <?php
+});
 
 add_filter('template_include', function($template) {
 
@@ -101,5 +128,5 @@ wp_footer();
 exit;
 });
 `,
-  }
+  },
 ]

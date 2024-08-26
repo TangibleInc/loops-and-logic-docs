@@ -7,26 +7,47 @@ url: /playground/code-example
 import Playground from '@site/src/components/Playground'
 
 <Playground
-  template={
-`<ul>
+  template={`<ul>
   <Loop type=post>
     <li><Field title /></li>
   </Loop>
 </ul>`}
- style={
-`ul {
-  color: green;
+  style={`ul {
+  li:first-child { color: red; }
+  li:nth-child(2) { color: green; }
+  li:nth-child(3) { color: blue; }
 }`}
-  script={
-`console.log('Hello from component')
+  script={`console.log('Hello from component')
 `}
   content={{
     post: [
-      { post_title: 'Another post' }
-    ]
+      { post_title: 'Second post' },
+      { post_title: 'Third post' },
+    ],
   }}
   iframeStyle={{
     border: 'none',
-    height: '220px'
+    height: '220px',
+  }}
+/>
+
+<Playground
+  template={`<Loop type=post name=test-1>
+  <h1><Field title /></h1>
+  <Field content />
+</Loop>`}
+  style={`ul {
+  color: green;
+}`}
+  script={`console.log('Hello from component')
+`}
+  content={{
+    post: [
+      { post_name: 'test-1', post_title: 'Example post', post_content: `<p>Content with <b>HTML</b>.` }
+    ],
+  }}
+  iframeStyle={{
+    border: 'none',
+    height: '220px',
   }}
 />
