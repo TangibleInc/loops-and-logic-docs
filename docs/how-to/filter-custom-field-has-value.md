@@ -1,15 +1,15 @@
 ---
 id: filter-custom-field-has-value
-title: How to only show posts with a certain custom field filled out
+title: Only show posts with a certain custom field filled out
 tags:
   - Filtering
   - ACF
 ---
-## The request
+## Request
 
 > How do I only show posts with a certain ACF or custom field filled out? [View original thread](https://discourse.tangible.one/t/displaying-only-the-items-in-a-loop-that-have-a-certain-field-filled-out/329)
 
-## The solution
+## Solution
 
 ```html
 <Loop type=post_type_name custom_field=field_name>
@@ -17,7 +17,7 @@ tags:
 </Loop>
 ```
 
-## The explanation
+## Explanation
 
 While this can be done with conditional logic, the best way to do this is by adding a `custom_field` query parameter that filters the query to only display items for which a specific field exists. Since we're simply wanting to show posts for which a certain custom field exists, there's no need to add any other parameters.
 

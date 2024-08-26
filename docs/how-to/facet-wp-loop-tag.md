@@ -1,6 +1,6 @@
 ---
 id: facet-wp-loop-tag
-title: How to use Loops & Logic with FacetWP
+title: Use Loops & Logic with FacetWP
 tags:
   - Facets
   - Filters

@@ -1,14 +1,14 @@
 ---
 id: resolution-size-featured-image
-title: How to adjust the resolution or size of a featured image
+title: Adjust the resolution or size of a featured image
 tags:
   - Image
   - Performance
 ---
-## The request
+## Request
 > Is it possible to select the render size of a featured image field? [See original thread](https://wordpress.org/support/topic/can-i-choose-the-render-size-of-an-image-field/#post-16030776)
 
-## The solution
+## Solution
 
 ```html
 <img src="{Field image_url size=thumbnail}" alt="{Field image_alt}" width="50">
@@ -18,7 +18,7 @@ tags:
 <img src="{Field image_url}" sizes="{Field image_sizes}" srcset="{Field image_srcset}" alt="{Field image_alt}" width="50">
 ```
 
-## The explanation
+## Explanation
 
 The fastest way to display a post's featured image with L&L is to simply write `<Field image />`. But what happens when we want a bit more control over the resolution of the rendered image or the size it gets displayed in the browser? Instead of reinventing the wheel, the best approach is to simply use HTML's `img` tag and then use L&L's dynamic tags to fill in its attributes. When working with the post's featured image, you can dynamically fill any values you need using the `Field` tag with the `image_*` attribute (noted [here](/dynamic-tags/loop/post#core-fields)) where that asterisk can be replaced by any field available in the [attachment loop](/dynamic-tags/loop/attachment#attachment-fields). If you simply want to use your site's default resolution for the image and adjust the size at which the image is displayed, the basic `width` or `height` attributes should be all you need. However, if you want to modify the actual resolution that's sent to a user's browser, there are two approaches to this.
 

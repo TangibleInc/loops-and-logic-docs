@@ -1,17 +1,17 @@
 ---
 id: random-post-from-list
-title: How to display a random post when your hosting provider has disabled random sorting
+title: Display a random post when your hosting provider has disabled random sorting
 tags:
   - Random
   - List
   - Set and Get
   - Variables
 ---
-## The request
+## Request
 
 > I have a post loop that uses the parameter `orderby=random` to display a random post. The displayed post is random when I'm logged in, but always shows the most recent post when logged out or in incognito. Why is this happening and how do I display a random post?
 
-## The solution
+## Solution
 
 ```html
 <Set maxCount>0</Set>
@@ -29,7 +29,7 @@ tags:
   Random post: <Field title />
 </Loop>
 ```
-## The explanation
+## Explanation
 
 Some hosting platforms, such as WP Engine, disable the ability to order posts randomly or enforce caching for logged-out users that limits the effectiveness of random post ordering. If you find that adding the `orderby=random` parameter to your `Loop` tag, you may want to look into your hosting provider's options related to caching and disabling random ordering, such as [these instructions for WP Engine](https://wpengine.com/support/about-order-by-rand/). Most hosting providers should allow you to control caching, but not all will allow you to use random post ordering due to its potential impact on server performance. If that's the case, the template above should allow faking the functionality of the `orderby=random` parameter to display one post at random from the ten most recent posts.
 

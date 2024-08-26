@@ -1,22 +1,22 @@
 ---
 id: order-alphabetically-acf-field-hide-empty
-title: How to order terms alphabetically by ACF text field and hide empty terms
+title: Order terms alphabetically by ACF text field and hide empty terms
 tags:
   - Order
   - Taxonomy
   - Filtering
   - ACF
 ---
-## The request
+## Request
 
 > I’m displaying terms and (1) want to order them alphabetically by an ACF text field, not the term’s title; and (2) hide empty terms, i.e. those terms that were created but have not been assigned to any posts. [View initial thread](https://discourse.tangible.one/t/order-terms-alphabetically-by-acf-text-field-hide-empty-terms/270)
 
-## The solution
+## Solution
 ```html
 <Loop taxonomy=guest orderby_field=name_ordering hide_empty=true>
 ```
 
-## The explanation
+## Explanation
 
 ### (1) Order terms by a custom field alphabetically
 

@@ -1,12 +1,12 @@
 ---
 id: varied-loop-item-behavior
-title: How to make a loop behave differently every nth item (e.g. display content every third post, change styling on even/odd posts)
+title: Make a loop behave differently every nth item (e.g. display content every third post, change styling on even/odd posts)
 tags:
   - Logic
   - Loop
   - Styling
 ---
-## The request
+## Request
 
 > I’m trying to add a condition to a loop so that the background color of odd posts is different than the background of even posts. In other words:  
 > item 1: `background-color: white;`  
@@ -21,7 +21,7 @@ Or, asked in a different context:
 
 > I want to place adsense ads after every 3 blog items on archive page. My archive page is made using a Tangible template. Is there any way to achieve this? [View original thread](https://discourse.tangible.one/t/show-ads-after-every-3-blog-posts-in-archive/821)
 
-## The solution
+## Solution
 
 While these may seem like similar requests, the solution differed depending on the needs of the template. See below for an explanation.
 
@@ -42,7 +42,7 @@ When the HTML output of the loop needs to change based on the loop count, it's p
 </Loop>
 ```
 
-## The explanation
+## Explanation
 
 Loops & Logic is extremely flexible, which means it can be used to build a wide variety of functionality. However, with great power comes great responsibility so it's important to recognize when to use the features in L&L and when not to. In this case, L&L makes it possible to check the current loop count (that is, the numerical position of the loop item within the loop) and modify the inner contents of the loop based on whether the count is even or odd or a multiple of any number. That being said, running any server-side script on your site can have performance tradeoffs for your users, so it's important to be smart about when you choose to use L&L.
 

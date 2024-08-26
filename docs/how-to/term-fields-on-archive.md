@@ -1,11 +1,11 @@
 ---
 id: term-fields-on-archive
-title: How to display term fields on a taxonomy term archive
+title: Display term fields on a taxonomy term archive
 tags:
   - Archive
   - Taxonomy
 ---
-## The request
+## Request
 
 > I created a simple list of taxonomies to generate a navigation menu.
 > 
@@ -13,7 +13,7 @@ tags:
 > 
 > Can I grab the current page’s taxonomy ID with If?
 
-## The solution
+## Solution
 
 ```html
 <Loop field=archive_term>
@@ -29,7 +29,7 @@ tags:
 </Loop>
 ```
 
-## The explanation
+## Explanation
 
 Each page or post or archive on a WordPress site has a [default loop context](/getting-started/terminology-definitions/default-query). This context is what L&L uses to get data and fields about the current page. The default loop context of an archive page is a loop of all the posts that belong to that archive. It's possible to display fields from each post in the archive using the `Loop` tag without specifying a type, like `<Loop><Field title /></Loop>`. While this is great for displaying fields from posts, this syntax doesn't allow us to get information about the current archive itself within our template. Luckily, there's a field that can be used for this that only exists on archive pages.
 

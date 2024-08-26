@@ -1,11 +1,11 @@
 ---
 id: custom-image-fields
-title: How to display a custom field that contains an image
+title: Display a custom field that contains an image
 tags:
   - Image
   - ACF
 ---
-## The request
+## Request
 
 > I am using a user loop and I have ACF fields on the users. Text fields are working, but as you can see below, I have a custom field for headshot, and even though the ACF field is set to return image URL, it will only return the image ID. So I’m getting this after the template is rendered on the front end:
 > 
@@ -28,7 +28,7 @@ tags:
 ```
 > How to I render the image URL instead of the image ID? [See original thread](https://discourse.tangible.one/t/acf-user-field-array-subfield/446/)
 
-## The solution
+## Solution
 
 ```html
 <Loop acf_user=resource_user>
@@ -44,7 +44,7 @@ tags:
 </Loop>
 ```
 
-## The explanation
+## Explanation
 
 The important part of the template to pay attention to in the request is `<img src="{Field author_headshot}">`. This is placed directly inside a user loop and since this `author_headshot` field is an image field, we might expect to simply be able to display the image by rendering it with the `Field` tag, just like any other field. As this user found out, that doesn't work. So why is that?
 

@@ -1,15 +1,15 @@
 ---
 id: no-posts-found-conditional
-title: How to show posts only if they exist and display a message if they don’t exist
+title: Show posts only if they exist and display a message if they don’t exist
 tags:
   - Loop
   - Logic
 ---
-## The request:
+## Request
 
 > How do I only show posts when they exist and display a message when there are none?
 
-## The solution:
+## Solution
 
 ```html
 <If loop exists type=post>  
@@ -21,7 +21,7 @@ tags:
 </If>
 ```
 
-## The explanation:
+## Explanation
 
 The basic structure of the [`If` tag](/dynamic-tags/if/) involves three parts: a subject, a comparison, and a value. In practice, this is structured like `<If subject comparison value></If>`. In our case, we want to check whether a particular loop exists. For that, we can use the `loop` condition as our subject. Then we need to add a comparison and since we're wanting our code to do something if a query exists (i.e. if there are items in a query), we can use the comparison `exists`. The loop condition is a special one because it allows us to write all the query parameters we want to use to narrow our loop directly as attributes of our `If` tag. If we wanted, we could add any of the possible [query parameters available for the post loop](/dynamic-tags/loop/post), or any other loop type.
 

@@ -1,12 +1,12 @@
 ---
 id: count-hierarchical-terms
-title: How to add up the count of a parent taxonomy term with the count of all its children
+title: Add up the count of a parent taxonomy term with the count of all its children
 tags:
   - Math
   - Conditional Logic
   - Taxonomy
 ---
-## The request
+## Request
 
 > I am using following markup to get a list of taxonomies/categories with their post count.
 ```html
@@ -17,7 +17,7 @@ tags:
 
 > I get list of categories and post count as 0 because main parent categories have not been assigned any posts but sub-categories inside parent categories have posts. So I want to get number/count of posts in parent category including those post count in subcategories in post count field. [See original thread](https://discourse.tangible.one/t/get-number-of-all-posts-including-post-count-of-children-inside-a-taxanomy/784)
 
-## The solution
+## Solution
 
 ```html
 <Loop type=taxonomy_term taxonomy=category>
@@ -33,7 +33,7 @@ tags:
 </Loop>
 ```
 
-## The explanation
+## Explanation
 
 The approach above uses the [If loop exists](/dynamic-tags/loop/features/exists) syntax to check whether the current term has any children and if it does, adds up all the posts belonging to those children.
 
