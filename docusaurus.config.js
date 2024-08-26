@@ -127,11 +127,11 @@ const config = {
             position: 'left',
             label: 'Reference',
           },
-          // {
-          //   to: '/play',
-          //   label: 'Play',
-          //   position: 'right',
-          // },
+          {
+            to: '/play',
+            label: 'Play',
+            position: 'right',
+          },
           {
             href: 'https://tangibletalk.com',
             label: 'Forum',
