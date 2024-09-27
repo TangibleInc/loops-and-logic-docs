@@ -24,7 +24,8 @@ export const defaultBlueprint: Blueprint = {
       pluginZipFile: {
         // resource: 'wordpress.org/plugins', slug: 'tangible-loops-and-logic',
         resource: 'url',
-        url: 'https://raw.githubusercontent.com/TangibleInc/releases/main/plugins/tangible-template-system.zip',
+        url: `https://github-proxy.com/proxy/?repo=TangibleInc/template-system`,
+        // url: 'https://raw.githubusercontent.com/TangibleInc/releases/main/plugins/tangible-template-system.zip',
         /**
          * Testing from development build of plugin
          * Must be served with CORS enabled - GitHub releases don't work.
