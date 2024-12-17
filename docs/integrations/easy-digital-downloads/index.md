@@ -9,10 +9,13 @@ url: /integrations/easy-digital-downloads
 
 # Easy Digital Downloads
 
-This is the Pro module for integrating with Easy Digital Downloads.
+:::warning
 
-(Here's a link to the [old documentation site](https://loop.tangible.one/extend/easy-digital-downloads/) until everything is moved.)
+This integration is a pre-release preview and is scheduled to be re-written ahead of launch. Some of the syntax in these docs may not work, and some of it may be changed or removed in the future. Use it at your own risk.
 
+:::
+
+This is the Pro module for integrating with [Easy Digital Downloads](https://easydigitaldownloads.com/docs/).
 
 Here are the loop types available.
 
@@ -33,3 +36,5 @@ Here are the loop types available.
 - [Subscription](/integrations/easy-digital-downloads/subscription)
 - [Tax Rate](/integrations/easy-digital-downloads/tax-rate)
 - [Vendor](/integrations/easy-digital-downloads/vendor)
+
+

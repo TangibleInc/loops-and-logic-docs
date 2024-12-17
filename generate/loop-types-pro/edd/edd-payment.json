@@ -10,6 +10,9 @@
       "target_name": "number",
       "alias": [
         "posts_per_page"
+      ],      
+      "default": [
+        "-1"
       ]
     },
     "orderby": {
@@ -34,7 +37,7 @@
       "type": "number"
     },
     "day": {
-      "description": "Dat",
+      "description": "Date",
       "type": "number"
     },
     "s": {
@@ -51,6 +54,9 @@
     }
   },
   "fields": {
+    "all": {
+      "description": "Dump data of all custom fields (for development purpose)"
+    },
     "id": {
       "description": "Payment ID"
     },
@@ -71,9 +77,6 @@
     },
     "subscription_id": {
       "description": "Subscription ID where applicable"
-    },
-    "all": {
-      "description": "Dump data of all custom fields (for development purpose)"
     }
   },
   "namespace": "Tangible\\Loop\\Integrations\\EDD",
