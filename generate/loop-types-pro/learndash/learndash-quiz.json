@@ -640,6 +640,9 @@
     },
     "title": {
       "description": "Title"
+    },
+    "url": {
+      "description": "URL"
     }
   }
 }
