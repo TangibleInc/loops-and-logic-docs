@@ -1,0 +1,23 @@
+{
+  "name": "user",
+  "title": "User",
+  "category": "learndash",
+  "description": "Loop through User",
+  "namespace": "Tangible\\Loop\\Integrations\\LearnDash",
+  "className": "UserActivityLoop",
+  "extends": "BaseLoop",
+  "query_args": {
+
+  },
+  "fields": {
+    "learndash_enrolled": {
+      "description": "User enrolled in the current Course (true/false)"
+    },
+    "learndash_enrolled_any": {
+      "description": "User enrolled in any Course (true/false)"
+    },
+    "learndash_can_progress": {
+      "description": "User can progress to the current Item (true/false)"
+    }
+  }
+}
