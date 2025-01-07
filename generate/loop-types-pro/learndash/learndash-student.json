@@ -32,6 +32,45 @@
     "activities_course_id": {
       "description": "Course ID or \"current\" to show activities",
       "type": "string"
+    },
+    "exclude": {
+      "description": "Exclude users by ID or name",
+      "type": ["string","array"]
+    },
+    "id": {
+      "description": "User by ID",
+      "type": ["string","array"]
+    },
+    "include": {
+      "description": "Include users by ID or name",
+      "type": ["string","array"]
+    },
+    "name": {
+      "description": "User by name/slug",
+      "type": ["string","array"]
+    },
+    "not_role": {
+      "description": "Exclude user role(s)",
+      "type": ["string","array"]
+    },
+    "order": {
+      "description": "Order: asc (ascending) or desc (descending)",
+      "type": ["string"],
+      "default":"asc"
+    },
+    "orderby": {
+      "description": "Order by field",
+      "type": ["string","array"],
+      "default":"display_name"
+    },
+    "paged": {
+      "description": "Items per page",
+      "type": "number",
+      "default":"10"
+    },
+    "role": {
+      "description": "User role(s)",
+      "type": ["string","array"]
     }
   },
   "fields": {
@@ -67,6 +106,45 @@
     },
     "student_group_leaders": {
       "description": "Student group leaders loop"
+    },
+    "archive_url": {
+      "description": "Post archive URL"
+    },
+    "avatar": {
+      "description": "Avatar image"
+    },
+    "avatar_url": {
+      "description": "Avatar URL"
+    },
+    "edit_url": {
+      "description": "Edit URL"
+    },
+    "email": {
+      "description": "Email"
+    },
+    "full_name": {
+      "description": "Full name"
+    },
+    "id": {
+      "description": "ID"
+    },
+    "locale": {
+      "description": "User locale from the Language setting in profile edit screen"
+    },
+    "name": {
+      "description": "Name"
+    },
+    "post_count": {
+      "description": "Post count"
+    },
+    "registration_date": {
+      "description": "Registration date"
+    },
+    "roles": {
+      "description": "User role(s)"
+    },
+    "url": {
+      "description": "URL"
     }
   }
 }

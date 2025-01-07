@@ -11,7 +11,8 @@
     "count": {
       "description": "Posts per page",
       "target_name": "number",
-      "type": "number"
+      "type": "number",
+      "default": "-1"
     },
     "key": {
       "description": "License key",

@@ -11,6 +11,237 @@
     "quiz": {
       "description": "Quiz ID  or \"current\" for current quiz",
       "type": "string"
+    },
+    "author": {
+      "description": "Include by author ID, login name, or 'current'",
+      "type": ["array","string"]
+    },
+    "category": {
+      "description": "Include by category ID, slug, or 'current'",
+      "type": ["array","string"]
+    },
+    "child_terms": {
+      "description": "Set 'true' to include child terms for hierarchical taxonomies",
+      "type": "string"
+    },
+    "custom_date_field": {
+      "description": "Filter by given custom date field - Faster than using 'field', this queries raw field values in the database",
+      "type": "string"
+    },
+    "custom_date_field_compare": {
+      "description": "Compare using one of: 'equal' (default), 'not', 'before', 'before_inclusive', 'after', 'after_inclusive'",
+      "type": "string"
+    },
+    "custom_date_field_format": {
+      "description": "For custom date field query, specify the date format of the field value - Default is 'Ymd'; For date-time field, set 'Y-m-d H:i:s'. If it's a timestamp, use 'timestamp'. For custom field plugins other than ACF, you may need to use a different format.",
+      "type": "string"
+    },
+    "custom_date_field_type": {
+      "description": "For custom date field query, one of: date (default), time, datetime, number",
+      "type": "string"
+    },
+    "custom_date_field_value": {
+      "description": "Filter by given custom date field value, or 'current'",
+      "type": "string"
+    },
+    "custom_field": {
+      "description": "Filter by given custom field - Faster than using 'field', this queries raw field values in the database",
+      "type": "string"
+    },
+    "custom_field_2": {
+      "description": "See attribute 'custom_field'",
+      "type": "string"
+    },
+    "custom_field_3": {
+      "description": "See attribute 'custom_field'",
+      "type": "string"
+    },
+    "custom_field_compare": {
+      "description": "Compare using one of: 'equal' (default), 'not', 'before', 'before_inclusive', 'after', 'after_inclusive'",
+      "type": "string"
+    },
+    "custom_field_compare_2": {
+      "description": "See attribute 'custom_field_compare'",
+      "type": "string"
+    },
+    "custom_field_type": {
+      "description": "For custom field query, one of: string (default), number, date, time, datetime",
+      "type": "string"
+    },
+    "custom_field_type_2": {
+      "description": "See attribute 'custom_field_type'",
+      "type": "string"
+    },
+    "custom_field_type_3": {
+      "description": "See attribute 'custom_field_type'",
+      "type": "string"
+    },
+    "custom_field_value": {
+      "description": "Filter by given custom field value",
+      "type": "string"
+    },
+    "custom_field_value_2": {
+      "description": "See attribute 'custom_field_value'",
+      "type": "string"
+    },
+    "custom_field_value_3": {
+      "description": "See attribute 'custom_field_value'",
+      "type": "string"
+    },
+    "exclude": {
+      "description": "Exclude by ID or name",
+      "type": ["string", "array"]
+    },
+    "exclude_author": {
+      "description": "Exclude by author ID, login name, or 'current'",
+      "type": ["string", "array"]
+    },
+    "exclude_category": {
+      "description": "Exclude by category ID, slug, or 'current'",
+      "type": ["string", "array"]
+    },
+    "exclude_parent": {
+      "description": "Exclude by parent ID or name",
+      "type": ["string", "array"]
+    },
+    "exclude_tag": {
+      "description": "Exclude by tag ID, slug, or 'current'",
+      "type": ["string", "array"]
+    },
+    "id": {
+      "description": "ID",
+      "type": ["string", "array"]
+    },
+    "ignore_sticky_posts": {
+      "description": "Ignore sticky posts",
+      "type": ["string", "array"],
+      "default":"TRUE"
+    },
+    "include": {
+      "description": "Include by ID or name",
+      "type": ["string", "array"]
+    },
+    "include_children": {
+      "description": "Include children",
+      "type": "boolean"
+    },
+    "name": {
+      "description": "Name/slug",
+      "type": ["string", "array"]
+    },
+    "order": {
+      "description": "Order: asc (ascending) or desc (descending)",
+      "type": "string",
+      "default":"asc"
+    },
+    "orderby": {
+      "description": "Order by one of: id, author, title, name, type, date, modified, random, comment_count, relevance, menu",
+      "type": "string",
+      "default":"title"
+    },
+    "orderby_field": {
+      "description": "Order by custom field",
+      "type": "string"
+    },
+    "orderby_field_number": {
+      "description": "Order by custom field whose value is a number",
+      "type": "string"
+    },
+    "page": {
+      "description": "Page number",
+      "type": "number",
+      "default":"1"
+    },
+    "paged": {
+      "description": "Posts per page",
+      "type": "number",
+      "default":"-1"
+    },
+    "parent": {
+      "description": "Include by parent ID or name",
+      "type": ["string", "array"]
+    },
+    "publish_compare": {
+      "description": "Publish date comparison - One of: 'before', 'before_inclusive', 'after', 'after_inclusive'",
+      "type": "string"
+    },
+    "publish_date": {
+      "description": "Filter by publish date in Y-M-D format, 'today', 'X days ago' and other values compatible with strtotime() - Optionally use 'publish_compare' attribute",
+      "type": "string"
+    },
+    "publish_day": {
+      "description": "Filter by given publish day of the month, from 1 to 31, or 'current'",
+      "type": "number"
+    },
+    "publish_month": {
+      "description": "Filter by given publish month, from 1 to 12, or 'current'",
+      "type": "number"
+    },
+    "publish_week": {
+      "description": "Filter by given publish week, from 1 to 54, or 'current' - Note: the 'publish_compare' attribute is not supported for this field",
+      "type": "number"
+    },
+    "publish_year": {
+      "description": "Filter by given publish year, or 'current'",
+      "type": "number"
+    },
+    "search": {
+      "description": "Search by given keyword - Prepending a keyword with a hyphen '-' will exclude posts matching it",
+      "type": "string"
+    },
+    "status": {
+      "description": "Post status: publish (default), pending, draft, future, private, trash",
+      "type": ["string", "array"],
+      "default":"publish"
+    },
+    "tag": {
+      "description": "Include by tag ID, slug, or 'current'",
+      "type": ["string", "array"]
+    },
+    "taxonomy": {
+      "description": "Include by taxonomy ID, slug, or 'current' for taxonomy archive. Use with 'term' and 'taxonomy_compare' attributes",
+      "type": ["string", "number"]
+    },
+    "taxonomy_2": {
+      "description": "See attribute 'taxonomy'",
+      "type": ["string", "number"]
+    },
+    "taxonomy_3": {
+      "description": "See attribute 'taxonomy'",
+      "type": ["string", "number"]
+    },
+    "taxonomy_compare": {
+      "description": "One of 'in' (default), 'not', 'and', 'exists', and 'not exists'. Use with 'taxonomy' attribute",
+      "type": "string"
+    },
+    "taxonomy_compare_2": {
+      "description": "See attribute 'taxonomy_compare'",
+      "type": "string"
+    },
+    "taxonomy_compare_3": {
+      "description": "See attribute 'taxonomy_compare'",
+      "type":"string"
+    },
+    "taxonomy_relation": {
+      "description": "When using more than one 'taxonomy' queries, can specify 'and' or 'or'",
+      "type": "string"
+    },
+    "terms": {
+      "description": "Include by taxonomy term ID, slug, or 'current'.Use with 'taxonomy' attribute",
+      "type": ["string", "array","number"]
+    },
+    "terms_2": {
+      "description": "See attribute 'terms'",
+      "type": ["string", "array","number"]
+    },
+    "terms_3": {
+      "description": "See attribute 'terms'",
+      "type": ["string", "array","number"]
+    },
+    "type": {
+      "description": "Post type(s)",
+      "type": ["string", "array"],
+      "default":"post"
     }
   },
   "fields": {
@@ -49,6 +280,84 @@
     },
     "question_answer_points_activated": {
       "description": "Answer points actvated - \"true\" or \"false\" "
+    },
+    "all": {
+      "description": "Show all custom fields (for development purpose)"
+    },
+    "ancestors": {
+      "description": "Ancestor posts from lowest to highest level; Set reverse=true to go from top-level down"
+    },
+    "archive_author": {
+      "description": "On an author archive page: Current author as a user loop"
+    },
+    "archive_post_type": {
+      "description": "On a post type archive page: Current post type as a loop"
+    },
+    "archive_term": {
+      "description": "On a taxonomy archive page: Current taxonomy term as a loop"
+    },
+    "author": {
+      "description": "Author"
+    },
+    "author_*": {
+      "description": "Author's user field"
+    },
+    "children": {
+      "description": "Children"
+    },
+    "children_ids": {
+      "description": "Children IDs"
+    },
+    "content": {
+      "description": "Content"
+    },
+    "edit_url": {
+      "description": "Edit URL"
+    },
+    "excerpt": {
+      "description": "Excerpt"
+    },
+    "id": {
+      "description": "ID"
+    },
+    "image": {
+      "description": "Featured image"
+    },
+    "image_*": {
+      "description": "Featured image field"
+    },
+    "menu_order": {
+      "description": "Menu order"
+    },
+    "modify_date": {
+      "description": "Modify date"
+    },
+    "name": {
+      "description": "name/slug"
+    },
+    "parent": {
+      "description": "Parent"
+    },
+    "parent_*": {
+      "description": "Parent field"
+    },
+    "parent_ids": {
+      "description": "All parent IDs from current to top"
+    },
+    "post_class": {
+      "description": "Post classes"
+    },
+    "publish_date": {
+      "description": "Publish date"
+    },
+    "status": {
+      "description": "Status"
+    },
+    "title": {
+      "description": "Title"
+    },
+    "url": {
+      "description": "URL"
     }
   }
 }

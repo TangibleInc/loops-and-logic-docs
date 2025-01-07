@@ -8,11 +8,13 @@ url: /integrations/learndash
 ---
 
 # Learndash
+:::warning
+
+This integration is a pre-release preview and is scheduled to be re-written ahead of launch. Some of the syntax in these docs may not work, and some of it may be changed or removed in the future. Use it at your own risk.
+
+:::
 
 This is the Pro module for integrating with Learndash.
-
-(Here's a link to the [old documentation site](https://loop.tangible.one/extend/learndash/) until everything is moved.)
-
 
 Here are the loop types available.
 
@@ -30,3 +32,5 @@ Here are the loop types available.
 - [Topic](/integrations/learndash/topic)
 - [User Activity](/integrations/learndash/user-activity)
 - [User Quiz Attempts](/integrations/learndash/user-quiz-attempts)
+- [User](/integrations/learndash/user)
+
