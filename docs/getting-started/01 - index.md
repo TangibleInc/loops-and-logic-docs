@@ -1,6 +1,6 @@
 ---
 id: welcome
-title: Two-minute quick-start guide to Loops & Logic
+title: Quick-start guide to Loops & Logic
 description: Get up and running quickly with L&L using these example templates
 tags:
   - Introduction
