@@ -1,0 +1,120 @@
+---
+id: settings
+title: Settings
+tags:
+  - Pro
+  - Settings
+toc_min_heading_level: 2
+toc_max_heading_level: 5
+---
+import TOCInline from '@theme/TOCInline';
+
+
+However, since setting data does not always exist in a 1-1 relationship to database entries, the interaction between Loops&Logic, Woocommerce and the provided template accessors is subject to slight customisation.
+
+In general, most options such as woocommerce_review_rating_verification_label are available in whatever raw form they are stored in the database.
+
+In other cases such as woocommerce_default_country, even though the raw value can be accessed using
+
+`<Get setting=woocommerce_default_country />`
+
+the "raw" value is not particularly useful; in this case, it contains both the country and the state, so Loops for Woocommerce provides these two specific methods to access the country and state separately:
+
+`<Setting woocommerce=country />`
+
+`<Setting woocommerce=state />`
+
+An alternate way of getting Woocommerce settings is by using the shortcut form `<Setting woo=setting_name/>`.
+
+## Settings by tab - updated on an as-needed basis
+### General: Store Address, Currency Options (w/o General Options)
+#### Store Address
+`<Setting woocommerce=address />`
+
+`<Setting woocommerce=address_2 />`
+
+`<Setting woocommerce=city />`
+
+`<Setting woocommerce=postcode />`
+
+`<Setting woocommerce=country />`
+
+`<Setting woocommerce=state />`
+
+#### Currency Options
+`<Setting woocommerce=currency />`
+
+`<Setting woocommerce=currency_symbol />`
+
+`<Setting woocommerce=price_thousand_separator />`
+
+`<Setting woocommerce=price_decimal_separator />`
+
+`<Setting woocommerce=price_decimals />`
+
+### Products
+#### General
+https://loops-old-documentation.instawp.xyz/shop/ no yes
+`<Setting woocommerce=placeholder_image height=200 width=200 />` placeholder_image supports attributes
+
+#### Measurements
+`<Setting woocommerce=weight_unit />`
+
+`<Setting woocommerce=dimension_unit />`
+
+#### Reviews
+`<Setting woocommerce=enable_reviews />`
+
+`<Setting woocommerce=review_rating_verification_label />`
+
+`<Setting woocommerce=review_rating_verification_required />`
+
+`<Setting woocommerce=enable_review_rating />`
+
+`<Setting woocommerce=review_rating_required />`
+
+### Advanced
+#### Page Setup
+Site Pages - will return full URL
+`<Setting woocommerce=cart />`
+
+`<Setting woocommerce=checkout />`
+
+`<Setting woocommerce=myaccount />`
+
+`<Setting woocommerce=terms />`
+
+`<Setting woocommerce=force_ssl_checkout />`
+
+#### Endpoints - will return the last URL bit entered in settings
+`<Setting woocommerce=order-pay />`
+
+...
+
+`<Setting woocommerce=customer-logout />`
+
+
+#####  Checkout endpoints
+- order-pay
+- order-received
+- add-payment-method
+- delete-payment-method
+- set-default-payment-method
+
+##### Account endpoints
+- orders
+- view-order
+- downloads
+- edit-account
+- edit-address
+- payment-methods
+- lost-password
+- customer-logout
+
+##### Addon endpoints
+- members-area
+- teams
+- join-team
+- subscriptions
+- view-subscription
+- subscription-payment-method
