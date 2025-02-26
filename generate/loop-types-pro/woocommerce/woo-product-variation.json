@@ -1,0 +1,74 @@
+{
+  "name": "woo_product_variation",
+  "title": "WooCommerce Product Variation",
+  "category": "woocommerce",
+  "description": "Loop through products",
+  "query_args": {
+    
+  },
+  "fields": {
+    "attributes": {
+      "description": "Array of variation attributes such as size, color. Returns a Loop"
+    },
+    "backorders_allowed": {
+      "description": "Backorders allowed"
+    },
+    "dimensions_html": {
+      "description": "Dimensions html"
+    },
+    "display_price": {
+      "description": "Display price"
+    },
+    "display_regular_price": {
+      "description": "Regular price"
+    },
+    "image": {
+      "description": "Variation image"
+    },
+    "is_downloadable": {
+      "description": "Is downloadable"
+    },
+    "is_purchasable": {
+      "description": "Is purchasable"
+    },
+    "is_sold_individually": {
+      "description": "Is sold individually"
+    },
+    "is_virtual": {
+      "description": "Is virtual"
+    },
+    "max_qty": {
+      "description": "Max qty"
+    },   
+    "min_qty ": {
+      "description": "Min qty"
+    },
+    "price_html": {
+      "description": "Price html"
+    },
+    "sku": {
+      "description": "SKU"
+    },
+    "variation_description": {
+      "description": "Variation description"
+    },
+    "variation_id": {
+      "description": "Variation ID"
+    },
+    "variation_is_active": {
+      "description": "Variation is active"
+    },
+    "variation_is_visible": {
+      "description": "Variation is visible"
+    },
+    "weight": {
+      "description": "Weight"
+    },
+    "weight_html": {
+      "description": "Weight html"
+    }
+  },
+  "namespace": "Tangible\\Loop\\Integrations\\WooCommerce",
+  "className": "ProductLoop",
+  "extends": "BaseLoop"
+}

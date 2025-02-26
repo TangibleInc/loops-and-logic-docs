@@ -1,0 +1,35 @@
+{
+  "name": "woo_product_attribute",
+  "title": "WooCommerce Product Attribute ",
+  "category": "woocommerce",
+  "description": "Loop through products attribute",
+  "query_args": {
+    
+  },
+  "fields": {
+    "id": {
+      "description": "Attribute id"
+    },
+    "label": {
+      "description": "Attribute label"
+    },
+    "options": {
+      "description": "Attribute name"
+    },
+    "name": {
+      "description": "Attribute options ids, array of values(use as list loop)"
+    },
+    "slugs": {
+      "description": "Attribute options slugs, array of values(use as list loop)"
+    },
+    "variation": {
+      "description": "Attribute used for product variations"
+    },
+    "visible": {
+      "description": "Attribute visible on the product page"
+    }
+  },
+  "namespace": "Tangible\\Loop\\Integrations\\WooCommerce",
+  "className": "ProductLoop",
+  "extends": "BaseLoop"
+}

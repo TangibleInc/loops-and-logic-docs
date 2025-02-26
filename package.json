@@ -2,6 +2,9 @@
   "name": "docs-loops-and-logic",
   "version": "0.0.0",
   "private": true,
+  "repository": {
+    "url": "git+ssh://git@github.com/tangibleinc/loops-docs.git"
+  },
   "scripts": {
     "docusaurus": "docusaurus",
     "start": "docusaurus start",

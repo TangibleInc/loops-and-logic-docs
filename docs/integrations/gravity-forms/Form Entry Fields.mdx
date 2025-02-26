@@ -18,3 +18,89 @@ For loop type `gravity_form_entry_fields`, here are the query parameters and fie
 ## Fields
 
 <FieldsList fields={json.fields} />
+
+
+:::info
+Some Gravity Forms Entry Field values are sub loops of list type and have specific Loop keys.
+
+#### Gravity Forms fields:
+- Standard fields
+  - value of "multiselect", "checkbox", "radio", "select" field types is a loop with keys:
+    - text
+    - value
+- Advanced fields
+  - value of "consent" field type is a loop with keys:
+    - text
+    - description
+  - value of "name" field type is a loop with keys:
+    - prefix
+    - first
+    - middle
+    - last
+    - suffix
+  - value of "address" field type is a loop with keys:
+    - street
+    - street2
+    - city
+    - state
+    - zip
+    - country
+- Post fields
+  - value of "post_image" field type is a loop with keys:
+    - url
+    - title
+    - caption
+    - description
+  - value of "post_category" field type is a loop with keys:
+    - name
+    - id
+  - value of "post_tags" field type is a loop with keys:
+    - name
+- Pricing fields
+  - value of "product", "shipping", "option" fields type is a loop with keys:
+    - name
+    - price
+
+#### Gravity Forms AddOn Fields:
+- Survey fields:
+  - value of "survey" field type - input type "likert" is a loop with keys:
+    - row
+    - choice
+    - score
+  - value of "survey" field type - input type "rating" is a loop with keys:
+    - value
+  - value of "survey" field type - input types "checkbox", "radio", "select" is a loop with keys:
+  - text
+  - value
+- Quiz fields:
+    - value of "quiz" field type - input types "checkbox", "radio", "select" is a loop with keys:
+      - text
+      - value
+      - is_correct
+      - weight
+- Poll fields:
+  - value of "survey" field type - input types "checkbox", "radio", "select" is a loop with keys:
+  - text
+  - value
+  - result key is subloop, with keys:
+    - label
+    - total_entries
+    - ratio
+
+Usage
+Poll field example:
+```html
+<If field="type" is value="poll" >
+  <Loop field=value >
+    * Text:<Field text/><br/>
+    * Value:<Field value/><br/><br/>
+    ** Results:<br/>
+    <Loop field=results>
+      -<strong>Label: <Field label/></strong><br/>
+      -Total Entries: <Field total_entries/><br/>
+      -Percentage: <Field ratio/><br/>
+    </Loop><br/>
+  </Loop>
+</If>
+```
+:::
