@@ -56,14 +56,10 @@ To filter multiple loops on the same page using different facet sets, use differ
 
 ### Pagination
 
-Pagination support for WP Grid Builder facets in Loops & Logic is currently under development. Until this feature is fully implemented, please note the following:
+When using WPGB facets on an L&L Loop, do NOT use the L&L native pagination tags: `<PaginateButtons />`. 
 
-1. **Current Limitation:** When using WPGB facets with Loops & Logic, you should display all posts by omitting the `paged` attribute in your `<Loop>` tag.
-2. **Upcoming Solution:** Once pagination integration is complete, you'll need to use the WP Grid Builder pagination facet instead of Loops & Logic's native pagination tags:
-```html
-<!-- Do NOT use L&L pagination tags: <PaginateButtons /> -->
-<!-- Instead, use WPGB's pagination facet -->
-[wpgb_facet id="3" grid="wpgb-content-1"]
-```
+Instead, you'll need to use the WP Grid Builder pagination facet. This is because after you have filtered posts, the pagination needs to know what posts match the new filtered query when paginating, and the L&L pagination won't have that context.
 
-We're actively working to resolve the pagination conflicts between the two systems to provide a seamless experience. This documentation will be updated once full pagination support is available.
+(When using WPGB's pagination facet, remember to assign the grid param to the pagination facet like you did your other facets)
+
+`[wpgb_facet id="your_pagination_facet_id_here" grid="wpgb-content-1"]`
