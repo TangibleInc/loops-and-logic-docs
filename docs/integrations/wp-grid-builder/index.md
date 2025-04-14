@@ -64,4 +64,4 @@ Instead, you'll need to use the WP Grid Builder pagination facet. This is becaus
 
 (When using WPGB's pagination facet, remember to assign the grid param to the pagination facet like you did your other facets)
 
-`[wpgb_facet id="your_pagination_facet_id_here" grid="wpgb-content-1"]`
+`<Shortcode wpgb_facet id="your_pagination_facet_id_here" grid="wpgb-content-1" />`
