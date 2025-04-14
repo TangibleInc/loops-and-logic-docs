@@ -23,7 +23,7 @@ The integration follows the WP Grid Builder's [method for filtering custom conte
 </ul>
 
 <!-- Step 2: Add facets that target the same identifier -->
-[wpgb_facet id="1" grid="wpgb-content-1"]
+<Shortcode wpgb_facet id="1" grid="wpgb-content-1" />
 ```
 
 ### Multiple Filtered Loops on the Same Page
@@ -32,7 +32,8 @@ To filter multiple loops on the same page using different facet sets, use differ
 
 ```html
 <!-- Facets for first loop -->
-[wpgb_facet id="1" grid="wpgb-content-1"]
+<Shortcode wpgb_facet id="1" grid="wpgb-content-1" />
+
 <!-- First filtered loop -->
 <ul class="wpgb-content-1">
   <Loop type=post wp_grid_builder=wpgb-content-1>
@@ -43,7 +44,8 @@ To filter multiple loops on the same page using different facet sets, use differ
 </ul>
 
 <!-- Facets for second loop -->
-[wpgb_facet id="2" grid="wpgb-content-2"]
+<Shortcode wpgb_facet id="2" grid="wpgb-content-2" />
+
 <!-- Second filtered loop with different post type -->
 <ul class="wpgb-content-2">
   <Loop type=product wp_grid_builder=wpgb-content-2>
