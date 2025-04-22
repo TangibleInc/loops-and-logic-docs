@@ -2,6 +2,52 @@
 
 This is an archive of Loops & Logic plugin's version releases.
 
+- Improve develop/build/test setup and workflow for plugin and modules
+
+## 4.2.1
+
+Release Date: 2025-04-21
+
+- Atomic CSS: Utility classes and variables compatible with Tailwind v4
+- Attachment loop type
+  - Add field "audio" for audio file metadata from ID3 tags
+  - Add field "filepath" for path to file
+- Editor: Improve passing language definition of closed tags to formatter
+- Elandel (template language in TypeScript): Start Expression and Interactivity modules
+- Enable by default new features that reached stability; Can be deactivated in settings page
+  - Elementor integration: Use new code editor based on CodeMirror 6
+  - Object cache for parsed and pre-processed templates
+- Export page: Improve select template types for L&L and Blocks
+- Field tag: Support "." dot syntax for subfields (object/array/loop)
+- Gutenberg integration: Improve enqueue editor assets in iframe
+- Improve compatibility with PHP 8.4
+- Improve development setup and tests for supported PHP versions with Docker and wp-env; end-to-end tests with Playwright; and running tests on plugin zip archive before publish
+- Layout template type: Improve loading logic to pass through redirects
+- REST API: Improve compatibility with Checkview
+- Start new features: Content Structure and Form templates; ACF Extended integration; Tangible Fields integration
+- WP Grid Builder facet integration with support for pagination; Thanks to @zackpyle!
+
+## 4.1.8
+
+Release Date: 2025-02-26
+
+- Improve compatibility with PHP 8.4
+- Improve dev/build/test setup and release pipeline
+
+## 4.1.7
+
+Release Date: 2024-11-21
+
+- Fix Gutenberg enqueue inside editor iframe: Register Template block dependencies
+  - [Block Editor: Enqueueing Assets in the Editor](https://developer.wordpress.org/block-editor/how-to-guides/enqueueing-assets-in-the-editor/#backward-compatibility-and-known-issues)
+- Optional object cache for parsed and preprocessed template posts; See admin settings
+
+## 4.1.5
+
+Release Date: 2024-08-31
+
+- Fix XSS vulnerability when visiting admin settings page URL
+
 ## 4.1.4
 
 Release Date: 2024-06-13
