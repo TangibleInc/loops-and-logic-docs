@@ -32,7 +32,7 @@ Indents are literally passed to the code block.
 
 #### Using Render Example
 
-The `render` attriburte can be used in both `Prism` and `Code` tag.
+The `render` attribute can be used in both `Prism` and `Code` tag.
 
 Below is an example of the `render` attribute that is added to both `Prism` and `Code`: 
 ![Render on Code and Prism on Classname](../29%20-%20modules/images/prism-code-render.jpg)
